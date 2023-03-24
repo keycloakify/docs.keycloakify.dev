@@ -14,4 +14,9 @@ Many things have changed, I invite you to have a look at the latest version of t
 
 {% embed url="https://github.com/codegouvfr/sill-web/commit/adf5d7779d62f22ec7f617aa0a095865bc72ce96" %}
 
+### Email theme
+
+The email theme should no longer be at the root of your project in a `keycloak_email_theme` directory.  \
+It should be moved to  `keycloak-theme/email`. The `keycloak-theme` dir can be anywhere in your src directory. In the starter project it's at `src/keycloak-theme`
+
 If you experience issues upgrading to v7 do not hesitate to [ask for help](https://github.com/InseeFrLab/keycloakify/discussions).
