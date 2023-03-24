@@ -1,0 +1,15 @@
+# Table of contents
+
+* [🏁 Requirements](README.md)
+* [👨💻 👨💻 Quick start](how-to-use.md)
+* [🧪 Development](developpement.md)
+* [📧 Email customization](email-customization.md)
+* [✒ Terms and conditions](terms-and-conditions.md)
+* [✅ Realtime input validation](realtime-input-validation.md)
+* [⚠ Limitations](limitations.md)
+* [🌉 Context persistence](context-persistence.md)
+* [🌐 Adding i18n messages keys](adding-text-keys.md)
+* [⚡ Performance optimization](page-1.md)
+* [💂 Email domain acceptlist](email-domain-acceptlist.md)
+* [🛑 Keycloak error in log](keycloak-error-in-log.md)
+* [💟 Contributing](contributing.md)
