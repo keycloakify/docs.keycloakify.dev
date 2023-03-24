@@ -1,0 +1,17 @@
+# Table of contents
+
+* [👨💻 Quick start](README.md)
+* [🔩 Keycloakify in my App](keycloakify-in-my-app.md)
+* [📧 Email customization](email-customization.md)
+* [✒ Terms and conditions](terms-and-conditions.md)
+* [✅ Realtime input validation](realtime-input-validation.md)
+* [⚠ Limitations](limitations.md)
+* [🌉 Context persistence](context-persistence.md)
+* [🌎 i18n: msg(...)](adding-text-keys.md)
+* [💂 Email domain acceptlist](email-domain-acceptlist.md)
+* [🛑 Keycloak error in log](keycloak-error-in-log.md)
+* [💟 Contributing](contributing.md)
+* [📖 Build options](build-options.md)
+* [🏁 Requirements](readme-1.md)
+* [⬆ v5 -> v6](readme-1-1.md)
+* [⬆ v6.x -> v6.12](v6.x-greater-than-v6.12.md)
