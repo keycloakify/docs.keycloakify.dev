@@ -126,7 +126,7 @@ _Introduced in 6.11_
 
 Configure the `groupId` that will appear in the `pom.xml` file. &#x20;
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 {% code title="package.json" %}
 ```json
@@ -152,7 +152,7 @@ _Introduced in 6.11_
 
 Configure the `artifactId` that will appear in the `pom.xml` file. &#x20;
 
-<figure><img src=".gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 {% code title="package.json" %}
 ```json
@@ -180,7 +180,7 @@ The `artifactId` also affects [the name of the `.jar` file](https://github.com/I
 
 Configure the version that will appear in the `pom.xml` file. &#x20;
 
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 By default the version that is used is the one in the package.json of your project
 

@@ -12,7 +12,7 @@
 * [🛑 Keycloak error in log](keycloak-error-in-log.md)
 * [💟 Contributing](contributing.md)
 * [📖 Build options](build-options.md)
-* [🏁 Requirements](readme-1.md)
+* [🏁 Requirements](<README (1).md>)
 * [⬆ Migration guides](migration-guides/README.md)
   * [⬆ v6 -> v7](migration-guides/v6-greater-than-v7.md)
   * [⬆ v6.x -> v6.12](migration-guides/v6.x-greater-than-v6.12.md)

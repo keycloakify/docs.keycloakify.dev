@@ -4,7 +4,7 @@ A Keycloakify theme do not need to be a standalone project.\
 If you are building an SPA React application  you can install Keycloakify right into your project and build your login pages alongside the other pages of your app.
 
 {% hint style="warning" %}
-Keycloakify isn't compatible with [Vite](https://vitejs.dev/) nor [Next.js](https://nextjs.org/) yet. [Webpack is the only bundler supported so far](readme-1.md#supported-meta-framworks). &#x20;
+Keycloakify isn't compatible with [Vite](https://vitejs.dev/) nor [Next.js](https://nextjs.org/) yet. [Webpack is the only bundler supported so far](<README (1).md#supported-meta-framworks>). &#x20;
 
 I acknowledge that we need at least Vite support, if it's important for you [get involved in the dicution](https://github.com/InseeFrLab/keycloakify/issues/271). &#x20;
 {% endhint %}
