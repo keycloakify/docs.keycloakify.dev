@@ -176,6 +176,24 @@ KEYCLOAKIFY_ARTIFACT_ID="my-cool-theme" npx keycloakify
 The `artifactId` also affects [the name of the `.jar` file](https://github.com/InseeFrLab/keycloakify/blob/9f72024c61b1b36d71a42b242c05d7ac793e049b/src/bin/keycloakify/generateJavaStackFiles.ts#L85).
 {% endhint %}
 
+### keycloakify.keycloakVersionDefaultAssets
+
+Default: 11.0.3
+
+{% hint style="warning" %}
+Only use this param if you know what you are doing. [See related issue](https://github.com/keycloakify/keycloakify/issues/276).
+{% endhint %}
+
+{% code title="package.json" %}
+```json
+{
+    "keycloakify": {
+        "keycloakVersionDefaultAssets": "21.0.1"
+    }
+}
+```
+{% endcode %}
+
 ### version
 
 Configure the version that will appear in the `pom.xml` file. &#x20;
@@ -201,3 +219,4 @@ KEYCLOAKIFY_VERSION="4.5.6" npx keycloakify
 {% hint style="info" %}
 The version also affects [the name of the `.jar` file](https://github.com/InseeFrLab/keycloakify/blob/9f72024c61b1b36d71a42b242c05d7ac793e049b/src/bin/keycloakify/generateJavaStackFiles.ts#L85).
 {% endhint %}
+
