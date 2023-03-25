@@ -6,7 +6,7 @@ If you are building an SPA React application  you can install Keycloakify right 
 {% hint style="warning" %}
 Keycloakify isn't compatible with [Vite](https://vitejs.dev/) nor [Next.js](https://nextjs.org/) yet. [Webpack is the only bundler supported so far](<README (1).md#supported-meta-framworks>). &#x20;
 
-I acknowledge that we need at least Vite support, if it's important for you [get involved in the dicution](https://github.com/InseeFrLab/keycloakify/issues/271). &#x20;
+[Vite support is on the way.](https://github.com/keycloakify/keycloakify/pull/275)
 {% endhint %}
 
 Before moving on and setting up Keycloakify in your project, first, mess around with [the starter project](https://github.com/codegouvfr/keycloakify-starter) to familiarize yourself with Keycloakify.
