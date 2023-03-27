@@ -5,7 +5,7 @@ description: Collocating your App and your frontend code
 # 🔩 Keycloakify in my App
 
 A Keycloakify theme do not need to be a standalone project.\
-If you are building a React application  you can install Keycloakify right into your project and build your login pages alongside the other pages of your app (it's what's implemented in [the starter project](https://github.com/keycloakify/keycloakify-starter)).
+Under certain conditions you can collocate your React app and your Keycloak theme. This enable to design the Keycloak user facing pages like if they where any other page of your project.  (it's what's implemented in [the starter project](https://github.com/keycloakify/keycloakify-starter)).
 
 {% hint style="warning" %}
 Currently you can only collocate your Keycloak theme with WebPack SPAs. Typically, [create-react-app](https://create-react-app.dev/) projects. &#x20;
