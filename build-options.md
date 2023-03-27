@@ -6,6 +6,10 @@ Options that can be passed to the `npx keycloakify` command.
 
 ### `--external-assets`
 
+{% hint style="warning" %}
+Do not invest time understanding this mode, it'll be removed in the next iteration of Keycloakify. &#x20;
+{% endhint %}
+
 {% hint style="info" %}
 `This is for performance optimisation.`
 {% endhint %}
