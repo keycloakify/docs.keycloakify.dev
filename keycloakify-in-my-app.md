@@ -1,3 +1,7 @@
+---
+description: Collocating your App and your frontend code
+---
+
 # 🔩 Keycloakify in my App
 
 A Keycloakify theme do not need to be a standalone project.\
