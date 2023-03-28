@@ -14,15 +14,14 @@ Keycloakify provides client side validation out of the box but for customizing t
 
 Example in the starter project: &#x20;
 
-{% embed url="https://github.com/codegouvfr/keycloakify-starter/blob/main/src/keycloak-theme/login/pages/RegisterUserProfile.tsx" %}
+{% embed url="https://github.com/keycloakify/keycloakify-starter/blob/main/src/keycloak-theme/login/pages/RegisterUserProfile.tsx" %}
 The RegisterUserProfile page...
 {% endembed %}
 
-{% embed url="https://github.com/codegouvfr/keycloakify-starter/blob/main/src/keycloak-theme/login/pages/shared/UserProfileCommons.tsx" %}
+{% embed url="https://github.com/keycloakify/keycloakify-starter/blob/main/src/keycloak-theme/login/pages/shared/UserProfileFormFields.tsx" %}
 ...but this is where the magic happens
 {% endembed %}
 
 {% hint style="warning" %}
 As of today [Keycloak dosen't allow to define a pattern for the password](https://keycloak.discourse.group/t/make-password-policies-available-to-freemarker/11632) in the admin console. You can however pass validators for it to the `useFormValidation` function. (this is why useFormValidation returns `attributesWithPassword`)
 {% endhint %}
-
