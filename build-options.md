@@ -161,7 +161,7 @@ _Introduced in 6.11_
 
 Configure the `artifactId` that will appear in the `pom.xml` file. &#x20;
 
-<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% code title="package.json" %}
 ```json

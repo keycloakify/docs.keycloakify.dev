@@ -4,7 +4,7 @@
 * [🔩 Keycloakify in my App](keycloakify-in-my-app.md)
 * [📧 Email customization](email-customization.md)
 * [✒ Terms and conditions](terms-and-conditions.md)
-* [✅ Realtime input validation](realtime-input-validation.md)
+* [✅ Realtime input validation and custom registration fields](realtime-input-validation.md)
 * [⚠ Limitations](limitations.md)
 * [🌉 Context persistence](context-persistence.md)
 * [🌎 i18n: msg(...)](adding-text-keys.md)
