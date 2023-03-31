@@ -70,11 +70,16 @@ If, for some reason, you need to add extra properties like for example `env=dev`
     "keycloakify": {
 <strong>        "extraThemeProperties": [ 
 </strong><strong>            "env=dev",
-</strong><strong>            "locales=en,ko"
+</strong><strong>            "locales=en,ko",
+</strong><strong>            "foo=bar"
 </strong><strong>        ]
 </strong>    }
 }
 </code></pre>
+
+You can then access this property in the `kcContext` (`kcContext.properties.foo === "bar"`) even if you won't have type safety.
+
+You can also use it to access Keycloak environment variables in your theme. [More info](https://github.com/keycloakify/keycloakify/issues/288#issuecomment-1491792859).
 
 ### `keycloakify.areAppAndKeycloakServerSharingSameDomain`
 
