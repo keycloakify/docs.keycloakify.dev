@@ -15,7 +15,7 @@ User profile is only available in Keycloak 15 and newer and it's not enabled by 
 
 or &#x20;
 
-`KEYCLOAK_EXTRA_ARGS: --features=declarative-user-profile` ([helm example](https://github.com/keycloakify/keycloakify/discussions/292#discussioncomment-5494498))&#x20;
+`KEYCLOAK_EXTRA_ARGS: --features=declarative-user-profile` ([Docker compose example](https://github.com/keycloakify/keycloakify/discussions/292#discussioncomment-5494498))&#x20;
 
 
 
