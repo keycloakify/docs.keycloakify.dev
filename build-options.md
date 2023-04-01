@@ -36,7 +36,7 @@ Prevent the build command from generating outputs. &#x20;
 
 You can read [here](https://github.com/InseeFrLab/keycloakify/blob/832434095eac722207c55062fd2b825d1f691722/src/bin/build-keycloak-theme/BuildOptions.ts#L7-L16) the package.json fields that are used by Keyclaokify.&#x20;
 
-### `extraPages`
+### `keycloakify.extraPages`
 
 Tells Keycloakify to generate extra pages. &#x20;
 
@@ -56,7 +56,7 @@ Keycloakify will generate `my-extra-page-1.ftl` and `my-extra-page-2.ftl` alongs
 
 More info about this in [this section (I do it only for my project)](limitations.md#i-have-established-that-a-page-that-i-need-isnt-supported-out-of-the-box-by-keycloakify-now-what). &#x20;
 
-### `extraThemeProperties`
+### `keycloakify.extraThemeProperties`
 
 By default the `theme.properties` files located in `build_keycloak/src/main/resources/theme/<your app>/login/theme.properties` only contains:&#x20;
 
@@ -81,7 +81,7 @@ You can then access this property in the `kcContext` (`kcContext.properties.foo 
 
 You can also use it to access Keycloak environment variables in your theme. [More info](https://github.com/keycloakify/keycloakify/issues/288#issuecomment-1491792859).
 
-### `areAppAndKeycloakServerSharingSameDomain`
+### `keycloakify.areAppAndKeycloakServerSharingSameDomain`
 
 This option is only considered when building with [`--external-assets`](build-options.md#external-assets).  &#x20;
 
@@ -101,7 +101,7 @@ Example: &#x20;
 
 When enabled you don't need to specify a `homepage` field in the `package.json`
 
-### bundler&#x20;
+### keycloakify.bundler&#x20;
 
 _Introduced in 6.11.4_
 
@@ -129,7 +129,7 @@ You can also convigure this value using an environement variable:&#x20;
 KEYCLOAKIFY_BUNDLER=none npx keycloakify
 ```
 
-### groupId
+### keycloakify.groupId
 
 _Introduced in 6.11_
 
@@ -155,7 +155,7 @@ You can overwrite this using an environement variable:&#x20;
 KEYCLOAKIFY_GROUP_ID="com.your-company.your-project.keycloak" npx keycloakify
 ```
 
-### artifactId
+### keycloakify.artifactId
 
 _Introduced in 6.11_
 
@@ -185,7 +185,7 @@ KEYCLOAKIFY_ARTIFACT_ID="my-cool-theme" npx keycloakify
 The `artifactId` also affects [the name of the `.jar` file](https://github.com/InseeFrLab/keycloakify/blob/9f72024c61b1b36d71a42b242c05d7ac793e049b/src/bin/keycloakify/generateJavaStackFiles.ts#L85).
 {% endhint %}
 
-### keycloakVersionDefaultAssets
+### keycloakify.keycloakVersionDefaultAssets
 
 Default: 11.0.3
 
@@ -229,7 +229,7 @@ KEYCLOAKIFY_VERSION="4.5.6" npx keycloakify
 The version also affects [the name of the `.jar` file](https://github.com/InseeFrLab/keycloakify/blob/9f72024c61b1b36d71a42b242c05d7ac793e049b/src/bin/keycloakify/generateJavaStackFiles.ts#L85).
 {% endhint %}
 
-### **customUserAttributes**
+### **keycloakify.customUserAttributes**
 
 _Introduced in 7.4.0_ &#x20;
 
