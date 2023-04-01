@@ -173,7 +173,7 @@ Configure the `artifactId` that will appear in the `pom.xml` file. &#x20;
 ```
 {% endcode %}
 
-By default it's `package.json["name"]-keycloak-theme`
+By default it's `<themeName>-keycloak-theme` See, [`keycloak.themeName`](build-options.md#keyclokify.themename) option.
 
 You can overwrite this using an environement variable:&#x20;
 
