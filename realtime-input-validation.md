@@ -44,7 +44,7 @@ In [the public deployment of the starter project](https://starter.keycloakify.de
 
 If you register you'll see that you have to select if your are a cat or dog person. &#x20;
 
-<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 This appear because, on my keycloak server I have configured a custom user profile attribute. &#x20;
 

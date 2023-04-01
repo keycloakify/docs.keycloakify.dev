@@ -36,7 +36,7 @@ Prevent the build command from generating outputs. &#x20;
 
 You can read [here](https://github.com/InseeFrLab/keycloakify/blob/832434095eac722207c55062fd2b825d1f691722/src/bin/build-keycloak-theme/BuildOptions.ts#L7-L16) the package.json fields that are used by Keyclaokify.&#x20;
 
-### `keycloakify.extraPages`
+### `extraPages`
 
 Tells Keycloakify to generate extra pages. &#x20;
 
@@ -56,7 +56,7 @@ Keycloakify will generate `my-extra-page-1.ftl` and `my-extra-page-2.ftl` alongs
 
 More info about this in [this section (I do it only for my project)](limitations.md#i-have-established-that-a-page-that-i-need-isnt-supported-out-of-the-box-by-keycloakify-now-what). &#x20;
 
-### `keycloakify.extraThemeProperties`
+### `extraThemeProperties`
 
 By default the `theme.properties` files located in `build_keycloak/src/main/resources/theme/<your app>/login/theme.properties` only contains:&#x20;
 
@@ -81,7 +81,7 @@ You can then access this property in the `kcContext` (`kcContext.properties.foo 
 
 You can also use it to access Keycloak environment variables in your theme. [More info](https://github.com/keycloakify/keycloakify/issues/288#issuecomment-1491792859).
 
-### `keycloakify.areAppAndKeycloakServerSharingSameDomain`
+### `areAppAndKeycloakServerSharingSameDomain`
 
 This option is only considered when building with [`--external-assets`](build-options.md#external-assets).  &#x20;
 
@@ -101,7 +101,7 @@ Example: &#x20;
 
 When enabled you don't need to specify a `homepage` field in the `package.json`
 
-### keycloakify.bundler&#x20;
+### bundler&#x20;
 
 _Introduced in 6.11.4_
 
@@ -129,7 +129,7 @@ You can also convigure this value using an environement variable:&#x20;
 KEYCLOAKIFY_BUNDLER=none npx keycloakify
 ```
 
-### keycloakify.groupId
+### groupId
 
 _Introduced in 6.11_
 
@@ -155,7 +155,7 @@ You can overwrite this using an environement variable:&#x20;
 KEYCLOAKIFY_GROUP_ID="com.your-company.your-project.keycloak" npx keycloakify
 ```
 
-### keycloakify.artifactId
+### artifactId
 
 _Introduced in 6.11_
 
@@ -185,7 +185,7 @@ KEYCLOAKIFY_ARTIFACT_ID="my-cool-theme" npx keycloakify
 The `artifactId` also affects [the name of the `.jar` file](https://github.com/InseeFrLab/keycloakify/blob/9f72024c61b1b36d71a42b242c05d7ac793e049b/src/bin/keycloakify/generateJavaStackFiles.ts#L85).
 {% endhint %}
 
-### keycloakify.keycloakVersionDefaultAssets
+### keycloakVersionDefaultAssets
 
 Default: 11.0.3
 
@@ -229,3 +229,30 @@ KEYCLOAKIFY_VERSION="4.5.6" npx keycloakify
 The version also affects [the name of the `.jar` file](https://github.com/InseeFrLab/keycloakify/blob/9f72024c61b1b36d71a42b242c05d7ac793e049b/src/bin/keycloakify/generateJavaStackFiles.ts#L85).
 {% endhint %}
 
+### **customUserAttributes**
+
+_Introduced in 7.4.0_ &#x20;
+
+This option it to use if when trying to use `kcContext.messagesPerField.existsError("your-custom-attribute")` you are getting the error message: `There is no your-custom-attribute field`
+
+<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+This means that you have defined user attribute thate aren't standard on your Keycloak realm. &#x20;
+
+[See issue for more context](https://github.com/keycloakify/keycloakify/issues/40).&#x20;
+
+`customUserAttributes` enables you to let Keycloakify know about thoses fields: &#x20;
+
+{% code title="package.json" %}
+```json
+{
+    "keycloakify": {
+        "customUserAttributes": ["your-custom-attribute"]
+    }
+}
+```
+{% endcode %}
+
+{% hint style="info" %}
+Note that it is far preferable to use User Profile features (using \`register-user-profile.ftl\` instead \`register.ftl\`) since it enables to have a single source of truth and client side field validation.  Checkout [this section of the doc](realtime-input-validation.md).&#x20;
+{% endhint %}
