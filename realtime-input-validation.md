@@ -52,7 +52,7 @@ This appear because, on my keycloak server I have configured a custom user profi
 
 And when the user is connecte, it's choice appear in the JWT &#x20;
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 This work because I have created the following mapper in my Keycloak configuration pannel:&#x20;
 

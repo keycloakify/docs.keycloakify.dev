@@ -135,7 +135,7 @@ _Introduced in 6.11_
 
 Configure the `groupId` that will appear in the `pom.xml` file. &#x20;
 
-<figure><img src=".gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% code title="package.json" %}
 ```json
@@ -256,3 +256,23 @@ This means that you have defined user attribute thate aren't standard on your Ke
 {% hint style="info" %}
 Note that it is far preferable to use User Profile features (using \`register-user-profile.ftl\` instead \`register.ftl\`) since it enables to have a single source of truth and client side field validation.  Checkout [this section of the doc](realtime-input-validation.md).&#x20;
 {% endhint %}
+
+### keyclokify.themeName
+
+Introduced in 7.5.0 &#x20;
+
+This is the hame of the theme in the Keycloak admin select: &#x20;
+
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+By default it's `package.json["name"]`
+
+{% code title="package.json" %}
+```json
+{
+    "keycloakify": {
+        "themeName": "my-custom-name"
+    }
+}
+```
+{% endcode %}
