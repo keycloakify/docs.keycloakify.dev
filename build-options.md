@@ -222,7 +222,7 @@ By default the version that is used is the one in the package.json of your proje
 But you can overwrite this value using an environnement variable (_Introduced in 6.11)_:&#x20;
 
 ```bash
-KEYCLOAKIFY_VERSION="4.5.6" npx keycloakify
+KEYCLOAKIFY_THEME_VERSION="4.5.6" npx keycloakify
 ```
 
 {% hint style="info" %}
