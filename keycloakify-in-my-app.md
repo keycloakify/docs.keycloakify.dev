@@ -56,3 +56,7 @@ You might now want to have a look at the available build options:
 {% content-ref url="build-options.md" %}
 [build-options.md](build-options.md)
 {% endcontent-ref %}
+
+{% embed url="https://www.cloud-iam.com/" %}
+Feeling overwhelmed? Check out our exclusive sponsor's Cloud IAM consulting services to simplify your experience.
+{% endembed %}
