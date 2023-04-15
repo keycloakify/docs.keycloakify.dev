@@ -123,3 +123,7 @@ Example of component level configuration of the Terms page
 +    i18n
  });
 ```
+
+{% embed url="https://www.cloud-iam.com/" %}
+Feeling overwhelmed? Check out our exclusive sponsor's Cloud IAM consulting services to simplify your experience.
+{% endembed %}

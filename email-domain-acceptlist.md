@@ -24,3 +24,6 @@ Relevent code [here](https://github.com/garronej/keycloakify-demo-app/blob/a316e
 {% endtab %}
 {% endtabs %}
 
+{% embed url="https://www.cloud-iam.com/" %}
+Feeling overwhelmed? Check out our exclusive sponsor's Cloud IAM consulting services to simplify your experience.
+{% endembed %}

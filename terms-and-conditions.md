@@ -61,3 +61,7 @@ export default function App(props: { kcContext: KcContext; }) {
 You can also eject the terms.ftl page if you're not happy with the default look: &#x20;
 
 {% embed url="https://github.com/codegouvfr/keycloakify-starter/blob/main/src/keycloak-theme/login/pages/Login.tsx" %}
+
+{% embed url="https://www.cloud-iam.com/" %}
+Feeling overwhelmed? Check out our exclusive sponsor's Cloud IAM consulting services to simplify your experience.
+{% endembed %}

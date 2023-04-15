@@ -23,3 +23,7 @@ You can set the language you'll get in `i18n.curentLanguageTag` by specifying `u
 
 [See how](context-persistence.md).
 {% endhint %}
+
+{% embed url="https://www.cloud-iam.com/" %}
+Feeling overwhelmed? Check out our exclusive sponsor's Cloud IAM consulting services to simplify your experience.
+{% endembed %}

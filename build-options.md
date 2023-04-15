@@ -276,3 +276,7 @@ By default it's `package.json["name"]`
 }
 ```
 {% endcode %}
+
+{% embed url="https://www.cloud-iam.com/" %}
+Feeling overwhelmed? Check out our exclusive sponsor's Cloud IAM consulting services to simplify your experience.
+{% endembed %}

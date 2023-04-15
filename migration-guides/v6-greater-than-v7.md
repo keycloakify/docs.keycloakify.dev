@@ -20,3 +20,7 @@ The email theme should no longer be at the root of your project in a `keycloak_e
 It should be moved to  `keycloak-theme/email`. The `keycloak-theme` dir can be anywhere in your src directory. In the starter project it's at `src/keycloak-theme`
 
 If you experience issues upgrading to v7 do not hesitate to [ask for help](https://github.com/InseeFrLab/keycloakify/discussions).
+
+{% embed url="https://www.cloud-iam.com/" %}
+Feeling overwhelmed? Check out our exclusive sponsor's Cloud IAM consulting services to simplify your experience.
+{% endembed %}

@@ -63,3 +63,8 @@ Go to clients -> [starter (name of your client)](https://github.com/keycloakify/
 * User attribute: `favourite_pet`
 * Token claim name: `favourite_pet`
 * Claim JSON type: `string`
+
+{% embed url="https://www.cloud-iam.com/" %}
+Feeling overwhelmed? Check out our exclusive sponsor's Cloud IAM consulting services to simplify your experience.
+{% endembed %}
+

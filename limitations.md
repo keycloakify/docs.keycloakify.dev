@@ -101,3 +101,7 @@ Example [here](https://github.com/garronej/keycloakify-demo-app/blob/9aa2dbaec28
 <figure><img src=".gitbook/assets/Admin_console_theme_not_supported.png" alt=""><figcaption></figcaption></figure>
 
 If you are missing this feature [open an issue about it](https://github.com/InseeFrLab/keycloakify/issues/new).
+
+{% embed url="https://www.cloud-iam.com/" %}
+Feeling overwhelmed? Check out our exclusive sponsor's Cloud IAM consulting services to simplify your experience.
+{% endembed %}
