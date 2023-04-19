@@ -31,8 +31,7 @@ add the following script
 {
   "scripts": {
      ...
-     "prestart": "copy-keycloak-resources-to-public",
-     "prestorybook": "copy-keycloak-resources-to-public",
+     "prepare": "copy-keycloak-resources-to-public", //This is only for beeing able to test the theme locally in storybook or with an explicit mockPageId
      "build-keycloak-theme": "yarn build && keycloakify"
   }
 }
