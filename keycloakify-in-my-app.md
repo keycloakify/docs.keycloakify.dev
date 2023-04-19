@@ -31,6 +31,8 @@ add the following script
 {
   "scripts": {
      ...
+     "prestart": "copy-keycloak-resources-to-public",
+     "prestorybook": "copy-keycloak-resources-to-public",
      "build-keycloak-theme": "yarn build && keycloakify"
   }
 }
