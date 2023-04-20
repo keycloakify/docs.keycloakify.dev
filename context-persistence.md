@@ -16,6 +16,6 @@ Add the value to the url before redirecting
 Using the values in the login pages
 {% endembed %}
 
-{% embed url="https://www.cloud-iam.com/" %}
+{% embed url="https://cloud-iam.com/?mtm_campaign=keycloakify-deal&mtm_source=keycloakify-doc-context-persistence" %}
 Feeling overwhelmed? Check out our exclusive sponsor's Cloud IAM consulting services to simplify your experience.
 {% endembed %}

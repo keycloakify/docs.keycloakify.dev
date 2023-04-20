@@ -64,7 +64,6 @@ Go to clients -> [starter (name of your client)](https://github.com/keycloakify/
 * Token claim name: `favourite_pet`
 * Claim JSON type: `string`
 
-{% embed url="https://www.cloud-iam.com/" %}
+{% embed url="https://cloud-iam.com/?mtm_campaign=keycloakify-deal&mtm_source=keycloakify-doc-realtime-input-validation" %}
 Feeling overwhelmed? Check out our exclusive sponsor's Cloud IAM consulting services to simplify your experience.
 {% endembed %}
-

@@ -124,6 +124,6 @@ Example of component level configuration of the Terms page
  });
 ```
 
-{% embed url="https://www.cloud-iam.com/" %}
+{% embed url="https://cloud-iam.com/?mtm_campaign=keycloakify-deal&mtm_source=keycloakify-doc-migration-guides-readme-1" %}
 Feeling overwhelmed? Check out our exclusive sponsor's Cloud IAM consulting services to simplify your experience.
 {% endembed %}

@@ -58,6 +58,6 @@ You might now want to have a look at the available build options:
 [build-options.md](build-options.md)
 {% endcontent-ref %}
 
-{% embed url="https://www.cloud-iam.com/" %}
+{% embed url="https://cloud-iam.com/?mtm_campaign=keycloakify-deal&mtm_source=keycloakify-doc-keycloakify-in-my-app" %}
 Feeling overwhelmed? Check out our exclusive sponsor's Cloud IAM consulting services to simplify your experience.
 {% endembed %}

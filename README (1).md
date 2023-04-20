@@ -63,6 +63,6 @@ To share your styles between your main app and your login pages you will need to
 
 * `docker` must be up and running when running `start_keycloak_testing_container.sh`&#x20;
 
-{% embed url="https://www.cloud-iam.com/" %}
+{% embed url="https://cloud-iam.com/?mtm_campaign=keycloakify-deal&mtm_source=keycloakify-doc-readme-1" %}
 Feeling overwhelmed? Check out our exclusive sponsor's Cloud IAM consulting services to simplify your experience.
 {% endembed %}

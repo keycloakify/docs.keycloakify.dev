@@ -21,6 +21,6 @@ It should be moved to  `keycloak-theme/email`. The `keycloak-theme` dir can be a
 
 If you experience issues upgrading to v7 do not hesitate to [ask for help](https://github.com/InseeFrLab/keycloakify/discussions).
 
-{% embed url="https://www.cloud-iam.com/" %}
+{% embed url="https://cloud-iam.com/?mtm_campaign=keycloakify-deal&mtm_source=keycloakify-doc-v6-greater-than-v7" %}
 Feeling overwhelmed? Check out our exclusive sponsor's Cloud IAM consulting services to simplify your experience.
 {% endembed %}
