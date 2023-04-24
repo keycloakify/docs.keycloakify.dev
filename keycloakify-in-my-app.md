@@ -8,12 +8,12 @@ A Keycloakify theme do not need to be a standalone project.\
 Under certain conditions you can collocate your React app and your Keycloak theme. This enable to design the Keycloak user facing pages like if they where any other page of your project.  (it's what's implemented in [the starter project](https://github.com/keycloakify/keycloakify-starter)).
 
 {% hint style="warning" %}
-Currently you can only collocate your Keycloak theme with WebPack SPAs. Typically, [create-react-app](https://create-react-app.dev/) projects. &#x20;
+Currently you can only collocate your Keycloak theme with WebPack SPAs. Typically, [create-react-app](https://create-react-app.dev/) projects.  \
+It's not the case of your project? **Don't worry!** You can still use Keycloakify but your theme will need to be a standalone project. Just follow [the instructions to make the starter project standalone](https://github.com/keycloakify/keycloakify-starter#standalone-keycloak-theme).&#x20;
 
 We are working toward making Keycloakify agnostic to the project it's colocated with.  \
-If we pull it off this will enable collocation with Vite, Next, Gatsby... anything. &#x20;
+This will enable collocation with Vite, Next, Gatsby... [Follow the progress.](https://github.com/keycloakify/keycloakify/pull/275)\
 
-[Follow the progress.](https://github.com/keycloakify/keycloakify/pull/275)
 {% endhint %}
 
 Before moving on and setting up Keycloakify in your project, first, mess around with [the starter project](https://github.com/codegouvfr/keycloakify-starter) to familiarize yourself with Keycloakify.
