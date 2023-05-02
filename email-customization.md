@@ -16,7 +16,7 @@ For this script to work you must be in one of thoses scenario:
 
 This directory should be tracked by Git (`yarn add -A`) You can start hacking the default template.
 
-You can remove all the template and resource file you aren't going to customize (it will fallback to the default email theme).  \
+You can remove all the template and resource file you aren't going to customize (it will fallback to the default email theme as long as you keep a `theme.properties` with `parent=base`).  \
 When `npx keycloakify` (`yarn keycloak`) is run it will bundle your email theme into your `.jar` file and you will be able to select it in the Keycloak administration pages.
 
 ![Selecting your email theme in the Keycloak admin](.gitbook/assets/email.png)
