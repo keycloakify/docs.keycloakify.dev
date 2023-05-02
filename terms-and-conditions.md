@@ -16,6 +16,8 @@ import Fallback, { type PageProps } from "keycloakify/login";
 import type { KcContext } from "./kcContext";
 import { useI18n } from "./i18n";
 <strong>import { useDownloadTerms } from "keycloakify/login";
+</strong><strong>import tos_en_url from "./assets/tos_en.md";
+</strong><strong>import tos_fr_url from "./assets/tos_fr.md";
 </strong>
 const DefaultTemplate = lazy(() => import("keycloakify/login/Template"));
 
@@ -29,14 +31,23 @@ export default function App(props: { kcContext: KcContext; }) {
 </strong><strong>	kcContext,
 </strong><strong>	"downloadTermMarkdown": async ({ currentLanguageTag }) => {
 </strong><strong>
-</strong><strong>	    const markdownString = await fetch((() => {
-</strong><strong>		switch (currentLanguageTag) {
-</strong><strong>			case "fr": return tos_fr_url;
-</strong><strong>			default: return tos_en_url;
-</strong><strong>		}
-</strong><strong>	    })()).then(response => response.text());
+</strong><strong>            const tos_url = (() => {
+</strong><strong>                switch (currentLanguageTag) {
+</strong><strong>                    case "fr": return tos_fr_url;
+</strong><strong>                    default: return tos_en_url;
+</strong><strong>                }
+</strong><strong>            })();
 </strong><strong>
-</strong><strong>	    return markdownString;
+</strong><strong>
+</strong><strong>            if ("__STORYBOOK_ADDONS" in window) {
+</strong><strong>                // NOTE: In storybook, when you import a .md file you get the content of the file.
+</strong><strong>                // In Create React App on the other hand you get an url to the file.
+</strong><strong>                return tos_url;
+</strong><strong>            }
+</strong><strong>
+</strong><strong>            const markdownString = await fetch(tos_url).then(response => response.text());
+</strong><strong>
+</strong><strong>            return markdownString;
 </strong><strong>	}
 </strong><strong>    });
 </strong>
