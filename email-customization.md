@@ -6,6 +6,10 @@ description: Customize the default email template
 
 _Introduced in_ [_v4.8.0_](https://github.com/InseeFrLab/keycloakify/releases/tag/v4.8.0)
 
+{% hint style="warning" %}
+Currently, customizing emails with React is not possible, and you must use FreeMarker instead. If this poses a significant obstacle for you, please [open a new issue](https://github.com/keycloakify/keycloakify/issues/new) to discuss it further.
+{% endhint %}
+
 It is now possible to customize the emails sent to your users to confirm their email address ect.\
 Just run `npx initialize-email-theme`.
 
