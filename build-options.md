@@ -261,7 +261,7 @@ Note that it is far preferable to use User Profile features (using \`register-us
 
 Introduced in 7.5.0 &#x20;
 
-This is the hame of the theme in the Keycloak admin select: &#x20;
+This is the name of the theme in the Keycloak admin select: &#x20;
 
 <figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
