@@ -1,8 +1,12 @@
+---
+description: consent page
+---
+
 # ✒ Terms and conditions
 
 {% embed url="https://user-images.githubusercontent.com/6702424/164942769-0d5420e3-c62f-4187-977e-316a113fb037.mp4" %}
 
-Many organizations have a requirement that when a new user logs in for the first time, they need to agree to the terms and conditions of the website.
+Many organizations have a requirement that when a new user logs in for the first time, they need to agree to the terms and conditions of the website. &#x20;
 
 First you need to enable the required action on the Keycloak server admin console:\
 
