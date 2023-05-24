@@ -1,5 +1,5 @@
 ---
-description: consent page
+description: Consent page
 ---
 
 # ✒ Terms and conditions
