@@ -7,18 +7,18 @@ Options that can be passed to the `npx keycloakify` command.
 ### `--external-assets`
 
 {% hint style="warning" %}
-Do not invest time understanding this mode, it'll be removed in the next iteration of Keycloakify. &#x20;
+Do not invest time understanding this mode, it'll be removed in the next iteration of Keycloakify.
 {% endhint %}
 
 {% hint style="info" %}
 `This is for performance optimisation.`
 {% endhint %}
 
-Build the theme without bundling the assets (static js files, images ect). Keycloakify will read the `package.json` -> `homepage` field to know from where the assets should be downloaded. &#x20;
+Build the theme without bundling the assets (static js files, images ect). Keycloakify will read the `package.json` -> `homepage` field to know from where the assets should be downloaded.
 
-This enables to you to levrage CDN and cache big resource files that are used by both the main app and the login pages. &#x20;
+This enables to you to levrage CDN and cache big resource files that are used by both the main app and the login pages.
 
-Step to make `--external-assets` work: &#x20;
+Step to make `--external-assets` work:
 
 * Provide the url of your app in the `homepage` field of `package.json` [example](https://github.com/garronej/keycloakify-demo-app/blob/7847cc70ef374ab26a6cc7953461cf25603e9a6d/package.json#L2) or in a `public/CNAME` file [example.](https://github.com/garronej/keycloakify-demo-app/blob/main/public/CNAME) (Or use [`keycloakify.areAppAndKeycloakServerSharingSameDomain=true`](build-options.md#keycloakify.isappandkeycloakserversharingsamedomain)`)`
 * Build the theme using `npx keycloakify --external-assets` [ex](https://github.com/codegouvfr/keycloakify-starter/blob/38dd7a946e60556cdc85a5579da5dd81783ac84f/.github/workflows/ci.yaml#L27)
@@ -30,17 +30,17 @@ Checkout a complete setup [here](https://github.com/codegouvfr/keycloakify-start
 
 ### `--silent`
 
-Prevent the build command from generating outputs. &#x20;
+Prevent the build command from generating outputs.
 
 ## `package.json` options
 
-You can read [here](https://github.com/InseeFrLab/keycloakify/blob/832434095eac722207c55062fd2b825d1f691722/src/bin/build-keycloak-theme/BuildOptions.ts#L7-L16) the package.json fields that are used by Keyclaokify.&#x20;
+You can read [here](https://github.com/InseeFrLab/keycloakify/blob/832434095eac722207c55062fd2b825d1f691722/src/bin/build-keycloak-theme/BuildOptions.ts#L7-L16) the package.json fields that are used by Keyclaokify.
 
 ### `keycloakify.extraPages`
 
-Tells Keycloakify to generate extra pages. &#x20;
+Tells Keycloakify to generate extra pages.
 
-If you have in your `package.json`: &#x20;
+If you have in your `package.json`:
 
 <pre class="language-json" data-title="package.json"><code class="lang-json">{
     "keycloakify": {
@@ -54,17 +54,17 @@ If you have in your `package.json`: &#x20;
 
 Keycloakify will generate `my-extra-page-1.ftl` and `my-extra-page-2.ftl` alongside `login.ftl`, r`egister-user-profile.ftl` ect...
 
-More info about this in [this section (I do it only for my project)](limitations.md#i-have-established-that-a-page-that-i-need-isnt-supported-out-of-the-box-by-keycloakify-now-what). &#x20;
+More info about this in [this section (I do it only for my project)](limitations.md#i-have-established-that-a-page-that-i-need-isnt-supported-out-of-the-box-by-keycloakify-now-what).
 
 ### `keycloakify.extraThemeProperties`
 
-By default the `theme.properties` files located in `build_keycloak/src/main/resources/theme/<your app>/login/theme.properties` only contains:&#x20;
+By default the `theme.properties` files located in `build_keycloak/src/main/resources/theme/<your app>/login/theme.properties` only contains:
 
 ```
 parent=keycloak
 ```
 
-If, for some reason, you need to add extra properties like for example `env=dev` you can do it by editing your `package.json` this way: &#x20;
+If, for some reason, you need to add extra properties like for example `env=dev` you can do it by editing your `package.json` this way:
 
 <pre class="language-json" data-title="package.json"><code class="lang-json">{
     "keycloakify": {
@@ -83,14 +83,14 @@ You can also use it to access Keycloak environment variables in your theme. [Mor
 
 ### `keycloakify.areAppAndKeycloakServerSharingSameDomain`
 
-This option is only considered when building with [`--external-assets`](build-options.md#external-assets).  &#x20;
+This option is only considered when building with [`--external-assets`](build-options.md#external-assets).
 
-Set to `true` it tels Keycloakify that you have configured your reverse proxy so that your app and your Keycloak server are under the same domain, example: &#x20;
+Set to `true` it tels Keycloakify that you have configured your reverse proxy so that your app and your Keycloak server are under the same domain, example:
 
 * _https://example.com/auth_: Keycloak.
 * _https://example.com (or https://example.com/x/y/z)_: Your App
 
-Example: &#x20;
+Example:
 
 <pre class="language-json" data-title="package.json"><code class="lang-json">{
     "keycloakify": {
@@ -101,11 +101,11 @@ Example: &#x20;
 
 When enabled you don't need to specify a `homepage` field in the `package.json`
 
-### keycloakify.bundler&#x20;
+### keycloakify.bundler
 
 _Introduced in 6.11.4_
 
-Configure if you want Keycloakify to build the final `.jar` for you or not. &#x20;
+Configure if you want Keycloakify to build the final `.jar` for you or not.
 
 {% code title="package.json" %}
 ```json
@@ -117,13 +117,13 @@ Configure if you want Keycloakify to build the final `.jar` for you or not. &#x2
 ```
 {% endcode %}
 
-Possibles values are: &#x20;
+Possibles values are:
 
 * `"keycloakify"` (default): Keycloakify will build the .jar file.
 * `"none"`: Keycloakify will not create a .jar file.
-* `"mvn"` (legacy): Keycloakify will use Maven to bundle the .jar file. This option is to use only if you experience problem with "keycloakify". It require mvn to be installed. If you have to resort to this option [please open an issue about it](https://github.com/InseeFrLab/keycloakify/issues/new) so we can see wha't wrong with our way of building the `.jar` file.&#x20;
+* `"mvn"` (legacy): Keycloakify will use Maven to bundle the .jar file. This option is to use only if you experience problem with "keycloakify". It require mvn to be installed. If you have to resort to this option [please open an issue about it](https://github.com/InseeFrLab/keycloakify/issues/new) so we can see wha't wrong with our way of building the `.jar` file.
 
-You can also convigure this value using an environement variable:&#x20;
+You can also convigure this value using an environement variable:
 
 ```bash
 KEYCLOAKIFY_BUNDLER=none npx keycloakify
@@ -133,7 +133,7 @@ KEYCLOAKIFY_BUNDLER=none npx keycloakify
 
 _Introduced in 6.11_
 
-Configure the `groupId` that will appear in the `pom.xml` file. &#x20;
+Configure the `groupId` that will appear in the `pom.xml` file.
 
 <figure><img src=".gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -147,9 +147,9 @@ Configure the `groupId` that will appear in the `pom.xml` file. &#x20;
 ```
 {% endcode %}
 
-By default it's the package.json hompage field at reverse with .keycloak at the end. &#x20;
+By default it's the package.json hompage field at reverse with .keycloak at the end.
 
-You can overwrite this using an environement variable:&#x20;
+You can overwrite this using an environement variable:
 
 ```bash
 KEYCLOAKIFY_GROUP_ID="com.your-company.your-project.keycloak" npx keycloakify
@@ -159,9 +159,9 @@ KEYCLOAKIFY_GROUP_ID="com.your-company.your-project.keycloak" npx keycloakify
 
 _Introduced in 6.11_
 
-Configure the `artifactId` that will appear in the `pom.xml` file. &#x20;
+Configure the `artifactId` that will appear in the `pom.xml` file.
 
-<figure><img src=".gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% code title="package.json" %}
 ```json
@@ -175,7 +175,7 @@ Configure the `artifactId` that will appear in the `pom.xml` file. &#x20;
 
 By default it's `<themeName>-keycloak-theme` See, [`keycloak.themeName`](build-options.md#keyclokify.themename) option.
 
-You can overwrite this using an environement variable:&#x20;
+You can overwrite this using an environement variable:
 
 ```bash
 KEYCLOAKIFY_ARTIFACT_ID="my-cool-theme" npx keycloakify
@@ -205,7 +205,7 @@ Only use this param if you know what you are doing. [See related issue](https://
 
 ### version
 
-Configure the version that will appear in the `pom.xml` file. &#x20;
+Configure the version that will appear in the `pom.xml` file.
 
 <figure><img src=".gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
@@ -219,7 +219,7 @@ By default the version that is used is the one in the package.json of your proje
 ```
 {% endcode %}
 
-But you can overwrite this value using an environnement variable (_Introduced in 6.11)_:&#x20;
+But you can overwrite this value using an environnement variable (_Introduced in 6.11)_:
 
 ```bash
 KEYCLOAKIFY_THEME_VERSION="4.5.6" npx keycloakify
@@ -231,17 +231,17 @@ The version also affects [the name of the `.jar` file](https://github.com/InseeF
 
 ### **keycloakify.customUserAttributes**
 
-_Introduced in 7.4.0_ &#x20;
+_Introduced in 7.4.0_
 
 This option it to use if when trying to use `kcContext.messagesPerField.existsError("your-custom-attribute")` you are getting the error message: `There is no your-custom-attribute field`
 
-<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
-This means that you have defined user attribute thate aren't standard on your Keycloak realm. &#x20;
+This means that you have defined user attribute thate aren't standard on your Keycloak realm.
 
-[See issue for more context](https://github.com/keycloakify/keycloakify/issues/40).&#x20;
+[See issue for more context](https://github.com/keycloakify/keycloakify/issues/40).
 
-`customUserAttributes` enables you to let Keycloakify know about thoses fields: &#x20;
+`customUserAttributes` enables you to let Keycloakify know about thoses fields:
 
 {% code title="package.json" %}
 ```json
@@ -254,16 +254,16 @@ This means that you have defined user attribute thate aren't standard on your Ke
 {% endcode %}
 
 {% hint style="info" %}
-Note that it is far preferable to use User Profile features (using \`register-user-profile.ftl\` instead \`register.ftl\`) since it enables to have a single source of truth and client side field validation.  Checkout [this section of the doc](realtime-input-validation.md).&#x20;
+Note that it is far preferable to use User Profile features (using \`register-user-profile.ftl\` instead \`register.ftl\`) since it enables to have a single source of truth and client side field validation. Checkout [this section of the doc](realtime-input-validation.md).
 {% endhint %}
 
-### keyclokify.themeName
+### keycloakify.themeName
 
-Introduced in 7.5.0 &#x20;
+_Introduced in 7.5.0_
 
-This is the name of the theme in the Keycloak admin select: &#x20;
+This is the name of the theme in the Keycloak admin select:
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 By default it's `package.json["name"]`
 
@@ -276,6 +276,37 @@ By default it's `package.json["name"]`
 }
 ```
 {% endcode %}
+
+### keycloakify.extraThemeNames
+
+_Introduced in 7.12_
+
+This option let you pack multiple themes variant in a single `.jar` bundle. In vanilla Keycloak themes you have the ability to extend a base theme. There is now an idiomatic way of achieving the same result by using this option.  &#x20;
+
+{% code title="package.json" %}
+```json
+{
+    "keycloakify": {
+        "extraThemeNames": [ 
+            "keycloakify-starter-variant-1", 
+            "keycloakify-starter-variant-2"
+        ]
+    }
+}
+```
+{% endcode %}
+
+This will make the theme variant appear in the Keycloak admin select input: &#x20;
+
+<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+The theme name will be available on the `kcContext`: &#x20;
+
+<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+You'll be able to implement different behaviour based on which theme variant is active: &#x20;
+
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 {% embed url="https://cloud-iam.com/?mtm_campaign=keycloakify-deal&mtm_source=keycloakify-doc-build-options" %}
 Feeling overwhelmed? Check out our exclusive sponsor's Cloud IAM consulting services to simplify your experience.
