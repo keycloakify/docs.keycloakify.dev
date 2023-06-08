@@ -43,13 +43,9 @@ You won't be able to [import things from your public directory **in your JavaScr
 
 ### Self hosted fonts
 
-{% hint style="success" %}
-If you are building the theme with [--external-assets](build-options.md#external-assets) this limitation doesn't apply, you can import fonts however you see fit.
-{% endhint %}
-
 This scenario **won't** work
 
-{% code title="fonts.css" %}
+{% code title="public/fonts.css" %}
 ```css
 @font-face {
   font-family: Marianne;
@@ -61,15 +57,15 @@ This scenario **won't** work
 ```
 {% endcode %}
 
-{% code title="index.html" %}
+{% code title="public/index.html" %}
 ```html
 <link rel="stylesheet" href="%PUBLIC_URL%/font.css" />
 ```
 {% endcode %}
 
-This will:
+As a workaround you can have your `@font-face` import directly in a style tage of your index.html `<head />`.
 
-{% code title="index.html" %}
+{% code title="public/index.html" %}
 ```diff
 -<link rel="stylesheet" href="%PUBLIC_URL%/font.css" />
 +<style>
@@ -92,15 +88,22 @@ Example [here](https://github.com/garronej/keycloakify-demo-app/blob/9aa2dbaec28
 
 #### Other workarounds
 
-* Use [`--external-assets`](build-options.md#external-assets).
-* If it is possible, use Google Fonts or any other font provider.
-* You can [use non relative url](https://github.com/garronej/keycloakify-demo-app/blob/2de8a9eb6f5de9c94f9cd3991faad0377e63268c/src/fonts.scss#L16), you will need to enable [`Access-Control-Allow-Origin`](https://github.com/garronej/keycloakify-demo-app/blob/2de8a9eb6f5de9c94f9cd3991faad0377e63268c/nginx.conf#L17-L19) for your font files, even on the same domain.
+* You can circumvent the problem by avoiding hosting your font yourself using Google Fonts, Font Awesome  or any other font provider.
+* You can [self host your font somewhere](https://github.com/garronej/keycloakify-demo-app/blob/2de8a9eb6f5de9c94f9cd3991faad0377e63268c/src/fonts.scss#L16), you will need to enable [`Access-Control-Allow-Origin`](https://github.com/garronej/keycloakify-demo-app/blob/2de8a9eb6f5de9c94f9cd3991faad0377e63268c/nginx.conf#L17-L19) on the server serving your fonts.
 
 ### Admin Console Theme not supported
 
 <figure><img src=".gitbook/assets/Admin_console_theme_not_supported.png" alt=""><figcaption></figcaption></figure>
 
 If you are missing this feature [open an issue about it](https://github.com/InseeFrLab/keycloakify/issues/new).
+
+### Wellcome page not customizable
+
+The following page isn't customizable yet.
+
+<figure><img src=".gitbook/assets/image (5).png" alt="" width="563"><figcaption></figcaption></figure>
+
+It's however planned to enable this. Follow the progress in [this issue](https://github.com/keycloakify/keycloakify/issues/148).
 
 {% embed url="https://cloud-iam.com/?mtm_campaign=keycloakify-deal&mtm_source=keycloakify-doc-limitations" %}
 Feeling overwhelmed? Check out our exclusive sponsor's Cloud IAM consulting services to simplify your experience.

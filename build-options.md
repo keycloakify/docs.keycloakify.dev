@@ -263,7 +263,7 @@ _Introduced in 7.5.0_
 
 This is the name of the theme in the Keycloak admin select:
 
-<figure><img src=".gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 By default it's `package.json["name"]`
 
