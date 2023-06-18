@@ -177,7 +177,9 @@ KEYCLOAKIFY_THEME_VERSION="4.5.6" npx keycloakify
 The version also affects [the name of the `.jar` file](https://github.com/InseeFrLab/keycloakify/blob/9f72024c61b1b36d71a42b242c05d7ac793e049b/src/bin/keycloakify/generateJavaStackFiles.ts#L85).
 {% endhint %}
 
-### **customUserAttributes (deprecated)**
+### **customUserAttributes**
+
+_Deprecated._
 
 _Introduced in 7.4.0 removed in 7.13.0_
 
