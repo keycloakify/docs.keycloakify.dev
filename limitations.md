@@ -105,6 +105,19 @@ The following page isn't customizable yet.
 
 It's however planned to enable this. Follow the progress in [this issue](https://github.com/keycloakify/keycloakify/issues/148).
 
+### Field Names can't be runtime generated
+
+Keycloakify analyze your code to see what field name are used. As a result your field names should be hard coded in your code (If you are [using user profile](realtime-input-validation.md) you don't have to worry about it). &#x20;
+
+```jsx
+// OK ✅
+messagesPerField.exists("foo-bar")
+
+// Not OK 🛑
+const bar= "bar";
+messagesPerField.exists(`foo-${bar}`);
+```
+
 {% embed url="https://cloud-iam.com/?mtm_campaign=keycloakify-deal&mtm_source=keycloakify-doc-limitations" %}
 Feeling overwhelmed? Check out our exclusive sponsor's Cloud IAM consulting services to simplify your experience.
 {% endembed %}
