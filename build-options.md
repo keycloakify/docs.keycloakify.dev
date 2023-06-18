@@ -177,33 +177,23 @@ KEYCLOAKIFY_THEME_VERSION="4.5.6" npx keycloakify
 The version also affects [the name of the `.jar` file](https://github.com/InseeFrLab/keycloakify/blob/9f72024c61b1b36d71a42b242c05d7ac793e049b/src/bin/keycloakify/generateJavaStackFiles.ts#L85).
 {% endhint %}
 
-### **customUserAttributes**
+### **customUserAttributes (deprecated)**
 
-_Introduced in 7.4.0_
+_Introduced in 7.4.0 removed in 7.13.0_
 
-This option it to use if when trying to use `kcContext.messagesPerField.existsError("your-custom-attribute")` you are getting the error message: `There is no your-custom-attribute field`
+Keycloakify no analyze your code and see what field name are actally used.  \
+Just make sure your fieldNames aren't generated at runtime. Eg: &#x20;
 
-<figure><img src=".gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+```tsx
+// OK ✅
+messagesPerField.exists("foo-bar")
 
-This means that you have defined user attribute thate aren't standard on your Keycloak realm.
+// Not OK 🛑
+const bar= "bar";
+messagesPerField.exists(`foo-${bar}`);
+```
 
 [See issue for more context](https://github.com/keycloakify/keycloakify/issues/40).
-
-`customUserAttributes` enables you to let Keycloakify know about thoses fields:
-
-{% code title="package.json" %}
-```json
-{
-    "keycloakify": {
-        "customUserAttributes": ["your-custom-attribute"]
-    }
-}
-```
-{% endcode %}
-
-{% hint style="info" %}
-Note that it is far preferable to use User Profile features (using \`register-user-profile.ftl\` instead \`register.ftl\`) since it enables to have a single source of truth and client side field validation. Checkout [this section of the doc](realtime-input-validation.md).
-{% endhint %}
 
 ### themeName
 
