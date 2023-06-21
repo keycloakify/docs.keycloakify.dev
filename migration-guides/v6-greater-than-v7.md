@@ -8,14 +8,15 @@ The main takeway is that, now your theme source files should be located in a key
 
 Acceptable directory strucuture: &#x20;
 
-<pre><code>src/
+```
+src/
   keycloak-theme/
     login/
     account/
     email/
     
-<strong>===OR===
-</strong>
+===OR===
+
 src/
   foo/
     bar/
@@ -30,7 +31,7 @@ src/
   login/
   account/
   email/
-</code></pre>
+```
 
 You don't need to have all three variant of the theme. If you only need the login theme for example you can have only the `login` directory.\
 \
