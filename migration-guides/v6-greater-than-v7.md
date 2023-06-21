@@ -4,6 +4,38 @@ Many things have changed, I invite you to have a look at the latest version of t
 
 {% embed url="https://github.com/codegouvfr/keycloakify-starter" %}
 
+The main takeway is that, now your theme source files should be located in a keycloak-theme directory somewhere in your src directory OR at the root of your directory. &#x20;
+
+Acceptable directory strucuture: &#x20;
+
+<pre><code>src/
+  keycloak-theme/
+    login/
+    account/
+    email/
+    
+<strong>===OR===
+</strong>
+src/
+  foo/
+    bar/
+      keycloak-theme/
+        login/
+        account/
+        email/
+
+===OR===
+
+src/
+  login/
+  account/
+  email/
+</code></pre>
+
+You don't need to have all three variant of the theme. If you only need the login theme for example you can have only the `login` directory.\
+\
+If you had a`keycloak_email_theme` at the root of your project it must be move alongside the `login/` and `account/` directory.
+
 ### Step by step migration example
 
 {% embed url="https://github.com/codegouvfr/sill-web/commit/a6a7bfa408fedfacde41946c72c9d055736ab72b" %}
@@ -13,11 +45,6 @@ Many things have changed, I invite you to have a look at the latest version of t
 {% embed url="https://github.com/codegouvfr/sill-web/commit/085e54d4417aa97db1441f28ce978460bceaa7c7" %}
 
 {% embed url="https://github.com/codegouvfr/sill-web/commit/adf5d7779d62f22ec7f617aa0a095865bc72ce96" %}
-
-### Email theme
-
-The email theme should no longer be at the root of your project in a `keycloak_email_theme` directory.  \
-It should be moved to  `keycloak-theme/email`. The `keycloak-theme` dir can be anywhere in your src directory. In the starter project it's at `src/keycloak-theme`
 
 If you experience issues upgrading to v7 do not hesitate to [ask for help](https://github.com/InseeFrLab/keycloakify/discussions).
 
