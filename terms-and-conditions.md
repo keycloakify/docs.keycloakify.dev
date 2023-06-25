@@ -15,7 +15,7 @@ First you need to enable the required action on the Keycloak server admin consol
 
 Then you load your own therms in Markdown format like this: &#x20;
 
-<pre class="language-tsx" data-title="KcApp.tsx"><code class="lang-tsx">import { lazy, Suspense } from "react";
+<pre class="language-tsx" data-title="login/KcApp.tsx"><code class="lang-tsx">import { lazy, Suspense } from "react";
 import Fallback, { type PageProps } from "keycloakify/login";
 import type { KcContext } from "./kcContext";
 import { useI18n } from "./i18n";
