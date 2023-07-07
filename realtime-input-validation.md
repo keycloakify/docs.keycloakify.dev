@@ -34,9 +34,13 @@ The RegisterUserProfile page...
 ...but this is where the magic happens
 {% endembed %}
 
-{% hint style="warning" %}
-As of today [Keycloak dosen't allow to define a pattern for the password](https://keycloak.discourse.group/t/make-password-policies-available-to-freemarker/11632) in the admin console. You can however pass validators for it to the `useFormValidation` function. (this is why useFormValidation returns `attributesWithPassword`)
-{% endhint %}
+#### Password validation
+
+You can establish guidelines for what constitutes a valid password, such as a minimum length, by utilizing the Keycloak Admin UI under 'Authentication -> Password Policy'. However, as of now, [Keycloak does not support front-end validation of passwords](https://keycloak.discourse.group/t/make-password-policies-available-to-freemarker/11632).
+
+This limitation means that we can't provide immediate feedback to the user on the client side about the validity of their chosen password. Only after the user clicks on 'Register' will they receive an error if the chosen password does not adhere to the server-defined password policy.
+
+Should you insist on implementing client-side password validation, [you can pass validators to the useFormValidation function](https://github.com/keycloakify/keycloakify-starter/blob/25d66046d6a364b934a5436e7a14be013d2124de/src/keycloak-theme/login/pages/shared/UserProfileFormFields.tsx#L29-L38), although it's not typically recommended. The reason for this is potential confusion for users if the validator defined in your theme does not align with the server's password policy.
 
 ### Getting your custom user attribute to be included in the JWT &#x20;
 
