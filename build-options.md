@@ -45,7 +45,9 @@ If, for some reason, you need to add extra properties like for example `env=dev`
 }
 </code></pre>
 
-You can then access this property in the `kcContext` (`kcContext.properties.foo === "bar"`) even if you won't have type safety.
+You can then access this property in the `kcContext` (`kcContext.properties.foo === "bar"`) even if you won't have type safety. &#x20;
+
+If you want to have your custom properties listed on the kcContext (at the type level) you can augment the KcContext type definition. [More info](https://github.com/keycloakify/keycloakify/issues/229#issuecomment-1635883568).&#x20;
 
 You can also use it to access Keycloak environment variables in your theme. [More info](https://github.com/keycloakify/keycloakify/issues/288).
 
