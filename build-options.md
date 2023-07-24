@@ -6,7 +6,9 @@ You can read [here](https://github.com/InseeFrLab/keycloakify/blob/832434095eac7
 
 ### `extraPages`
 
-Tells Keycloakify to generate extra pages.
+Tells Keycloakify to generate extra pages.\
+\
+If you are unsure what it means, please [read this](https://github.com/keycloakify/keycloakify/issues/334#issuecomment-1648772798).
 
 If you have in your `package.json`:
 
