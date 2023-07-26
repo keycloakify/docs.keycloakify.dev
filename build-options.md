@@ -187,7 +187,7 @@ _Deprecated._
 
 _Introduced in 7.4.0 removed in 7.13.0_
 
-Keycloakify no analyze your code and see what field name are actally used.  \
+Keycloakify now analyzes your code and see what field name are actually used.  \
 Just make sure your fieldNames aren't generated at runtime. Eg: &#x20;
 
 ```tsx

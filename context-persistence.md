@@ -5,7 +5,7 @@ Let's explore how we can pass query params to the URL before redirecting to the 
 It's up to you to implement it however you want but here's a solution off the shelf for you to use
 
 {% embed url="https://github.com/codegouvfr/keycloakify-starter/blob/main/src/keycloak-theme/login/valuesTransferredOverUrl.ts" %}
-Declare the varialbes that we want to pass over, here foo and bar
+Declare the variables that we want to pass over, here foo and bar
 {% endembed %}
 
 {% embed url="https://github.com/codegouvfr/keycloakify-starter/blob/cb5844c62381efed7b303886cbe460c055a62c21/src/App/App.tsx#L21-L27" %}
