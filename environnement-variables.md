@@ -4,8 +4,6 @@ Environment variables defined on the Keycloak server can be transferred to the t
 
 While this feature is not yet fully documented, you can glean some understanding by referring to the build options provided below. This should assist you in making sense of the functionality:
 
-
-
-{% content-ref url="build-options.md" %}
-[build-options.md](build-options.md)
-{% endcontent-ref %}
+{% embed url="https://docs.keycloakify.dev/build-options#extrathemeproperties" %}
+The extraThemeProperty build option
+{% endembed %}
