@@ -2,6 +2,8 @@
 
 ## `package.json` options
 
+
+
 You can read [here](https://github.com/InseeFrLab/keycloakify/blob/832434095eac722207c55062fd2b825d1f691722/src/bin/build-keycloak-theme/BuildOptions.ts#L7-L16) the package.json fields that are used by Keyclaokify.
 
 ### `extraPages`
@@ -41,17 +43,20 @@ If, for some reason, you need to add extra properties like for example `env=dev`
 <strong>        "extraThemeProperties": [ 
 </strong><strong>            "env=dev",
 </strong><strong>            "locales=en,ko",
-</strong><strong>            "foo=bar"
+</strong><strong>            "foo=bar",
+</strong><strong>            "myValue=${env.MY_ENV_VARIABLE:default}"
 </strong><strong>        ]
 </strong>    }
 }
 </code></pre>
 
-You can then access this property in the `kcContext` (`kcContext.properties.foo === "bar"`) even if you won't have type safety. &#x20;
+You can then access this property in the `kcContext` (`kcContext.properties.foo === "bar"`) even if you won't have type safety.
 
-If you want to have your custom properties listed on the kcContext (at the type level) you can augment the KcContext type definition. [More info](https://github.com/keycloakify/keycloakify/issues/229#issuecomment-1635883568).&#x20;
+If you want to have your custom properties listed on the kcContext (at the type level) you can augment the KcContext type definition. [More info](https://github.com/keycloakify/keycloakify/issues/229#issuecomment-1635883568).
 
-You can also use it to access Keycloak environment variables in your theme. [More info](https://github.com/keycloakify/keycloakify/issues/288).
+You can also use it to access Keycloak environment variables in your theme. [More info](https://github.com/keycloakify/keycloakify/issues/288).\
+\
+You can find [here](https://github.com/codegouvfr/sill-web/commit/01a58e06a007fa06499214f87d9d207981c3bbf7) a practical example of environment variables.
 
 ### bundler
 
@@ -187,8 +192,8 @@ _Deprecated._
 
 _Introduced in 7.4.0 removed in 7.13.0_
 
-Keycloakify now analyzes your code and see what field name are actually used.  \
-Just make sure your fieldNames aren't generated at runtime. Eg: &#x20;
+Keycloakify now analyzes your code and see what field name are actually used.\
+Just make sure your fieldNames aren't generated at runtime. Eg:
 
 ```tsx
 // OK ✅
@@ -225,7 +230,7 @@ By default it's `package.json["name"]`
 
 _Introduced in 7.12_
 
-This option let you pack multiple themes variant in a single `.jar` bundle. In vanilla Keycloak themes you have the ability to extend a base theme. There is now an idiomatic way of achieving the same result by using this option.  &#x20;
+This option let you pack multiple themes variant in a single `.jar` bundle. In vanilla Keycloak themes you have the ability to extend a base theme. There is now an idiomatic way of achieving the same result by using this option.
 
 {% code title="package.json" %}
 ```json
@@ -240,15 +245,15 @@ This option let you pack multiple themes variant in a single `.jar` bundle. In v
 ```
 {% endcode %}
 
-This will make the theme variant appear in the Keycloak admin select input: &#x20;
+This will make the theme variant appear in the Keycloak admin select input:
 
 <figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
-The theme name will be available on the `kcContext`: &#x20;
+The theme name will be available on the `kcContext`:
 
 <figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
-You'll be able to implement different behaviour based on which theme variant is active: &#x20;
+You'll be able to implement different behaviour based on which theme variant is active:
 
 <figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
