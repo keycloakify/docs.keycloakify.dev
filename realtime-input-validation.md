@@ -9,13 +9,16 @@ In reality the regexp used in this gif doesn't work server side, the regexp patt
 User Profile is a Keycloak feature that enables to [define, from the admin console](https://user-images.githubusercontent.com/6702424/136872461-1f5b64ef-d2ef-4c6b-bb8d-07d4729552b3.png), what information you want to collect on your users in the register page and to validate inputs [**on the frontend**, in realtime](https://github.com/InseeFrLab/keycloakify/blob/c4f8879cda657f6c0178b2a7ed01c73c7b7cb5fb/src/login/kcContext/KcContext.ts#L452-L479)!
 
 {% hint style="info" %}
-User profile is only available in Keycloak 15 and newer and it's not enabled by default, you have, to enable it set:  &#x20;
+User profile is only available in Keycloak 15 and newer and it's not enabled by default, you have, to start keywloak with the extra parameter:  [`--features=declarative-user-profile`](https://www.keycloak.org/docs/latest/server\_admin/index.html#user-profile)
 
-`JAVA_OPTS=-Dkeycloak.profile=preview` ([docker example](https://user-images.githubusercontent.com/6702424/229278938-fb170876-b848-4362-b125-0f3a19351774.png), [helm example](https://user-images.githubusercontent.com/6702424/229279001-1e35afec-7484-40eb-868e-044a74d684ab.png))&#x20;
+How you would pass this parameter in practice depend of the Docker image/Helm chart that you are using.\
+[Here is an example with docker compose](https://github.com/keycloakify/keycloakify/discussions/292#discussioncomment-5494498).  \
+With older Keycloak distribution you can also use JAVA\_OPS environement variable
 
-or &#x20;
+[docker example](https://user-images.githubusercontent.com/6702424/229278938-fb170876-b848-4362-b125-0f3a19351774.png), [helm example](https://user-images.githubusercontent.com/6702424/229279001-1e35afec-7484-40eb-868e-044a74d684ab.png).\
+But the default way, with the official docker image is [this](https://github.com/keycloakify/keycloakify/blob/48cbfc64c07ad92636dd04e04143228a3a53bef2/src/bin/keycloakify/generateStartKeycloakTestingContainer.ts#L57).
 
-`KEYCLOAK_EXTRA_ARGS: --features=declarative-user-profile` ([Docker compose example](https://github.com/keycloakify/keycloakify/discussions/292#discussioncomment-5494498))&#x20;
+
 
 
 
