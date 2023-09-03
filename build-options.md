@@ -1,12 +1,6 @@
 # 📖 Build options
 
-## `package.json` options
-
-
-
-You can read [here](https://github.com/InseeFrLab/keycloakify/blob/832434095eac722207c55062fd2b825d1f691722/src/bin/build-keycloak-theme/BuildOptions.ts#L7-L16) the package.json fields that are used by Keyclaokify.
-
-### `extraPages`
+### extraPages
 
 Tells Keycloakify to generate extra pages.\
 \
@@ -28,7 +22,7 @@ Keycloakify will generate `my-extra-page-1.ftl` and `my-extra-page-2.ftl` alongs
 
 More info about this in [this section (I do it only for my project)](limitations.md#i-have-established-that-a-page-that-i-need-isnt-supported-out-of-the-box-by-keycloakify-now-what).
 
-### `extraThemeProperties`
+### extraThemeProperties
 
 By default the `theme.properties` files located in `build_keycloak/src/main/resources/theme/<your app>/login/theme.properties` only contains:
 
@@ -224,9 +218,11 @@ By default it's `package.json["name"]`
 ```
 {% endcode %}
 
-### extraThemeNames
+### themeVariantNames
 
-_Introduced in 7.12_
+_Introduced in 9.0_
+
+_Deprecate_ `extraThemeNames`
 
 This option let you pack multiple themes variant in a single `.jar` bundle. In vanilla Keycloak themes you have the ability to extend a base theme. There is now an idiomatic way of achieving the same result by using this option.
 
@@ -234,7 +230,7 @@ This option let you pack multiple themes variant in a single `.jar` bundle. In v
 ```json
 {
     "keycloakify": {
-        "extraThemeNames": [ 
+        "themeVariantNames": [ 
             "keycloakify-starter-variant-1", 
             "keycloakify-starter-variant-2"
         ]
@@ -251,9 +247,46 @@ The theme name will be available on the `kcContext`:
 
 <figure><img src=".gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
-You'll be able to implement different behaviour based on which theme variant is active:
+You'll be able to implement different behaviour based on which theme variant is the current one:
 
 <figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+To load different global css file based on the theme name you can implement this strategy: &#x20;
+
+```typescript
+// src/keycloak-theme/login/useGlobalStylesheet.ts
+import { useMemo } from "react";
+
+export function useGlobalStylesheet(themeName: string){
+    useMemo(() => {
+        switch(themeName){
+            case "keycloakify-starter":
+                // @ts-expect-error
+                import("./keycloakify-starter.css");
+                break;
+            case "keycloakify-starter-variant-1":
+                // @ts-expect-error
+                import("./keycloakify-starter-variant-1.css");
+                break;
+        }
+    }, [themeName]);
+}
+```
+
+```tsx
+// src/keycloak-theme/login/KcApp.tsx
+
+import { useGlobalStylesheet } from "./useGlobalStylesheet";
+// ...
+
+export default function KcApp(props: { kcContext: KcContext; }) {
+  const { kcContext }= props;
+  // ...
+  
+  useGlogalStylesheet(kcContext.themeName);
+
+  // ...
+```
 
 ### silent
 
