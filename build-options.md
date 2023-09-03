@@ -255,26 +255,6 @@ You'll be able to implement different behaviour based on which theme variant is 
 
 <figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
-### `areAppAndKeycloakServerSharingSameDomain` (deprecated)
-
-This option is only considered when building with [`--external-assets`](build-options.md#external-assets).
-
-Set to `true` it tels Keycloakify that you have configured your reverse proxy so that your app and your Keycloak server are under the same domain, example:
-
-* _https://example.com/auth_: Keycloak.
-* _https://example.com (or https://example.com/x/y/z)_: Your App
-
-Example:
-
-<pre class="language-json" data-title="package.json"><code class="lang-json">{
-    "keycloakify": {
-<strong>        "areAppAndKeycloakServerSharingSameDomain": true
-</strong>    }
-}
-</code></pre>
-
-When enabled you don't need to specify a `homepage` field in the `package.json`
-
 ### silent
 
 Options that can be passed to the `npx keycloakify` command. With `npx keycloakify --silent` no output is printed to the console.
@@ -285,6 +265,12 @@ Keycloakify needs to download resources from the Keycloak project to build your 
 Example: `XDG_CACHE_HOME=/home/runner/.cache/yarn npx keycloakify`
 
 This is particularly useful [in your CI workflow](https://github.com/keycloakify/keycloakify-starter/blob/92b20fe74154ef8cf037f4b156eb3b2e5264a074/.github/workflows/ci.yaml#L19-L21) to ensure that the cache persists across runs (see the documentation for the bahmutov/npm-install GitHub Action).
+
+### PUBLIC\_DIR\_PATH
+
+Default: `~/public`
+
+Example: `npx PUBLIC_DIR_PATH=./web/public npx copy-keycloak-resources-to-public`
 
 {% embed url="https://cloud-iam.com/?mtm_campaign=keycloakify-deal&mtm_source=keycloakify-doc-build-options" %}
 Feeling overwhelmed? Check out our exclusive sponsor's Cloud IAM consulting services to simplify your experience.
