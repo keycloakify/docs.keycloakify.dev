@@ -218,26 +218,19 @@ By default it's `package.json["name"]`
 ```
 {% endcode %}
 
-### themeVariantNames
-
-_Introduced in 9.0_
-
-_Deprecate_ `extraThemeNames`
-
-This option let you pack multiple themes variant in a single `.jar` bundle. In vanilla Keycloak themes you have the ability to extend a base theme. There is now an idiomatic way of achieving the same result by using this option.
+You can also provide an array if you want to Keycloakify to create multiple theme variant:&#x20;
 
 {% code title="package.json" %}
 ```json
 {
     "keycloakify": {
-        "themeVariantNames": [ 
-            "keycloakify-starter-variant-1", 
-            "keycloakify-starter-variant-2"
-        ]
+        "themeName": [ "keycloakify-starter", "keycloakify-starter-variant-1" ]
     }
 }
 ```
 {% endcode %}
+
+This option deprecates `extraThemeNames`and let you pack multiple themes variant in a single `.jar` bundle. In vanilla Keycloak themes you have the ability to extend a base theme. There is now an idiomatic way of achieving the same result by using this option.
 
 This will make the theme variant appear in the Keycloak admin select input:
 
