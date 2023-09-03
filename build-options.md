@@ -281,7 +281,7 @@ export default function KcApp(props: { kcContext: KcContext; }) {
   // ...
 ```
 
-### buildRetrocompatAccountTheme
+### doBuildRetrocompatAccountTheme
 
 Introduced in v9
 
@@ -295,7 +295,7 @@ If you want to avoid that the retrocompatbile version be built you can set this 
 ```json
 {
     "keycloakify": {
-        "buildRetrocompatAccountTheme": false
+        "doBuildRetrocompatAccountTheme": false
     }
 }
 ```
