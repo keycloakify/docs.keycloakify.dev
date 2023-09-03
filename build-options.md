@@ -288,6 +288,26 @@ export default function KcApp(props: { kcContext: KcContext; }) {
   // ...
 ```
 
+### buildRetrocompatAccountTheme
+
+Introduced in v9
+
+_Default: true_
+
+If you implement an account theme Keycloakify will build two version of your theme, one that will appear in the drop down as \<theme\_name> and the other as \<theme\_name>\_retrocompat.  \
+The retrocompat variant will work with Keycloak prior 22.1 and the regular will work with Keycloak 22.1 and up.  \
+If you want to avoid that the retrocompatbile version be built you can set this option to `false`.
+
+{% code title="package.json" %}
+```json
+{
+    "keycloakify": {
+        "buildRetrocompatAccountTheme": false
+    }
+}
+```
+{% endcode %}
+
 ### silent
 
 Options that can be passed to the `npx keycloakify` command. With `npx keycloakify --silent` no output is printed to the console.
