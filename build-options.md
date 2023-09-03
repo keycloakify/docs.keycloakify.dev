@@ -58,33 +58,23 @@ You can also use it to access Keycloak environment variables in your theme. [Mor
 \
 You can find [here](https://github.com/codegouvfr/sill-web/commit/01a58e06a007fa06499214f87d9d207981c3bbf7) a practical example of environment variables.
 
-### bundler
+### doCreateJar
 
-_Introduced in 6.11.4_
+default: true
 
-Configure if you want Keycloakify to build the final `.jar` for you or not.
+_Introduced in 9.0_
+
+Tell wether or not you want Keycloakify to bundle your theme within a .jar file.
 
 {% code title="package.json" %}
 ```json
 {
     "keycloakify": {
-        "bundler": "none"
+        "doCreateJar": false
     }
 }
 ```
 {% endcode %}
-
-Possibles values are:
-
-* `"keycloakify"` (default): Keycloakify will build the .jar file.
-* `"none"`: Keycloakify will not create a .jar file.
-* `"mvn"` (legacy): Keycloakify will use Maven to bundle the .jar file. This option is to use only if you experience problem with "keycloakify". It require mvn to be installed. If you have to resort to this option [please open an issue about it](https://github.com/InseeFrLab/keycloakify/issues/new) so we can see wha't wrong with our way of building the `.jar` file.
-
-You can also convigure this value using an environement variable:
-
-```bash
-KEYCLOAKIFY_BUNDLER=none npx keycloakify
-```
 
 ### groupId
 
