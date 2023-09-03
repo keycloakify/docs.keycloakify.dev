@@ -142,23 +142,31 @@ KEYCLOAKIFY_ARTIFACT_ID="my-cool-theme" npx keycloakify
 The `artifactId` also affects [the name of the `.jar` file](https://github.com/InseeFrLab/keycloakify/blob/9f72024c61b1b36d71a42b242c05d7ac793e049b/src/bin/keycloakify/generateJavaStackFiles.ts#L85).
 {% endhint %}
 
-### keycloakVersionDefaultAssets
+### loginThemeResourcesFromKeycloakVersion
 
 Default: 11.0.3
 
-{% hint style="warning" %}
-Only use this param if you know what you are doing. [See related issue](https://github.com/keycloakify/keycloakify/issues/276).
-{% endhint %}
+This replaces `keycloakVersionDefaultAssets`.
+
+The default login `Template.tsx` imports CSS resources that are copied from the Keycloak version specified by this parameter.\
+This is not something you should worry about too much. These imports are mostly there so that the pages that Keycloakify provides by default match the ones of the default theme. You should, however, strive to use your own assets; after all, this is the point of creating a theme.   \
+\
+Example where Keycloak resources are imported in the login theme: &#x20;
+
+* &#x20;[In Template.tsx, css imports](https://github.com/keycloakify/keycloakify-starter/blob/92b20fe74154ef8cf037f4b156eb3b2e5264a074/src/keycloak-theme/login/Template.tsx#L37-L40)
+* [In LoginOtp, js import](https://github.com/keycloakify/keycloakify/blob/402c6fc64a26268b6f2f7222e4f11ff07de452f8/src/login/pages/LoginOtp.tsx#L26)
 
 {% code title="package.json" %}
 ```json
 {
     "keycloakify": {
-        "keycloakVersionDefaultAssets": "21.0.1"
+        "loginThemeResourcesFromKeycloakVersion": "21.0.1"
     }
 }
 ```
 {% endcode %}
+
+Note that for account theme we do not enable to specify the version, the assets used are fixed to Keycloak 21.1.2. &#x20;
 
 ### version
 
