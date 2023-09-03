@@ -281,7 +281,7 @@ Options that can be passed to the `npx keycloakify` command. With `npx keycloaki
 
 ### XDG\_CACHE\_HOME
 
-Keycloakify needs to download resources from the Keycloak project to build your theme. To prevent these resources from being downloaded repeatedly, Keycloakify caches them by default in `node_modules/.cache/keycloakify`. However, you can specify a different location by setting the `XDG_CACHE_HOME` environment variable.\
+Keycloakify needs to download resources from the Keycloak project to build your theme. To prevent these resources from being downloaded repeatedly, Keycloakify caches them by default in `node_modules/.cache`. However, you can specify a different location by setting the `XDG_CACHE_HOME` environment variable.\
 Example: `XDG_CACHE_HOME=/home/runner/.cache/yarn npx keycloakify`
 
 This is particularly useful [in your CI workflow](https://github.com/keycloakify/keycloakify-starter/blob/92b20fe74154ef8cf037f4b156eb3b2e5264a074/.github/workflows/ci.yaml#L19-L21) to ensure that the cache persists across runs (see the documentation for the bahmutov/npm-install GitHub Action).
