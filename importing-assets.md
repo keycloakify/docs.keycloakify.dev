@@ -7,7 +7,7 @@ For the others, or thoses who want to see precisely what's supported here are so
 
 If you want to import your own, images, video, anything you should put them anywhere under src/ and import them like you would import code; &#x20;
 
-Example you can put foo.png in src/keycloak-theme/login/assets and import it like this in the template:&#x20;
+Example you can put foo.png in `src/keycloak-theme/login/assets` and import it like this in the template:&#x20;
 
 {% code title="Template.tsx" %}
 ```tsx
@@ -24,9 +24,9 @@ import fooPngUrl from "./assets/foo.png";
 Note that this isn't a feature of Keycloakify, Create React App, Vite and Next.js all support importing assets this way.  \
 
 
-Now there is one thing that is supported in vanila Create React App project but you can't do when using Keycloakify: placing assets in the public/ directory and importing them manually. &#x20;
+Now there is one thing that is supported in vanila Create React App project but you can't do when using Keycloakify: placing assets in the `public/` directory and importing them manually. &#x20;
 
-Like putting foo.png into public/img/foo.png and importing it like:
+Like putting foo.png into `public/img/foo.png` and importing it like:
 
 {% code title="Template.tsx" %}
 ```tsx
