@@ -32,7 +32,7 @@ For example, placing `foo.png` in `public/img/foo.png` and importing it won't wo
 
 However, this method of asset importation is generally inferior in terms of both performance and maintainability, so its lack of support shouldn't be a concern.
 
-## Importing Default Theme Resources
+## Importing Default Keycloak Theme Resources
 
 {% hint style="info" %}
 This section is mainly for transparency.\
