@@ -1,58 +1,52 @@
-# 🖼 Importing assets
+# 🖼 Importing Assets
 
-If you are familiar with the React ecosystem already, just import assets like you are used to, it should work out of the box.  \
-For the others, or thoses who want to see precisely what's supported here are some instructions.&#x20;
+If you're already familiar with the React ecosystem, you can import assets as you usually would; it should work out of the box.  
+For those new to React or those interested in the specifics, here are some detailed instructions.
 
-### Importing custom assets
+## Importing Custom Assets
 
-If you want to import your own, images, video, anything you should put them anywhere under src/ and import them like you would import code; &#x20;
+To import your custom assets like images, videos, etc., place them in any folder under `src/`. Import them just like you would import code.
 
-Example you can put foo.png in `src/keycloak-theme/login/assets` and import it like this in the template:&#x20;
+For example, you can place `foo.png` in `src/keycloak-theme/login/assets` and import it in the template as shown below:
 
-{% code title="Template.tsx" %}
 ```tsx
 import fooPngUrl from "./assets/foo.png";
-// NOTE: fooPngUrl is a url (string) that point to the asset. 
+// NOTE: fooPngUrl is a URL (string) that points to the asset.
 
-//...
-
+// ...
 
 <img src={fooPngUrl} />
 ```
-{% endcode %}
 
-Note that this isn't a feature of Keycloakify, Create React App, Vite and Next.js all support importing assets this way.  \
+Note that this is not a unique feature of Keycloakify; Create React App, Vite, and Next.js all support importing assets in this manner.
 
+There is one thing you can do in a vanilla Create React App project that you can't do with Keycloakify: placing assets in the `public/` directory and importing them manually.
 
-Now there is one thing that is supported in vanila Create React App project but you can't do when using Keycloakify: placing assets in the `public/` directory and importing them manually. &#x20;
+For example, placing `foo.png` in `public/img/foo.png` and importing it won't work:
 
-Like putting foo.png into `public/img/foo.png` and importing it like:
-
-{% code title="Template.tsx" %}
 ```tsx
-// This work in CRA but does not when using Keycloakify
+// This works in CRA but not in Keycloakify
 <img src={process.env.PUBLIC_URL + "img/foo.png"} />
-// NOTE: process.env.PUBLIC_URL is usualy the empty string
+// NOTE: process.env.PUBLIC_URL is usually the empty string
 ```
-{% endcode %}
 
-This way of importing assets however is worth both in term of performance and maintainability so it shouldn't be a probelm that it isn't supported. &#x20;
+However, this method of asset importation is generally inferior in terms of both performance and maintainability, so its lack of support shouldn't be a concern.
 
-### Importing default theme resources
+## Importing Default Theme Resources
 
 {% hint style="info" %}
-This section is more for transparency sake than anything. \
-You should use your own assets inseted of importing the default ones, this is the all point of creating a custom theme. &#x20;
+This section is mainly for transparency. \
+You should use your own assets instead of importing the default ones; that's the whole point of creating a custom theme.
 {% endhint %}
 
-If you want to import the resources that are available in the default theme you can construct urls like: &#x20;
+To import resources available in the default theme, you can construct URLs like:
 
 ```tsx
-const paternlyflyUrl = `${kcContext.url.resourcesCommonPath}/node_modules/patternfly/dist/css/patternfly.min.css`;
-const loginCss = `${url.resourcesPath}/css/login.css`;
+const patternflyUrl = \`${kcContext.url.resourcesCommonPath}/node_modules/patternfly/dist/css/patternfly.min.css\`;
+const loginCss = \`${url.resourcesPath}/css/login.css\`;
 ```
 
-You can see what assets are available in public/keycloak-resources/login/resources.  \
-If you want to chose what version of the assets are available you can use the [this build option](build-options.md#loginthemeresourcesfromkeycloakversion). &#x20;
+You can see what assets are available under `public/keycloak-resources/login/resources`. \
+If you want to choose which version of the assets to use, refer to [this build option](build-options.md#loginthemeresourcesfromkeycloakversion).
 
-By default the default css assets are imported and applyed [here](https://github.com/keycloakify/keycloakify/blob/402c6fc64a26268b6f2f7222e4f11ff07de452f8/src/login/Template.tsx#L35-L38C19) in the login theme.&#x20;
+By default, the default CSS assets are imported and applied [here](https://github.com/keycloakify/keycloakify/blob/402c6fc64a26268b6f2f7222e4f11ff07de452f8/src/login/Template.tsx#L35-L38C19) in the login theme.
