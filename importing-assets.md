@@ -1,6 +1,6 @@
-# 🖼 Importing Assets
+# 🖼 Importing assets
 
-If you're already familiar with the React ecosystem, you can import assets as you usually would; it should work out of the box.  
+If you're already familiar with the React ecosystem, you can import assets as you usually would; it should work out of the box.\
 For those new to React or those interested in the specifics, here are some detailed instructions.
 
 ## Importing Custom Assets
@@ -35,18 +35,18 @@ However, this method of asset importation is generally inferior in terms of both
 ## Importing Default Theme Resources
 
 {% hint style="info" %}
-This section is mainly for transparency. \
+This section is mainly for transparency.\
 You should use your own assets instead of importing the default ones; that's the whole point of creating a custom theme.
 {% endhint %}
 
 To import resources available in the default theme, you can construct URLs like:
 
 ```tsx
-const patternflyUrl = \`${kcContext.url.resourcesCommonPath}/node_modules/patternfly/dist/css/patternfly.min.css\`;
-const loginCss = \`${url.resourcesPath}/css/login.css\`;
+const patternflyUrl = `${kcContext.url.resourcesCommonPath}/node_modules/patternfly/dist/css/patternfly.min.css`;
+const loginCssUrl = `${url.resourcesPath}/css/login.css`;
 ```
 
-You can see what assets are available under `public/keycloak-resources/login/resources`. \
+You can see what assets are available under `public/keycloak-resources/login/resources`.\
 If you want to choose which version of the assets to use, refer to [this build option](build-options.md#loginthemeresourcesfromkeycloakversion).
 
 By default, the default CSS assets are imported and applied [here](https://github.com/keycloakify/keycloakify/blob/402c6fc64a26268b6f2f7222e4f11ff07de452f8/src/login/Template.tsx#L35-L38C19) in the login theme.
