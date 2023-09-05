@@ -2,6 +2,7 @@
 
 * [👨💻 Quick start](README.md)
 * [🔩 Keycloakify in my App](keycloakify-in-my-app.md)
+* [🖼 Importing assets](importing-assets.md)
 * [📧 Email customization](email-customization.md)
 * [✒ Terms and conditions](terms-and-conditions.md)
 * [✅ Realtime input validation and custom registration fields](realtime-input-validation.md)
