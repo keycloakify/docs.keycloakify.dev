@@ -1,23 +1,5 @@
 # 📖 Build options
 
-### extraPages
-
-Tells Keycloakify to generate extra pages.\
-\
-If you are unsure what it means, please [read this](https://github.com/keycloakify/keycloakify/issues/334#issuecomment-1648772798).
-
-If you have in your `package.json`:
-
-<pre class="language-json" data-title="package.json"><code class="lang-json">{
-    "keycloakify": {
-<strong>        "extraPages": [ 
-</strong><strong>            "my-extra-page-1.ftl", 
-</strong><strong>            "my-extra-page-2.ftl" 
-</strong><strong>        ]
-</strong>    }
-}
-</code></pre>
-
 Keycloakify will generate `my-extra-page-1.ftl` and `my-extra-page-2.ftl` alongside `login.ftl`, r`egister-user-profile.ftl` ect...
 
 More info about this in [this section (I do it only for my project)](limitations.md#i-have-established-that-a-page-that-i-need-isnt-supported-out-of-the-box-by-keycloakify-now-what).
