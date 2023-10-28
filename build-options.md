@@ -6,28 +6,6 @@
 
 You can read [here](https://github.com/InseeFrLab/keycloakify/blob/832434095eac722207c55062fd2b825d1f691722/src/bin/build-keycloak-theme/BuildOptions.ts#L7-L16) the package.json fields that are used by Keyclaokify.
 
-### `extraPages`
-
-Tells Keycloakify to generate extra pages.\
-\
-If you are unsure what it means, please [read this](https://github.com/keycloakify/keycloakify/issues/334#issuecomment-1648772798).
-
-If you have in your `package.json`:
-
-<pre class="language-json" data-title="package.json"><code class="lang-json">{
-    "keycloakify": {
-<strong>        "extraPages": [ 
-</strong><strong>            "my-extra-page-1.ftl", 
-</strong><strong>            "my-extra-page-2.ftl" 
-</strong><strong>        ]
-</strong>    }
-}
-</code></pre>
-
-Keycloakify will generate `my-extra-page-1.ftl` and `my-extra-page-2.ftl` alongside `login.ftl`, r`egister-user-profile.ftl` ect...
-
-More info about this in [this section (I do it only for my project)](limitations.md#i-have-established-that-a-page-that-i-need-isnt-supported-out-of-the-box-by-keycloakify-now-what).
-
 ### `extraThemeProperties`
 
 By default the `theme.properties` files located in `build_keycloak/src/main/resources/theme/<your app>/login/theme.properties` only contains:
