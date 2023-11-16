@@ -61,7 +61,7 @@ const PUBLIC_URL = (()=>{
 
     })();
 
-    return kcContext === undefined || process.env.NODE_ENV === "development"
+    return (kcContext === undefined || process.env.NODE_ENV === "development")
         ? process.env.PUBLIC_URL
         : `${kcContext.url.resourcesPath}/build`;
 
