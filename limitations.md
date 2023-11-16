@@ -38,7 +38,39 @@ Main takeaways are:
 
 ### `process.env.PUBLIC_URL` not supported.
 
-You won't be able to [import things from your public directory **in your JavaScript code** (it's supported in `public/index.html`)](https://create-react-app.dev/docs/using-the-public-folder/#adding-assets-outside-of-the-module-system). (This isn't recommended anyway).
+Using `process.env.PUBLIC_URL` is not directly supported (but it will be in the future).  \
+As a temporary workaround we you can do: &#x20;
+
+```typescript
+import { kcContext as kcLoginThemeContext } from "keycloak-theme/login/kcContext";
+import { kcContext as kcAccountThemeContext } from "keycloak-theme/login/kcContext";
+
+const PUBLIC_URL = (()=>{
+
+    const kcContext = (()=>{
+
+        if( kcLoginThemeContext !== undefined ){
+            return kcLoginThemeContext;
+        }
+        
+        if( kcAccountThemeContext !== undefined ){
+            return kcLoginThemeContext
+        }
+
+        return undefined;
+
+    })();
+
+    return kcContext === undefined || process.env.NODE_ENV === "development"
+        ? process.env.PUBLIC_URL
+        : `${kcContext.url.resourcesPath}/build`;
+
+})();
+
+// Assuming you have my-image.png in your public directory 
+// you can get an URL for it that will be correct regardless of the context with:  
+const imageUrl = `${PUBLIC_URL}/my-image.png`;
+```
 
 ### Self hosted fonts
 
@@ -78,10 +110,6 @@ As a workaround you can have your `@font-face` import directly in a style tage o
 +</style>
 ```
 {% endcode %}
-
-{% hint style="warning" %}
-Make sure `%PUBLIC_URL%/fonts/Marianne-Light.woff2` actually point to the font file.
-{% endhint %}
 
 Example [here](https://github.com/garronej/keycloakify-demo-app/blob/9aa2dbaec28a7786d6b2983c9a59d393dec1b2d6/public/index.html#L27-L73) (and the font are [here](https://github.com/garronej/keycloakify-demo-app/tree/main/public/fonts/WorkSans)).
 
