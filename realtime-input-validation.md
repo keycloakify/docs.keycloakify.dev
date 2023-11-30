@@ -53,9 +53,10 @@ If you register you'll see that you have to select if your are a cat or dog pers
 
 <figure><img src=".gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
-This appear because, on my keycloak server I have configured a custom user profile attribute. &#x20;
+This appear because, on my keycloak server I have configured a custom user profile attribute.  \
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
 And when the user is connecte, it's choice appear in the JWT &#x20;
 
