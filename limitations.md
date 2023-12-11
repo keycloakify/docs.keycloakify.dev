@@ -2,17 +2,21 @@
 
 ### Some pages still have the default theme. Why?
 
-This project only support out of the box the most common user facing pages of Keycloak.
-
-To see the complete list of pages that Keycloak provide you can download the base theme with the following command
-
-`npx -p keycloakify download-builtin-keycloak-theme`&#x20;
-
-[Video demo](https://user-images.githubusercontent.com/6702424/164304458-934b0e1d-9de7-4bb4-8a1c-e06a70b1636a.mov) &#x20;
+This project only support out of the box the most common user facing pages of Keycloak but not all of them. You might find out that a page that you need to customize is not yet provided as a react component by Keycloakify. &#x20;
 
 [Here](https://github.com/InseeFrLab/keycloakify/tree/main/src/login/pages) are the login pages currently implemented vs [all the existing pages](https://github.com/keycloak/keycloak/tree/main/themes/src/main/resources/theme/base/login). &#x20;
 
-[Here](https://github.com/InseeFrLab/keycloakify/tree/main/src/account/pages) are the acount pages currently implemented vs [all the existing pages](https://github.com/keycloak/keycloak/tree/21.1.2/themes/src/main/resources/theme/base/account).
+[Here](https://github.com/InseeFrLab/keycloakify/tree/main/src/account/pages) are the acount pages currently implemented vs [all the existing pages](https://github.com/keycloak/keycloak/tree/21.1.2/themes/src/main/resources/theme/base/account).  \
+\
+You can preview the pages looks like in [the Storybook](https://storybook.keycloakify.dev/?path=/story/introduction--page). (Well of course the pages that are not yet implemented will not apprear here.) &#x20;
+
+If the page you are looking for is implemented you can import it in your project if you need to implement it futher with the command:   &#x20;
+
+`npx -p keycloakify download-builtin-keycloak-theme`&#x20;
+
+[Video demo](https://user-images.githubusercontent.com/6702424/164304458-934b0e1d-9de7-4bb4-8a1c-e06a70b1636a.mov)  \
+\
+Otherwise, keep reading.
 
 #### I have established that a page that I need isn't supported out of the box by Keycloakify, now what? &#x20;
 
