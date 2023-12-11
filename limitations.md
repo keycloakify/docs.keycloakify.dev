@@ -12,7 +12,7 @@ To see the complete list of pages that Keycloak provide you can download the bas
 
 [Here](https://github.com/InseeFrLab/keycloakify/tree/main/src/login/pages) are the login pages currently implemented vs [all the existing pages](https://github.com/keycloak/keycloak/tree/main/themes/src/main/resources/theme/base/login). &#x20;
 
-[Here](https://github.com/InseeFrLab/keycloakify/tree/main/src/account/pages) are the acount pages currently implemented vs [all the existing pages](https://github.com/keycloak/keycloak/tree/main/themes/src/main/resources/theme/base/account).
+[Here](https://github.com/InseeFrLab/keycloakify/tree/main/src/account/pages) are the acount pages currently implemented vs [all the existing pages](https://github.com/keycloak/keycloak/tree/21.1.2/themes/src/main/resources/theme/base/account).
 
 #### I have established that a page that I need isn't supported out of the box by Keycloakify, now what? &#x20;
 
