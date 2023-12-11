@@ -8,7 +8,7 @@ This project only support out of the box the most common user facing pages of Ke
 
 [Here](https://github.com/InseeFrLab/keycloakify/tree/main/src/account/pages) are the acount pages currently implemented vs [all the existing pages](https://github.com/keycloak/keycloak/tree/21.1.2/themes/src/main/resources/theme/base/account).  \
 \
-You can preview the pages looks like in [the Storybook](https://storybook.keycloakify.dev/?path=/story/introduction--page). (Well of course the pages that are not yet implemented will not apprear here.) &#x20;
+You can preview the pages looks in [the Storybook](https://storybook.keycloakify.dev/?path=/story/introduction--page). (Well of course the pages that are not yet implemented will not apprear here.) &#x20;
 
 If the page you are looking for is implemented you can import it in your project if you need to implement it futher with the command:   &#x20;
 
