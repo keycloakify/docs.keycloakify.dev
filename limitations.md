@@ -10,11 +10,13 @@ This project only support out of the box the most common user facing pages of Ke
 \
 You can preview the pages looks in [the Storybook](https://storybook.keycloakify.dev/?path=/story/introduction--page). (Well of course the pages that are not yet implemented will not apprear here.) &#x20;
 
-If the page you are looking for is implemented you can import it in your project if you need to implement it futher with the command:   &#x20;
+If the page you are looking for is implemented you can import it in you project with this command: &#x20;
 
 `npx -p keycloakify download-builtin-keycloak-theme`&#x20;
 
 [Video demo](https://user-images.githubusercontent.com/6702424/164304458-934b0e1d-9de7-4bb4-8a1c-e06a70b1636a.mov)  \
+\
+(Before copying the page in your project try to see if you can't acheive the desired look by customizing the Template.tsx)\
 \
 Otherwise, keep reading.
 
