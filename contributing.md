@@ -28,6 +28,7 @@ git clone https://github.com/garronej/keycloakify-starter # Or your project
 cd keycloakify
 yarn
 yarn build
+# For the following command you can replace 'keycloakify-starter' by 'my-project'
 yarn link-in-app keycloakify-starter
 # The following command will start the compilation of Keycloakify
 # in watch mode. You will be able to perform changes on the keycloakify code
