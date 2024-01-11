@@ -1,11 +1,6 @@
-# 🖼 Importing assets
+# 🖼 Importing assets and fonts
 
-If you're already familiar with the React ecosystem, you can import assets as you usually would; it should work out of the box.\
-For those new to React or those interested in the specifics, here are some detailed instructions.
-
-## Importing Custom Assets
-
-
+## Importing Custom assets that are not fonts
 
 {% tabs %}
 {% tab title="Using the `import` statement " %}
@@ -100,6 +95,62 @@ import { PUBLIC_URL } from "../PUBLIC_URL";
 <img src={`${PUBLIC_URL}/foo.png`} />
 ```
 {% endcode %}
+{% endtab %}
+{% endtabs %}
+
+## Importing Fonts
+
+{% tabs %}
+{% tab title="Selft hosted fonts" %}
+So, this is typically how you would import self hosted font in a Regular React App.  \
+Let's immagine you have the folloing font index CSS file:
+
+{% code title="public/fonts.css" %}
+```css
+@font-face {
+  font-family: Marianne;
+  src: url("./fonts/Marianne-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+```
+{% endcode %}
+
+You would import it like this: &#x20;
+
+{% code title="public/index.html" %}
+```html
+<!-- 🛑 This do not work in keycloakfy --> 
+<link rel="stylesheet" href="%PUBLIC_URL%/font.css" />
+```
+{% endcode %}
+
+Unfortunately this approach does not work in Keycloakify. &#x20;
+
+The workaround consist in including all your `@font-face` statements directly in your `public/index.html` file.\
+This is how you would update your index.html file in order to make it work with Keycloakify: &#x20;
+
+{% code title="public/index.html" %}
+```diff
+-<link rel="stylesheet" href="%PUBLIC_URL%/font.css" />
++<style>
++ @font-face {
++   font-family: Marianne;
++   src: url("%PUBLIC_URL%/fonts/Marianne-Light.woff2") format("woff2");
++   font-weight: 300;
++   font-style: normal;
++   font-display: swap;
++ }
++</style>
+```
+{% endcode %}
+
+Example [here](https://github.com/garronej/keycloakify-demo-app/blob/9aa2dbaec28a7786d6b2983c9a59d393dec1b2d6/public/index.html#L27-L73) (and the font are [here](https://github.com/garronej/keycloakify-demo-app/tree/main/public/fonts/WorkSans)).
+{% endtab %}
+
+{% tab title="Using Google Font or other font provider" %}
+Works out of the box ✅
 {% endtab %}
 {% endtabs %}
 

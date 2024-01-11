@@ -42,86 +42,18 @@ Main takeaways are:
 {% endtab %}
 {% endtabs %}
 
-### `process.env.PUBLIC_URL` not supported.
+### `process.env.PUBLIC_URL`  not supported.
 
-Using `process.env.PUBLIC_URL` is not directly supported (but it will be in the future).  \
-As a temporary workaround we you can do: &#x20;
+The environement variable process.env.PUBLIC\_URL can't be directly used in a Keycloakify project but there is a workaround. See: &#x20;
 
-```typescript
-import { kcContext as kcLoginThemeContext } from "keycloak-theme/login/kcContext";
-import { kcContext as kcAccountThemeContext } from "keycloak-theme/login/kcContext";
-
-const PUBLIC_URL = (()=>{
-
-    const kcContext = (()=>{
-
-        if( kcLoginThemeContext !== undefined ){
-            return kcLoginThemeContext;
-        }
-        
-        if( kcAccountThemeContext !== undefined ){
-            return kcLoginThemeContext
-        }
-
-        return undefined;
-
-    })();
-
-    return (kcContext === undefined || process.env.NODE_ENV === "development")
-        ? process.env.PUBLIC_URL
-        : `${kcContext.url.resourcesPath}/build`;
-
-})();
-
-// Assuming you have my-image.png in your public directory 
-// you can get an URL for it that will be correct regardless of the context with:  
-const imageUrl = `${PUBLIC_URL}/my-image.png`;
-```
+[#import-assets-from-the-public-directory](importing-assets.md#import-assets-from-the-public-directory "mention")
 
 ### Self hosted fonts
 
-This scenario **won't** work
+Importing self hosted font does not work out of the box like it would in a regular React project.  \
+See workaround: &#x20;
 
-{% code title="public/fonts.css" %}
-```css
-@font-face {
-  font-family: Marianne;
-  src: url("./fonts/Marianne-Light.woff2") format("woff2");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-```
-{% endcode %}
-
-{% code title="public/index.html" %}
-```html
-<link rel="stylesheet" href="%PUBLIC_URL%/font.css" />
-```
-{% endcode %}
-
-As a workaround you can have your `@font-face` import directly in a style tage of your index.html `<head />`.
-
-{% code title="public/index.html" %}
-```diff
--<link rel="stylesheet" href="%PUBLIC_URL%/font.css" />
-+<style>
-+ @font-face {
-+   font-family: Marianne;
-+   src: url("%PUBLIC_URL%/fonts/Marianne-Light.woff2") format("woff2");
-+   font-weight: 300;
-+   font-style: normal;
-+   font-display: swap;
-+ }
-+</style>
-```
-{% endcode %}
-
-{% hint style="warning" %}
-Make sure `%PUBLIC_URL%/fonts/Marianne-Light.woff2` actually point to the font file.
-{% endhint %}
-
-Example [here](https://github.com/garronej/keycloakify-demo-app/blob/9aa2dbaec28a7786d6b2983c9a59d393dec1b2d6/public/index.html#L27-L73) (and the font are [here](https://github.com/garronej/keycloakify-demo-app/tree/main/public/fonts/WorkSans)).
+[#selft-hosted-fonts](importing-assets.md#selft-hosted-fonts "mention")
 
 #### Other workarounds
 
