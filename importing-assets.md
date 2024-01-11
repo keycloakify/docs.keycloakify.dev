@@ -23,7 +23,7 @@ import fooPngUrl from "./assets/foo.png";
 Demo in the Starter project
 {% endembed %}
 
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption><p>Keycloakify corectly replaces the URLs</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Keycloakify corectly replaces the URLs</p></figcaption></figure>
 {% endtab %}
 
 {% tab title="Import assets from the public/ directory" %}
@@ -49,6 +49,12 @@ Let's assume you have `foo.png in` the `public/` directory. To import it you wou
 
 &#x3C;/html>
 </code></pre>
+
+{% embed url="https://github.com/keycloakify/keycloakify-starter/blob/d28c986686c3255b812152f68f3458995fa8bfb7/public/index.html#L8-L17" %}
+Example from the starter: Import favicon
+{% endembed %}
+
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption><p>The favicon is correctly loaded for the Keycloak server</p></figcaption></figure>
 
 ### In your TypeScript files
 
@@ -100,7 +106,7 @@ import { PUBLIC_URL } from "../PUBLIC_URL";
 Example in the starter
 {% endembed %}
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption><p>The asset is successfuly downloaded</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption><p>The asset is successfuly downloaded</p></figcaption></figure>
 {% endtab %}
 {% endtabs %}
 

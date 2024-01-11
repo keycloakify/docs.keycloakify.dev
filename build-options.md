@@ -134,7 +134,7 @@ Note that for account theme we do not enable to specify the version, the assets 
 
 Configure the version that will appear in the `pom.xml` file.
 
-<figure><img src=".gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 By default the version that is used is the one in the package.json of your project
 
