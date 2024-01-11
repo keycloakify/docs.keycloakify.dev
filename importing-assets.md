@@ -1,6 +1,6 @@
 # 🖼 Importing assets and fonts
 
-## Importing Custom assets that are not fonts
+## Importing Custom assets that aren't fonts
 
 {% tabs %}
 {% tab title="Using the `import` statement " %}
