@@ -23,7 +23,7 @@ import fooPngUrl from "./assets/foo.png";
 Demo in the Starter project
 {% endembed %}
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption><p>Keycloakify corectly replaces the URLs</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption><p>Keycloakify corectly replaces the URLs</p></figcaption></figure>
 {% endtab %}
 
 {% tab title="Import assets from the public/ directory" %}
@@ -95,6 +95,12 @@ import { PUBLIC_URL } from "../PUBLIC_URL";
 <img src={`${PUBLIC_URL}/foo.png`} />
 ```
 {% endcode %}
+
+{% embed url="https://github.com/keycloakify/keycloakify-starter/commit/7a3589610cb27663d0e5d2ac68bb3d4b1c7c9970" %}
+Example in the starter
+{% endembed %}
+
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption><p>The asset is successfuly downloaded</p></figcaption></figure>
 {% endtab %}
 {% endtabs %}
 
