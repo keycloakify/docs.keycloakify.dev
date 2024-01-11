@@ -13,5 +13,5 @@ Introduction video + blog post
 {% endembed %}
 
 {% embed url="https://youtu.be/WMyGZNHQkjU" %}
-A video to give you confidence that this thing actually works
+A video to give you confidence that this thing actually works (it's not meant as a tutorial)
 {% endembed %}
