@@ -8,8 +8,8 @@ For those new to React or those interested in the specifics, here are some detai
 
 
 {% tabs %}
-{% tab title="Import managed by Webpack Asset Module" %}
-Import using [webpack asset module](https://webpack.js.org/guides/asset-modules/) (available by default in Create React App) enable you to import assets directly in from your TypeScript files. This works as well in Keycloakify. &#x20;
+{% tab title="Using the `import` statement " %}
+[Webpack asset module](https://webpack.js.org/guides/asset-modules/), available by default in Create React App, enables you to import assets directly from within your TypeScript files. **This works with Keycloakify**. &#x20;
 
 For example, you can place `foo.png` in `src/login/assets` and import it in the template as shown below:
 
@@ -32,43 +32,76 @@ Demo in the Starter project
 {% endtab %}
 
 {% tab title="Import assets from the public/ directory" %}
-This is a little less straight forward. Whenever possible prefer relying on the bundler for the import. &#x20;
+{% hint style="warning" %}
+This is **not recommended**, Keycloakify or not, whenever possible prefer importing your assets using the `import` statement.  [Learn more](https://create-react-app.dev/docs/using-the-public-folder/#adding-assets-outside-of-the-module-system).
+{% endhint %}
 
-Let's assume you have foo.png in the public directory. To import it you would do: &#x20;
+This is how you would relyably import assets that you have in your public directory regardless of if you are in a Keycloak context or not. &#x20;
+
+Let's assume you have `foo.png in` the `public/` directory. To import it you would do.
+
+### In you `public/index.html` file
+
+<pre class="language-html" data-title="public/index.html"><code class="lang-html">&#x3C;!DOCTYPE html>
+&#x3C;html>
+&#x3C;head>
+<strong>  &#x3C;link rel="icon" href="%PUBLIC_URL%/foo.png" />  
+</strong>&#x3C;/head>
+
+&#x3C;body>
+  &#x3C;div id="root">&#x3C;/div>
+&#x3C;/body>
+
+&#x3C;/html>
+</code></pre>
+
+### In your TypeScript files
+
+{% hint style="warning" %}
+This is **not recommended**, Keycloakify or not, whenever possible prefer importing your assets using the `import` statement.  [Learn more](https://create-react-app.dev/docs/using-the-public-folder/#adding-assets-outside-of-the-module-system).
+{% endhint %}
+
+You first need to create this file: &#x20;
+
+{% code title="src/PUBLIC_URL.ts" %}
+```typescript
+import { kcContext as kcLoginThemeContext } from "keycloak-theme/login/kcContext";
+import { kcContext as kcAccountThemeContext } from "keycloak-theme/login/kcContext";
+
+// You must use this instead of process.env.PUBLIC_URL
+export const PUBLIC_URL = (()=>{
+
+    const kcContext = (()=>{
+
+        if( kcLoginThemeContext !== undefined ){
+            return kcLoginThemeContext;
+        }
+        
+        if( kcAccountThemeContext !== undefined ){
+            return kcLoginThemeContext
+        }
+
+        return undefined;
+
+    })();
+
+    return (kcContext === undefined || process.env.NODE_ENV === "development")
+        ? process.env.PUBLIC_URL
+        : `${kcContext.url.resourcesPath}/build`;
+
+})();
+```
+{% endcode %}
 
 {% code title="src/login/Template.tsx" %}
-```
+```tsx
+import { PUBLIC_URL } from "../PUBLIC_URL";
+
+<img src={`${PUBLIC_URL}/foo.png`} />
 ```
 {% endcode %}
 {% endtab %}
 {% endtabs %}
-
-To import your custom assets like images, videos, etc., place them in any folder under `src/`. Import them just like you would import code.
-
-For example, you can place `foo.png` in `src/keycloak-theme/login/assets` and import it in the template as shown below:
-
-```tsx
-import fooPngUrl from "./assets/foo.png";
-// NOTE: fooPngUrl is a URL (string) that points to the asset.
-
-// ...
-
-<img src={fooPngUrl} />
-```
-
-Note that this is not a unique feature of Keycloakify; Create React App, Vite, and Next.js all support importing assets in this manner.
-
-There is one thing you can do in a vanilla Create React App project that you can't do with Keycloakify: placing assets in the `public/` directory and importing them manually.
-
-For example, placing `foo.png` in `public/img/foo.png` and importing it won't work:
-
-```tsx
-// This works in CRA but not in Keycloakify
-<img src={process.env.PUBLIC_URL + "img/foo.png"} />
-// NOTE: process.env.PUBLIC_URL is usually the empty string
-```
-
-However, this method of asset importation is generally inferior in terms of both performance and maintainability, so its lack of support shouldn't be a concern.
 
 ## Importing Default Keycloak Theme Resources
 
