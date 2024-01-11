@@ -5,6 +5,44 @@ For those new to React or those interested in the specifics, here are some detai
 
 ## Importing Custom Assets
 
+
+
+{% tabs %}
+{% tab title="Import managed by Webpack Asset Module" %}
+Import using [webpack asset module](https://webpack.js.org/guides/asset-modules/) (available by default in Create React App) enable you to import assets directly in from your TypeScript files. This works as well in Keycloakify. &#x20;
+
+For example, you can place `foo.png` in `src/login/assets` and import it in the template as shown below:
+
+{% code title="src/login/Template.tsx" lineNumbers="true" %}
+```tsx
+import fooPngUrl from "./assets/foo.png";
+// NOTE: fooPngUrl is a URL (string) that points to the asset.
+
+// ...
+
+<img src={fooPngUrl} />
+```
+{% endcode %}
+
+{% embed url="https://github.com/keycloakify/keycloakify-starter/commit/c3e706746ac2b347d85bcae72bdfa394ccb6d1b0" %}
+Demo in the Starter project
+{% endembed %}
+
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption><p>Keycloakify corectly replaces the URLs</p></figcaption></figure>
+{% endtab %}
+
+{% tab title="Import assets from the public/ directory" %}
+This is a little less straight forward. Whenever possible prefer relying on the bundler for the import. &#x20;
+
+Let's assume you have foo.png in the public directory. To import it you would do: &#x20;
+
+{% code title="src/login/Template.tsx" %}
+```
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
 To import your custom assets like images, videos, etc., place them in any folder under `src/`. Import them just like you would import code.
 
 For example, you can place `foo.png` in `src/keycloak-theme/login/assets` and import it in the template as shown below:
