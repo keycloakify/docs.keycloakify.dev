@@ -6,7 +6,7 @@ Now that you have your theme as a .jar file, let's see how you can import it in 
 
 {% tabs %}
 {% tab title="Using CloudIAM" %}
-If you are utilizing a Keycloak instance managed by CloudIAM, importing themes and extensions is quite straightforward.
+If you are utilizing a Keycloak instance managed by [CloudIAM](https://cloud-iam.com/?mtm\_campaign=keycloakify-deal\&mtm\_source=keycloakify-doc-header), importing themes and extensions is quite straightforward.
 
 {% hint style="info" %}
 Uploading custom JAR files is only available with paid plans.&#x20;
