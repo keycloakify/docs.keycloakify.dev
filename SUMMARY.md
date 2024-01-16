@@ -1,6 +1,7 @@
 # Table of contents
 
 * [👨💻 Quick start](README.md)
+* [📥 Importing your theme in Keycloak](importing-your-theme-in-keycloak.md)
 * [🔩 Keycloakify in my App](keycloakify-in-my-app.md)
 * [🖼 Importing assets and fonts](importing-assets.md)
 * [📧 Email customization](email-customization.md)
