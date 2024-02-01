@@ -8,7 +8,7 @@
   * If you have no Account theme: You can use the `retrocompat-*.jar`, it will work on any Keycloak version.
   *   If you have an Account theme:&#x20;
 
-      * You should use `retrocompat-*.jar` on any Keycloak version prior to 23. And select `retrocompat_<your theme>` when selecting in the dropdown when selecting your account theme. &#x20;
+      * You should use `retrocompat-*.jar` on any Keycloak version prior to 23. [And select `<your theme>_retrocompat` when selecting in the dropdown when selecting your account theme](https://github.com/keycloakify/keycloakify/assets/6702424/bc0c988a-9fc1-4c45-a37a-fcf98b7096af). &#x20;
       * You should use `*.jar` on Keycloak 23 and up.
 
       Be aware that Acount theme does not work in Keycloak 22 (and only in this version).
