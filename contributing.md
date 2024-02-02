@@ -29,11 +29,14 @@ cd keycloakify
 yarn
 yarn build
 # For the following command you can replace 'keycloakify-starter' by 'my-project'
-yarn link-in-app keycloakify-starter
+yarn link-in-starter
+# or `yarn link-in-app your-app` to link in another app (that uses yarn)
 # The following command will start the compilation of Keycloakify
 # in watch mode. You will be able to perform changes on the keycloakify code
 # and see them apply live in the keycloakify-demo-app
-npx tsc -p src/bin -w & npx tsc -p src/lib -w 
+
+npx tsc -p src -w 
+# npx tsc -p src/bin -w # In another terminal if you are also working on the build tool
 ```
 
 Open a new terminal window
