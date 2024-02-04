@@ -8,12 +8,7 @@ A Keycloakify theme do not need to be a standalone project.\
 Under certain conditions you can collocate your React app and your Keycloak theme. This enable to design the Keycloak user facing pages like if they where any other page of your project.  (it's what's implemented in [the starter project](https://github.com/keycloakify/keycloakify-starter)).
 
 {% hint style="warning" %}
-Currently you can only collocate your Keycloak theme with WebPack SPAs. Typically, [create-react-app](https://create-react-app.dev/) projects.  \
-It's not the case of your project? **Don't worry!** You can still use Keycloakify but your theme will need to be a standalone project. Just follow [the instructions to make the starter project standalone](https://github.com/keycloakify/keycloakify-starter#standalone-keycloak-theme).&#x20;
-
-We are working toward making Keycloakify agnostic to the project it's colocated with.  \
-This will enable collocation with Vite, Next, Gatsby... [Follow the progress.](https://github.com/keycloakify/keycloakify/pull/275)\
-
+Currently Keycloakify only works with Create React App (Webpack), Vite support is comming very soon. [Follow progress](https://github.com/keycloakify/keycloakify/pull/499).
 {% endhint %}
 
 Before moving on and setting up Keycloakify in your project, first, mess around with [the starter project](https://github.com/codegouvfr/keycloakify-starter) to familiarize yourself with Keycloakify.
@@ -21,7 +16,7 @@ Before moving on and setting up Keycloakify in your project, first, mess around 
 Once you think you are ready to move on:
 
 ```bash
-yarn add keycloakify
+yarn add keycloakify rimraf
 ```
 
 add the following script
@@ -30,9 +25,10 @@ add the following script
 ```json
 {
   "scripts": {
-     ...
-     "prepare": "copy-keycloak-resources-to-public", //This is only for beeing able to test the theme locally in storybook or with an explicit mockPageId
-     "build-keycloak-theme": "yarn build && keycloakify"
+      "start": "copy-keycloak-resources-to-public && react-scripts start",
+      "storybook": "copy-keycloak-resources-to-public && start-storybook -p 6006",
+      "build": "react-scripts build && rimraf build/keycloak-resources",
+      "build-keycloak-theme": "yarn build && keycloakify"
   }
 }
 ```
