@@ -4,6 +4,14 @@ Now that you have your theme as a .jar file, let's see how you can import it in 
 
 <figure><img src=".gitbook/assets/image (16).png" alt="" width="375"><figcaption><p>Custom login and acount theme selecte in the Keycloak Admin console</p></figcaption></figure>
 
+
+
+{% hint style="info" %}
+Attention: Many pepole miss this but **Keycloakify provides a way to test your theme in a local container just by running a single command**.  \
+You just have to follow the instruction printed in the console after running running the `build-keycloak-theme` command!  \
+[Video tutorial](https://www.youtube.com/watch?v=WMyGZNHQkjU).
+{% endhint %}
+
 {% tabs %}
 {% tab title="Using CloudIAM" %}
 If you are utilizing a Keycloak instance managed by [CloudIAM](https://cloud-iam.com/?mtm\_campaign=keycloakify-deal\&mtm\_source=keycloakify-doc-header), importing themes and extensions is quite straightforward.
