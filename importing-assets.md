@@ -159,6 +159,10 @@ This is how you would update your index.html file in order to make it work with 
 {% endcode %}
 
 Example [here](https://github.com/garronej/keycloakify-demo-app/blob/9aa2dbaec28a7786d6b2983c9a59d393dec1b2d6/public/index.html#L27-L73) (and the font are [here](https://github.com/garronej/keycloakify-demo-app/tree/main/public/fonts/WorkSans)).
+
+{% hint style="info" %}
+**Storybook**: To have your font applied in your Storybook as well you need to import them as shown [here](https://github.com/keycloakify/keycloakify-starter/blob/20e45b981f4db907139ae8e3111be34f83abc9b6/src/keycloak-theme/login/createPageStory.tsx#L20-L21).
+{% endhint %}
 {% endtab %}
 
 {% tab title="Using Google Font or other font provider" %}
