@@ -49,7 +49,7 @@ cd ..
 cat << EOF > ./Dockerfile
 FROM node:18 as keycloakify_jar_builder
 RUN apt-get update && \
-    apt-get install -y openjdk-11-jdk && \
+    apt-get install -y openjdk-17-jdk && \
     apt-get install -y maven;
 COPY ./keycloakify-starter/package.json ./keycloakify-starter/yarn.lock /opt/app/
 WORKDIR /opt/app
