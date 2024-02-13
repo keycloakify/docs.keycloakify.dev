@@ -13,6 +13,7 @@ If you wish to upgrade your theme that was based on [the CRA starter project](ht
 * Of course report all the dependencies you might had added in the the new package.json
 * Storybook has been upgraded to v8, have a look at the story in the new starters. They are slightly different. &#x20;
 * You can remove the `src/PUBLIC_URL.ts` file if you used one. You can now simply use `import.meta.env.BASE_URL` to reference assets in your public directory like: ``<img src={`${import.meta.env.BASE_URL}foo.png`} />``
+* You now don't have to specify a XDG\_CACHE\_HOME in your CI. There is a improved builtin cache mechanism in v9.4 that dramatically improve build speed. [If you still provide the  XDG\_CACHE\_HOME var env](https://github.com/keycloakify/keycloakify-starter-cra/blob/2da558a3e7c0e1a4c420eda14adb9ecdd4284ee8/.github/workflows/ci.yaml#L21) you must also provide it to the yarn build script.&#x20;
 
 {% content-ref url="../keycloakify-in-my-app.md" %}
 [keycloakify-in-my-app.md](../keycloakify-in-my-app.md)
