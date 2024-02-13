@@ -8,7 +8,7 @@ The best way to get started with Keycloakify is to study and play around with th
 
 Alternatively, one of the main contributors of the project wrote a tutorial on his blog article. Check it out! &#x20;
 
-{% hint style="danger" %}
+{% hint style="info" %}
 This video from The UI Dawg is great to give you an overview of how Keycloakify operates but don't treat it as a tutorial!  \
 The autoritative source is [the readme of the starter project](https://github.com/keycloakify/keycloakify-starter) and this documentation website!
 {% endhint %}

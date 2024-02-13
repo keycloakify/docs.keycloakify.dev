@@ -48,6 +48,8 @@ The environement variable process.env.PUBLIC\_URL can't be directly used in a Ke
 
 [#import-assets-from-the-public-directory](importing-assets.md#import-assets-from-the-public-directory "mention")
 
+In Vite `import.meta.env.BASE_URL` is supported!&#x20;
+
 ### Self hosted fonts
 
 Importing self hosted font does not work out of the box like it would in a regular React project.  \

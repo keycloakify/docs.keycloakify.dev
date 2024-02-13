@@ -17,6 +17,7 @@
 * [💟 Contributing](contributing.md)
 * [🤔 How it works](how-it-works.md)
 * [⬆ Migration guides](migration-guides/README.md)
+  * [⬆ CRA -> Vite](migration-guides/cra-greater-than-vite.md)
   * [⬆ v8 -> v9](migration-guides/v8-greater-than-v9.md)
   * [⬆ v7 -> v8](migration-guides/v7-greater-than-v8.md)
   * [⬆ v6 -> v7](migration-guides/v6-greater-than-v7.md)
