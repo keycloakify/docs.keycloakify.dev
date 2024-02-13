@@ -26,11 +26,11 @@ Demo in the Starter project
 <figure><img src=".gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Keycloakify corectly replaces the URLs</p></figcaption></figure>
 {% endtab %}
 
-{% tab title="Import from public/ - Vite" %}
+{% tab title="from public/ - Vite" %}
 
 {% endtab %}
 
-{% tab title="Import from public/ - Webpack" %}
+{% tab title="from public/ - CRA (Webpack)" %}
 This is how you would relyably import assets that you have in your public directory regardless of if you are in a Keycloak context or not. &#x20;
 
 Let's assume you have `foo.png in` the `public/` directory. To import it you would do.
