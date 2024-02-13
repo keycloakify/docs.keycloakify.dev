@@ -26,11 +26,11 @@ Demo in the Starter project
 <figure><img src=".gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Keycloakify corectly replaces the URLs</p></figcaption></figure>
 {% endtab %}
 
-{% tab title="Import assets from the public/ directory" %}
-{% hint style="warning" %}
-This is **not recommended**, Keycloakify or not, whenever possible prefer importing your assets using the `import` statement.  [Learn more](https://create-react-app.dev/docs/using-the-public-folder/#adding-assets-outside-of-the-module-system).
-{% endhint %}
+{% tab title="Import from public/ - Vite" %}
 
+{% endtab %}
+
+{% tab title="Import from public/ - Webpack" %}
 This is how you would relyably import assets that you have in your public directory regardless of if you are in a Keycloak context or not. &#x20;
 
 Let's assume you have `foo.png in` the `public/` directory. To import it you would do.
@@ -62,41 +62,11 @@ Example from the starter: Import favicon
 This is **not recommended**, Keycloakify or not, whenever possible prefer importing your assets using the `import` statement.  [Learn more](https://create-react-app.dev/docs/using-the-public-folder/#adding-assets-outside-of-the-module-system).
 {% endhint %}
 
-You first need to create this file: &#x20;
-
-{% code title="src/PUBLIC_URL.ts" %}
-```typescript
-import { kcContext as kcLoginThemeContext } from "keycloak-theme/login/kcContext";
-import { kcContext as kcAccountThemeContext } from "keycloak-theme/login/kcContext";
-
-// You must use this instead of process.env.PUBLIC_URL
-export const PUBLIC_URL = (()=>{
-
-    const kcContext = (()=>{
-
-        if( kcLoginThemeContext !== undefined ){
-            return kcLoginThemeContext;
-        }
-        
-        if( kcAccountThemeContext !== undefined ){
-            return kcLoginThemeContext
-        }
-
-        return undefined;
-
-    })();
-
-    return (kcContext === undefined || process.env.NODE_ENV === "development")
-        ? process.env.PUBLIC_URL
-        : `${kcContext.url.resourcesPath}/build`;
-
-})();
-```
-{% endcode %}
-
 {% code title="src/login/Template.tsx" %}
 ```tsx
-import { PUBLIC_URL } from "../PUBLIC_URL";
+// This is like process.env.PUBLIC_URL but it works both inside
+// and outside of Keycloak.  
+import { PUBLIC_URL } from "keycloakify/PUBLIC_URL";
 
 <img src={`${PUBLIC_URL}/foo.png`} />
 ```
