@@ -51,6 +51,39 @@ const config: StorybookConfig = {
 </strong>};
 export default config;
 </code></pre>
+
+### Sources directory structure
+
+The acceptable directory hierarchy is the following: &#x20;
+
+```
+src/
+  keycloak-theme/
+    login/
+    account/
+    email/
+    
+===OR===
+
+src/
+  foo/
+    bar/
+      keycloak-theme/
+        login/
+        account/
+        email/
+
+===OR===
+
+src/
+  login/
+  account/
+  email/
+```
+
+You can have only `login` for example if you don't implement and account or email theme. &#x20;
+
+You need, however, to have a `src` directory. This is not customizable. &#x20;
 {% endtab %}
 
 {% tab title="Create React App (Webpack)" %}
@@ -111,6 +144,39 @@ const config: StorybookConfig = {
 </strong>};
 export default config;
 </code></pre>
+
+### Sources directory structure
+
+The acceptable directory hierarchy is the following: &#x20;
+
+```
+src/
+  keycloak-theme/
+    login/
+    account/
+    email/
+    
+===OR===
+
+src/
+  foo/
+    bar/
+      keycloak-theme/
+        login/
+        account/
+        email/
+
+===OR===
+
+src/
+  login/
+  account/
+  email/
+```
+
+You can have only `login` for example if you don't implement and account or email theme. &#x20;
+
+You need, however, to have a `src` directory. This is not customizable. &#x20;
 {% endtab %}
 {% endtabs %}
 
