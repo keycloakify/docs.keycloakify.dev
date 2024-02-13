@@ -6,6 +6,54 @@ description: Setting up Keycloakify in your Web App
 
 {% tabs %}
 {% tab title="Vite" %}
+{% embed url="https://github.com/keycloakify/keycloakify-starter-cra" %}
+Create React App version of the starter
+{% endembed %}
+
+If you are familiar with how Keycloakify work and you want to set it up in an existing Create React App (Webpack) project here is what you need to do:
+
+### Add it to your dependencies
+
+```bash
+yarn add keycloakify rimraf # Or npm install --save keycloakify rimraf
+```
+
+### Register the commands to build your theme
+
+{% code title="package.json" %}
+```json
+...
+  "scripts": {
+    "start": "copy-keycloak-resources-to-public && react-scripts start",
+    "storybook": "copy-keycloak-resources-to-public && start-storybook -p 6006",
+    "build": "react-scripts build && rimraf build/keycloak-resources",
+    "build-keycloak-theme": "yarn build && keycloakify"
+  },
+...
+```
+{% endcode %}
+
+{% hint style="info" %}
+Monorepos: You can run Keycloakify from the root of your project with:&#x20;
+
+`npx keycloakify --project <path>`
+
+`<path>` would be tipically something like `packages/keycloak-theme`
+{% endhint %}
+
+### Storybook: List the public/ directory as static dir
+
+<pre class="language-typescript" data-title=".storybook/main.ts"><code class="lang-typescript">import type { StorybookConfig } from "@storybook/react-vite";
+
+const config: StorybookConfig = {
+  // ...
+<strong>  staticDirs: ["../public"]
+</strong>};
+export default config;
+</code></pre>
+{% endtab %}
+
+{% tab title="Create React App (Webpack)" %}
 If you are starting a new project, the best aproach is to fork the starter repo, read it's readme and start from here. &#x20;
 
 {% embed url="https://github.com/keycloakify/keycloakify-starter" %}
@@ -63,10 +111,6 @@ const config: StorybookConfig = {
 </strong>};
 export default config;
 </code></pre>
-{% endtab %}
-
-{% tab title="Create React App (Webpack)" %}
-
 {% endtab %}
 {% endtabs %}
 
