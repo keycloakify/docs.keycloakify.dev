@@ -1,5 +1,15 @@
 # 📖 Build options
 
+### --project or -p CLI option
+
+Introduced in Keycloakify 9.4
+
+This option is for Monorepos. You can run Keycloakify from the root of your project with:&#x20;
+
+`npx keycloakify --project <path>`
+
+`<path>` would be tipically something like `packages/keycloak-theme`
+
 ### extraThemeProperties
 
 By default the `theme.properties` files located in `build_keycloak/src/main/resources/theme/<your app>/login/theme.properties` only contains:
