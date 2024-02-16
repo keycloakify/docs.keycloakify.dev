@@ -116,7 +116,61 @@ Example in the starter
 ## Importing Fonts
 
 {% tabs %}
-{% tab title="Selft hosted fonts" %}
+{% tab title="Selft hosted fonts - Vite" %}
+So, this is typically how you would import self hosted font in a Regular React App.  \
+Let's immagine you have the folloing font index CSS file:
+
+{% code title="public/fonts.css" %}
+```css
+@font-face {
+  font-family: Marianne;
+  src: url("./fonts/Marianne-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+```
+{% endcode %}
+
+You would import it like this: &#x20;
+
+{% code title="public/index.html" %}
+```html
+<!-- 🛑 This do not work in keycloakfy --> 
+<link rel="stylesheet" href="%BASE_URL%font.css" />
+```
+{% endcode %}
+
+Unfortunately this approach does not work in Keycloakify. &#x20;
+
+The workaround consist in including all your `@font-face` statements directly in your `public/index.html` file.\
+This is how you would update your index.html file in order to make it work with Keycloakify: &#x20;
+
+{% code title="public/index.html" %}
+```diff
+-<link rel="stylesheet" href="%BASE_URL%font.css" />
++<style>
++ @font-face {
++   font-family: Marianne;
++   src: url("%BASE_URL%fonts/Marianne-Light.woff2") format("woff2");
++   font-weight: 300;
++   font-style: normal;
++   font-display: swap;
++ }
++</style>
+```
+{% endcode %}
+
+Example [here](https://github.com/garronej/keycloakify-demo-app/blob/9aa2dbaec28a7786d6b2983c9a59d393dec1b2d6/public/index.html#L27-L73) (and the font are [here](https://github.com/garronej/keycloakify-demo-app/tree/main/public/fonts/WorkSans)).
+
+{% hint style="info" %}
+**Storybook**: To have your font applied in your Storybook as well you need to import them as shown [here](https://github.com/keycloakify/keycloakify-starter/blob/20e45b981f4db907139ae8e3111be34f83abc9b6/src/keycloak-theme/login/createPageStory.tsx#L20-L21).
+{% endhint %}
+{% endtab %}
+
+{% tab title="Selft hosted fonts - Webpack" %}
+
+
 So, this is typically how you would import self hosted font in a Regular React App.  \
 Let's immagine you have the folloing font index CSS file:
 
