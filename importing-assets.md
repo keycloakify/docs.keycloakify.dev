@@ -4,8 +4,6 @@
 
 {% tabs %}
 {% tab title="Using the `import` statement " %}
-[Webpack asset module](https://webpack.js.org/guides/asset-modules/), available by default in Create React App, enables you to import assets directly from within your TypeScript files. **This works with Keycloakify**. &#x20;
-
 For example, you can place `foo.png` in `src/login/assets` and import it in the template as shown below:
 
 {% code title="src/login/Template.tsx" lineNumbers="true" %}
