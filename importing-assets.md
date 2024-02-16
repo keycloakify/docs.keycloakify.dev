@@ -61,8 +61,6 @@ This is **not recommended**, Keycloakify or not, whenever possible prefer import
 {% endcode %}
 
 <figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption><p>The asset is successfuly downloaded</p></figcaption></figure>
-
-ss
 {% endtab %}
 
 {% tab title="from public/ - CRA (Webpack)" %}
