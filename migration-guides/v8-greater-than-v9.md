@@ -12,5 +12,6 @@
       * You should use `*.jar` on Keycloak 23 and up.
 
       Be aware that Acount theme does not work in Keycloak 22 (and only in this version).
+* If you where loading your theme into your Keycloak by copy pasting the build\_keycloak/src directly into your Keycloak you can still do that with Keycloak prior to 22 or if you don't have an account theme but if you have an account theme and you are on Keycloak 23 you must follow one of the [official instruction for loading the .jar into Keycloak](../importing-your-theme-in-keycloak.md).
 
 \
