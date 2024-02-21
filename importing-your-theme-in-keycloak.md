@@ -13,20 +13,6 @@ You just have to follow the instruction printed in the console after running run
 {% endhint %}
 
 {% tabs %}
-{% tab title="Using CloudIAM" %}
-If you are utilizing a Keycloak instance managed by [CloudIAM](https://cloud-iam.com/?mtm\_campaign=keycloakify-deal\&mtm\_source=keycloakify-doc-header), importing themes and extensions is quite straightforward.
-
-{% hint style="info" %}
-Uploading custom JAR files is only available with paid plans.&#x20;
-
-If you decide to subscribe, please consider using the code `keycloakify5`.&#x20;
-
-This code will provide you with a 5% discount, and we will also receive 5%, which greatly supports our project!
-{% endhint %}
-
-{% embed url="https://app.tango.us/app/embed/fe0030b4-598b-4c3a-8d9e-a6710d337749" %}
-{% endtab %}
-
 {% tab title="Using Docker" %}
 Let's see how you would go about creating a Keycloak Docker image with your theme available.\
 
@@ -200,6 +186,20 @@ After that you should run bin/kc.sh build (e.g: `bash /opt/keycloak/bin/kc.sh bu
 Then you can start your Keycloak server, your theme should be available in it!&#x20;
 
 If you are using a version of Keycloak prior to 23 you must [use the `retrocompat-*.jar`](#user-content-fn-1)[^1].&#x20;
+{% endtab %}
+
+{% tab title="Using CloudIAM" %}
+If you are utilizing a Keycloak instance managed by [CloudIAM](https://cloud-iam.com/?mtm\_campaign=keycloakify-deal\&mtm\_source=keycloakify-doc-header), importing themes and extensions is quite straightforward.
+
+{% hint style="info" %}
+Uploading custom JAR files is only available with paid plans.&#x20;
+
+If you decide to subscribe, please consider using the code `keycloakify5`.&#x20;
+
+This code will provide you with a 5% discount, and we will also receive 5%, which greatly supports our project!
+{% endhint %}
+
+{% embed url="https://app.tango.us/app/embed/fe0030b4-598b-4c3a-8d9e-a6710d337749" %}
 {% endtab %}
 {% endtabs %}
 
