@@ -39,7 +39,7 @@ export default defineConfig({
 </strong><strong>          path.join(keycloakifyBuildOptions.keycloakifyBuildDirPath, "foo.txt"),
 </strong><strong>          Buffer.from(
 </strong><strong>            [
-</strong><strong>            "This file was created by the postBuild hook of the keycloakify vite plugin", 
+</strong><strong>            "Created by the postBuild hook of the keycloakify vite plugin", 
 </strong><strong>            "",
 </strong><strong>            "Resolved keycloakifyBuildOptions:",
 </strong><strong>            "",
