@@ -10,6 +10,51 @@ This option is for Monorepos. You can run Keycloakify from the root of your proj
 
 `<path>` would be tipically something like `packages/keycloak-theme`
 
+### postBuild hook
+
+_Ony available in Vite, introduced in v9.5_
+
+The postBuild hook is an optional parameter of the Keycloakify Vite plugin that enables you to apply some transformation to your Keycloak theme after it's been build but beforethe .jar is created. &#x20;
+
+<pre class="language-typescript" data-title="vite.config.ts"><code class="lang-typescript">import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { keycloakify } from "keycloakify/vite-plugin";
+
+export default defineConfig({
+  plugins: [
+    react(), 
+    keycloakify({
+      themeName: "keycloakify-starter",
+      extraThemeProperties: [
+        "foo=bar"
+      ],
+<strong>      // In this example, after running `yarn build-keycloak-theme`
+</strong><strong>      // there will be a `keycloak_dist/foo.txt` file.  
+</strong><strong>      postBuild: async keycloakifyBuildOptions => {
+</strong><strong>
+</strong><strong>        const fs = await import("fs/promises");
+</strong><strong>        const path = await import("path");
+</strong><strong>
+</strong><strong>        await fs.writeFile(
+</strong><strong>          path.join(keycloakifyBuildOptions.keycloakifyBuildDirPath, "foo.txt"),
+</strong><strong>          Buffer.from(
+</strong><strong>            [
+</strong><strong>            "This file was created by the postBuild hook of the keycloakify vite plugin", 
+</strong><strong>            "",
+</strong><strong>            "Resolved keycloakifyBuildOptions:",
+</strong><strong>            "",
+</strong><strong>            JSON.stringify(keycloakifyBuildOptions, null, 2),
+</strong><strong>            ""
+</strong><strong>            ].join("\n"),
+</strong><strong>            "utf8"
+</strong><strong>          )
+</strong><strong>        );
+</strong><strong>
+</strong><strong>      }
+</strong>    })
+  ],
+</code></pre>
+
 ### extraThemeProperties
 
 By default the `theme.properties` files located in `build_keycloak/src/main/resources/theme/<your app>/login/theme.properties` only contains:
@@ -48,15 +93,37 @@ _Introduced in 9.0_
 
 Tell wether or not you want Keycloakify to bundle your theme within a .jar file.
 
-{% code title="package.json" %}
-```json
-{
+before
+
+{% tabs %}
+{% tab title="Vite" %}
+<pre class="language-typescript" data-title="vite.config.ts"><code class="lang-typescript">import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { keycloakify } from "keycloakify/vite-plugin";
+
+export default defineConfig({
+  plugins: [
+    react(), 
+    keycloakify({
+<strong>      doCreateJar: false
+</strong>    })
+  ],
+})
+
+</code></pre>
+{% endtab %}
+
+{% tab title="Webpack" %}
+<pre class="language-json" data-title="package.json"><code class="lang-json">{
     "keycloakify": {
-        "doCreateJar": false
-    }
+<strong>        "doCreateJar": false
+</strong>    }
 }
-```
-{% endcode %}
+</code></pre>
+{% endtab %}
+{% endtabs %}
+
+after
 
 ### groupId
 
@@ -66,6 +133,25 @@ Configure the `groupId` that will appear in the `pom.xml` file.
 
 <figure><img src=".gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
+{% tabs %}
+{% tab title="Vite" %}
+<pre class="language-typescript" data-title="vite.config.ts"><code class="lang-typescript">import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { keycloakify } from "keycloakify/vite-plugin";
+
+export default defineConfig({
+  plugins: [
+    react(), 
+    keycloakify({
+<strong>      groupId: "dev.keycloakify.demo-app-advanced.keycloak"
+</strong>    })
+  ],
+})
+
+</code></pre>
+{% endtab %}
+
+{% tab title="Webpack" %}
 {% code title="package.json" %}
 ```json
 {
@@ -75,6 +161,8 @@ Configure the `groupId` that will appear in the `pom.xml` file.
 }
 ```
 {% endcode %}
+{% endtab %}
+{% endtabs %}
 
 By default it's the package.json hompage field at reverse with .keycloak at the end.
 
@@ -92,6 +180,25 @@ Configure the `artifactId` that will appear in the `pom.xml` file.
 
 <figure><img src=".gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
+{% tabs %}
+{% tab title="Vite" %}
+<pre class="language-typescript" data-title="vite.config.ts"><code class="lang-typescript">import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { keycloakify } from "keycloakify/vite-plugin";
+
+export default defineConfig({
+  plugins: [
+    react(), 
+    keycloakify({
+<strong>      artifactId: "keycloakify-advanced-starter-keycloak-theme"
+</strong>    })
+  ],
+})
+
+</code></pre>
+{% endtab %}
+
+{% tab title="Webpack" %}
 {% code title="package.json" %}
 ```json
 {
@@ -101,6 +208,8 @@ Configure the `artifactId` that will appear in the `pom.xml` file.
 }
 ```
 {% endcode %}
+{% endtab %}
+{% endtabs %}
 
 By default it's `<themeName>-keycloak-theme` See, [`keycloak.themeName`](build-options.md#keyclokify.themename) option.
 
@@ -128,6 +237,25 @@ Example where Keycloak resources are imported in the login theme: &#x20;
 * &#x20;[In Template.tsx, css imports](https://github.com/keycloakify/keycloakify-starter/blob/92b20fe74154ef8cf037f4b156eb3b2e5264a074/src/keycloak-theme/login/Template.tsx#L37-L40)
 * [In LoginOtp, js import](https://github.com/keycloakify/keycloakify/blob/402c6fc64a26268b6f2f7222e4f11ff07de452f8/src/login/pages/LoginOtp.tsx#L26)
 
+{% tabs %}
+{% tab title="Vite" %}
+<pre class="language-typescript" data-title="vite.config.ts"><code class="lang-typescript">import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { keycloakify } from "keycloakify/vite-plugin";
+
+export default defineConfig({
+  plugins: [
+    react(), 
+    keycloakify({
+<strong>      loginThemeResourcesFromKeycloakVersion: "21.0.1"
+</strong>    })
+  ],
+})
+
+</code></pre>
+{% endtab %}
+
+{% tab title="Webpack" %}
 {% code title="package.json" %}
 ```json
 {
@@ -137,6 +265,8 @@ Example where Keycloak resources are imported in the login theme: &#x20;
 }
 ```
 {% endcode %}
+{% endtab %}
+{% endtabs %}
 
 Note that for account theme we do not enable to specify the version, the assets used are fixed to Keycloak 21.1.2. &#x20;
 
@@ -196,6 +326,25 @@ This is the name of the theme in the Keycloak admin select:
 
 By default it's `package.json["name"]`
 
+{% tabs %}
+{% tab title="Vite" %}
+<pre class="language-typescript" data-title="vite.config.ts"><code class="lang-typescript">import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { keycloakify } from "keycloakify/vite-plugin";
+
+export default defineConfig({
+  plugins: [
+    react(), 
+    keycloakify({
+<strong>      themeName: "my-custom-name"
+</strong>    })
+  ],
+})
+
+</code></pre>
+{% endtab %}
+
+{% tab title="Webpack" %}
 {% code title="package.json" %}
 ```json
 {
@@ -205,9 +354,33 @@ By default it's `package.json["name"]`
 }
 ```
 {% endcode %}
+{% endtab %}
+{% endtabs %}
 
 You can also provide an array if you want to Keycloakify to create multiple theme variant:&#x20;
 
+{% tabs %}
+{% tab title="Vite" %}
+{% code title="vite.config.ts" %}
+```typescript
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { keycloakify } from "keycloakify/vite-plugin";
+
+export default defineConfig({
+  plugins: [
+    react(), 
+    keycloakify({
+      themeName: [ "keycloakify-starter", "keycloakify-starter-variant-1" ]
+    })
+  ],
+})
+
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Webpack" %}
 {% code title="package.json" %}
 ```json
 {
@@ -217,6 +390,8 @@ You can also provide an array if you want to Keycloakify to create multiple them
 }
 ```
 {% endcode %}
+{% endtab %}
+{% endtabs %}
 
 This option deprecates `extraThemeNames`and let you pack multiple themes variant in a single `.jar` bundle. In vanilla Keycloak themes you have the ability to extend a base theme. There is now an idiomatic way of achieving the same result by using this option.
 
