@@ -2,7 +2,7 @@
 description: Consent page
 ---
 
-# ✒ Terms and conditions
+# ✒️ Terms and conditions
 
 {% embed url="https://user-images.githubusercontent.com/6702424/164942769-0d5420e3-c62f-4187-977e-316a113fb037.mp4" %}
 
@@ -76,6 +76,10 @@ export default function App(props: { kcContext: KcContext; }) {
 You can also eject the terms.ftl page if you're not happy with the default look: &#x20;
 
 {% embed url="https://github.com/codegouvfr/keycloakify-starter/blob/main/src/keycloak-theme/login/pages/Login.tsx" %}
+
+Nice to know: You can access user infos and attribute in the Terms page. This enables you to display different terms depending on what option the user selected on the registration page: &#x20;
+
+<figure><img src=".gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
 
 {% embed url="https://cloud-iam.com/?mtm_campaign=keycloakify-deal&mtm_source=keycloakify-doc-terms-and-conditions" %}
 Feeling overwhelmed? Check out our exclusive sponsor's Cloud IAM consulting services to simplify your experience.
