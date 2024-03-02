@@ -82,6 +82,6 @@ Go to clients&#x20;
 * Token claim name: `favourite_pet`
 * Claim JSON type: `string`
 
-{% embed url="https://cloud-iam.com/?mtm_campaign=keycloakify-deal&mtm_source=keycloakify-doc-realtime-input-validation" %}
-Feeling overwhelmed? Check out our exclusive sponsor's Cloud IAM consulting services to simplify your experience.
+{% embed url="https://app.tango.us/app/embed/582a6e96-be1a-4962-b484-73dbe2c6e892" %}
+Walkthrough the Keycloak UI
 {% endembed %}
