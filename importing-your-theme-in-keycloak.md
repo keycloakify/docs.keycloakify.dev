@@ -200,7 +200,7 @@ If you decide to subscribe, please consider using the code `keycloakify5`.&#x20;
 This code will provide you with a 5% discount, and we will also receive 5%, which greatly supports our project!
 {% endhint %}
 
-{% embed url="https://app.tango.us/app/embed/fe0030b4-598b-4c3a-8d9e-a6710d337749" %}
+{% embed url="https://app.tango.us/app/embed/e22aec8f-d7cf-44a7-bfe7-9f92630aa7eb" %}
 {% endtab %}
 {% endtabs %}
 
