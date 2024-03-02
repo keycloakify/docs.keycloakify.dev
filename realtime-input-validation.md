@@ -64,9 +64,19 @@ And when the user is connecte, it's choice appear in the JWT &#x20;
 
 This work because I have created the following mapper in my Keycloak configuration pannel:&#x20;
 
-Go to clients -> [starter (name of your client)](https://github.com/keycloakify/keycloakify-starter/blob/5689455bc040442c9d71356cc0ce1be28c301f02/src/App/App.tsx#L16) -> Mappers
+Go to clients&#x20;
 
-* Name: `Favourite pet`
+\-> \[name of your client]&#x20;
+
+\-> client scopes&#x20;
+
+\-> \[name of your client]-dedicated&#x20;
+
+\-> configure new mapper&#x20;
+
+\-> User attribute
+
+* Name: `Favorite pet`
 * Mapper type: `User attribute`
 * User attribute: `favourite_pet`
 * Token claim name: `favourite_pet`
