@@ -60,6 +60,7 @@ docker build -t docker-keycloak-with-theme .
 docker run \
     -e KEYCLOAK_ADMIN=admin \
     -e KEYCLOAK_ADMIN_PASSWORD=admin \
+    --env MY_ENV_VARIABLE='Value of my env variable' \
     -p 8080:8080 \
     docker-keycloak-with-theme
 </code></pre>
@@ -138,7 +139,7 @@ keycloak:
   extraEnvVars: 
 <strong>    # See: https://docs.keycloakify.dev/build-options#extrathemeproperties
 </strong><strong>    - name: MY_ENV_VARIABLE
-</strong><strong>      value: "foo"
+</strong><strong>      value: "value of MY_ENV_VARIABLE"
 </strong>
   initContainers: |
     - name: realm-ext-provider

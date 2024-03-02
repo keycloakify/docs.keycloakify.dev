@@ -57,33 +57,56 @@ export default defineConfig({
 
 ### extraThemeProperties
 
-By default the `theme.properties` files located in `build_keycloak/src/main/resources/theme/<your app>/login/theme.properties` only contains:
-
-```
-parent=keycloak
-```
-
-If, for some reason, you need to add extra properties like for example `env=dev` you can do it by editing your `package.json` this way:
+This let you add properties to the  `build_keycloak/src/main/resources/theme/<your app>/[login|account]/theme.properties` file.
 
 <pre class="language-json" data-title="package.json"><code class="lang-json">{
     "keycloakify": {
 <strong>        "extraThemeProperties": [ 
-</strong><strong>            "env=dev",
 </strong><strong>            "locales=en,ko",
-</strong><strong>            "foo=bar",
-</strong><strong>            "myValue=${env.MY_ENV_VARIABLE:default}"
+</strong><strong>            "MY_ENV_VARIABLE=${env.MY_ENV_VARIABLE:default}"
 </strong><strong>        ]
 </strong>    }
 }
 </code></pre>
 
-You can then access this property in the `kcContext` (`kcContext.properties.foo === "bar"`) even if you won't have type safety.
+{% tabs %}
+{% tab title="Vite" %}
+<pre class="language-typescript" data-title="vite.config.ts"><code class="lang-typescript">import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { keycloakify } from "keycloakify/vite-plugin";
 
-If you want to have your custom properties listed on the kcContext (at the type level) you can augment the KcContext type definition. [More info](https://github.com/keycloakify/keycloakify/issues/229#issuecomment-1635883568).
+export default defineConfig({
+  plugins: [
+    react(), 
+    keycloakify({
+<strong>      extraThemeProperties: [ 
+</strong><strong>        "locales=en,ko",
+</strong><strong>        "MY_ENV_VARIABLE=${env.MY_ENV_VARIABLE:default}"
+</strong><strong>      ]
+</strong>    })
+  ],
+})
+</code></pre>
+{% endtab %}
 
-You can also use it to access Keycloak environment variables in your theme. [More info](https://github.com/keycloakify/keycloakify/issues/288).\
-\
-You can find [here](https://github.com/codegouvfr/sill-web/commit/01a58e06a007fa06499214f87d9d207981c3bbf7) a practical example of environment variables.
+{% tab title="Webpack" %}
+<pre class="language-json" data-title="package.json"><code class="lang-json">{
+    "keycloakify": {
+<strong>        "extraThemeProperties": [ 
+</strong><strong>            "locales=en,ko",
+</strong><strong>            "MY_ENV_VARIABLE=${env.MY_ENV_VARIABLE:default}"
+</strong><strong>        ]
+</strong>    }
+}
+</code></pre>
+{% endtab %}
+{% endtabs %}
+
+It is maily usefull to get access to the Keyclaok server environnement variables in your theme. See:
+
+{% content-ref url="environnement-variables.md" %}
+[environnement-variables.md](environnement-variables.md)
+{% endcontent-ref %}
 
 ### doCreateJar
 
@@ -92,8 +115,6 @@ default: true
 _Introduced in 9.0_
 
 Tell wether or not you want Keycloakify to bundle your theme within a .jar file.
-
-before
 
 {% tabs %}
 {% tab title="Vite" %}
@@ -109,7 +130,6 @@ export default defineConfig({
 </strong>    })
   ],
 })
-
 </code></pre>
 {% endtab %}
 
@@ -122,8 +142,6 @@ export default defineConfig({
 </code></pre>
 {% endtab %}
 {% endtabs %}
-
-after
 
 ### groupId
 
@@ -147,7 +165,6 @@ export default defineConfig({
 </strong>    })
   ],
 })
-
 </code></pre>
 {% endtab %}
 
@@ -194,7 +211,6 @@ export default defineConfig({
 </strong>    })
   ],
 })
-
 </code></pre>
 {% endtab %}
 
@@ -251,7 +267,6 @@ export default defineConfig({
 </strong>    })
   ],
 })
-
 </code></pre>
 {% endtab %}
 
@@ -340,7 +355,6 @@ export default defineConfig({
 </strong>    })
   ],
 })
-
 </code></pre>
 {% endtab %}
 
@@ -375,7 +389,6 @@ export default defineConfig({
     })
   ],
 })
-
 ```
 {% endcode %}
 {% endtab %}
