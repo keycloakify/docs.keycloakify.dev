@@ -189,8 +189,8 @@ Then you can start your Keycloak server, your theme should be available in it!&#
 If you are using a version of Keycloak prior to 23 you must [use the `retrocompat-*.jar`](#user-content-fn-1)[^1].&#x20;
 {% endtab %}
 
-{% tab title="Using CloudIAM" %}
-If you are utilizing a Keycloak instance managed by [CloudIAM](https://cloud-iam.com/?mtm\_campaign=keycloakify-deal\&mtm\_source=keycloakify-doc-header), importing themes and extensions is quite straightforward.
+{% tab title="Using Cloud-IAM" %}
+If you are utilizing a Keycloak instance managed by [Cloud-IAM](https://cloud-iam.com/?mtm\_campaign=keycloakify-deal\&mtm\_source=keycloakify-doc-header), importing themes and extensions is quite straightforward.
 
 {% hint style="info" %}
 Uploading custom JAR files is only available with paid plans.&#x20;
