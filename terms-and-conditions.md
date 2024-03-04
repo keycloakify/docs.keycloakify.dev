@@ -13,7 +13,7 @@ First you need to enable the required action on the Keycloak server admin consol
 
 ![](https://user-images.githubusercontent.com/6702424/114280501-dad2e600-9a39-11eb-9c39-a225572dd38a.png)
 
-Then you load your own therms in Markdown format like this: &#x20;
+Then you load your own terms in Markdown format like this: &#x20;
 
 <pre class="language-tsx" data-title="login/KcApp.tsx"><code class="lang-tsx">import { lazy, Suspense } from "react";
 import Fallback, { type PageProps } from "keycloakify/login";
