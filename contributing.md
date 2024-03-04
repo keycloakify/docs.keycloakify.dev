@@ -54,7 +54,3 @@ If you want to link your local version of `keycloakify` in your own app instead 
 {% endhint %}
 
 Heads over the development instruction if you are not already familiar with the process of testing your Keycloakify themes:
-
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
-{% endcontent-ref %}

@@ -26,5 +26,5 @@ When `npx keycloakify` (`yarn keycloak`) is run it will bundle your email theme 
 ![Selecting your email theme in the Keycloak admin](.gitbook/assets/email.png)
 
 {% embed url="https://cloud-iam.com/?mtm_campaign=keycloakify-deal&mtm_source=keycloakify-doc-email-customization" %}
-Feeling overwhelmed? Check out our exclusive sponsor's Cloud IAM consulting services to simplify your experience.
+Feeling overwhelmed? Check out our exclusive sponsor's Cloud-IAM consulting services to simplify your experience.
 {% endembed %}

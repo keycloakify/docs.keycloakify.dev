@@ -1,4 +1,4 @@
-# ⚠ Limitations
+# ⚠️ Limitations
 
 ### Some pages still have the default theme. Why?
 
@@ -90,5 +90,5 @@ messagesPerField.exists(`foo-${bar}`);
 ```
 
 {% embed url="https://cloud-iam.com/?mtm_campaign=keycloakify-deal&mtm_source=keycloakify-doc-limitations" %}
-Feeling overwhelmed? Check out our exclusive sponsor's Cloud IAM consulting services to simplify your experience.
+Feeling overwhelmed? Check out our exclusive sponsor's Cloud-IAM consulting services to simplify your experience.
 {% endembed %}

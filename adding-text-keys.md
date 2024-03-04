@@ -25,5 +25,5 @@ You can set the language you'll get in `i18n.curentLanguageTag` by specifying `u
 {% endhint %}
 
 {% embed url="https://cloud-iam.com/?mtm_campaign=keycloakify-deal&mtm_source=keycloakify-doc-adding-text-keys" %}
-Feeling overwhelmed? Check out our exclusive sponsor's Cloud IAM consulting services to simplify your experience.
+Feeling overwhelmed? Check out our exclusive sponsor's Cloud-IAM consulting services to simplify your experience.
 {% endembed %}

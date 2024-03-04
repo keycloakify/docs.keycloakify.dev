@@ -25,5 +25,5 @@ Relevent code [here](https://github.com/garronej/keycloakify-demo-app/blob/a316e
 {% endtabs %}
 
 {% embed url="https://cloud-iam.com/?mtm_campaign=keycloakify-deal&mtm_source=keycloakify-doc-email-domain-acceptlist" %}
-Feeling overwhelmed? Check out our exclusive sponsor's Cloud IAM consulting services to simplify your experience.
+Feeling overwhelmed? Check out our exclusive sponsor's Cloud-IAM consulting services to simplify your experience.
 {% endembed %}
