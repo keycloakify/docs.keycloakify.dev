@@ -13,7 +13,7 @@ You just have to follow the instruction printed in the console after running run
 {% endhint %}
 
 {% tabs %}
-{% tab title="Using Docker" %}
+{% tab title="Docker" %}
 Let's see how you would go about creating a Keycloak Docker image with your theme available.\
 
 
@@ -66,7 +66,7 @@ docker run \
 </code></pre>
 {% endtab %}
 
-{% tab title="Using Helm" %}
+{% tab title="Helm" %}
 If you use [Bitnami's Keycloak Helm chart](https://github.com/bitnami/charts/tree/main/bitnami/keycloak) you can levrage the initContainers parameter to load your theme. &#x20;
 
 {% code title="Chart.yaml" %}
@@ -189,7 +189,7 @@ Then you can start your Keycloak server, your theme should be available in it!&#
 If you are using a version of Keycloak prior to 23 you must [use the `retrocompat-*.jar`](#user-content-fn-1)[^1].&#x20;
 {% endtab %}
 
-{% tab title="Using Cloud-IAM" %}
+{% tab title="Cloud-IAM" %}
 If you are utilizing a Keycloak instance managed by [Cloud-IAM](https://cloud-iam.com/?mtm\_campaign=keycloakify-deal\&mtm\_source=keycloakify-doc-header), importing themes and extensions is quite straightforward.
 
 {% hint style="info" %}
