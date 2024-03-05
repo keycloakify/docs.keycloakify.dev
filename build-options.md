@@ -59,16 +59,6 @@ export default defineConfig({
 
 This let you add properties to the  `build_keycloak/src/main/resources/theme/<your app>/[login|account]/theme.properties` file.
 
-<pre class="language-json" data-title="package.json"><code class="lang-json">{
-    "keycloakify": {
-<strong>        "extraThemeProperties": [ 
-</strong><strong>            "locales=en,ko",
-</strong><strong>            "MY_ENV_VARIABLE=${env.MY_ENV_VARIABLE:default}"
-</strong><strong>        ]
-</strong>    }
-}
-</code></pre>
-
 {% tabs %}
 {% tab title="Vite" %}
 <pre class="language-typescript" data-title="vite.config.ts"><code class="lang-typescript">import { defineConfig } from 'vite'
