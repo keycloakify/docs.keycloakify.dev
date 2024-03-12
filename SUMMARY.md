@@ -13,7 +13,7 @@
 * [📖 Build options](build-options.md)
 * [💂 Email domain acceptlist](email-domain-acceptlist.md)
 * [🛑 Keycloak error in log](keycloak-error-in-log.md)
-* [🌉 Context persistence](context-persistence.md)
+* [🌉 Passing values from the App to the theme](context-persistence.md)
 * [💟 Contributing](contributing.md)
 * [🤔 How it works](how-it-works.md)
 * [⬆️ Migration guides](migration-guides/README.md)
