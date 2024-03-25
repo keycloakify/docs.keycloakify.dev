@@ -103,7 +103,11 @@ You need, however, to have a `src` directory. This is not customizable. &#x20;
 Create React App version of the starter
 {% endembed %}
 
-If you are familiar with how Keycloakify work and you want to set it up in an existing Create React App (Webpack) project here is what you need to do:
+If you are familiar with how Keycloakify work and you want to set it up in an existing Create React App project here is what you need to do: &#x20;
+
+{% hint style="info" %}
+If your project is using Webpack but not Create React App you might want to checkout [this thread](https://github.com/keycloakify/keycloakify/issues/384).
+{% endhint %}
 
 ### Add it to your dependencies
 
