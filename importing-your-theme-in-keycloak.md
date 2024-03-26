@@ -47,7 +47,7 @@ WORKDIR /opt/keycloak
 <strong># NOTE: If you are using a version of Keycloak prior to 23 you must use 
 </strong><strong># the retrocompat-*.jar. Look inside your target directory there is two jars file
 </strong><strong># one *.jar and the other retrocompat-*.jar
-</strong><strong>COPY --from=keycloakify_jar_builder /opt/app/build_keycloak/target/keycloakify-starter-keycloak-theme-6.0.2.jar /opt/keycloak/providers/
+</strong><strong>COPY --from=keycloakify_jar_builder /opt/app/dist_keycloak/target/keycloakify-starter-keycloak-theme-6.0.2.jar /opt/keycloak/providers/
 </strong>RUN /opt/keycloak/bin/kc.sh build
 
 FROM quay.io/keycloak/keycloak:latest
