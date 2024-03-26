@@ -32,7 +32,7 @@ Otherwise, keep reading.
 {% tab title="I do it only for my project" %}
 Keycloakify also enables you to declare custom ftl pages. &#x20;
 
-Check out how `my-extra-page-1.ftl` and `my-extra-page-2.ftl` where added to [the demo project](https://github.com/garronej/keycloakify-demo-app/tree/look\_and\_feel). &#x20;
+Check out how `my-extra-page-1.ftl` and `my-extra-page-2.ftl` where added to [the starter project](https://github.com/keycloakify/keycloakify-starter/tree/main). &#x20;
 
 Main takeaways are:
 
