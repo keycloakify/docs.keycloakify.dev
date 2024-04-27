@@ -50,7 +50,7 @@ yarn start
 Now you are able to test your local version of Keycloakify in the test app and make sure everything works as expected.
 
 {% hint style="success" %}
-If you want to link your local version of `keycloakify` in your own app instead of the `keycloakify-starter` just run `yarn link_in_test_app <your_app>` (Assuming `../<your_app>` exsist)
+If you want to link your local version of `keycloakify` in your own app instead of the `keycloakify-starter` just run `yarn link_in_test_app <your_app>` (Assuming `../<your_app>` exists)
 {% endhint %}
 
 Heads over the development instruction if you are not already familiar with the process of testing your Keycloakify themes:

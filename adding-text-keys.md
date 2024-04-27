@@ -11,7 +11,7 @@ In Keycloakify you don't [directly edit the `messages_xx.properties` files](http
 {% endhint %}
 
 {% embed url="https://github.com/codegouvfr/keycloakify-starter/blob/main/src/keycloak-theme/login/i18n.ts" %}
-Overwiting default messages or defining new ones
+Overwriting default messages or defining new ones
 {% endembed %}
 
 {% embed url="https://github.com/codegouvfr/keycloakify-starter/blob/cb5844c62381efed7b303886cbe460c055a62c21/src/keycloak-theme/login/KcApp.tsx#L37-L46" %}

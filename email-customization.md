@@ -13,9 +13,9 @@ Currently, customizing emails with React is not possible, and you must use FreeM
 It is now possible to customize the emails sent to your users to confirm their email address ect.\
 Just run `npx initialize-email-theme`.
 
-For this script to work you must be in one of thoses scenario:
+For this script to work you must be in one of these scenarios:
 
-* `src/login` or `src/account` exsists, if it's the case it will assume that this is a standalong keycloak theme and create `src/email`
+* `src/login` or `src/account` exists, if it's the case it will assume that this is a standalone keycloak theme and create `src/email`
 * There is a `keycloak-theme` directory somewhere in your `src` directory. If it's the case it will create `src/**/keycloak-theme/email`.
 
 This directory should be tracked by Git (`yarn add -A`) You can start hacking the default template.

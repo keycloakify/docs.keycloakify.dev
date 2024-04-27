@@ -8,13 +8,13 @@ This option is for Monorepos. You can run Keycloakify from the root of your proj
 
 `npx keycloakify --project <path>`
 
-`<path>` would be tipically something like `packages/keycloak-theme`
+`<path>` would be typically something like `packages/keycloak-theme`
 
 ### postBuild hook
 
 _Ony available in Vite, introduced in v9.5_
 
-The postBuild hook is an optional parameter of the Keycloakify Vite plugin that enables you to apply some transformation to your Keycloak theme after it's been build but beforethe .jar is created. &#x20;
+The postBuild hook is an optional parameter of the Keycloakify Vite plugin that enables you to apply some transformation to your Keycloak theme after it's been built but before the .jar is created. &#x20;
 
 <pre class="language-typescript" data-title="vite.config.ts"><code class="lang-typescript">import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
@@ -92,10 +92,10 @@ export default defineConfig({
 {% endtab %}
 {% endtabs %}
 
-It is maily usefull to get access to the Keyclaok server environnement variables in your theme. See:
+It is mainly useful to get access to the Keycloak server environment variables in your theme. See:
 
-{% content-ref url="environnement-variables.md" %}
-[environnement-variables.md](environnement-variables.md)
+{% content-ref url="environment-variables.md" %}
+[environment-variables.md](environment-variables.md)
 {% endcontent-ref %}
 
 ### doCreateJar
@@ -171,9 +171,9 @@ export default defineConfig({
 {% endtab %}
 {% endtabs %}
 
-By default it's the package.json hompage field at reverse with .keycloak at the end.
+By default it's the package.json homepage field at reverse with .keycloak at the end.
 
-You can overwrite this using an environement variable:
+You can overwrite this using an environment variable:
 
 ```bash
 KEYCLOAKIFY_GROUP_ID="com.your-company.your-project.keycloak" npx keycloakify
@@ -219,7 +219,7 @@ export default defineConfig({
 
 By default it's `<themeName>-keycloak-theme` See, [`keycloak.themeName`](build-options.md#keyclokify.themename) option.
 
-You can overwrite this using an environement variable:
+You can overwrite this using an environment variable:
 
 ```bash
 KEYCLOAKIFY_ARTIFACT_ID="my-cool-theme" npx keycloakify
@@ -291,7 +291,7 @@ By default the version that is used is the one in the package.json of your proje
 ```
 {% endcode %}
 
-But you can overwrite this value using an environnement variable (_Introduced in 6.11)_:
+But you can overwrite this value using an environment variable (_Introduced in 6.11)_:
 
 ```bash
 KEYCLOAKIFY_THEME_VERSION="4.5.6" npx keycloakify
@@ -462,7 +462,7 @@ This is particularly useful [in your CI workflow](https://github.com/keycloakify
 
 ### PUBLIC\_DIR\_PATH
 
-> Only relevent in webpack project, in Vite, it's read from your vite.config.ts file!
+> Only relevant in webpack project, in Vite, it's read from your vite.config.ts file!
 
 Default: `~/public`
 

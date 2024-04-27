@@ -13,7 +13,7 @@ User profile is only available in Keycloak 15 and newer and it's not enabled by 
 
 How you would pass this parameter in practice depend of the Docker image/Helm chart that you are using.\
 [Here is an example with docker compose](https://github.com/keycloakify/keycloakify/discussions/292#discussioncomment-5494498).  \
-With older Keycloak distribution you can also use JAVA\_OPS environement variable
+With older Keycloak distribution you can also use JAVA\_OPS environment variable
 
 [docker example](https://user-images.githubusercontent.com/6702424/229278938-fb170876-b848-4362-b125-0f3a19351774.png), [helm example](https://user-images.githubusercontent.com/6702424/229279001-1e35afec-7484-40eb-868e-044a74d684ab.png).\
 But the default way, with the official docker image is [this](https://github.com/keycloakify/keycloakify/blob/48cbfc64c07ad92636dd04e04143228a3a53bef2/src/bin/keycloakify/generateStartKeycloakTestingContainer.ts#L57).
@@ -58,11 +58,11 @@ This appear because, on my keycloak server I have configured a custom user profi
 
 <figure><img src=".gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
-And when the user is connecte, it's choice appear in the JWT &#x20;
+And when the user is connected, it's choice appear in the JWT &#x20;
 
 <figure><img src=".gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
-This work because I have created the following mapper in my Keycloak configuration pannel:&#x20;
+This works because I have created the following mapper in my Keycloak configuration panel:&#x20;
 
 Go to clients&#x20;
 

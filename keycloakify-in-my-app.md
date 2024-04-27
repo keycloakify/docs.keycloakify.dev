@@ -6,7 +6,7 @@ description: Setting up Keycloakify in your Web App
 
 {% tabs %}
 {% tab title="Vite" %}
-If you are starting a new project, the best aproach is to fork the starter repo, read it's readme and start from here. &#x20;
+If you are starting a new project, the best approach is to fork the starter repo, read its readme and start from here. &#x20;
 
 {% embed url="https://github.com/keycloakify/keycloakify-starter" %}
 
@@ -50,7 +50,7 @@ Monorepos: You can run Keycloakify from the root of your project with:&#x20;
 
 `npx keycloakify --project <path>`
 
-`<path>` would be tipically something like `packages/keycloak-theme`
+`<path>` would be typically something like `packages/keycloak-theme`
 {% endhint %}
 
 ### Storybook: List the public/ directory as static dir
@@ -135,7 +135,7 @@ Monorepos: You can run Keycloakify from the root of your project with:&#x20;
 
 `npx keycloakify --project <path>`
 
-`<path>` would be tipically something like `packages/keycloak-theme`
+`<path>` would be typically something like `packages/keycloak-theme`
 {% endhint %}
 
 ### Storybook: List the public/ directory as static dir
