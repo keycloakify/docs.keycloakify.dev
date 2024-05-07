@@ -8,7 +8,7 @@
 * [✒️ Terms and conditions](terms-and-conditions.md)
 * [✅ Realtime input validation and custom registration fields](realtime-input-validation.md)
 * [⚠️ Limitations](limitations.md)
-* [🔧 Environnement Variables](environnement-variables.md)
+* [🔧 Environment Variables](environment-variables.md)
 * [🌎 i18n: msg(...)](adding-text-keys.md)
 * [📖 Build options](build-options.md)
 * [💂 Email domain acceptlist](email-domain-acceptlist.md)

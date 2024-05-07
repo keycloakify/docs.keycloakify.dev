@@ -1,8 +1,8 @@
-# 🔧 Environnement Variables
+# 🔧 Environment Variables
 
 Environment variables defined on the Keycloak server can be transferred to the theme. This allows for a degree of theme customization without necessitating a rebuild. This approach is particularly useful if multiple parties are reusing your theme. As an example, you can distribute a single .jar file to multiple customers, enabling them to modify certain aspect of the login page by defining specific environment variables. &#x20;
 
-Concreatly the ide is to be able, if you start your Keycloak server like this: &#x20;
+Concretely the ide is to be able, if you start your Keycloak server like this: &#x20;
 
 <pre class="language-bash"><code class="lang-bash">docker run \
     -e KEYCLOAK_ADMIN=admin \
@@ -14,7 +14,7 @@ Concreatly the ide is to be able, if you start your Keycloak server like this: &
 
 To be able to access MY\_ENV\_VARIABLE value in your theme. (This is assuming you're using docker but for for Helm for example see [this](importing-your-theme-in-keycloak.md#using-helm)).
 
-To impelemnt this you need to use [the extraThemeProperties build option](build-options.md#extrathemeproperties) like so:
+To implement this you need to use [the extraThemeProperties build option](build-options.md#extrathemeproperties) like so:
 
 {% tabs %}
 {% tab title="Vite" %}
@@ -69,7 +69,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
 ```
 {% endcode %}
 
-You also probably want to provide mock values the variables for when you're devlopping your theme in Storybook: &#x20;
+You also probably want to provide mock values the variables for when you're developing your theme in Storybook: &#x20;
 
 <pre class="language-typescript" data-title="login/kcContext.ts"><code class="lang-typescript">import { createGetKcContext } from "keycloakify/login";
 

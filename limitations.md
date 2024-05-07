@@ -6,7 +6,7 @@ This project only support out of the box the most common user facing pages of Ke
 
 [Here](https://github.com/InseeFrLab/keycloakify/tree/main/src/login/pages) are the login pages currently implemented vs [all the existing pages](https://github.com/keycloak/keycloak/tree/main/themes/src/main/resources/theme/base/login). &#x20;
 
-[Here](https://github.com/InseeFrLab/keycloakify/tree/main/src/account/pages) are the acount pages currently implemented vs [all the existing pages](https://github.com/keycloak/keycloak/tree/21.1.2/themes/src/main/resources/theme/base/account).  \
+[Here](https://github.com/InseeFrLab/keycloakify/tree/main/src/account/pages) are the account pages currently implemented vs [all the existing pages](https://github.com/keycloak/keycloak/tree/21.1.2/themes/src/main/resources/theme/base/account).  \
 \
 You can preview the pages looks in [the Storybook](https://storybook.keycloakify.dev/?path=/story/introduction--page). (Well of course the pages that are not yet implemented will not apprear here.) &#x20;
 
@@ -16,7 +16,7 @@ If the page you are looking for is implemented you can import it in you project 
 
 [Video demo](https://user-images.githubusercontent.com/6702424/164304458-934b0e1d-9de7-4bb4-8a1c-e06a70b1636a.mov)  \
 \
-(Before copying the page in your project try to see if you can't acheive the desired look by customizing the Template.tsx)\
+(Before copying the page in your project try to see if you can't achieve the desired look by customizing the Template.tsx)\
 \
 Otherwise, keep reading.
 
@@ -44,7 +44,7 @@ Main takeaways are:
 
 ### `process.env.PUBLIC_URL`  not supported.
 
-The environement variable process.env.PUBLIC\_URL can't be directly used in a Keycloakify project but there is a workaround. See: &#x20;
+The environment variable process.env.PUBLIC\_URL can't be directly used in a Keycloakify project but there is a workaround. See: &#x20;
 
 [#import-assets-from-the-public-directory](importing-assets.md#import-assets-from-the-public-directory "mention")
 
@@ -55,7 +55,7 @@ In Vite `import.meta.env.BASE_URL` is supported!&#x20;
 Importing self hosted font does not work out of the box like it would in a regular React project.  \
 See workaround: &#x20;
 
-[#selft-hosted-fonts](importing-assets.md#selft-hosted-fonts "mention")
+[#self-hosted-fonts](importing-assets.md#self-hosted-fonts "mention")
 
 #### Other workarounds
 

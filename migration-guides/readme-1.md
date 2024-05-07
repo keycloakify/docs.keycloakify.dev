@@ -35,7 +35,7 @@ You can search and replace `build-keycloak-theme` -> `keycloakify` in your proje
 
 ### Components exported using default export
 
-In order to enable you to use `React.lazy()`, Keyclaokify components are now exported with default exports instead of named exports. &#x20;
+In order to enable you to use `React.lazy()`, Keycloakify components are now exported with default exports instead of named exports. &#x20;
 
 ```diff
 -import { KcApp, defaultKcProps, getKcContext } from "keycloakify";

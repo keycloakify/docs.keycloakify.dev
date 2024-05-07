@@ -21,11 +21,11 @@ import fooPngUrl from "./assets/foo.png";
 Demo in the Starter project
 {% endembed %}
 
-<figure><img src=".gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Keycloakify corectly replaces the URLs</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Keycloakify correctly replaces the URLs</p></figcaption></figure>
 {% endtab %}
 
 {% tab title="from public/ - Vite" %}
-This is how you would relyably import assets that you have in your public directory regardless of if you are in a Keycloak context or not. &#x20;
+This is how you would reliably import assets that you have in your public directory regardless of if you are in a Keycloak context or not. &#x20;
 
 Let's assume you have `foo.png in` the `public/` directory. To import it you would do.
 
@@ -60,11 +60,11 @@ This is **not recommended**, Keycloakify or not, whenever possible prefer import
 ```
 {% endcode %}
 
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption><p>The asset is successfuly downloaded</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption><p>The asset is successfully downloaded</p></figcaption></figure>
 {% endtab %}
 
 {% tab title="from public/ - CRA (Webpack)" %}
-This is how you would relyably import assets that you have in your public directory regardless of if you are in a Keycloak context or not. &#x20;
+This is how you would reliably import assets that you have in your public directory regardless of if you are in a Keycloak context or not. &#x20;
 
 Let's assume you have `foo.png in` the `public/` directory. To import it you would do.
 
@@ -109,16 +109,16 @@ import { PUBLIC_URL } from "keycloakify/PUBLIC_URL";
 Example in the starter
 {% endembed %}
 
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption><p>The asset is successfuly downloaded</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption><p>The asset is successfully downloaded</p></figcaption></figure>
 {% endtab %}
 {% endtabs %}
 
 ## Importing Fonts
 
 {% tabs %}
-{% tab title="Selft hosted fonts - Vite" %}
+{% tab title="Self hosted fonts - Vite" %}
 So, this is typically how you would import self hosted font in a Regular React App.  \
-Let's immagine you have the folloing font index CSS file:
+Let's imagine you have the following font index CSS file:
 
 {% code title="public/fonts.css" %}
 ```css
@@ -168,11 +168,11 @@ Example [here](https://github.com/garronej/keycloakify-demo-app/blob/9aa2dbaec28
 {% endhint %}
 {% endtab %}
 
-{% tab title="Selft hosted fonts - Webpack" %}
+{% tab title="Self hosted fonts - Webpack" %}
 
 
 So, this is typically how you would import self hosted font in a Regular React App.  \
-Let's immagine you have the folloing font index CSS file:
+Let's imagine you have the following font index CSS file:
 
 {% code title="public/fonts.css" %}
 ```css

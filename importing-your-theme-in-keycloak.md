@@ -1,13 +1,13 @@
 # 📥 Importing your theme in Keycloak
 
-Now that you have your theme as a .jar file, let's see how you can import it in Keycloak so that it apprer  in the dropdown list for selecting theme in the Keycloak Admin console. &#x20;
+Now that you have your theme as a .jar file, let's see how you can import it in Keycloak so that it appears in the dropdown list for selecting theme in the Keycloak Admin console. &#x20;
 
-<figure><img src=".gitbook/assets/image (16).png" alt="" width="375"><figcaption><p>Custom login and acount theme selecte in the Keycloak Admin console</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (16).png" alt="" width="375"><figcaption><p>Custom login and account theme selected in the Keycloak Admin console</p></figcaption></figure>
 
 
 
 {% hint style="info" %}
-Attention: Many pepole miss this but **Keycloakify provides a way to test your theme in a local container just by running a single command**.  \
+Attention: Many people miss this but **Keycloakify provides a way to test your theme in a local container just by running a single command**.  \
 You just have to follow the instruction printed in the console after running running the `build-keycloak-theme` command!  \
 [Video tutorial](https://www.youtube.com/watch?v=WMyGZNHQkjU).
 {% endhint %}
@@ -26,7 +26,7 @@ mkdir docker-keycloak-with-theme
 cd docker-keycloak-with-theme
 git clone https://github.com/keycloakify/keycloakify-starter
 cd keycloakify-starter
-# Just to make sure theses instruction remain relevent in the future
+# Just to make sure these instructions remain relevant in the future
 # We pin the version of the starter we are using.  
 git checkout 620525fed69b37f8790570594c0b19ec03ce962a
 cd ..
@@ -67,7 +67,7 @@ docker run \
 {% endtab %}
 
 {% tab title="Helm" %}
-If you use [Bitnami's Keycloak Helm chart](https://github.com/bitnami/charts/tree/main/bitnami/keycloak) you can levrage the initContainers parameter to load your theme. &#x20;
+If you use [Bitnami's Keycloak Helm chart](https://github.com/bitnami/charts/tree/main/bitnami/keycloak) you can leverage the initContainers parameter to load your theme. &#x20;
 
 {% code title="Chart.yaml" %}
 ```yaml
