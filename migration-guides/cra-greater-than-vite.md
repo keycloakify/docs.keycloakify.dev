@@ -6,8 +6,9 @@ That being said it will remain compatible with WebPack for the forseable future.
 
 If you wish to upgrade your theme that was based on [the CRA starter project](https://github.com/keycloakify/keycloakify-starter-cra) here is what you need to do: &#x20;
 
-* Clone the new starter and copy/paste you src directory into it. &#x20;
+* Clone the new starter and copy/paste your `src` and `public` directories as well as your `index.html` into it. &#x20;
 * Rename the src/index.tsx into src/main.tsx
+* Check if you have modified other parts since you cloned the original starter
 * The build directory is now dist and the build\_keycloak directory is now dist\_keycloak update your .github/workflow/ci.yaml file and your Dockerfile to reflect theses changes. If you haven't changed anything you can just keep things as they are in the new starter. &#x20;
 * If you are hosting you app on GitHub pages, don't forget to report your homepage field from your old package.json to the new one. You also want to specify a base option in the vite.config.ts if your app was hosted under a subpath which is the case with the default GitHub Page domains (`<username>.github.io/<project name>`)
 * Of course report all the dependencies you might had added in the the new package.json
