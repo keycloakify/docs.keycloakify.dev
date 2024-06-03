@@ -1,4 +1,4 @@
-# 🖼 Importing assets and fonts
+# 🖼️ Importing assets and fonts
 
 ## Importing Custom assets that aren't fonts
 
@@ -25,16 +25,16 @@ Demo in the Starter project
 {% endtab %}
 
 {% tab title="from public/ - Vite" %}
-This is how you would reliably import assets that you have in your public directory regardless of if you are in a Keycloak context or not. &#x20;
+This is how you would reliably import assets that you have in your public directory regardless of if you are in a Keycloak context or not.
 
 Let's assume you have `foo.png in` the `public/` directory. To import it you would do.
 
-### In you `public/index.html` file
+#### In you `public/index.html` file
 
 <pre class="language-html" data-title="public/index.html"><code class="lang-html">&#x3C;!DOCTYPE html>
 &#x3C;html>
 &#x3C;head>
-<strong>  &#x3C;link rel="icon" href="%BASE_URL%/foo.png" />  
+<strong>  &#x3C;link rel="icon" href="/foo.png" />  
 </strong>&#x3C;/head>
 
 &#x3C;body>
@@ -46,10 +46,10 @@ Let's assume you have `foo.png in` the `public/` directory. To import it you wou
 
 <figure><img src=".gitbook/assets/image.png" alt=""><figcaption><p>The favicon is correctly loaded for the Keycloak server</p></figcaption></figure>
 
-### In your TypeScript files
+#### In your TypeScript files
 
 {% hint style="warning" %}
-This is **not recommended**, Keycloakify or not, whenever possible prefer importing your assets using the `import` statement.  [Learn more](https://create-react-app.dev/docs/using-the-public-folder/#adding-assets-outside-of-the-module-system).
+This is **not recommended**, Keycloakify or not, whenever possible prefer importing your assets using the `import` statement. [Learn more](https://create-react-app.dev/docs/using-the-public-folder/#adding-assets-outside-of-the-module-system).
 {% endhint %}
 
 {% code title="src/login/Template.tsx" %}
@@ -64,11 +64,11 @@ This is **not recommended**, Keycloakify or not, whenever possible prefer import
 {% endtab %}
 
 {% tab title="from public/ - CRA (Webpack)" %}
-This is how you would reliably import assets that you have in your public directory regardless of if you are in a Keycloak context or not. &#x20;
+This is how you would reliably import assets that you have in your public directory regardless of if you are in a Keycloak context or not.
 
 Let's assume you have `foo.png in` the `public/` directory. To import it you would do.
 
-### In you `public/index.html` file
+#### In you `public/index.html` file
 
 <pre class="language-html" data-title="public/index.html"><code class="lang-html">&#x3C;!DOCTYPE html>
 &#x3C;html>
@@ -89,10 +89,10 @@ Example from the starter: Import favicon
 
 <figure><img src=".gitbook/assets/image.png" alt=""><figcaption><p>The favicon is correctly loaded for the Keycloak server</p></figcaption></figure>
 
-### In your TypeScript files
+#### In your TypeScript files
 
 {% hint style="warning" %}
-This is **not recommended**, Keycloakify or not, whenever possible prefer importing your assets using the `import` statement.  [Learn more](https://create-react-app.dev/docs/using-the-public-folder/#adding-assets-outside-of-the-module-system).
+This is **not recommended**, Keycloakify or not, whenever possible prefer importing your assets using the `import` statement. [Learn more](https://create-react-app.dev/docs/using-the-public-folder/#adding-assets-outside-of-the-module-system).
 {% endhint %}
 
 {% code title="src/login/Template.tsx" %}
@@ -117,7 +117,7 @@ Example in the starter
 
 {% tabs %}
 {% tab title="Self hosted fonts - Vite" %}
-So, this is typically how you would import self hosted font in a Regular React App.  \
+So, this is typically how you would import self hosted font in a Regular React App.\
 Let's imagine you have the following font index CSS file:
 
 {% code title="public/fonts.css" %}
@@ -132,7 +132,7 @@ Let's imagine you have the following font index CSS file:
 ```
 {% endcode %}
 
-You would import it like this: &#x20;
+You would import it like this:
 
 {% code title="public/index.html" %}
 ```html
@@ -141,10 +141,10 @@ You would import it like this: &#x20;
 ```
 {% endcode %}
 
-Unfortunately this approach does not work in Keycloakify. &#x20;
+Unfortunately this approach does not work in Keycloakify.
 
 The workaround consist in including all your `@font-face` statements directly in your `public/index.html` file.\
-This is how you would update your index.html file in order to make it work with Keycloakify: &#x20;
+This is how you would update your index.html file in order to make it work with Keycloakify:
 
 {% code title="public/index.html" %}
 ```diff
@@ -169,9 +169,7 @@ Example [here](https://github.com/garronej/keycloakify-demo-app/blob/9aa2dbaec28
 {% endtab %}
 
 {% tab title="Self hosted fonts - Webpack" %}
-
-
-So, this is typically how you would import self hosted font in a Regular React App.  \
+So, this is typically how you would import self hosted font in a Regular React App.\
 Let's imagine you have the following font index CSS file:
 
 {% code title="public/fonts.css" %}
@@ -186,7 +184,7 @@ Let's imagine you have the following font index CSS file:
 ```
 {% endcode %}
 
-You would import it like this: &#x20;
+You would import it like this:
 
 {% code title="public/index.html" %}
 ```html
@@ -195,10 +193,10 @@ You would import it like this: &#x20;
 ```
 {% endcode %}
 
-Unfortunately this approach does not work in Keycloakify. &#x20;
+Unfortunately this approach does not work in Keycloakify.
 
 The workaround consist in including all your `@font-face` statements directly in your `public/index.html` file.\
-This is how you would update your index.html file in order to make it work with Keycloakify: &#x20;
+This is how you would update your index.html file in order to make it work with Keycloakify:
 
 {% code title="public/index.html" %}
 ```diff
