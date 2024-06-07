@@ -15,5 +15,9 @@ Why do I need Keycloakify in the first place? Why can't I just implement the def
 
 Convinced? Start playing with the starter project now and comme back here in a few minutes to learn more!
 
+{% hint style="info" %}
+Although successfull implementation of Keycloakify had already been acheived in Vite and Angular. Keycloakify is, as of today, primarely a React framwork.
+{% endhint %}
+
 {% embed url="https://github.com/codegouvfr/keycloakify-starter" %}
 
