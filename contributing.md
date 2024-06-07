@@ -28,11 +28,15 @@ git clone https://github.com/garronej/keycloakify-starter # Or your project
 cd keycloakify
 yarn
 yarn build
-yarn link-in-app keycloakify-starter
+# For the following command you can replace 'keycloakify-starter' by 'my-project'
+yarn link-in-starter
+# or `yarn link-in-app your-app` to link in another app (that uses yarn)
 # The following command will start the compilation of Keycloakify
 # in watch mode. You will be able to perform changes on the keycloakify code
 # and see them apply live in the keycloakify-demo-app
-npx tsc -p src/bin -w & npx tsc -p src/lib -w 
+
+npx tsc -p src -w 
+# npx tsc -p src/bin -w # In another terminal if you are also working on the build tool
 ```
 
 Open a new terminal window
@@ -46,11 +50,7 @@ yarn start
 Now you are able to test your local version of Keycloakify in the test app and make sure everything works as expected.
 
 {% hint style="success" %}
-If you want to link your local version of `keycloakify` in your own app instead of the `keycloakify-starter` just run `yarn link_in_test_app <your_app>` (Assuming `../<your_app>` exsist)
+If you want to link your local version of `keycloakify` in your own app instead of the `keycloakify-starter` just run `yarn link_in_test_app <your_app>` (Assuming `../<your_app>` exists)
 {% endhint %}
 
 Heads over the development instruction if you are not already familiar with the process of testing your Keycloakify themes:
-
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
-{% endcontent-ref %}

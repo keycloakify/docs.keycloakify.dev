@@ -10,20 +10,20 @@ Can't register with a @gmail.com address
 
 {% tabs %}
 {% tab title="With user profile" %}
-Using user profile capabilities of keycloak you can define a Regexp on the email field that will only allow certain domails to register. &#x20;
+Using user profile capabilities of keycloak you can define a Regexp on the email field that will only allow certain domains to register.
 
-The Regexp should look [something like this](https://github.com/etalab/sill-web/blob/20e1500166708da75fcad4ebfb9f6e1d39b462c0/src/ui/components/KcApp/kcContext.ts#L53) and can be generated easily with [this helper](https://github.com/etalab/sill-web/blob/main/src/bin/emails\_domain\_accept\_list\_helper.ts). &#x20;
+The Regexp should look [something like this](https://github.com/InseeFrLab/onyxia/blob/fee2b51d0c7ce43d4d25c5c16530a65e71662bd8/web/src/keycloak-theme/login/kcContext.ts#L39) and can be generated easily with [this helper](https://github.com/InseeFrLab/onyxia/blob/v8.20.2/web/scripts/emails-domain-accept-list-helper.ts).
 
-Find the source code of the register page showed in the video [here](https://github.com/etalab/sill-web/blob/main/src/ui/components/KcApp/RegisterUserProfile.tsx).
+You can find [here](https://github.com/InseeFrLab/onyxia/blob/fee2b51d0c7ce43d4d25c5c16530a65e71662bd8/web/src/keycloak-theme/login/pages/shared/UserProfileFormFields.tsx#L204-L223) the source code that allow to convert the regexp back into an array of string to display a tooltip that show what emails are allowed like shown on the video above. &#x20;
 {% endtab %}
 
 {% tab title="With a third party Keycloak plugin" %}
-The legacy way of doing it would be with [this plugin](https://github.com/micedre/keycloak-mail-whitelisting) and using`kcContext["authorizedMailDomains"]` to validate in realtime. &#x20;
+The legacy way of doing it would be with [this plugin](https://github.com/micedre/keycloak-mail-whitelisting) and using`kcContext["authorizedMailDomains"]` to validate in realtime.
 
-Relevent code [here](https://github.com/garronej/keycloakify-demo-app/blob/a316ea0046976e6d435a33e896cb9e3d1873c124/src/KcApp/kcContext.ts#L11) and [here](https://github.com/garronej/keycloakify-demo-app/blob/a316ea0046976e6d435a33e896cb9e3d1873c124/src/KcApp/kcContext.ts#L35-L41).
+Relevant code [here](https://github.com/garronej/keycloakify-demo-app/blob/a316ea0046976e6d435a33e896cb9e3d1873c124/src/KcApp/kcContext.ts#L11) and [here](https://github.com/garronej/keycloakify-demo-app/blob/a316ea0046976e6d435a33e896cb9e3d1873c124/src/KcApp/kcContext.ts#L35-L41).
 {% endtab %}
 {% endtabs %}
 
 {% embed url="https://cloud-iam.com/?mtm_campaign=keycloakify-deal&mtm_source=keycloakify-doc-email-domain-acceptlist" %}
-Feeling overwhelmed? Check out our exclusive sponsor's Cloud IAM consulting services to simplify your experience.
+Feeling overwhelmed? Check out our exclusive sponsor's Cloud-IAM consulting services to simplify your experience.
 {% endembed %}

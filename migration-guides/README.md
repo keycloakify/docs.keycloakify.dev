@@ -1,2 +1,2 @@
-# ⬆ Migration guides
+# ⬆️ Migration guides
 

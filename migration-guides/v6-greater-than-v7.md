@@ -1,4 +1,4 @@
-# ⬆ v6 -> v7
+# ⬆️ v6 -> v7
 
 Many things have changed, I invite you to have a look at the latest version of the starter to see what's up: &#x20;
 

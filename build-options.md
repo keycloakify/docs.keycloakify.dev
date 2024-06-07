@@ -1,68 +1,137 @@
 # 📖 Build options
 
-## `package.json` options
+### --project or -p CLI option
 
+Introduced in Keycloakify 9.4
 
+This option is for Monorepos. You can run Keycloakify from the root of your project with:
 
-You can read [here](https://github.com/InseeFrLab/keycloakify/blob/832434095eac722207c55062fd2b825d1f691722/src/bin/build-keycloak-theme/BuildOptions.ts#L7-L16) the package.json fields that are used by Keyclaokify.
+`npx keycloakify --project <path>`
 
-### `extraThemeProperties`
+`<path>` would be typically something like `packages/keycloak-theme`
 
-By default the `theme.properties` files located in `build_keycloak/src/main/resources/theme/<your app>/login/theme.properties` only contains:
+### postBuild hook
 
-```
-parent=keycloak
-```
+_Ony available in Vite, introduced in v9.5_
 
-If, for some reason, you need to add extra properties like for example `env=dev` you can do it by editing your `package.json` this way:
+The postBuild hook is an optional parameter of the Keycloakify Vite plugin that enables you to apply some transformation to your Keycloak theme after it's been built but before the .jar is created.
 
+<pre class="language-typescript" data-title="vite.config.ts"><code class="lang-typescript">import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { keycloakify } from "keycloakify/vite-plugin";
+
+export default defineConfig({
+  plugins: [
+    react(), 
+    keycloakify({
+      themeName: "keycloakify-starter",
+      extraThemeProperties: [
+        "foo=bar"
+      ],
+<strong>      // In this example, after running `yarn build-keycloak-theme`
+</strong><strong>      // there will be a `keycloak_dist/foo.txt` file.  
+</strong><strong>      postBuild: async keycloakifyBuildOptions => {
+</strong>
+<strong>        const fs = await import("fs/promises");
+</strong><strong>        const path = await import("path");
+</strong>
+<strong>        await fs.writeFile(
+</strong><strong>          path.join(keycloakifyBuildOptions.keycloakifyBuildDirPath, "foo.txt"),
+</strong><strong>          Buffer.from(
+</strong><strong>            [
+</strong><strong>            "Created by the postBuild hook of the keycloakify vite plugin", 
+</strong><strong>            "",
+</strong><strong>            "Resolved keycloakifyBuildOptions:",
+</strong><strong>            "",
+</strong><strong>            JSON.stringify(keycloakifyBuildOptions, null, 2),
+</strong><strong>            ""
+</strong><strong>            ].join("\n"),
+</strong><strong>            "utf8"
+</strong><strong>          )
+</strong><strong>        );
+</strong>
+<strong>      }
+</strong>    })
+  ],
+</code></pre>
+
+### extraThemeProperties
+
+This let you add properties to the `build_keycloak/src/main/resources/theme/<your app>/[login|account]/theme.properties` file.
+
+{% tabs %}
+{% tab title="Vite" %}
+<pre class="language-typescript" data-title="vite.config.ts"><code class="lang-typescript">import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { keycloakify } from "keycloakify/vite-plugin";
+
+export default defineConfig({
+  plugins: [
+    react(), 
+    keycloakify({
+<strong>      extraThemeProperties: [ 
+</strong><strong>        "locales=en,ko",
+</strong><strong>        "MY_ENV_VARIABLE=${env.MY_ENV_VARIABLE:default}"
+</strong><strong>      ]
+</strong>    })
+  ],
+})
+</code></pre>
+{% endtab %}
+
+{% tab title="Webpack" %}
 <pre class="language-json" data-title="package.json"><code class="lang-json">{
     "keycloakify": {
 <strong>        "extraThemeProperties": [ 
-</strong><strong>            "env=dev",
 </strong><strong>            "locales=en,ko",
-</strong><strong>            "foo=bar",
-</strong><strong>            "myValue=${env.MY_ENV_VARIABLE:default}"
+</strong><strong>            "MY_ENV_VARIABLE=${env.MY_ENV_VARIABLE:default}"
 </strong><strong>        ]
 </strong>    }
 }
 </code></pre>
+{% endtab %}
+{% endtabs %}
 
-You can then access this property in the `kcContext` (`kcContext.properties.foo === "bar"`) even if you won't have type safety.
+It is mainly useful to get access to the Keycloak server environment variables in your theme. See:
 
-If you want to have your custom properties listed on the kcContext (at the type level) you can augment the KcContext type definition. [More info](https://github.com/keycloakify/keycloakify/issues/229#issuecomment-1635883568).
+{% content-ref url="environment-variables.md" %}
+[environment-variables.md](environment-variables.md)
+{% endcontent-ref %}
 
-You can also use it to access Keycloak environment variables in your theme. [More info](https://github.com/keycloakify/keycloakify/issues/288).\
-\
-You can find [here](https://github.com/codegouvfr/sill-web/commit/01a58e06a007fa06499214f87d9d207981c3bbf7) a practical example of environment variables.
+### doCreateJar
 
-### bundler
+default: true
 
-_Introduced in 6.11.4_
+_Introduced in 9.0_
 
-Configure if you want Keycloakify to build the final `.jar` for you or not.
+Tell wether or not you want Keycloakify to bundle your theme within a .jar file.
 
-{% code title="package.json" %}
-```json
-{
+{% tabs %}
+{% tab title="Vite" %}
+<pre class="language-typescript" data-title="vite.config.ts"><code class="lang-typescript">import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { keycloakify } from "keycloakify/vite-plugin";
+
+export default defineConfig({
+  plugins: [
+    react(), 
+    keycloakify({
+<strong>      doCreateJar: false
+</strong>    })
+  ],
+})
+</code></pre>
+{% endtab %}
+
+{% tab title="Webpack" %}
+<pre class="language-json" data-title="package.json"><code class="lang-json">{
     "keycloakify": {
-        "bundler": "none"
-    }
+<strong>        "doCreateJar": false
+</strong>    }
 }
-```
-{% endcode %}
-
-Possibles values are:
-
-* `"keycloakify"` (default): Keycloakify will build the .jar file.
-* `"none"`: Keycloakify will not create a .jar file.
-* `"mvn"` (legacy): Keycloakify will use Maven to bundle the .jar file. This option is to use only if you experience problem with "keycloakify". It require mvn to be installed. If you have to resort to this option [please open an issue about it](https://github.com/InseeFrLab/keycloakify/issues/new) so we can see wha't wrong with our way of building the `.jar` file.
-
-You can also convigure this value using an environement variable:
-
-```bash
-KEYCLOAKIFY_BUNDLER=none npx keycloakify
-```
+</code></pre>
+{% endtab %}
+{% endtabs %}
 
 ### groupId
 
@@ -70,8 +139,26 @@ _Introduced in 6.11_
 
 Configure the `groupId` that will appear in the `pom.xml` file.
 
-<figure><img src=".gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
+{% tabs %}
+{% tab title="Vite" %}
+<pre class="language-typescript" data-title="vite.config.ts"><code class="lang-typescript">import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { keycloakify } from "keycloakify/vite-plugin";
+
+export default defineConfig({
+  plugins: [
+    react(), 
+    keycloakify({
+<strong>      groupId: "dev.keycloakify.demo-app-advanced.keycloak"
+</strong>    })
+  ],
+})
+</code></pre>
+{% endtab %}
+
+{% tab title="Webpack" %}
 {% code title="package.json" %}
 ```json
 {
@@ -81,10 +168,12 @@ Configure the `groupId` that will appear in the `pom.xml` file.
 }
 ```
 {% endcode %}
+{% endtab %}
+{% endtabs %}
 
-By default it's the package.json hompage field at reverse with .keycloak at the end.
+By default it's the package.json homepage field at reverse with .keycloak at the end.
 
-You can overwrite this using an environement variable:
+You can overwrite this using an environment variable:
 
 ```bash
 KEYCLOAKIFY_GROUP_ID="com.your-company.your-project.keycloak" npx keycloakify
@@ -96,8 +185,26 @@ _Introduced in 6.11_
 
 Configure the `artifactId` that will appear in the `pom.xml` file.
 
-<figure><img src=".gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
+{% tabs %}
+{% tab title="Vite" %}
+<pre class="language-typescript" data-title="vite.config.ts"><code class="lang-typescript">import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { keycloakify } from "keycloakify/vite-plugin";
+
+export default defineConfig({
+  plugins: [
+    react(), 
+    keycloakify({
+<strong>      artifactId: "keycloakify-advanced-starter-keycloak-theme"
+</strong>    })
+  ],
+})
+</code></pre>
+{% endtab %}
+
+{% tab title="Webpack" %}
 {% code title="package.json" %}
 ```json
 {
@@ -107,10 +214,12 @@ Configure the `artifactId` that will appear in the `pom.xml` file.
 }
 ```
 {% endcode %}
+{% endtab %}
+{% endtabs %}
 
 By default it's `<themeName>-keycloak-theme` See, [`keycloak.themeName`](build-options.md#keyclokify.themename) option.
 
-You can overwrite this using an environement variable:
+You can overwrite this using an environment variable:
 
 ```bash
 KEYCLOAKIFY_ARTIFACT_ID="my-cool-theme" npx keycloakify
@@ -120,29 +229,57 @@ KEYCLOAKIFY_ARTIFACT_ID="my-cool-theme" npx keycloakify
 The `artifactId` also affects [the name of the `.jar` file](https://github.com/InseeFrLab/keycloakify/blob/9f72024c61b1b36d71a42b242c05d7ac793e049b/src/bin/keycloakify/generateJavaStackFiles.ts#L85).
 {% endhint %}
 
-### keycloakVersionDefaultAssets
+### loginThemeResourcesFromKeycloakVersion
 
 Default: 11.0.3
 
-{% hint style="warning" %}
-Only use this param if you know what you are doing. [See related issue](https://github.com/keycloakify/keycloakify/issues/276).
-{% endhint %}
+This replaces `keycloakVersionDefaultAssets`.
 
+The default login `Template.tsx` imports CSS resources that are copied from the Keycloak version specified by this parameter.\
+This is not something you should worry about too much. These imports are mostly there so that the pages that Keycloakify provides by default match the ones of the default theme. You should, however, strive to use your own assets; after all, this is the point of creating a theme.\
+\
+Example where Keycloak resources are imported in the login theme:
+
+* [In Template.tsx, css imports](https://github.com/keycloakify/keycloakify-starter/blob/92b20fe74154ef8cf037f4b156eb3b2e5264a074/src/keycloak-theme/login/Template.tsx#L37-L40)
+* [In LoginOtp, js import](https://github.com/keycloakify/keycloakify/blob/402c6fc64a26268b6f2f7222e4f11ff07de452f8/src/login/pages/LoginOtp.tsx#L26)
+
+{% tabs %}
+{% tab title="Vite" %}
+<pre class="language-typescript" data-title="vite.config.ts"><code class="lang-typescript">import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { keycloakify } from "keycloakify/vite-plugin";
+
+export default defineConfig({
+  plugins: [
+    react(), 
+    keycloakify({
+<strong>      loginThemeResourcesFromKeycloakVersion: "21.0.1"
+</strong>    })
+  ],
+})
+</code></pre>
+{% endtab %}
+
+{% tab title="Webpack" %}
 {% code title="package.json" %}
 ```json
 {
     "keycloakify": {
-        "keycloakVersionDefaultAssets": "21.0.1"
+        "loginThemeResourcesFromKeycloakVersion": "21.0.1"
     }
 }
 ```
 {% endcode %}
+{% endtab %}
+{% endtabs %}
+
+Note that for account theme we do not enable to specify the version, the assets used are fixed to Keycloak 21.1.2.
 
 ### version
 
 Configure the version that will appear in the `pom.xml` file.
 
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 By default the version that is used is the one in the package.json of your project
 
@@ -154,7 +291,7 @@ By default the version that is used is the one in the package.json of your proje
 ```
 {% endcode %}
 
-But you can overwrite this value using an environnement variable (_Introduced in 6.11)_:
+But you can overwrite this value using an environment variable (_Introduced in 6.11)_:
 
 ```bash
 KEYCLOAKIFY_THEME_VERSION="4.5.6" npx keycloakify
@@ -190,10 +327,28 @@ _Introduced in 7.5.0_
 
 This is the name of the theme in the Keycloak admin select:
 
-<figure><img src=".gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
 By default it's `package.json["name"]`
 
+{% tabs %}
+{% tab title="Vite" %}
+<pre class="language-typescript" data-title="vite.config.ts"><code class="lang-typescript">import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { keycloakify } from "keycloakify/vite-plugin";
+
+export default defineConfig({
+  plugins: [
+    react(), 
+    keycloakify({
+<strong>      themeName: "my-custom-name"
+</strong>    })
+  ],
+})
+</code></pre>
+{% endtab %}
+
+{% tab title="Webpack" %}
 {% code title="package.json" %}
 ```json
 {
@@ -203,66 +358,116 @@ By default it's `package.json["name"]`
 }
 ```
 {% endcode %}
+{% endtab %}
+{% endtabs %}
 
-### extraThemeNames
+You can also provide an array if you want to Keycloakify to create multiple theme variant:
 
-_Introduced in 7.12_
+{% tabs %}
+{% tab title="Vite" %}
+{% code title="vite.config.ts" %}
+```typescript
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { keycloakify } from "keycloakify/vite-plugin";
 
-This option let you pack multiple themes variant in a single `.jar` bundle. In vanilla Keycloak themes you have the ability to extend a base theme. There is now an idiomatic way of achieving the same result by using this option.
+export default defineConfig({
+  plugins: [
+    react(), 
+    keycloakify({
+      themeName: [ "keycloakify-starter", "keycloakify-starter-variant-1" ]
+    })
+  ],
+})
+```
+{% endcode %}
+{% endtab %}
 
+{% tab title="Webpack" %}
 {% code title="package.json" %}
 ```json
 {
     "keycloakify": {
-        "extraThemeNames": [ 
-            "keycloakify-starter-variant-1", 
-            "keycloakify-starter-variant-2"
-        ]
+        "themeName": [ "keycloakify-starter", "keycloakify-starter-variant-1" ]
     }
 }
 ```
 {% endcode %}
+{% endtab %}
+{% endtabs %}
+
+This option deprecates `extraThemeNames`and let you pack multiple themes variant in a single `.jar` bundle. In vanilla Keycloak themes you have the ability to extend a base theme. There is now an idiomatic way of achieving the same result by using this option.
 
 This will make the theme variant appear in the Keycloak admin select input:
 
-<figure><img src=".gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 The theme name will be available on the `kcContext`:
 
-<figure><img src=".gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
-You'll be able to implement different behaviour based on which theme variant is active:
+You'll be able to implement different behaviour based on which theme variant is the current one:
 
-<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
-### `areAppAndKeycloakServerSharingSameDomain` (deprecated)
+To load different global css file based on the theme name you can implement this strategy:
 
-This option is only considered when building with [`--external-assets`](build-options.md#external-assets).
+```typescript
+// src/keycloak-theme/login/useGlobalStylesheet.ts
+import { useMemo } from "react";
 
-Set to `true` it tels Keycloakify that you have configured your reverse proxy so that your app and your Keycloak server are under the same domain, example:
-
-* _https://example.com/auth_: Keycloak.
-* _https://example.com (or https://example.com/x/y/z)_: Your App
-
-Example:
-
-<pre class="language-json" data-title="package.json"><code class="lang-json">{
-    "keycloakify": {
-<strong>        "areAppAndKeycloakServerSharingSameDomain": true
-</strong>    }
+export function useGlobalStylesheet(themeName: string){
+    useMemo(() => {
+        switch(themeName){
+            case "keycloakify-starter":
+                // @ts-expect-error
+                import("./keycloakify-starter.css");
+                break;
+            case "keycloakify-starter-variant-1":
+                // @ts-expect-error
+                import("./keycloakify-starter-variant-1.css");
+                break;
+        }
+    }, [themeName]);
 }
-</code></pre>
+```
 
-When enabled you don't need to specify a `homepage` field in the `package.json`
+```tsx
+// src/keycloak-theme/login/KcApp.tsx
 
-## CLI options
+import { useGlobalStylesheet } from "./useGlobalStylesheet";
+// ...
 
-Options that can be passed to the `npx keycloakify` command.
+export default function KcApp(props: { kcContext: KcContext; }) {
+  const { kcContext }= props;
+  // ...
+  
+  useGlogalStylesheet(kcContext.themeName);
 
-### `--silent`
+  // ...
+```
 
-Prevent the build command from generating outputs.
+### silent
+
+Options that can be passed to the `npx keycloakify` command. With `npx keycloakify --silent` no output is printed to the console.
+
+### XDG\_CACHE\_HOME
+
+> This option is not as important to implement as it use to be, Keycloakify is much more optimized in the latest releases.
+
+Keycloakify needs to download resources from the Keycloak project to build your theme. To prevent these resources from being downloaded repeatedly, Keycloakify caches them by default in `node_modules/.cache`. However, you can specify a different location by setting the `XDG_CACHE_HOME` environment variable.\
+Example: `XDG_CACHE_HOME=/home/runner/.cache/yarn npx keycloakify`
+
+This is particularly useful [in your CI workflow](https://github.com/keycloakify/keycloakify-starter/blob/92b20fe74154ef8cf037f4b156eb3b2e5264a074/.github/workflows/ci.yaml#L19-L21) to ensure that the cache persists across runs (see the documentation for the bahmutov/npm-install GitHub Action).
+
+### PUBLIC\_DIR\_PATH
+
+> Only relevant in webpack project, in Vite, it's read from your vite.config.ts file!
+
+Default: `~/public`
+
+Example: `npx PUBLIC_DIR_PATH=./web/public npx copy-keycloak-resources-to-public`
 
 {% embed url="https://cloud-iam.com/?mtm_campaign=keycloakify-deal&mtm_source=keycloakify-doc-build-options" %}
-Feeling overwhelmed? Check out our exclusive sponsor's Cloud IAM consulting services to simplify your experience.
+Feeling overwhelmed? Check out our exclusive sponsor's Cloud-IAM consulting services to simplify your experience.
 {% endembed %}

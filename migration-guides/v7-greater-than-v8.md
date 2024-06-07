@@ -1,6 +1,4 @@
-# ⬆ v7 -> v8
-
-
+# ⬆️ v7 -> v8
 
 * Remove the `public/keycloak-resources` directory.
 * The [`--external-assets` build option has been removed](https://docs.keycloakify.dev/v/v7/build-options#external-assets-deprecated) it was a performance optimization that is no longer relevant now that we have lazy loading.

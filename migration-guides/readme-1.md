@@ -2,7 +2,7 @@
 description: Migration guide from v5 to v6
 ---
 
-# ⬆ v5 -> v6
+# ⬆️ v5 -> v6
 
 ### Main script renamed to `keycloakify`
 
@@ -35,7 +35,7 @@ You can search and replace `build-keycloak-theme` -> `keycloakify` in your proje
 
 ### Components exported using default export
 
-In order to enable you to use `React.lazy()`, Keyclaokify components are now exported with default exports instead of named exports. &#x20;
+In order to enable you to use `React.lazy()`, Keycloakify components are now exported with default exports instead of named exports.
 
 ```diff
 -import { KcApp, defaultKcProps, getKcContext } from "keycloakify";
@@ -45,16 +45,16 @@ In order to enable you to use `React.lazy()`, Keyclaokify components are now exp
 +import Login from "keycloakify/lib/components/Login";
 ```
 
-Once you're at it, it might be a good time to update your app to use `<Suspense/>` and `React.lazy()` in order to reduce your bundle size.  See [keycloakify-starter (CSS only)](https://github.com/garronej/keycloakify-starter) or [keycloakify-advanced-starter (component level customization)](https://github.com/garronej/keycloakify-advanced-starter) to see how it's suposed to be setup.
+Once you're at it, it might be a good time to update your app to use `<Suspense/>` and `React.lazy()` in order to reduce your bundle size. See [keycloakify-starter (CSS only)](https://github.com/garronej/keycloakify-starter) or [keycloakify-advanced-starter (component level customization)](https://github.com/garronej/keycloakify-advanced-starter) to see how it's suposed to be setup.
 
-You can also have a look at a real world migration: &#x20;
+You can also have a look at a real world migration:
 
 * [An app using Keycloakify v5](https://github.com/etalab/sill-web/tree/f1b93012555f8a4c1c5e5afd9020b6246421b64e)
 * [The same app after upgrade to v6](https://github.com/etalab/sill-web/tree/main/src/ui/components/KcApp)
 
 ### i18n: Adding i18n messages keys
 
-In v5 and prior, Keycloakify only provided [a very hacky way](https://docs.keycloakify.dev/v/v5/adding-text-keys) of customizing internatiznalized message. &#x20;
+In v5 and prior, Keycloakify only provided [a very hacky way](https://docs.keycloakify.dev/v/v5/adding-text-keys) of customizing internatiznalized message.
 
 Keycloakify v6 now has a proper i18n api.
 

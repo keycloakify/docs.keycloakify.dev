@@ -1,20 +1,26 @@
-# ⚠ Limitations
+# ⚠️ Limitations
 
 ### Some pages still have the default theme. Why?
 
-This project only support out of the box the most common user facing pages of Keycloak login.
+This project only support out of the box the most common user facing pages of Keycloak but not all of them. You might find out that a page that you need to customize is not yet provided as a react component by Keycloakify.
 
-To see the complete list of pages that Keycloak provide you can download the base theme with the following command
+[Here](https://github.com/InseeFrLab/keycloakify/tree/main/src/login/pages) are the login pages currently implemented vs [all the existing pages](https://github.com/keycloak/keycloak/tree/main/themes/src/main/resources/theme/base/login).
 
-`npx -p keycloakify download-builtin-keycloak-theme`&#x20;
+[Here](https://github.com/InseeFrLab/keycloakify/tree/main/src/account/pages) are the account pages currently implemented vs [all the existing pages](https://github.com/keycloak/keycloak/tree/21.1.2/themes/src/main/resources/theme/base/account).\
+\
+You can preview the pages looks in [the Storybook](https://storybook.keycloakify.dev/?path=/story/introduction--page). (Well of course the pages that are not yet implemented will not apprear here.)
 
-[Video demo](https://user-images.githubusercontent.com/6702424/164304458-934b0e1d-9de7-4bb4-8a1c-e06a70b1636a.mov) &#x20;
+If the page you are looking for is implemented you can import it in you project with this command:
 
-[Here](https://github.com/InseeFrLab/keycloakify/tree/main/src/login/pages) are the login pages currently implemented vs [all the existing pages](https://github.com/keycloak/keycloak/tree/main/themes/src/main/resources/theme/base/login). &#x20;
+`npx -p keycloakify download-builtin-keycloak-theme`
 
-[Here](https://github.com/InseeFrLab/keycloakify/tree/main/src/account/pages) are the acount pages currently implemented vs [all the existing pages](https://github.com/keycloak/keycloak/tree/main/themes/src/main/resources/theme/base/account).
+[Video demo](https://user-images.githubusercontent.com/6702424/164304458-934b0e1d-9de7-4bb4-8a1c-e06a70b1636a.mov)\
+\
+(Before copying the page in your project try to see if you can't achieve the desired look by customizing the Template.tsx)\
+\
+Otherwise, keep reading.
 
-#### I have established that a page that I need isn't supported out of the box by Keycloakify, now what? &#x20;
+#### I have established that a page that I need isn't supported out of the box by Keycloakify, now what?
 
 {% tabs %}
 {% tab title="I submit a PR to Keycloakify" %}
@@ -24,9 +30,9 @@ To see the complete list of pages that Keycloak provide you can download the bas
 {% endtab %}
 
 {% tab title="I do it only for my project" %}
-Keycloakify also enables you to declare custom ftl pages. &#x20;
+Keycloakify also enables you to declare custom ftl pages.
 
-Check out how `my-extra-page-1.ftl` and `my-extra-page-2.ftl` where added to [the demo project](https://github.com/garronej/keycloakify-demo-app/tree/look\_and\_feel). &#x20;
+Check out how `my-extra-page-1.ftl` and `my-extra-page-2.ftl` where added to [the starter project](https://github.com/keycloakify/keycloakify-starter/tree/main).
 
 Main takeaways are:
 
@@ -38,84 +44,22 @@ Main takeaways are:
 
 ### `process.env.PUBLIC_URL` not supported.
 
-Using `process.env.PUBLIC_URL` is not directly supported (but it will be in the future).  \
-As a temporary workaround we you can do: &#x20;
+The environment variable process.env.PUBLIC\_URL can't be directly used in a Keycloakify project but there is a workaround. See:
 
-```typescript
-import { kcContext as kcLoginThemeContext } from "keycloak-theme/login/kcContext";
-import { kcContext as kcAccountThemeContext } from "keycloak-theme/login/kcContext";
+[#import-assets-from-the-public-directory](importing-assets.md#import-assets-from-the-public-directory "mention")
 
-const PUBLIC_URL = (()=>{
-
-    const kcContext = (()=>{
-
-        if( kcLoginThemeContext !== undefined ){
-            return kcLoginThemeContext;
-        }
-        
-        if( kcAccountThemeContext !== undefined ){
-            return kcLoginThemeContext
-        }
-
-        return undefined;
-
-    })();
-
-    return (kcContext === undefined || process.env.NODE_ENV === "development")
-        ? process.env.PUBLIC_URL
-        : `${kcContext.url.resourcesPath}/build`;
-
-})();
-
-// Assuming you have my-image.png in your public directory 
-// you can get an URL for it that will be correct regardless of the context with:  
-const imageUrl = `${PUBLIC_URL}/my-image.png`;
-```
+In Vite `import.meta.env.BASE_URL` is supported!
 
 ### Self hosted fonts
 
-This scenario **won't** work
+Importing self hosted font does not work out of the box like it would in a regular React project.\
+See workaround:
 
-{% code title="public/fonts.css" %}
-```css
-@font-face {
-  font-family: Marianne;
-  src: url("./fonts/Marianne-Light.woff2") format("woff2");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-```
-{% endcode %}
-
-{% code title="public/index.html" %}
-```html
-<link rel="stylesheet" href="%PUBLIC_URL%/font.css" />
-```
-{% endcode %}
-
-As a workaround you can have your `@font-face` import directly in a style tage of your index.html `<head />`.
-
-{% code title="public/index.html" %}
-```diff
--<link rel="stylesheet" href="%PUBLIC_URL%/font.css" />
-+<style>
-+ @font-face {
-+   font-family: Marianne;
-+   src: url("%PUBLIC_URL%/fonts/Marianne-Light.woff2") format("woff2");
-+   font-weight: 300;
-+   font-style: normal;
-+   font-display: swap;
-+ }
-+</style>
-```
-{% endcode %}
-
-Example [here](https://github.com/garronej/keycloakify-demo-app/blob/9aa2dbaec28a7786d6b2983c9a59d393dec1b2d6/public/index.html#L27-L73) (and the font are [here](https://github.com/garronej/keycloakify-demo-app/tree/main/public/fonts/WorkSans)).
+[#self-hosted-fonts](importing-assets.md#self-hosted-fonts "mention")
 
 #### Other workarounds
 
-* You can circumvent the problem by avoiding hosting your font yourself using Google Fonts, Font Awesome  or any other font provider.
+* You can circumvent the problem by avoiding hosting your font yourself using Google Fonts, Font Awesome or any other font provider.
 * You can [self host your font somewhere](https://github.com/garronej/keycloakify-demo-app/blob/2de8a9eb6f5de9c94f9cd3991faad0377e63268c/src/fonts.scss#L16), you will need to enable [`Access-Control-Allow-Origin`](https://github.com/garronej/keycloakify-demo-app/blob/2de8a9eb6f5de9c94f9cd3991faad0377e63268c/nginx.conf#L17-L19) on the server serving your fonts.
 
 ### Admin Console Theme not supported
@@ -128,13 +72,13 @@ If you are missing this feature [open an issue about it](https://github.com/Inse
 
 The following page isn't customizable yet.
 
-<figure><img src=".gitbook/assets/image (10).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (13).png" alt="" width="563"><figcaption></figcaption></figure>
 
 It's however planned to enable this. Follow the progress in [this issue](https://github.com/keycloakify/keycloakify/issues/148).
 
 ### Field Names can't be runtime generated
 
-Keycloakify analyze your code to see what field name are used. As a result your field names should be hard coded in your code (If you are [using user profile](realtime-input-validation.md) you don't have to worry about it). &#x20;
+Keycloakify analyze your code to see what field name are used. As a result your field names should be hard coded in your code (If you are [using user profile](realtime-input-validation.md) you don't have to worry about it).
 
 ```jsx
 // OK ✅
@@ -146,5 +90,5 @@ messagesPerField.exists(`foo-${bar}`);
 ```
 
 {% embed url="https://cloud-iam.com/?mtm_campaign=keycloakify-deal&mtm_source=keycloakify-doc-limitations" %}
-Feeling overwhelmed? Check out our exclusive sponsor's Cloud IAM consulting services to simplify your experience.
+Feeling overwhelmed? Check out our exclusive sponsor's Cloud-IAM consulting services to simplify your experience.
 {% endembed %}

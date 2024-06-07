@@ -2,18 +2,17 @@
 description: Consent page
 ---
 
-# ✒ Terms and conditions
+# ✒️ Terms and conditions
 
 {% embed url="https://user-images.githubusercontent.com/6702424/164942769-0d5420e3-c62f-4187-977e-316a113fb037.mp4" %}
 
-Many organizations have a requirement that when a new user logs in for the first time, they need to agree to the terms and conditions of the website. &#x20;
+Many organizations have a requirement that when a new user logs in for the first time, they need to agree to the terms and conditions of the website.
 
-First you need to enable the required action on the Keycloak server admin console:\
-
+First you need to enable the required action on the Keycloak server admin console:\\
 
 ![](https://user-images.githubusercontent.com/6702424/114280501-dad2e600-9a39-11eb-9c39-a225572dd38a.png)
 
-Then you load your own therms in Markdown format like this: &#x20;
+Then you load your own terms in Markdown format like this:
 
 <pre class="language-tsx" data-title="login/KcApp.tsx"><code class="lang-tsx">import { lazy, Suspense } from "react";
 import Fallback, { type PageProps } from "keycloakify/login";
@@ -34,24 +33,24 @@ export default function App(props: { kcContext: KcContext; }) {
 <strong>    useDownloadTerms({
 </strong><strong>	kcContext,
 </strong><strong>	"downloadTermMarkdown": async ({ currentLanguageTag }) => {
-</strong><strong>
-</strong><strong>            const tos_url = (() => {
+</strong>
+<strong>            const tos_url = (() => {
 </strong><strong>                switch (currentLanguageTag) {
 </strong><strong>                    case "fr": return tos_fr_url;
 </strong><strong>                    default: return tos_en_url;
 </strong><strong>                }
 </strong><strong>            })();
-</strong><strong>
-</strong><strong>
-</strong><strong>            if ("__STORYBOOK_ADDONS" in window) {
+</strong>
+
+<strong>            if ("__STORYBOOK_ADDONS" in window) {
 </strong><strong>                // NOTE: In storybook, when you import a .md file you get the content of the file.
 </strong><strong>                // In Create React App on the other hand you get an url to the file.
 </strong><strong>                return tos_url;
 </strong><strong>            }
-</strong><strong>
-</strong><strong>            const markdownString = await fetch(tos_url).then(response => response.text());
-</strong><strong>
-</strong><strong>            return markdownString;
+</strong>
+<strong>            const markdownString = await fetch(tos_url).then(response => response.text());
+</strong>
+<strong>            return markdownString;
 </strong><strong>	}
 </strong><strong>    });
 </strong>
@@ -73,10 +72,14 @@ export default function App(props: { kcContext: KcContext; }) {
 }
 </code></pre>
 
-You can also eject the terms.ftl page if you're not happy with the default look: &#x20;
+You can also eject the terms.ftl page if you're not happy with the default look:
 
 {% embed url="https://github.com/codegouvfr/keycloakify-starter/blob/main/src/keycloak-theme/login/pages/Login.tsx" %}
 
+Nice to know: You can access user infos and attribute in the Terms page. This enables you to display different terms depending on what option the user selected on the registration page:
+
+<figure><img src=".gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+
 {% embed url="https://cloud-iam.com/?mtm_campaign=keycloakify-deal&mtm_source=keycloakify-doc-terms-and-conditions" %}
-Feeling overwhelmed? Check out our exclusive sponsor's Cloud IAM consulting services to simplify your experience.
+Feeling overwhelmed? Check out our exclusive sponsor's Cloud-IAM consulting services to simplify your experience.
 {% endembed %}

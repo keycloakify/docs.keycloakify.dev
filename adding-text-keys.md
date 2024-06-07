@@ -11,7 +11,7 @@ In Keycloakify you don't [directly edit the `messages_xx.properties` files](http
 {% endhint %}
 
 {% embed url="https://github.com/codegouvfr/keycloakify-starter/blob/main/src/keycloak-theme/login/i18n.ts" %}
-Overwiting default messages or defining new ones
+Overwriting default messages or defining new ones
 {% endembed %}
 
 {% embed url="https://github.com/codegouvfr/keycloakify-starter/blob/cb5844c62381efed7b303886cbe460c055a62c21/src/keycloak-theme/login/KcApp.tsx#L37-L46" %}
@@ -25,5 +25,5 @@ You can set the language you'll get in `i18n.curentLanguageTag` by specifying `u
 {% endhint %}
 
 {% embed url="https://cloud-iam.com/?mtm_campaign=keycloakify-deal&mtm_source=keycloakify-doc-adding-text-keys" %}
-Feeling overwhelmed? Check out our exclusive sponsor's Cloud IAM consulting services to simplify your experience.
+Feeling overwhelmed? Check out our exclusive sponsor's Cloud-IAM consulting services to simplify your experience.
 {% endembed %}

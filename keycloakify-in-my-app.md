@@ -1,63 +1,189 @@
 ---
-description: Collocating your App and your frontend code
+description: Setting up Keycloakify in your Web App
 ---
 
 # 🔩 Keycloakify in my App
 
-A Keycloakify theme do not need to be a standalone project.\
-Under certain conditions you can collocate your React app and your Keycloak theme. This enable to design the Keycloak user facing pages like if they where any other page of your project.  (it's what's implemented in [the starter project](https://github.com/keycloakify/keycloakify-starter)).
+{% tabs %}
+{% tab title="Vite" %}
+If you are starting a new project, the best approach is to fork the starter repo, read its readme and start from here.
 
-{% hint style="warning" %}
-Currently you can only collocate your Keycloak theme with WebPack SPAs. Typically, [create-react-app](https://create-react-app.dev/) projects.  \
-It's not the case of your project? **Don't worry!** You can still use Keycloakify but your theme will need to be a standalone project. Just follow [the instructions to make the starter project standalone](https://github.com/keycloakify/keycloakify-starter#standalone-keycloak-theme).&#x20;
+{% embed url="https://github.com/keycloakify/keycloakify-starter" %}
 
-We are working toward making Keycloakify agnostic to the project it's colocated with.  \
-This will enable collocation with Vite, Next, Gatsby... [Follow the progress.](https://github.com/keycloakify/keycloakify/pull/275)\
+If you are familiar with how Keycloakify work and you want to set it up in an existing Vite project here is what you need to do:
 
-{% endhint %}
-
-Before moving on and setting up Keycloakify in your project, first, mess around with [the starter project](https://github.com/codegouvfr/keycloakify-starter) to familiarize yourself with Keycloakify.
-
-Once you think you are ready to move on:
+#### Add it to your dependencies
 
 ```bash
-yarn add keycloakify
+yarn add keycloakify # Or npm install --save keycloakify
 ```
 
-add the following script
+#### Enable the Keycloakify's Vite plugin
+
+<pre class="language-tsx" data-title="vite.config.ts"><code class="lang-tsx">import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+<strong>import { keycloakify } from "keycloakify/vite-plugin";
+</strong>
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [
+    react(), 
+<strong>    keycloakify()
+</strong>  ]
+})
+</code></pre>
+
+#### Register the command to build your theme
+
+<pre class="language-json" data-title="package.json"><code class="lang-json">...
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc &#x26;&#x26; vite build",
+    "storybook": "storybook dev -p 6006",
+<strong>    "build-keycloak-theme": "yarn build &#x26;&#x26; keycloakify"
+</strong>  },
+...
+</code></pre>
+
+{% hint style="info" %}
+Monorepos: You can run Keycloakify from the root of your project with:
+
+`npx keycloakify --project <path>`
+
+`<path>` would be typically something like `packages/keycloak-theme`
+{% endhint %}
+
+#### Storybook: List the public/ directory as static dir
+
+<pre class="language-typescript" data-title=".storybook/main.ts"><code class="lang-typescript">import type { StorybookConfig } from "@storybook/react-vite";
+
+const config: StorybookConfig = {
+  // ...
+<strong>  staticDirs: ["../public"]
+</strong>};
+export default config;
+</code></pre>
+
+#### Sources directory structure
+
+The acceptable directory hierarchy is the following:
+
+```
+src/
+  keycloak-theme/
+    login/
+    account/
+    email/
+    
+===OR===
+
+src/
+  foo/
+    bar/
+      keycloak-theme/
+        login/
+        account/
+        email/
+
+===OR===
+
+src/
+  login/
+  account/
+  email/
+```
+
+You can have only `login` for example if you don't implement and account or email theme.
+
+You need, however, to have a `src` directory. This is not customizable.
+{% endtab %}
+
+{% tab title="Create React App (Webpack)" %}
+{% embed url="https://github.com/keycloakify/keycloakify-starter-cra" %}
+Create React App version of the starter
+{% endembed %}
+
+If you are familiar with how Keycloakify work and you want to set it up in an existing Create React App project here is what you need to do:
+
+{% hint style="info" %}
+If your project is using Webpack but not Create React App you might want to checkout [this thread](https://github.com/keycloakify/keycloakify/issues/384).
+{% endhint %}
+
+#### Add it to your dependencies
+
+```bash
+yarn add keycloakify rimraf # Or npm install --save keycloakify rimraf
+```
+
+#### Register the commands to build your theme
 
 {% code title="package.json" %}
 ```json
-{
-  "scripts": {
-     ...
-     "prepare": "copy-keycloak-resources-to-public", //This is only for beeing able to test the theme locally in storybook or with an explicit mockPageId
-     "build-keycloak-theme": "yarn build && keycloakify"
-  }
-}
-```
-{% endcode %}
-
-Git ignore the keycloak build directory:
-
-{% code title=".gitignore" %}
-```diff
 ...
-/build_keycloak
+  "scripts": {
+    "start": "copy-keycloak-resources-to-public && react-scripts start",
+    "storybook": "copy-keycloak-resources-to-public && start-storybook -p 6006",
+    "build": "react-scripts build && rimraf build/keycloak-resources",
+    "build-keycloak-theme": "yarn build && keycloakify"
+  },
+...
 ```
 {% endcode %}
 
-That's it. You can build your App as a Keycloak theme with `yarn build-keycloak-theme`\
-Reproduce the directory structure of [the starter project](https://github.com/codegouvfr/keycloakify-starter).
+{% hint style="info" %}
+Monorepos: You can run Keycloakify from the root of your project with:
 
-You can eject pages using the `npx eject-keycloak-page` command.&#x20;
+`npx keycloakify --project <path>`
 
-You might now want to have a look at the available build options:
+`<path>` would be typically something like `packages/keycloak-theme`
+{% endhint %}
 
-{% content-ref url="build-options.md" %}
-[build-options.md](build-options.md)
-{% endcontent-ref %}
+#### Storybook: List the public/ directory as static dir
+
+<pre class="language-typescript" data-title=".storybook/main.ts"><code class="lang-typescript">import type { StorybookConfig } from "@storybook/react-vite";
+
+const config: StorybookConfig = {
+  // ...
+<strong>  staticDirs: ["../public"]
+</strong>};
+export default config;
+</code></pre>
+
+#### Sources directory structure
+
+The acceptable directory hierarchy is the following:
+
+```
+src/
+  keycloak-theme/
+    login/
+    account/
+    email/
+    
+===OR===
+
+src/
+  foo/
+    bar/
+      keycloak-theme/
+        login/
+        account/
+        email/
+
+===OR===
+
+src/
+  login/
+  account/
+  email/
+```
+
+You can have only `login` for example if you don't implement and account or email theme.
+
+You need, however, to have a `src` directory. This is not customizable.
+{% endtab %}
+{% endtabs %}
 
 {% embed url="https://cloud-iam.com/?mtm_campaign=keycloakify-deal&mtm_source=keycloakify-doc-keycloakify-in-my-app" %}
-Feeling overwhelmed? Check out our exclusive sponsor's Cloud IAM consulting services to simplify your experience.
+Feeling overwhelmed? Check out our exclusive sponsor's Cloud-IAM consulting services to simplify your experience.
 {% endembed %}
