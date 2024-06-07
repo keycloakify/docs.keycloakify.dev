@@ -16,6 +16,7 @@
 * [🖼️ Importing assets](importing-assets-1.md)
 * [🔗 Redirecting your users your the login pages](redirecting-your-users-your-the-login-pages.md)
 * [🌎 Internationalization and translations](adding-text-keys.md)
+* [🎭 Theme Variants](theme-variants.md)
 * [🔧 Environment Variables](environment-variables.md)
 * [📄 Terms and conditions](terms-and-conditions.md)
 * [📧 Email customization](email-customization.md)
@@ -36,4 +37,5 @@
 
 ## Keycloak configuration
 
-* [Page 1](keycloak-configuration/page-1.md)
+* [Customizing the registration form](keycloak-configuration/customizing-the-registration-form.md)
+* [Defining Password Requirements](keycloak-configuration/defining-password-requirements.md)
