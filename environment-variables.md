@@ -1,4 +1,4 @@
-# 🔧 Environment Variables
+# 🔧 Accessing Server Environement Variable
 
 Environment variables defined on the Keycloak server can be transferred to the theme. This allows for a degree of theme customization without necessitating a rebuild. This approach is particularly useful if multiple parties are reusing your theme. As an example, you can distribute a single .jar file to multiple customers, enabling them to modify certain aspect of the login page by defining specific environment variables.
 
@@ -12,7 +12,7 @@ Concretely the ide is to be able, if you start your Keycloak server like this:
     docker-keycloak-with-theme
 </code></pre>
 
-To be able to access MY\_ENV\_VARIABLE value in your theme. (This is assuming you're using docker but for for Helm for example see [this](importing-your-theme-in-keycloak.md#using-helm)).
+To be able to access MY\_ENV\_VARIABLE value in your theme. (This is assuming you're using docker but for for Helm for example see [this](keycloak-configuration/importing-your-theme-in-keycloak.md#using-helm)).
 
 To implement this you need to use [the extraThemeProperties build option](build-options.md#extrathemeproperties) like so:
 
