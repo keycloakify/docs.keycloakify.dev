@@ -2,7 +2,7 @@
 description: Consent page
 ---
 
-# ✒️ Terms and conditions
+# 📄 Terms and conditions
 
 {% embed url="https://user-images.githubusercontent.com/6702424/164942769-0d5420e3-c62f-4187-977e-316a113fb037.mp4" %}
 

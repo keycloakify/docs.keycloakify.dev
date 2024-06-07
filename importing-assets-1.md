@@ -1,4 +1,4 @@
-# 🖋️ Custom font
+# 🖼️ Importing assets
 
 ## Importing Custom assets that aren't fonts
 

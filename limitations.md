@@ -78,7 +78,7 @@ It's however planned to enable this. Follow the progress in [this issue](https:/
 
 ### Field Names can't be runtime generated
 
-Keycloakify analyze your code to see what field name are used. As a result your field names should be hard coded in your code (If you are [using user profile](realtime-input-validation.md) you don't have to worry about it).
+Keycloakify analyze your code to see what field name are used. As a result your field names should be hard coded in your code (If you are [using user profile](broken-reference) you don't have to worry about it).
 
 ```jsx
 // OK ✅
