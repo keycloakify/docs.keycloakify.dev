@@ -1,8 +1,8 @@
-# Importing the JAR
+# 📥 Importing the JAR
 
 Now that you have your theme as a .jar file, let's see how you can import it in Keycloak so that it appears in the dropdown list for selecting theme in the Keycloak Admin console.
 
-<figure><img src="../.gitbook/assets/image (19).png" alt="" width="375"><figcaption><p>Custom login and account theme selected in the Keycloak Admin console</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (19).png" alt="" width="375"><figcaption><p>Custom login and account theme selected in the Keycloak Admin console</p></figcaption></figure>
 
 {% tabs %}
 {% tab title="Docker" %}

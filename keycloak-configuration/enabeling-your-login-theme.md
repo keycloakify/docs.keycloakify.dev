@@ -1,2 +1,0 @@
-# Enabeling your login theme
-

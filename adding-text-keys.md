@@ -4,7 +4,7 @@ description: >-
   Keycloak, define some new messages, or add translation for a new language.
 ---
 
-# 🌎 Internationalization and translations
+# 🌎 Internationalization and Translations
 
 {% hint style="info" %}
 In Keycloakify you don't [directly edit the `messages_xx.properties` files](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FsspJ8BvaNa5VrAWRnnD0%2Fuploads%2FARZ2fA82vANcrQ30kEac%2FUntitled.png?alt=media\&token=14c35c9a-e78d-4cf0-9037-22097eb6071b).
@@ -21,7 +21,7 @@ Using the i18n API
 {% hint style="success" %}
 You can set the language you'll get in `i18n.curentLanguageTag` by specifying `ui_locales=xx` as query parameter when redirecting to your login or register page.
 
-[See how](keycloakify-in-my-app/context-persistence.md).
+[See how](context-persistence.md).
 {% endhint %}
 
 {% embed url="https://cloud-iam.com/?mtm_campaign=keycloakify-deal&mtm_source=keycloakify-doc-adding-text-keys" %}

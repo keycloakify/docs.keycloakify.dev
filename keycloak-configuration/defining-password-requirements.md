@@ -1,2 +1,2 @@
-# Defining Password Requirements
+# 🔒 Defining Password Requirements
 
