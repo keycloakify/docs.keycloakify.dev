@@ -2,7 +2,7 @@
 
 ### Admin Console Theme not supported
 
-<figure><img src=".gitbook/assets/Admin_console_theme_not_supported.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Admin_console_theme_not_supported.png" alt=""><figcaption></figcaption></figure>
 
 If you are missing this feature [open an issue about it](https://github.com/InseeFrLab/keycloakify/issues/new).
 
@@ -10,7 +10,7 @@ If you are missing this feature [open an issue about it](https://github.com/Inse
 
 The following page isn't customizable yet.
 
-<figure><img src=".gitbook/assets/image (13).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (13).png" alt="" width="563"><figcaption></figcaption></figure>
 
 It's however planned to enable this. Follow the progress in [this issue](https://github.com/keycloakify/keycloakify/issues/148).
 

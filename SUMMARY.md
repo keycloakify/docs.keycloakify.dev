@@ -9,24 +9,19 @@
   * [CSS Level](customization-strategy/css-level.md)
   * [React Component level](customization-strategy/react-component-level.md)
 * [📥 Importing your theme in Keycloak](importing-your-theme-in-keycloak.md)
-* [🔩 Integrating Keycloakify to your project](keycloakify-in-my-app/README.md)
+* [🔩 Integrating Keycloakify in your project](keycloakify-in-my-app/README.md)
   * [Monorepo](keycloakify-in-my-app/monorepo.md)
   * [Collocation](keycloakify-in-my-app/collocation.md)
 * [🖋️ Custom font](importing-assets.md)
 * [🖼️ Importing assets](importing-assets-1.md)
-* [🔗 Redirecting your users your the login pages](redirecting-your-users-your-the-login-pages.md)
 * [🌎 Internationalization and translations](adding-text-keys.md)
 * [🎭 Theme Variants](theme-variants.md)
 * [🔧 Environment Variables](environment-variables.md)
 * [📄 Terms and conditions](terms-and-conditions.md)
 * [📧 Email customization](email-customization.md)
 * [📖 Build options](build-options.md)
-* [💂 Email domain acceptlist](email-domain-acceptlist.md)
-* [🛑 Keycloak error in log](keycloak-error-in-log.md)
-* [🌉 Passing values from the App to the theme](context-persistence.md)
-* [💟 Contributing](contributing.md)
-* [⚠️ Limitations](limitations.md)
-* [🤔 How it works](how-it-works.md)
+* [🛫 Redirecting your users your the login pages](context-persistence.md)
+* [🖇️ Integration With Custom Keycloak Extention](integration-with-custom-keycloak-extention.md)
 * [⬆️ Migration guides](migration-guides/README.md)
   * [⬆️ CRA -> Vite](migration-guides/cra-greater-than-vite.md)
   * [⬆️ v8 -> v9](migration-guides/v8-greater-than-v9.md)
@@ -37,5 +32,14 @@
 
 ## Keycloak configuration
 
-* [Customizing the registration form](keycloak-configuration/page-1.md)
+* [Adding form fields to the registration form](keycloak-configuration/adding-form-fields-to-the-registration-form/README.md)
+  * [💂 Email domain acceptlist](keycloak-configuration/adding-form-fields-to-the-registration-form/email-domain-acceptlist.md)
 * [Defining Password Requirements](keycloak-configuration/defining-password-requirements.md)
+
+## FAQ
+
+* [🤔 How it works](faq/how-it-works.md)
+* [⚠️ Limitations](faq/limitations.md)
+* [✅ Passing security audits](faq/passing-security-audits.md)
+* [🛑 Keycloak error in log](faq/keycloak-error-in-log.md)
+* [💟 Contributing](faq/contributing.md)

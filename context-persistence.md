@@ -1,4 +1,4 @@
-# 🌉 Passing values from the App to the theme
+# 🛫 Redirecting your users your the login pages
 
 Let's explore how we can pass query params to the URL before redirecting to the login page so that we can transport some values from the main app to the login page.
 
