@@ -20,12 +20,12 @@
 * [🔧 Environment Variables](environment-variables.md)
 * [📄 Terms and conditions](terms-and-conditions.md)
 * [📧 Email customization](email-customization.md)
-* [⚠️ Limitations](limitations.md)
 * [📖 Build options](build-options.md)
 * [💂 Email domain acceptlist](email-domain-acceptlist.md)
 * [🛑 Keycloak error in log](keycloak-error-in-log.md)
 * [🌉 Passing values from the App to the theme](context-persistence.md)
 * [💟 Contributing](contributing.md)
+* [⚠️ Limitations](limitations.md)
 * [🤔 How it works](how-it-works.md)
 * [⬆️ Migration guides](migration-guides/README.md)
   * [⬆️ CRA -> Vite](migration-guides/cra-greater-than-vite.md)
@@ -37,5 +37,5 @@
 
 ## Keycloak configuration
 
-* [Customizing the registration form](keycloak-configuration/customizing-the-registration-form.md)
+* [Customizing the registration form](keycloak-configuration/page-1.md)
 * [Defining Password Requirements](keycloak-configuration/defining-password-requirements.md)
