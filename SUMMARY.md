@@ -35,7 +35,8 @@
 ## FAQ & HELP
 
 * [🤔 How it Works](faq/how-it-works.md)
-* [❓ Can I use it with Vue or Angular](faq-and-help/can-i-use-it-with-vue-or-angular.md)
+* [❓ Can I use it with Vue or Angular](faq-and-help/can-i-use-it-with-vue-or-angular/README.md)
+  * [Angular](faq-and-help/can-i-use-it-with-vue-or-angular/angular.md)
 * [⚠️ Limitations](faq/limitations.md)
 * [🖇️ Integration With Custom Keycloak Extention](integration-with-custom-keycloak-extention.md)
 * [✅ Passing Security Audits](faq/passing-security-audits.md)
