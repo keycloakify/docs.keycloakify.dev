@@ -28,8 +28,8 @@
   * [Login Theme](keycloak-configuration/enabling-your-theme/login-theme.md)
   * [Account Theme](keycloak-configuration/enabling-your-theme/account-theme.md)
   * [Email Theme](keycloak-configuration/enabling-your-theme/email-theme.md)
-* [✍️ Customizing the Registration Form](keycloak-configuration/adding-form-fields-to-the-registration-form/README.md)
-  * [💂 Email domain acceptlist](keycloak-configuration/adding-form-fields-to-the-registration-form/email-domain-acceptlist.md)
+* [✍️ Adding Registration Form Fields](keycloak-configuration/adding-registration-form-fields/README.md)
+  * [💂 Email domain acceptlist](keycloak-configuration/adding-registration-form-fields/email-domain-acceptlist.md)
 * [🔒 Defining Password Requirements](keycloak-configuration/defining-password-requirements.md)
 
 ## FAQ & HELP
