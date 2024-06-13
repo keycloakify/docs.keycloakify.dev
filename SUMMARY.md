@@ -8,7 +8,7 @@
 * [🎨 Customization Strategy](customization-strategy/README.md)
   * [CSS Level](customization-strategy/css-level.md)
   * [React Component Level](customization-strategy/react-component-level.md)
-* [🔩 Integrating Keycloakify in your Project](keycloakify-in-my-app/README.md)
+* [🔩 Integration in your Project](keycloakify-in-my-app/README.md)
   * [Monorepo](keycloakify-in-my-app/monorepo.md)
   * [Collocation](keycloakify-in-my-app/collocation.md)
   * [Redirecting your user to Keycloak](context-persistence.md)
