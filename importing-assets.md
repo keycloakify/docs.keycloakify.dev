@@ -137,7 +137,7 @@ You would import it like this:
 {% code title="public/index.html" %}
 ```html
 <!-- 🛑 This do not work in keycloakfy --> 
-<link rel="stylesheet" href="%BASE_URL%font.css" />
+<link rel="stylesheet" href="/font.css" />
 ```
 {% endcode %}
 
@@ -148,7 +148,7 @@ This is how you would update your index.html file in order to make it work with 
 
 {% code title="public/index.html" %}
 ```diff
--<link rel="stylesheet" href="%BASE_URL%font.css" />
+-<link rel="stylesheet" href="/font.css" />
 +<style>
 + @font-face {
 +   font-family: Marianne;
