@@ -59,7 +59,7 @@ Then all we have to do is apply the Font font familly, in this example we will u
 
 That's it!
 
-<figure><img src=".gitbook/assets/image (1).png" alt="" width="375"><figcaption><p>Playwrite NL succesfully applied to the header</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1).png" alt="" width="375"><figcaption><p>Playwrite NL succesfully applied to the header</p></figcaption></figure>
 
 ## Using self hosted fonts
 
@@ -73,7 +73,7 @@ Let's see how we would use a self hosted copy [Vercel's Geist](https://vercel.co
 
 First let's download and extract [the font files](https://github.com/keycloakify/keycloakify/releases/download/v0.0.1/geist.zip) in `public/fonts/geist/`:
 
-<figure><img src=".gitbook/assets/image (2).png" alt="" width="265"><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (2) (1).png" alt="" width="265"><figcaption></figcaption></figure>
 
 Then we need to add an inline `<style />` tag in the `index.html`
 
