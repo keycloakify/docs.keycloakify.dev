@@ -58,7 +58,7 @@
 * [🖇️ Integration With Custom Keycloak Extention](integration-with-custom-keycloak-extention.md)
 * [🛑 Errors Keycloak in Logs](faq/keycloak-error-in-log.md)
 * [🙋 How do I add extra pages?](faq-and-help/how-do-i-add-extra-pages.md)
-* [🤓 Can I use react-hooks-form](faq-and-help/can-i-use-react-hooks-form.md)
+* [🤓 Can I use react-hooks-form?](faq-and-help/can-i-use-react-hooks-form.md)
 * [💟 Contributing](faq/contributing.md)
 * [⬆️ Migration Guides](migration-guides/README.md)
   * [⬆️ CRA -> Vite](migration-guides/cra-greater-than-vite.md)
