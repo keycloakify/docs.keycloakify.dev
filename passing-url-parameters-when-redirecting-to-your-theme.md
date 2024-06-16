@@ -1,4 +1,4 @@
-# 🚛 Passing URL Parameters when Redirecting to your Theme
+# 🚛 Passing URL Parameters to your Theme
 
 Let's explore how we can pass query params to the URL before redirecting to the login page so that we can transport some values from the main app to the login page.
 
