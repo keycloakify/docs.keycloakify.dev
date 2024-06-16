@@ -1,16 +1,14 @@
-# 📖 Build options
+# 📖 Build Options
 
 ### --project or -p CLI option
 
-Introduced in Keycloakify 9.4
+This option is for Monorepos. You can run every subcommand of the `keycloakify` CLI tool from the root of your Keycloakify project with, example with the `build` command:
 
-This option is for Monorepos. You can run Keycloakify from the root of your Keycloakify project with:
-
-`npx keycloakify build -p <path>`
+```bash
+npx keycloakify build -p <path>
+```
 
 `<path>` would be typically something like `packages/keycloak-theme`
-
-See:
 
 {% content-ref url="keycloakify-in-my-app/monorepo.md" %}
 [monorepo.md](keycloakify-in-my-app/monorepo.md)
@@ -18,48 +16,42 @@ See:
 
 ### postBuild hook
 
-_Ony available in Vite, introduced in v9.5_
+{% hint style="info" %}
+Only avaiable in Vite projects
+{% endhint %}
 
-The postBuild hook is an optional parameter of the Keycloakify Vite plugin that enables you to apply some transformation to your Keycloak theme after it's been built but before the .jar is created.
+The postBuild hook is called just before Keycloakify bundles the themes resources into the jar. &#x20;
 
-<pre class="language-typescript" data-title="vite.config.ts"><code class="lang-typescript">import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import { keycloakify } from "keycloakify/vite-plugin";
+This gives you the ability to implement some custom transformation. Like, for example removing some assets files: &#x20;
+
+{% code title="vite.config.ts" %}
+```typescript
+import * as fs from "fs/promises";
 
 export default defineConfig({
-  plugins: [
-    react(), 
-    keycloakify({
-      themeName: "keycloakify-starter",
-      extraThemeProperties: [
-        "foo=bar"
-      ],
-<strong>      // In this example, after running `yarn build-keycloak-theme`
-</strong><strong>      // there will be a `keycloak_dist/foo.txt` file.  
-</strong><strong>      postBuild: async keycloakifyBuildOptions => {
-</strong>
-<strong>        const fs = await import("fs/promises");
-</strong><strong>        const path = await import("path");
-</strong>
-<strong>        await fs.writeFile(
-</strong><strong>          path.join(keycloakifyBuildOptions.keycloakifyBuildDirPath, "foo.txt"),
-</strong><strong>          Buffer.from(
-</strong><strong>            [
-</strong><strong>            "Created by the postBuild hook of the keycloakify vite plugin", 
-</strong><strong>            "",
-</strong><strong>            "Resolved keycloakifyBuildOptions:",
-</strong><strong>            "",
-</strong><strong>            JSON.stringify(keycloakifyBuildOptions, null, 2),
-</strong><strong>            ""
-</strong><strong>            ].join("\n"),
-</strong><strong>            "utf8"
-</strong><strong>          )
-</strong><strong>        );
-</strong>
-<strong>      }
-</strong>    })
-  ],
-</code></pre>
+    plugins: [react(), keycloakify({
+        "postBuild": async (buildContext) => {
+        
+            await fs.rm(
+                pathJoin(
+                    "theme",
+                    "onyxia",
+                    "login",
+                    "resources",
+                    "build",
+                    "material-icons"
+                ),
+                { "recursive": true }
+            );
+            
+        }
+        
+    })]
+});
+```
+{% endcode %}
+
+
 
 ### extraThemeProperties
 
