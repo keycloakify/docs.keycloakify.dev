@@ -1,4 +1,4 @@
-# 🖋️ Custom font
+# 🖋️ Custom Font
 
 ## Importing Custom assets that aren't fonts
 
@@ -44,7 +44,7 @@ Let's assume you have `foo.png in` the `public/` directory. To import it you wou
 &#x3C;/html>
 </code></pre>
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption><p>The favicon is correctly loaded for the Keycloak server</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption><p>The favicon is correctly loaded for the Keycloak server</p></figcaption></figure>
 
 #### In your TypeScript files
 
@@ -60,7 +60,7 @@ This is **not recommended**, Keycloakify or not, whenever possible prefer import
 ```
 {% endcode %}
 
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption><p>The asset is successfully downloaded</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1).png" alt=""><figcaption><p>The asset is successfully downloaded</p></figcaption></figure>
 {% endtab %}
 
 {% tab title="from public/ - CRA (Webpack)" %}
@@ -87,7 +87,7 @@ Let's assume you have `foo.png in` the `public/` directory. To import it you wou
 Example from the starter: Import favicon
 {% endembed %}
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption><p>The favicon is correctly loaded for the Keycloak server</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption><p>The favicon is correctly loaded for the Keycloak server</p></figcaption></figure>
 
 #### In your TypeScript files
 
@@ -109,7 +109,7 @@ import { PUBLIC_URL } from "keycloakify/PUBLIC_URL";
 Example in the starter
 {% endembed %}
 
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption><p>The asset is successfully downloaded</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1).png" alt=""><figcaption><p>The asset is successfully downloaded</p></figcaption></figure>
 {% endtab %}
 {% endtabs %}
 

@@ -19,6 +19,7 @@
 * [🔧 Accessing the Server Environement Variables](environment-variables.md)
 * [🎭 Theme Variants](theme-variants.md)
 * [📧 Email Customization](email-customization.md)
+* [🎯 Targetting Specific Keycloak Versions](targetting-specific-keycloak-versions.md)
 * [📖 Build Options](build-options.md)
 
 ## Keycloak configuration
