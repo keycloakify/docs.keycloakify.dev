@@ -184,3 +184,19 @@ The fonts must also be imported in Storybook (`.storybook/preview-head.html`): &
 
 Then all we have to do is apply the Font font familly, in this example we will use vanilla CSS but you can of course use your favourite styling solution.
 
+{% code title="src/login/main.css" %}
+```css
+body {
+    font-family: Geist;
+}
+```
+{% endcode %}
+
+<pre class="language-tsx" data-title="src/login/KcPage.tsx"><code class="lang-tsx"><strong>import "./main.css";
+</strong>import { Suspense, lazy } from "react";
+// ...
+</code></pre>
+
+Result:&#x20;
+
+<figure><img src=".gitbook/assets/image (23).png" alt=""><figcaption><p>Geist succesfully applyed</p></figcaption></figure>
