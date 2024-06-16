@@ -21,7 +21,7 @@ Using the i18n API
 {% hint style="success" %}
 You can set the language you'll get in `i18n.curentLanguageTag` by specifying `ui_locales=xx` as query parameter when redirecting to your login or register page.
 
-[See how](context-persistence.md).
+[See how](broken-reference).
 {% endhint %}
 
 {% embed url="https://cloud-iam.com/?mtm_campaign=keycloakify-deal&mtm_source=keycloakify-doc-adding-text-keys" %}

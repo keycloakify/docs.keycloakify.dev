@@ -1,0 +1,2 @@
+# XDG\_CACHE\_HOME
+

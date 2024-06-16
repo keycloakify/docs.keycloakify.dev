@@ -240,6 +240,6 @@ const loginCssUrl = `${url.resourcesPath}/css/login.css`;
 ```
 
 You can see what assets are available under `public/keycloak-resources/login/resources`.\
-If you want to choose which version of the assets to use, refer to [this build option](build-options.md#loginthemeresourcesfromkeycloakversion).
+If you want to choose which version of the assets to use, refer to [this build option](build-options/#loginthemeresourcesfromkeycloakversion).
 
 By default, the default CSS assets are imported and applied [here](https://github.com/keycloakify/keycloakify/blob/402c6fc64a26268b6f2f7222e4f11ff07de452f8/src/login/Template.tsx#L35-L38C19) in the login theme.

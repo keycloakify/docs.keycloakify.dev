@@ -14,7 +14,7 @@ Concretely the ide is to be able, if you start your Keycloak server like this:
 
 To be able to access MY\_ENV\_VARIABLE value in your theme. (This is assuming you're using docker but for for Helm for example see [this](importing-your-theme-in-keycloak.md#using-helm)).
 
-To implement this you need to use [the extraThemeProperties build option](build-options.md#extrathemeproperties) like so:
+To implement this you need to use [the extraThemeProperties build option](build-options/#extrathemeproperties) like so:
 
 {% tabs %}
 {% tab title="Vite" %}

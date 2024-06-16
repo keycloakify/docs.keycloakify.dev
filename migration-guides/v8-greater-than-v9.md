@@ -1,9 +1,9 @@
 # ⬆️ v8 -> v9
 
 * If it's not already the case you must now use the [`copy-keycloak-resources-to-public` postinstall script](https://github.com/keycloakify/keycloakify-starter/blob/92b20fe74154ef8cf037f4b156eb3b2e5264a074/package.json#L11). (Only in WebPack projects, with Vite it's done automatically by the plugin)!.
-* The [`keycloakVersionDefaultAssets`](https://docs.keycloakify.dev/v/v8/build-options#keycloakversiondefaultassets) has been removed in favor of [`loginThemeResourcesFromKeycloakVersion`](../build-options.md#loginthemeresourcesfromkeycloakversion). &#x20;
-* You now must have `mvn` (Maven, `brew install maven`) installed to build your Keycloakify theme. The `bundler` build option has been removed in favor of [doCreateJar](../build-options.md#docreatejar).  (Note that Maven is present by default on the GitHub Action runners).  If you are building your theme within Docker [here are the instructions](../importing-your-theme-in-keycloak.md#using-docker).
-* The [`extraThemeNames`](https://docs.keycloakify.dev/v/v8/build-options#extrathemenames) build option has been removed, if you have theme variant, simply pass an array to the [themeName option](../build-options.md#themename).
+* The [`keycloakVersionDefaultAssets`](https://docs.keycloakify.dev/v/v8/build-options#keycloakversiondefaultassets) has been removed in favor of [`loginThemeResourcesFromKeycloakVersion`](../build-options/#loginthemeresourcesfromkeycloakversion). &#x20;
+* You now must have `mvn` (Maven, `brew install maven`) installed to build your Keycloakify theme. The `bundler` build option has been removed in favor of [doCreateJar](../build-options/#docreatejar).  (Note that Maven is present by default on the GitHub Action runners).  If you are building your theme within Docker [here are the instructions](../importing-your-theme-in-keycloak.md#using-docker).
+* The [`extraThemeNames`](https://docs.keycloakify.dev/v/v8/build-options#extrathemenames) build option has been removed, if you have theme variant, simply pass an array to the [themeName option](../build-options/#themename).
 * Keycloakify now generates two jars `*.jar` and `retrocompat-*.jar`. [You should update your CI](https://github.com/keycloakify/keycloakify-starter/commit/c9aad1406502ba08c654ade4bfa95bf3a6e93830).
   * If you have no Account theme: You can use the `retrocompat-*.jar`, it will work on any Keycloak version.
   *   If you have an Account theme:&#x20;

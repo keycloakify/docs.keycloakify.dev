@@ -10,8 +10,8 @@ npx keycloakify build -p <path>
 
 `<path>` would be typically something like `packages/keycloak-theme`
 
-{% content-ref url="keycloakify-in-my-app/monorepo.md" %}
-[monorepo.md](keycloakify-in-my-app/monorepo.md)
+{% content-ref url="../keycloakify-in-my-app/as-a-subproject-of-your-monorepo.md" %}
+[as-a-subproject-of-your-monorepo.md](../keycloakify-in-my-app/as-a-subproject-of-your-monorepo.md)
 {% endcontent-ref %}
 
 ### postBuild
@@ -66,7 +66,7 @@ _Introduced in 6.11_
 
 Configure the `groupId` that will appear in the `pom.xml` file.
 
-<figure><img src=".gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
 {% tabs %}
 {% tab title="Vite" %}
@@ -112,7 +112,7 @@ _Introduced in 6.11_
 
 Configure the `artifactId` that will appear in the `pom.xml` file.
 
-<figure><img src=".gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
 {% tabs %}
 {% tab title="Vite" %}
@@ -144,7 +144,7 @@ export default defineConfig({
 {% endtab %}
 {% endtabs %}
 
-By default it's `<themeName>-keycloak-theme` See, [`keycloak.themeName`](build-options.md#keyclokify.themename) option.
+By default it's `<themeName>-keycloak-theme` See, [`keycloak.themeName`](./#keyclokify.themename) option.
 
 You can overwrite this using an environment variable:
 
@@ -160,7 +160,7 @@ The `artifactId` also affects [the name of the `.jar` file](https://github.com/I
 
 Configure the version that will appear in the `pom.xml` file.
 
-<figure><img src=".gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 By default the version that is used is the one in the package.json of your project
 
@@ -219,8 +219,8 @@ export default defineConfig({
 By providing an array this also enables you to implement theme variant. See:\
 
 
-{% content-ref url="theme-variants.md" %}
-[theme-variants.md](theme-variants.md)
+{% content-ref url="../theme-variants.md" %}
+[theme-variants.md](../theme-variants.md)
 {% endcontent-ref %}
 
 ### XDG\_CACHE\_HOME
