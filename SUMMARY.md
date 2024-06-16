@@ -11,7 +11,7 @@
 * [🔩 Integrating Keycloakify in your Project](keycloakify-in-my-app/README.md)
   * [As a Subproject of your Monorepo](keycloakify-in-my-app/as-a-subproject-of-your-monorepo.md)
   * [In your Vite or Webpack project](keycloakify-in-my-app/in-your-vite-react-project.md)
-* [🖋️ Custom Font](importing-assets.md)
+* [🖋️ Custom Fonts](importing-assets.md)
 * [🖼️ Importing Assets](importing-assets-1.md)
 * [📄 Terms and conditions](terms-and-conditions.md)
 * [🌎 Internationalization and Translations](adding-text-keys.md)
