@@ -1,6 +1,6 @@
 # 📖 Build Options
 
-### --project or -p CLI option
+### --project
 
 This option is for Monorepos. You can run every subcommand of the `keycloakify` CLI tool from the root of your Keycloakify project with, example with the `build` command:
 
@@ -14,7 +14,7 @@ npx keycloakify build -p <path>
 [monorepo.md](keycloakify-in-my-app/monorepo.md)
 {% endcontent-ref %}
 
-### postBuild hook
+### postBuild
 
 {% hint style="info" %}
 Only avaiable in Vite projects
@@ -22,79 +22,43 @@ Only avaiable in Vite projects
 
 The postBuild hook is called just before Keycloakify bundles the themes resources into the jar. &#x20;
 
-This gives you the ability to implement some custom transformation. Like, for example removing some assets files: &#x20;
+This gives you the ability to implement some custom transformation.&#x20;
 
-{% code title="vite.config.ts" %}
-```typescript
-import * as fs from "fs/promises";
+Let's say, for example, we have a big `material-icons` in our `public` directory and thoses icons are used in the main app but not in the Keycloak theme.  We can use the postBuild hook to make sure that thoses icons are not bundled in the generated jar files.
+
+<pre class="language-typescript" data-title="vite.config.ts"><code class="lang-typescript">import * as fs from "fs/promises";
 
 export default defineConfig({
     plugins: [react(), keycloakify({
-        "postBuild": async (buildContext) => {
-        
-            await fs.rm(
-                pathJoin(
-                    "theme",
-                    "onyxia",
-                    "login",
-                    "resources",
-                    "build",
-                    "material-icons"
-                ),
-                { "recursive": true }
-            );
-            
-        }
-        
+<strong>        postBuild: async (buildContext) => {
+</strong><strong>        
+</strong><strong>            await fs.rm(
+</strong><strong>                pathJoin(
+</strong><strong>                    "theme",
+</strong><strong>                    "onyxia",
+</strong><strong>                    "login",
+</strong><strong>                    "resources",
+</strong><strong>                    "build",
+</strong><strong>                    "material-icons"
+</strong><strong>                ),
+</strong><strong>                { "recursive": true }
+</strong><strong>            );
+</strong><strong>            
+</strong><strong>        }
+</strong>        
     })]
 });
+</code></pre>
+
+When this function is invoked the current working directory (process.cwd()) is the root of the directory of the files about to be archived.
+
+You can get an idea of how is structured the files inside the jar by extracting it manually:
+
+```bash
+mkdir dist_keycloak/extracted
+cd dist_keycloak/extracted
+jar -xf ../keycloak-theme-for-kc-25-and-above.jar
 ```
-{% endcode %}
-
-
-
-### extraThemeProperties
-
-This let you add properties to the `build_keycloak/src/main/resources/theme/<your app>/[login|account]/theme.properties` file.
-
-{% tabs %}
-{% tab title="Vite" %}
-<pre class="language-typescript" data-title="vite.config.ts"><code class="lang-typescript">import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import { keycloakify } from "keycloakify/vite-plugin";
-
-export default defineConfig({
-  plugins: [
-    react(), 
-    keycloakify({
-<strong>      extraThemeProperties: [ 
-</strong><strong>        "locales=en,ko",
-</strong><strong>        "MY_ENV_VARIABLE=${env.MY_ENV_VARIABLE:default}"
-</strong><strong>      ]
-</strong>    })
-  ],
-})
-</code></pre>
-{% endtab %}
-
-{% tab title="Webpack" %}
-<pre class="language-json" data-title="package.json"><code class="lang-json">{
-    "keycloakify": {
-<strong>        "extraThemeProperties": [ 
-</strong><strong>            "locales=en,ko",
-</strong><strong>            "MY_ENV_VARIABLE=${env.MY_ENV_VARIABLE:default}"
-</strong><strong>        ]
-</strong>    }
-}
-</code></pre>
-{% endtab %}
-{% endtabs %}
-
-It is mainly useful to get access to the Keycloak server environment variables in your theme. See:
-
-{% content-ref url="environment-variables.md" %}
-[environment-variables.md](environment-variables.md)
-{% endcontent-ref %}
 
 ### groupId
 
@@ -218,6 +182,8 @@ KEYCLOAKIFY_THEME_VERSION="4.5.6" npx keycloakify build
 
 _Introduced in 7.5.0_
 
+This is the name that will apprear in the select input of the Keycloak Admin UI that let's you select the theme.&#x20;
+
 By default it's `package.json["name"]`
 
 {% tabs %}
@@ -266,6 +232,8 @@ export XDG_CACHE_HOME=/home/runner/.cache/yarn
 npx keycloakify build
 # /home/runner/.cache/yarn/keycloakify will contain various resources
 ```
+
+This option is mainly usefull if you need to be able to build your theme offline.
 
 ### PUBLIC\_DIR\_PATH
 

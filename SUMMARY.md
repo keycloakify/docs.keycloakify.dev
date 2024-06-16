@@ -24,11 +24,11 @@
 
 ## Keycloak configuration
 
-* [📥 Importing the JAR of your theme into Keycloak](importing-your-theme-in-keycloak.md)
-* [🔛 Enabling your Theme](keycloak-configuration/enabling-your-theme/README.md)
-  * [Login Theme](keycloak-configuration/enabling-your-theme/login-theme.md)
-  * [Account Theme](keycloak-configuration/enabling-your-theme/account-theme.md)
-  * [Email Theme](keycloak-configuration/enabling-your-theme/email-theme.md)
+* [📥 Importing the JAR of Your Theme Into Keycloak](importing-your-theme-in-keycloak.md)
+* [🔛 Enabling your Theme in the Admin UI](keycloak-configuration/enabling-your-theme-in-the-admin-ui/README.md)
+  * [Login Theme](keycloak-configuration/enabling-your-theme-in-the-admin-ui/login-theme.md)
+  * [Account Theme](keycloak-configuration/enabling-your-theme-in-the-admin-ui/account-theme.md)
+  * [Email Theme](keycloak-configuration/enabling-your-theme-in-the-admin-ui/email-theme.md)
 * [✍️ Adding Registration Form Fields](keycloak-configuration/adding-registration-form-fields/README.md)
   * [💂 Email domain acceptlist](keycloak-configuration/adding-registration-form-fields/email-domain-acceptlist.md)
 * [🔒 Defining Password Requirements](keycloak-configuration/defining-password-requirements.md)
