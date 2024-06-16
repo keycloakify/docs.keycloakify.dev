@@ -1,10 +1,10 @@
 ---
-description: Looking for submitting a PR? Thank you!
+description: Looking to submit a PR? Thank you!
 ---
 
 # 💟 Contributing
 
-Here are the few things you need to know to find your way around the project.  \
+Here is how you can setup a devlopement environement. You must use Yarn classic (v1).    \
 First you want to clone keycloakify and the keycloakify starter alongside each other
 
 ```bash
@@ -35,3 +35,5 @@ cd ~/github/keycloakify-starter
 yarn storybook # or
 npx keycloakify start-keycloak
 ```
+
+And see the changes you make on the keycloakify project applied in the starter. &#x20;
