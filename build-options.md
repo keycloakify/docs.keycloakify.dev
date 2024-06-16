@@ -242,7 +242,3 @@ This option is mainly usefull if you need to be able to build your theme offline
 Default: `~/public`
 
 Example: `npx PUBLIC_DIR_PATH=./web/public npx keycloakify copy-keycloak-resources-to-public`
-
-{% embed url="https://cloud-iam.com/?mtm_campaign=keycloakify-deal&mtm_source=keycloakify-doc-build-options" %}
-Feeling overwhelmed? Check out our exclusive sponsor's Cloud-IAM consulting services to simplify your experience.
-{% endembed %}
