@@ -29,7 +29,6 @@
   * [postBuild](build-options/postbuild.md)
   * [kcContextExclusionsFtl](build-options/kccontextexclusionsftl.md)
   * [XDG\_CACHE\_HOME](build-options/xdg\_cache\_home.md)
-  * [themeVersion](build-options/themeversion.md)
   * [keycloakifyBuildDirPath](build-options/keycloakifybuilddirpath.md)
   * [groupId](build-options/groupid.md)
   * [artifactId](build-options/artifactid.md)
