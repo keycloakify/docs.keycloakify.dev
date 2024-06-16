@@ -24,7 +24,7 @@
 
 ## Keycloak configuration
 
-* [📥 Importing the JAR](importing-your-theme-in-keycloak.md)
+* [📥 Importing the JAR of your theme into Keycloak](importing-your-theme-in-keycloak.md)
 * [🔛 Enabling your Theme](keycloak-configuration/enabling-your-theme/README.md)
   * [Login Theme](keycloak-configuration/enabling-your-theme/login-theme.md)
   * [Account Theme](keycloak-configuration/enabling-your-theme/account-theme.md)
