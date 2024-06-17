@@ -8,9 +8,7 @@ To do that, just uncomment the lines in the main.tsx (index.tsx in Webpack)
 import { createRoot } from "react-dom/client";
 import { StrictMode, lazy, Suspense } from "react";
 
-<strong>// The following block can be uncommented to test a specific page with `yarn dev`
-</strong><strong>// Don't forget to comment back or your bundle size will increase
-</strong><strong>import { getKcContextMock } from "./login/KcPageStory";
+<strong>import { getKcContextMock } from "./login/KcPageStory";
 </strong><strong>
 </strong><strong>if (import.meta.env.DEV) {
 </strong><strong>    window.kcContext = getKcContextMock({
