@@ -84,7 +84,7 @@ const classes = {
 
 {% tab title="Webpack" %}
 <pre class="language-tsx" data-title="src/login/KcPages.tsx"><code class="lang-tsx"><strong>import { css } from "@emotion/css";
-</strong><strong>import { PUBLIC_URL } from "keycloakify"; // You can't use process.env.PUBLIC_URL directly.
+</strong><strong>import { PUBLIC_URL } from "keycloakify/PUBLIC_URL"; // You can't use process.env.PUBLIC_URL directly.
 </strong>import { Suspense, lazy } from "react";
 // ...
 export default function KcPage(props: { kcContext: KcContext }) {
