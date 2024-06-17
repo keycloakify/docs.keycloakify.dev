@@ -28,12 +28,13 @@ cd ~/github/keycloakify
 yarn link-in-starter
 ```
 
-After that you can
+In parallel you can:
 
 ```bash
 cd ~/github/keycloakify-starter
-yarn storybook # or
+yarn storybook 
+# or
 npx keycloakify start-keycloak
 ```
 
-And see the changes you make on the keycloakify project applied in the starter. &#x20;
+And see the changes you make on the keycloakify project applied in the starter, it's all hot reloaded.

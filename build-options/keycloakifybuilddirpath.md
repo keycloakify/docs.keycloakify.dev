@@ -1,6 +1,6 @@
 # keycloakifyBuildDirPath
 
-This option enables you to configure in which directory the .jar files created by Keycloakifty should be created. By default it's dist\_keycloak in Vite or build\_keycloak in Webpack. &#x20;
+This option enables you to configure in which directory the .jar files should be created. By default it's `dist_keycloak` in Vite or `build_keycloak` in Webpack. &#x20;
 
 {% tabs %}
 {% tab title="Vite" %}
@@ -31,5 +31,3 @@ export default defineConfig({
 {% endcode %}
 {% endtab %}
 {% endtabs %}
-
-By providing an array this also enables you to implement theme variant. See:\

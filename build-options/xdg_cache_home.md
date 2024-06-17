@@ -8,4 +8,4 @@ npx keycloakify build
 # /home/runner/.cache/yarn/keycloakify will contain various resources
 ```
 
-This option is mainly usefull if you need to be able to build your theme offline, in a context with strong network restriction polices. &#x20;
+This option is mainly usefull if you need to be able to build your theme offline, in a context with network restriction polices. &#x20;
