@@ -3,7 +3,7 @@
 You can but it's probably not a good idea.  \
 The Keycloak server is authorithative for defining if a given input is valid, not your theme.  \
 For example, it's on the Keycloak server that you would defines that user passwords must be at least 12 character long or that you only accept registration from emails _@your-company.com_.  \
-You don't want to hard code thoses rules in your theme, it will be a nightmare to maintain because you'll have to keep your theme in sync with your Keycloak server configuration.   &#x20;
+You don't want to hard code thoses rules in your theme just to be able to display errors in realtime as the user fills the form, it will be a nightmare to maintain because you'll have to keep your theme in sync with your Keycloak server configuration.   &#x20;
 
 \
 The validation criteria are made accessible to the cliens in `kcContext.profile.attributesByName[*].validators` and `kcContext.passwordPolicies`.  \
