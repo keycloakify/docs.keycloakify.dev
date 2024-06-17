@@ -1,5 +1,16 @@
 # In Storybook
 
+{% hint style="info" %}
+TLDR:
+
+```bash
+npx keycloakify add-story
+npm run storybook
+```
+{% endhint %}
+
+
+
 Storybook is a tool that enables to test UI component in isolation. For reference, the component showcase Keycloakify website is a Storybook instrance:
 
 {% embed url="https://storybook.keycloakify.dev/?path=/story/introduction--page" %}

@@ -1,5 +1,12 @@
 # With Vite or Webpack in dev mode
 
+{% hint style="info" %}
+TLDR:
+
+* Uncomment the getKcContextMock() in **src/main.tsx** (or **src/index.tsx** in Webpack)
+* **npm run dev** (or **npm run start** in Webpack)
+{% endhint %}
+
 If you don't have Storybook in your project you can also test your theme with the dev server. &#x20;
 
 To do that, just uncomment the lines in the main.tsx (index.tsx in Webpack)

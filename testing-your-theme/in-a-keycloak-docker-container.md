@@ -1,5 +1,15 @@
 # In a Keycloak Docker Container
 
+{% hint style="info" %}
+TLDR:
+
+```bash
+npx keycloakify start-keycloak
+```
+{% endhint %}
+
+
+
 Testing your theme in Storybook is nice, but at some point you'll want to test your theme in a real Keycloak before shipping it in production!
 
 First you want to install and launch [Docker Desktop](https://www.docker.com/products/docker-desktop/) (or just Docker) on your computer, if you haven't done it already. &#x20;
