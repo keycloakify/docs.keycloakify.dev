@@ -5,7 +5,7 @@ TLDR: In Vite there isn't any Keycloakfy specifc restriction. You can import ass
 
 In Webpack projects you can't use `process.env.PUBLIC_URL` directly you must use&#x20;
 
-`import { PUBLIC_URL } from "keycloakify"` instead.&#x20;
+`import { PUBLIC_URL } from "keycloakify/PUBLIC_URL"` instead.&#x20;
 {% endhint %}
 
 Let's see, as an example, the different ways you have to change the backgrouns image of the login page. &#x20;
