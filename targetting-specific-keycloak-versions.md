@@ -138,4 +138,4 @@ export default defineConfig({
 {% endtab %}
 {% endtabs %}
 
-Note that the hasAccountTheme is not authoritative. What determines if you implement an account theme or not is the existence of an account directory in your sources. This property is just used to give you correct typing for the keycloak ranges availabes.
+Note that the `hasAccountTheme` is not authoritative. What determines if you implement an account theme or not is the existence of an account directory in your sources. This property is just used to give you correct typing for the keycloak ranges availabes.

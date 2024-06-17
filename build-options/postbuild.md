@@ -11,13 +11,14 @@ This gives you the ability to implement some custom transformation.&#x20;
 Let's say, for example, we have a big `material-icons` in our `public` directory and thoses icons are used in the main app but not in the Keycloak theme.  We can use the postBuild hook to make sure that thoses icons are not bundled in the generated jar files.
 
 <pre class="language-typescript" data-title="vite.config.ts"><code class="lang-typescript">import * as fs from "fs/promises";
+import * as path from "path";
 
 export default defineConfig({
     plugins: [react(), keycloakify({
 <strong>        postBuild: async (buildContext) => {
 </strong><strong>            
 </strong><strong>            await fs.rm(
-</strong><strong>                pathJoin(
+</strong><strong>                path.join(
 </strong><strong>                    "theme",
 </strong><strong>                    "keycloakify-starter",
 </strong><strong>                    "login", // Note: We assume we only have an login theme, if we had an account theme we would have to remove it there as well.
@@ -25,7 +26,7 @@ export default defineConfig({
 </strong><strong>                    "dist", // Your Vite dist/ or Webpack build/ is here.
 </strong><strong>                    "material-icons"
 </strong><strong>                ),
-</strong><strong>                { "recursive": true }
+</strong><strong>                { recursive: true }
 </strong><strong>            );
 </strong><strong>            
 </strong><strong>        }
