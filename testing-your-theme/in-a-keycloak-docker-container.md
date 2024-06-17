@@ -40,11 +40,11 @@ You are ready! In your Keycloakify just run:&#x20;
 npx keycloakfy start-keycloak
 ```
 
-You'll prompted to chose the Keycloak version you want to spin up:
+You'll be invited to chose the Keycloak version you want to spin up:
 
 <figure><img src="../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
 
-Keycloakify will preconfigure a realm and client for your theme so you don't nessesarely need to go in the the Keycloak admin UI you can simply lavigate to https://my-theme.keycloakify.dev it will redirect automatically to your local Keycloak login page! &#x20;
+Keycloakify will preconfigure a realm and client for your theme so you don't nessesarely need to go in the the Keycloak admin console you can simply lavigate to **https://my-theme.keycloakify.dev** it will redirect to your local Keycloak login pages! &#x20;
 
 <figure><img src="../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
 
@@ -64,11 +64,11 @@ Here you can chose to go back to the login page or you have a link to the accoun
 
 <figure><img src="../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
 
-Now what's interesting is you can see the real kcContext in the devlopper console. You can use it as a reference to create new stories!
+Now what's interesting is you can see the real kcContext in the dev tools. You can use it as a reference to create new stories!
 
 <figure><img src="../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
 
-If you connect to the Keycloak Admin UI (http://localhost:8080) and make some changes to the Ream configuration you can then export theses change into a .json file using the partial export feature of Keycloak:
+If you connect to the Keycloak Admin UI (**http://localhost:8080**) and make some changes to the Ream configuration you can then export theses change into a .json file using the partial export feature of Keycloak:
 
 <figure><img src="../.gitbook/assets/image (40).png" alt=""><figcaption><p>When exporting, enable "export clients"</p></figcaption></figure>
 

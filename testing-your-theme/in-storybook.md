@@ -1,10 +1,8 @@
 # In Storybook
 
-Storybook is a tool that enables to test UI component in isolation. Keycloakify provide an integration with this tool and is the preffed way to develope your theme.  \
-\
-First step is to go over the Keycloakify component website and identify the pages that you want to test. &#x20;
+Storybook is a tool that enables to test UI component in isolation. For reference, the component showcase Keycloakify website is a Storybook instrance:
 
-{% embed url="https://docs.keycloakify.dev/" %}
+{% embed url="https://storybook.keycloakify.dev/?path=/story/introduction--page" %}
 
 The starter template does not initially contain any story files, instead there's a keycloakify CLI command that let's you import specifically the stories for the pages you want to test into your project.&#x20;
 
@@ -20,7 +18,11 @@ You can run this command multiple times to add stories for multiple pages.
 
 <figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
+Selecting login -> register.ftl will result in this file to be created in your project:
+
 <figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+
+You can run the above command multiple times to add stories for the different pages you want to develop.
 
 Once your added a few stories you can start Storybook locally with:
 
@@ -33,13 +35,11 @@ npm run storybook
 You can see the changes you make in you code in realtime in your Storybook. &#x20;
 
 The idea of Storybook is to easyly let you see the pages in different configuration without having to reproduce the full login/register cinematic in a real Keycloak.  \
-Keycloakify provide a default mock context for every pages, the story let you partially overrride some specific part of this default mock to reflect pages in different configurations.  \
+Keycloakify provide a default mock context for every pages, the stories let you partially overrride some specific part of this default mock to reflect pages in different configurations.  \
 \
 For example, if you want to create a story that show the register page in chinese you would add this:
 
-{% code title="src/login/pages/Register.stories.tsx" %}
-```tsx
-import type { Meta, StoryObj } from "@storybook/react";
+<pre class="language-tsx" data-title="src/login/pages/Register.stories.tsx"><code class="lang-tsx">import type { Meta, StoryObj } from "@storybook/react";
 import { createKcPageStory } from "../KcPageStory";
 
 const { KcPageStory } = createKcPageStory({ pageId: "register.ftl" });
@@ -47,33 +47,32 @@ const { KcPageStory } = createKcPageStory({ pageId: "register.ftl" });
 const meta = {
     title: "login/register.ftl",
     component: KcPageStory
-} satisfies Meta<typeof KcPageStory>;
+} satisfies Meta&#x3C;typeof KcPageStory>;
 
 export default meta;
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj&#x3C;typeof meta>;
 
 export const Default: Story = {
-    render: () => <KcPageStory />
+    render: () => &#x3C;KcPageStory />
 };
 
-export const InChinese: Story = {
-    render: ()=> (
-        <KcPageStory
-            kcContext={{
-                locale: {
-                    currentLanguageTag: "zh-CN"
-                }
-            }}
-        />
-    )
-};
-```
-{% endcode %}
+<strong>export const InChinese: Story = {
+</strong><strong>    render: ()=> (
+</strong><strong>        &#x3C;KcPageStory
+</strong><strong>            kcContext={{
+</strong><strong>                locale: {
+</strong><strong>                    currentLanguageTag: "zh-CN"
+</strong><strong>                }
+</strong><strong>            }}
+</strong><strong>        />
+</strong><strong>    )
+</strong><strong>};
+</strong></code></pre>
 
 <figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
-That's really nice, however this approach has it's limits. At some point you'll want to test in a real Keycloak to make sure everything works. Also you don't nessesary know the kcContext values to provides to test replicate a desired configuration. &#x20;
+That's really nice, however this approach has it's limits. At some point you'll want to test in a real Keycloak to make sure everything works. Also you don't nessesary know the kcContext values to provides in order to replicate a desired configuration. &#x20;
 
 Don't worry! Keycloakify got you covered by letting you test in a local Keycloak Docker container.
 
