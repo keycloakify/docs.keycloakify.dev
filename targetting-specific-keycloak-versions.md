@@ -125,12 +125,14 @@ export default defineConfig({
 
 {% tab title="Webpack" %}
 <pre class="language-json" data-title="package.json"><code class="lang-json">{
-<strong>    "keycloakify": {
-</strong><strong>        "hasAccountTheme": false,
-</strong><strong>        "21-and-below": false,
-</strong><strong>        "22-and-above": true
-</strong><strong>    }
-</strong>}
+    "keycloakify": {
+<strong>        "keycloakVersionTargets": {
+</strong><strong>            "hasAccountTheme": false,
+</strong><strong>            "21-and-below": false,
+</strong><strong>            "22-and-above": true
+</strong><strong>        }
+</strong>    }
+}
 </code></pre>
 {% endtab %}
 {% endtabs %}
