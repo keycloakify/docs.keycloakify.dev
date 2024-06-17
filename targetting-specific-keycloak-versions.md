@@ -71,39 +71,36 @@ Start by deleting the src/account directory from your project
 
 Then update your src/main.tsx (or src/index.tsx)
 
-{% code title="src/main.tsx" %}
-```diff
- import { createRoot } from "react-dom/client";
+<pre class="language-diff" data-title="src/main.tsx"><code class="lang-diff"> import { createRoot } from "react-dom/client";
  import { StrictMode, lazy, Suspense } from "react";
  
  const KcLoginThemePage = lazy(() => import("./login/KcPage"));
  const KcAccountThemePage = lazy(() => import("./account/KcPage"));
  
  createRoot(document.getElementById("root")!).render(
-     <StrictMode>
-         <Suspense>
+     &#x3C;StrictMode>
+         &#x3C;Suspense>
              {(() => {
                  switch (window.kcContext?.themeType) {
                      case "login":
-                         return <KcLoginThemePage kcContext={window.kcContext} />;
--                    case "account":
--                        return <KcAccountThemePage kcContext={window.kcContext} />;
-                 }
-                 return <h1>No Keycloak Context</h1>;
+                         return &#x3C;KcLoginThemePage kcContext={window.kcContext} />;
+<strong>-                    case "account":
+</strong><strong>-                        return &#x3C;KcAccountThemePage kcContext={window.kcContext} />;
+</strong>                 }
+                 return &#x3C;h1>No Keycloak Context&#x3C;/h1>;
              })()}
-         </Suspense>
-     </StrictMode>
+         &#x3C;/Suspense>
+     &#x3C;/StrictMode>
  );
  
  declare global {
      interface Window {
          kcContext?:
              | import("./login/KcContext").KcContext
--            | import("./account/KcContext").KcContext;
-     }
+<strong>-            | import("./account/KcContext").KcContext;
+</strong>     }
  }
-```
-{% endcode %}
+</code></pre>
 
 If it was defined, update your keycloakVersionTargets Keycloakify build option. &#x20;
 
