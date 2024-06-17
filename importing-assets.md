@@ -59,7 +59,7 @@ Then all we have to do is apply the Font font familly, in this example we will u
 
 That's it!
 
-<figure><img src=".gitbook/assets/image (1) (1) (1).png" alt="" width="375"><figcaption><p>Playwrite NL succesfully applied to the header</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1) (1) (1).png" alt="" width="375"><figcaption><p>Playwrite NL succesfully applied to the header</p></figcaption></figure>
 
 ## Using self hosted fonts
 

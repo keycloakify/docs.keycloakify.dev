@@ -13,6 +13,12 @@ Why do I need Keycloakify in the first place? Why can't I just implement the def
 * Keycloakify themes implement real-time frontend validation out of the box. For example, when a user chooses a password that is too weak, they see the feedback immediately and not after they have pressed the submit button.
 * We're here to help either via [our Discord](https://discord.gg/kYFZG7fQmn) channel or GitHub issues.
 
-First thing you want to do is to fork/clode the Keycloakify starter project. Run the few commands in README and comeback here to learn more. &#x20;
+First thing you want to do is to fork/clode the Keycloakify starter project.&#x20;
 
-{% embed url="https://github.com/codegouvfr/keycloakify-starter" %}
+{% embed url="https://github.com/keycloakify/keycloakify-starter/tree/keycloakify_10" %}
+
+Then you can move on to the next section of the documentation:
+
+{% content-ref url="testing-your-theme/" %}
+[testing-your-theme](testing-your-theme/)
+{% endcontent-ref %}
