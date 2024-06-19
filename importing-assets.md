@@ -11,7 +11,7 @@ TLDR: There is nothing specific to Keycloakify about importing assets. You can d
 {% hint style="info" %}
 TLDR:  You can import asset like you would in any other project, one exception being: If you reference assets that are located in your public directory from within your TSX files you must use Keycloakify's polifill of the `PUBLIC_URL` environnement variable, you can't use `process.env.PUBLIC_URL` directly:
 
-```
+```tsx
 import { PUBLIC_URL } from "keycloakify/PUBLIC_URL";
 <img src={`${PUBLIC_URL}/my-image.png`} />
 ```
