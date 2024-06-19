@@ -4,7 +4,7 @@ Keycloakify is a tool that enables customization of the look and feel of Keycloa
 
 {% embed url="https://storybook.keycloakify.dev/" %}
 
-Why do I need Keycloakify in the first place? Why can't I just implement the default theming system provided by Keycloak?
+Why do I need Keycloakify in the first place? Why can't I just implement the default theming system featured by Keycloak?
 
 * Keycloakify lets you use modern frontend technology: TypeScript, React, and any styling solution or component library you'd like, such as TailwindCSS, MUI, ShadeCN/UI, or just plain CSS modules. With the base theming system you have to write [FreeMarker](https://freemarker.apache.org/index.html) and integrating frontend technologies into a Java Stack isn't straight forward.
 * Keycloakify makes it very easy to test your theme inside and outside Keycloak with hot reloading enabled.
