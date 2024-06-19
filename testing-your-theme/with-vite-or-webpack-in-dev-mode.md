@@ -9,10 +9,12 @@ TLDR:
 
 If you don't have Storybook in your project you can also test your theme with the dev server. &#x20;
 
-To do that, just uncomment the lines in the main.tsx (index.tsx in Webpack)
+To do that, just uncomment some line in your entrypoint:\
 
-<pre class="language-jsx" data-title="src/main.tsx"><code class="lang-jsx">/* eslint-disable react-refresh/only-export-components */
-import { createRoot } from "react-dom/client";
+
+{% tabs %}
+{% tab title="Vite" %}
+<pre class="language-tsx" data-title="src/main.tsx"><code class="lang-tsx">import { createRoot } from "react-dom/client";
 import { StrictMode, lazy, Suspense } from "react";
 
 <strong>import { getKcContextMock } from "./login/KcPageStory";
@@ -43,6 +45,42 @@ createRoot(document.getElementById("root")!).render(
     &#x3C;/StrictMode>
 );
 </code></pre>
+{% endtab %}
+
+{% tab title="Webpack" %}
+<pre class="language-tsx" data-title="src/index.tsx"><code class="lang-tsx">import { createRoot } from "react-dom/client";
+import { StrictMode, lazy, Suspense } from "react";
+
+<strong>import { getKcContextMock } from "./login/KcPageStory";
+</strong><strong>
+</strong><strong>if (process.env.NODE_ENV === "development") {
+</strong><strong>    window.kcContext = getKcContextMock({
+</strong><strong>        pageId: "register.ftl",
+</strong><strong>        overrides: {}
+</strong><strong>    });
+</strong><strong>}
+</strong>
+const KcLoginThemePage = lazy(() => import("./login/KcPage"));
+const KcAccountThemePage = lazy(() => import("./account/KcPage"));
+
+createRoot(document.getElementById("root")!).render(
+    &#x3C;StrictMode>
+        &#x3C;Suspense>
+            {(() => {
+                switch (window.kcContext?.themeType) {
+                    case "login":
+                        return &#x3C;KcLoginThemePage kcContext={window.kcContext} />;
+                    case "account":
+                        return &#x3C;KcAccountThemePage kcContext={window.kcContext} />;
+                }
+                return &#x3C;h1>No Keycloak Context&#x3C;/h1>;
+            })()}
+        &#x3C;/Suspense>
+    &#x3C;/StrictMode>
+);
+</code></pre>
+{% endtab %}
+{% endtabs %}
 
 The pageId parameter of the getKcContextMock let you decide what page you want to test.  \
 The overrides parameter let you modify the the default kcContext mock for the page. \
