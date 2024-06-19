@@ -13,7 +13,7 @@ Let's see how to use, for example, [Playwrite Netherland](https://fonts.google.c
 
 First we need to add the few links tag we got from from Google Fonts in our HTML \<head>: &#x20;
 
-<pre class="language-html" data-title="index.html"><code class="lang-html">&#x3C;!doctype html>
+<pre class="language-html" data-title="index.html (or public/index.html in Webpack)"><code class="lang-html">&#x3C;!doctype html>
 &#x3C;html>
     &#x3C;head>
         &#x3C;meta charset="utf-8" />
