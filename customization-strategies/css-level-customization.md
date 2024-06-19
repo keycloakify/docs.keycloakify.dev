@@ -2,6 +2,6 @@
 
 Under construction. For now see:
 
-{% content-ref url="../importing-assets-1.md" %}
-[importing-assets-1.md](../importing-assets-1.md)
+{% content-ref url="../importing-assets.md" %}
+[importing-assets.md](../importing-assets.md)
 {% endcontent-ref %}

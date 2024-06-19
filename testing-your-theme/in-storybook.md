@@ -27,11 +27,11 @@ It will enables you to select the pages you want to add stories for.&#x20;
 
 You can run this command multiple times to add stories for multiple pages.
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Selecting login -> register.ftl will result in this file to be created in your project:
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 You can run the above command multiple times to add stories for the different pages you want to develop.
 
@@ -41,7 +41,7 @@ Once your added a few stories you can start Storybook locally with:
 npm run storybook
 ```
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 You can see the changes you make in you code in realtime in your Storybook. &#x20;
 
