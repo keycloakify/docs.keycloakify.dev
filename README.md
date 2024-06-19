@@ -15,7 +15,7 @@ Why do I need Keycloakify in the first place? Why can't I just implement the def
 
 First thing you want to do is to fork/clode the Keycloakify Vite[^1] starter project.&#x20;
 
-{% embed url="https://github.com/keycloakify/keycloakify-starter/tree/keycloakify_10" %}
+{% embed url="https://github.com/keycloakify/keycloakify-starter" %}
 
 Then you can move on to the next section of the documentation:
 
