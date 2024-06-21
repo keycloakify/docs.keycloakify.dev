@@ -47,7 +47,7 @@ Or [install it manually](https://chocolatey.org/).
 You are ready! In your Keycloakify just run:&#x20;
 
 ```bash
-npx keycloakfy start-keycloak
+npx keycloakify start-keycloak
 ```
 
 You'll be invited to chose the Keycloak version you want to spin up:
