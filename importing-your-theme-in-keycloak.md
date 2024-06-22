@@ -1,4 +1,4 @@
-# 📥 Importing the JAR
+# 📥 Importing the JAR of Your Theme Into Keycloak
 
 Now that you have your theme as a .jar file, let's see how you can import it in Keycloak so that it appears in the dropdown list for selecting theme in the Keycloak Admin console.
 
@@ -19,7 +19,7 @@ git clone https://github.com/keycloakify/keycloakify-starter
 cd keycloakify-starter
 # Just to make sure these instructions remain relevant in the future
 # We pin the version of the starter we are using.  
-git checkout 620525fed69b37f8790570594c0b19ec03ce962a
+git checkout 1992a63a1629c05edfae51dd86954f9cf2457095
 cd ..
 
 cat &#x3C;&#x3C; EOF > ./Dockerfile
@@ -35,10 +35,7 @@ RUN yarn build-keycloak-theme
 
 FROM quay.io/keycloak/keycloak:latest as builder
 WORKDIR /opt/keycloak
-<strong># NOTE: If you are using a version of Keycloak prior to 23 you must use 
-</strong><strong># the retrocompat-*.jar. Look inside your target directory there is two jars file
-</strong><strong># one *.jar and the other retrocompat-*.jar
-</strong><strong>COPY --from=keycloakify_jar_builder /opt/app/dist_keycloak/target/keycloakify-starter-keycloak-theme-6.0.2.jar /opt/keycloak/providers/
+<strong>COPY --from=keycloakify_jar_builder /opt/app/dist_keycloak/keycloak-theme-for-kc-25-and-above.jar /opt/keycloak/providers/
 </strong>RUN /opt/keycloak/bin/kc.sh build
 
 FROM quay.io/keycloak/keycloak:latest
@@ -51,7 +48,6 @@ docker build -t docker-keycloak-with-theme .
 docker run \
     -e KEYCLOAK_ADMIN=admin \
     -e KEYCLOAK_ADMIN_PASSWORD=admin \
-    --env MY_ENV_VARIABLE='Value of my env variable' \
     -p 8080:8080 \
     docker-keycloak-with-theme
 </code></pre>
