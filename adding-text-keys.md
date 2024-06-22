@@ -68,7 +68,7 @@ export type I18n = typeof ofTypeI18n;
 {% endcode %}
 
 {% hint style="warning" %}
-The messageBundle that you provide as argument of the `createUseI18n` function must be statically evaluable. You can't import from external file. All the translations must be declared inline.  \
+The messageBundle that you provide as argument of the `createUseI18n` function must be statically evaluable. You can't import from external files. All the translations must be declared inline.  \
 This is because Keycloakify will analyse your code at build time to make Keycloak aware of your modifications of the base messages so that server side generated feedback messages can use your translations. &#x20;
 
 ![](<.gitbook/assets/image (3).png>)\
