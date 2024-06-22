@@ -13,7 +13,6 @@
   * [In your Vite or Webpack project](keycloakify-in-my-app/in-your-vite-react-project.md)
 * [🖼️ Importing Assets](importing-assets.md)
 * [🖋️ Custom Fonts](custom-fonts.md)
-* [📄 Terms and conditions](terms-and-conditions.md)
 * [🌎 Internationalization and Translations](adding-text-keys.md)
 * [🔧 Accessing the Server Environement Variables](environment-variables.md)
 * [🎭 Theme Variants](theme-variants.md)
@@ -40,6 +39,7 @@
 ## Keycloak configuration
 
 * [📥 Importing the JAR of Your Theme Into Keycloak](importing-your-theme-in-keycloak.md)
+* [📄 Terms and conditions](keycloak-configuration/terms-and-conditions.md)
 * [🔛 Enabling your Theme in the Keycloak Admin Console](keycloak-configuration/enabling-your-theme/README.md)
   * [Login Theme](keycloak-configuration/enabling-your-theme/login-theme.md)
   * [Account Theme](keycloak-configuration/enabling-your-theme/account-theme.md)
