@@ -40,6 +40,6 @@ npx keycloakify add-story
 # Select login -> terms.ftl
 ```
 
-In `src/login/Terms.tsx`, note that `msg("termsText")` returns a JSX.Element. It's because the `msg()` function renders the string message as HTML. You can't work directly with that. &#x20;
+In `src/login/Terms.tsx`, note that `msg("termsText")` returns a `JSX.Element`. It's because the `msg()` function renders the string message as HTML text. You can't work directly with that. &#x20;
 
-If you want to apply transformation to the text, you should use `msgStr("termsText")` instead. This returns the original string as defined on Keycloak. &#x20;
+If you want to apply transformation to the text, you should use `msgStr("termsText")` instead. This returns the original string as defined in your realm configuration. &#x20;
