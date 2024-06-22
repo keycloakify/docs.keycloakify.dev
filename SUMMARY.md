@@ -13,7 +13,7 @@
   * [In your Vite or Webpack project](keycloakify-in-my-app/in-your-vite-react-project.md)
 * [🖼️ Importing Assets](importing-assets.md)
 * [🖋️ Custom Fonts](custom-fonts.md)
-* [🌎 Internationalization and Translations](adding-text-keys.md)
+* [🌎 Internationalization and Translations](i18n.md)
 * [🔧 Accessing the Server Environement Variables](environment-variables.md)
 * [🎭 Theme Variants](theme-variants.md)
 * [📧 Email Customization](email-customization.md)
