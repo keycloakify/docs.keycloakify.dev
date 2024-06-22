@@ -71,7 +71,7 @@ export type I18n = typeof ofTypeI18n;
 The messageBundle that you provide as argument of the `createUseI18n` function must be statically evaluable. You can't import from external files. All the translations must be declared inline.  \
 This is because Keycloakify will analyse your code at build time to make Keycloak aware of your modifications of the base messages so that server side generated feedback messages can use your translations. &#x20;
 
-![](<.gitbook/assets/image (3).png>)\
+![](<.gitbook/assets/image (3) (1).png>)\
 ![](<.gitbook/assets/image (4).png>)
 
 ![](<.gitbook/assets/Screenshot 2024-06-22 at 21.36.53.png>)
@@ -83,6 +83,20 @@ If you don't provide tranlation for all the language that are enabled in the rea
 
 ### In the Keycloak Realm configuration
 
+Some relevent messages, namely termsText and all the messages used in the User Profile Attributes like for example the Display name, the helper text or the select option labels can be defined at the reaml level and it will work as you would expect:
 
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption><p>The custom user attribute favourite_pet has for Display Name the message key "profile.attributes.favourite_pet"</p></figcaption></figure>
 
-\
+<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption><p>A translation for the message key "profile.attributes.favourite_pet" has been defined for the English language: "Favourite Pet"</p></figcaption></figure>
+
+<figure><img src=".gitbook/assets/image (2).png" alt="" width="312"><figcaption><p>"Favourite Pet" is correctly used as Display Name for the input field in the register page</p></figcaption></figure>
+
+See alslo:
+
+{% content-ref url="keycloak-configuration/terms-and-conditions.md" %}
+[terms-and-conditions.md](keycloak-configuration/terms-and-conditions.md)
+{% endcontent-ref %}
+
+{% content-ref url="keycloak-configuration/adding-registration-form-fields/" %}
+[adding-registration-form-fields](keycloak-configuration/adding-registration-form-fields/)
+{% endcontent-ref %}
