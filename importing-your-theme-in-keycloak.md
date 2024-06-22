@@ -104,8 +104,6 @@ What you need to know is that your keycloak-theme.jar should be placed in the pr
 After that you should run bin/kc.sh build (e.g: `bash /opt/keycloak/bin/kc.sh build`)
 
 Then you can start your Keycloak server, your theme should be available in it!
-
-If you are using a version of Keycloak prior to 23 you must [use the `retrocompat-*.jar`](#user-content-fn-1)[^1].
 {% endtab %}
 
 {% tab title="Cloud-IAM" %}
@@ -122,5 +120,3 @@ This code will provide you with a 5% discount, and we will also receive 5%, whic
 {% embed url="https://app.tango.us/app/embed/e22aec8f-d7cf-44a7-bfe7-9f92630aa7eb" %}
 {% endtab %}
 {% endtabs %}
-
-[^1]: When you run yarn build-keycloak-theme in the dist\_keycloak/build directory two jar files are create. \*.jar and retrocompat-\*.jar.
