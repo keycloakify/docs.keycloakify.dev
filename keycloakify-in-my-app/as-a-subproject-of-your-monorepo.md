@@ -71,7 +71,7 @@ npm run build-keycloak-theme
 ```
 
 {% embed url="https://youtu.be/4h9lOf-4ZIE" %}
-Building the theme, only compiling for Keycloak 25 with a custom jar file name
+Building the theme, only compiling for Keycloak 25 with a custom jar file name. Demonstrating the effectiveness of turborepo cache
 {% endembed %}
 {% endtab %}
 
