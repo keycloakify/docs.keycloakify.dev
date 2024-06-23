@@ -1,6 +1,6 @@
 # XDG\_CACHE\_HOME
 
-If this environnement variable is defined this cache directory will be used instead of `node_modules/.cache` example:
+If this environnement variable is defined this cache directory will be used instead of the default `node_modules/.cache/keycloakify` example:
 
 ```bash
 export XDG_CACHE_HOME=/home/runner/.cache/yarn
@@ -9,3 +9,5 @@ npx keycloakify build
 ```
 
 This option is mainly usefull if you need to be able to build your theme offline, in a context with network restriction polices. &#x20;
+
+The Keycloakify caches the default Keycloak theme resources to avoid having to download them over and over. &#x20;

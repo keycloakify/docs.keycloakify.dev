@@ -94,3 +94,9 @@ npx keycloakify start-keycloak
 # OR
 npx keycloakify start-keycloak -p apps/keycloak-theme
 ```
+
+To go beyond the base configuration you might want to expore: &#x20;
+
+{% content-ref url="../build-options/" %}
+[build-options](../build-options/)
+{% endcontent-ref %}

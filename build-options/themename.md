@@ -36,8 +36,9 @@ export default defineConfig({
 {% endtab %}
 {% endtabs %}
 
-By providing an array this also enables you to implement theme variant. See:\
+The theme name is also in `kcContext.themeName`
 
+Providing an array enables you to implement theme variant. See:
 
 {% content-ref url="../theme-variants.md" %}
 [theme-variants.md](../theme-variants.md)
