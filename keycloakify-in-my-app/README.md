@@ -19,6 +19,10 @@ If you happen to be devlopping a React Single Page Application with Vite or Webp
 If the collocation approach is not an option for you either because your not building an SPA (you are using Next or Remix) or because you're using another frontend framwork than React you can integrate your Keycloakify as a subproject of your Monorepo.  \
 
 
+{% content-ref url="as-a-subproject-of-your-monorepo.md" %}
+[as-a-subproject-of-your-monorepo.md](as-a-subproject-of-your-monorepo.md)
+{% endcontent-ref %}
+
 ## Redirecting your users to the Login/Register pages
 
 If you are integrating Keycloakify into an existing app, chances are you've already figured out how to setup an OIDC client in your web app.  \
