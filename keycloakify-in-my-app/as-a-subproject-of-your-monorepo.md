@@ -53,23 +53,26 @@ Then you want to add a new script for building your theme in your root **package
 
 Add a turborepo task
 
-{% code title="turbo.json" %}
-```json
-{
+<pre class="language-json" data-title="turbo.json"><code class="lang-json">{
   "$schema": "https://turbo.build/schema.json",
   "tasks": {
     // ... Other tasks
-    "build-keycloak-theme": {}
-  }
+<strong>    "build-keycloak-theme": {
+</strong><strong>        "outputs": ["dist/**", "dist_keycloak/**"]
+</strong><strong>    }
+</strong>  }
 }
-```
-{% endcode %}
+</code></pre>
 
 You can now build your keycloak theme at the root of your monorepo by running
 
 ```bash
 npm run build-keycloak-theme
 ```
+
+{% embed url="https://youtu.be/4h9lOf-4ZIE" %}
+Building the theme, only compiling for Keycloak 25 with a custom jar file name
+{% endembed %}
 {% endtab %}
 
 {% tab title="Nx" %}
