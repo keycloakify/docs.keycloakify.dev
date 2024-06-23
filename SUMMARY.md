@@ -58,6 +58,7 @@
 * [🛑 Errors Keycloak in Logs](faq/keycloak-error-in-log.md)
 * [🙋 How do I add extra pages?](faq-and-help/how-do-i-add-extra-pages.md)
 * [🤓 Can I use react-hooks-form?](faq-and-help/can-i-use-react-hooks-form.md)
+* [🚀 Redirecting you users to the login/register pages](faq-and-help/redirecting-you-users-to-the-login-register-pages.md)
 * [💟 Contributing](faq/contributing.md)
 * [⬆️ Migration Guides](migration-guides/README.md)
   * [⬆️ CRA -> Vite](migration-guides/cra-greater-than-vite.md)
