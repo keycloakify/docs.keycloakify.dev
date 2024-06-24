@@ -18,7 +18,7 @@ It's however planned to enable this. Follow the progress in [this issue](https:/
 
 Keycloakify lets you bundle an email theme in your Jar but you'll have to use FreeMarker for customizing your email template.&#x20;
 
-### Keycloakify relies on Account v1 not v3
+### Keycloakify Account theme are based on Account v1 not v3
 
 Hense the default look might seems a bit dated:
 
