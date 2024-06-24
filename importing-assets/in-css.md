@@ -9,7 +9,7 @@ First let's [download a background image](https://coolbackgrounds.io/) an put it
 {% hint style="info" %}
 If you wish to do so, you can hot swipe assets that you have placed into your public directory in your Keycloak instance files at:
 
-**/opt/keycloak/themes/\<name of your theme>/\<login|account>/resources/dist**
+**/opt/keycloak/themes/**[**\<name of your theme>**](../build-options/themename.md)**/\<login|account>/resources/dist**
 
 ![](<../.gitbook/assets/image (28).png>)
 {% endhint %}

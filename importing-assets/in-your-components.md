@@ -46,7 +46,7 @@ You can see the result by running `npx keycloakify start-keycloak`
 {% hint style="info" %}
 If you ever need to SSH into the Keycloak server and hot swipe the image you can find it at
 
-**/opt/keycloak/themes/\<name of your theme>/login/resources/dist/img/logo.png**
+**/opt/keycloak/themes/**[**\<name of your theme>**](../build-options/themename.md)**/login/resources/dist/img/logo.png**
 
 ![](<../.gitbook/assets/image (3).png>)
 {% endhint %}
