@@ -1,6 +1,6 @@
 # 🔩 Integrating Keycloakify in your Project
 
-This documentation section is rellevent to you if you have already a web project and you want to integrate a Keycloak theme as an integral part of your project. &#x20;
+This documentation section is rellevent to you only if you have already a web project and you want to integrate a Keycloak theme into it. &#x20;
 
 One of the powerfull aspect of Keycloakify is to enable you to reuse component style and logic of your main application in your Keycloak theme. This enable for a seemless transition from your app to your Keycloak pages. &#x20;
 
