@@ -7,8 +7,8 @@ First you want to create a new subproject in your monorepo, just clone the start
 ```bash
 cd my-turborepo
 git clone https://github.com/keycloakify/keycloakify-starter apps/keycloak-theme
-rm -r apps/keycloak-theme/.git
-rm -r apps/keycloak-theme/.github
+rm -rf apps/keycloak-theme/.git
+rm -rf apps/keycloak-theme/.github
 ```
 
 Change the name field in your package.json
