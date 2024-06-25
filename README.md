@@ -11,7 +11,7 @@ Why do I need Keycloakify in the first place? Why can't I just implement the def
 * Keycloakify bundles the theme for you into a JAR that you can simply import into Keycloak.
 * The Keycloak themes generated with Keycloakify are compatible with all Keycloak versions down to v11, by oposition to regular themes that must be updated to target a specific Keycloak version.
 * Keycloakify themes implement real-time frontend validation out of the box. For example, when a user chooses a password that is too weak, they see the feedback immediately and not after they have pressed the submit button.
-* We're here to help either via [our Discord](https://discord.gg/kYFZG7fQmn) channel or GitHub issues.
+* We're here to help either via [our Discord](https://discord.gg/kYFZG7fQmn) channel or [GitHub issues](https://github.com/keycloakify/keycloakify/issues/new).
 
 First thing you want to do is to fork/clode the Keycloakify Vite[^1] starter project.&#x20;
 
