@@ -63,6 +63,7 @@
 * [🚀 Redirecting you users to the login/register pages](faq-and-help/redirecting-you-users-to-the-login-register-pages.md)
 * [💟 Contributing](faq/contributing.md)
 * [⬆️ Migration Guides](migration-guides/README.md)
+  * [⬆️ v9 -> v10](faq-and-help/migration-guides/v9-greater-than-v10.md)
   * [⬆️ CRA -> Vite](migration-guides/cra-greater-than-vite.md)
   * [⬆️ v8 -> v9](migration-guides/v8-greater-than-v9.md)
   * [⬆️ v7 -> v8](migration-guides/v7-greater-than-v8.md)
