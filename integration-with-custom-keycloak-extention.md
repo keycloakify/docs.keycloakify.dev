@@ -8,7 +8,7 @@ You can implement this custom page in your Keycloakify project. Here is a branch
 Branch of the starter where with a custom sms-otp.ftl page
 {% endembed %}
 
-{% embed url="https://github.com/keycloakify/keycloakify-starter/commit/2e81a70ac44856b425335b70ca042d3bcd8c209d" %}
+{% embed url="https://github.com/keycloakify/keycloakify-starter/commit/fec0e9290d6820e5604150a478cce63a500e228f" %}
 Diff view of the changes to add the page
 {% endembed %}
 
