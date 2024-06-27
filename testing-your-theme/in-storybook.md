@@ -9,9 +9,7 @@ npm run storybook
 ```
 {% endhint %}
 
-
-
-Storybook is a tool that enables to test UI component in isolation. For reference, the component showcase Keycloakify website is a Storybook instrance:
+[Storybook](https://storybook.js.org/) is a tool that enables to test UI component in isolation. For reference, the component showcase Keycloakify website is a website generated with Storybook.
 
 {% embed url="https://storybook.keycloakify.dev/?path=/story/introduction--page" %}
 
