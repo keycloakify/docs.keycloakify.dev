@@ -41,8 +41,8 @@ npm run storybook
 
 You can see the changes you make in you code in realtime in your Storybook. &#x20;
 
-The idea of Storybook is to easyly let you see the pages in different configuration without having to reproduce the full login/register cinematic in a real Keycloak.  \
-Keycloakify provide a default mock context for every pages, the stories let you partially overrride some specific part of this default mock to reflect pages in different configurations.  \
+The idea of Storybook is to easyly let you see the pages in different configuration without having to reproduce the full login/register process in a real Keycloak.  \
+Keycloakify provide a default mock context for every pages, the stories let you partially override some specific part of this default mock to reflect pages in different configurations.  \
 \
 For example, if you want to create a story that show the register page in chinese you would add this:
 
