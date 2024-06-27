@@ -38,6 +38,16 @@ Result (see [testing your theme](../testing-your-theme/)):
 
 <figure><img src="../.gitbook/assets/image (26).png" alt=""><figcaption><p>Custom background successfully applyed</p></figcaption></figure>
 
+If you prefer, you can also move the background.png image from `public/` to, for examples, `src/login/assets/background.png` and reference the image with a path relative to the CSS file, in this case it would be:
+
+{% code title="src/login/main.css" %}
+```css
+body.kcBodyClass {
+    background: url(./assets/background.png) no-repeat center center fixed;
+}
+```
+{% endcode %}
+
 ### CSS-in-JS
 
 Now let's see how we can apply the same image using a CSS-in-JS. In this example we'll use [@emotion/css](https://emotion.sh/docs/introduction).
