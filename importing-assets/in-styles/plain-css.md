@@ -37,3 +37,4 @@ body.kcBodyClass {
 
 Now let's see how we would apply a different background image for different pages of our theme.
 
+{% embed url="https://youtu.be/Kg7TqJhPvEI" %}
