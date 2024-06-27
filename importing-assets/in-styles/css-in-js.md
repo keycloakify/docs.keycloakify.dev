@@ -4,6 +4,8 @@
 At this point we assume we have a **background.png** file in the **public/** directory.
 {% endhint %}
 
+CSS-in-JS is preferable over plain CSS as it enables for more flexibility and is easyer to maintain.
+
 Let's see how we can apply the image using a CSS-in-JS. In this example we'll use [@emotion/css](https://emotion.sh/docs/introduction).
 
 ```bash
@@ -104,4 +106,6 @@ const classes = {
 } satisfies { [key in ClassKey]?: string };
 </code></pre>
 
-This will yeild the same result except that now if you delete, move or rename the **background.png** file you'll get a compilation error letting you know that you must also uptate your **KcPage.tsx** file.
+Now let's see how we can go futher and apply different backgroud on different pages of our theme:
+
+{% embed url="https://youtu.be/vRPlGUD-KvE" %}
