@@ -21,10 +21,10 @@ import { PUBLIC_URL } from "keycloakify/PUBLIC_URL";
 {% endtab %}
 {% endtabs %}
 
-{% content-ref url="in-your-components.md" %}
-[in-your-components.md](in-your-components.md)
+{% content-ref url="in-react-components.md" %}
+[in-react-components.md](in-react-components.md)
 {% endcontent-ref %}
 
-{% content-ref url="in-css.md" %}
-[in-css.md](in-css.md)
+{% content-ref url="in-styles/" %}
+[in-styles](in-styles/)
 {% endcontent-ref %}

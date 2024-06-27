@@ -1,56 +1,10 @@
-# In CSS
-
-Let's see, as an example, the different ways you have to change the backgrouns image of the login page. &#x20;
-
-First let's [download a background image](https://coolbackgrounds.io/) an put it in our public directory:
-
-<figure><img src="../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+# CSS in JS
 
 {% hint style="info" %}
-If you wish to do so, you can hot swipe assets that you have placed into your public directory in your Keycloak instance files at:
-
-**/opt/keycloak/themes/**[**\<name of your theme>**](../build-options/themename.md)**/\<login|account>/resources/dist**
-
-![](<../.gitbook/assets/image (28).png>)
+At this point we assume we have a **background.png** file in the **public/** directory.
 {% endhint %}
 
-### Plain CSS
-
-Let's apply this image to the body using plain CSS
-
-{% code title="src/login/main.css" %}
-```css
-
-body.kcBodyClass {
-    background: url(/background.png) no-repeat center center fixed;
-}
-```
-{% endcode %}
-
-We import the StyleSheet:
-
-<pre class="language-tsx" data-title="src/login/KcPage.tsx"><code class="lang-tsx"><strong>import "./main.css";
-</strong>import { Suspense, lazy } from "react";
-// ...
-</code></pre>
-
-Result (see [testing your theme](../testing-your-theme/)):
-
-<figure><img src="../.gitbook/assets/image (26).png" alt=""><figcaption><p>Custom background successfully applyed</p></figcaption></figure>
-
-If you prefer, you can also move the background.png image from `public/` to, for examples, `src/login/assets/background.png` and reference the image with a path relative to the CSS file, in this case it would be:
-
-{% code title="src/login/main.css" %}
-```css
-body.kcBodyClass {
-    background: url(./assets/background.png) no-repeat center center fixed;
-}
-```
-{% endcode %}
-
-### CSS-in-JS
-
-Now let's see how we can apply the same image using a CSS-in-JS. In this example we'll use [@emotion/css](https://emotion.sh/docs/introduction).
+Let's see how we can apply the image using a CSS-in-JS. In this example we'll use [@emotion/css](https://emotion.sh/docs/introduction).
 
 ```bash
 yarn add @emotion/css
@@ -113,12 +67,14 @@ const classes = {
 {% endtab %}
 {% endtabs %}
 
-And that's it. You'll get the same result as shown with plain CSS! &#x20;
+Result (see [testing your theme](../../testing-your-theme/)):
 
-That being said. It's even better to let the bundler generate url for your imports instead of manually referencing files from your public directory.  \
+<figure><img src="../../.gitbook/assets/image (26).png" alt=""><figcaption><p>Custom background successfully applyed</p></figcaption></figure>
+
+Now let's go a little futher, it's even better to let the bundler generate url for your imports instead of manually referencing files from your public directory.  \
 So, let's move the background image in **src/login/assets/**:
 
-<figure><img src="../.gitbook/assets/image (30).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (30).png" alt="" width="375"><figcaption></figcaption></figure>
 
 And in our code import it this way:
 
