@@ -17,7 +17,7 @@ Why would I chose to use this thrid party tool insted of directly implementing [
 * Keycloakify themes implement real-time frontend validation out of the box. For example, when a user chooses a password that is too weak, they see the feedback  message like _"the password must be at least 12 character long"_ immediately and not after they have pressed the submit button.
 * We're here to help! Either via [our Discord](https://discord.gg/kYFZG7fQmn) channel or [GitHub issues](https://github.com/keycloakify/keycloakify/issues/new).
 
-First thing you want to do is to fork/clone the Keycloakify Vite[^1] starter project.&#x20;
+First thing you want to do is to fork/clone the Keycloakify Vite[^1] starter template.&#x20;
 
 {% embed url="https://github.com/keycloakify/keycloakify-starter" %}
 
