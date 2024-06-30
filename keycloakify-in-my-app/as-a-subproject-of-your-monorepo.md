@@ -45,7 +45,8 @@ Then you want to add a new script for building your theme in your root **package
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-<strong>    "build-keycloak-theme": "turbo run build-keycloak-theme --filter=keycloak-theme"
+<strong>    "build-keycloak-theme": "turbo run build-keycloak-theme --filter=keycloak-theme",
+</strong><strong>    "start-keycloak": "keycloakify start-keycloak -p apps/keycloak-theme"
 </strong>  },
   // ...
 }
@@ -109,7 +110,90 @@ If you applies thoses changes, when you'll run `npm run build-keycloak-theme` yo
 {% endtab %}
 
 {% tab title="Nx" %}
+```bash
+npx create-nx-workspace@latest --preset=react-monorepo --bundler=vite
+```
 
+<figure><img src="../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+
+```bash
+cd nx-monorepo
+rm -rf apps/keycloak-theme/src
+git clone https://github.com/keycloakify/keycloakify-starter tmp
+mv tmp/src apps/keycloak-theme
+rm -rf tmp
+```
+
+<figure><img src="../.gitbook/assets/image (45).png" alt="" width="369"><figcaption></figcaption></figure>
+
+<pre class="language-json" data-title="package.json"><code class="lang-json">{
+  "name": "@nx-monorepo/source",
+  "version": "0.0.0",
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "tslib": "^2.3.0",
+<strong>    "keycloakify": "10.0.0-rc.99"
+</strong>  },
+  "scripts": {
+<strong>    "build-keycloak-theme": "nx build keycloak-theme &#x26;&#x26; keycloakify build -p apps/keycloak-theme",
+</strong><strong>    "start-keycloak": "keycloakify start-keycloak -p apps/keycloak-theme"
+</strong>  },
+  // ...
+</code></pre>
+
+```bash
+npm install # or `pnpm install` or `yarn`...
+```
+
+<pre class="language-typescript" data-title="vite.config.ts"><code class="lang-typescript">/// &#x3C;reference types='vitest' />
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
+import { keycloakify } from "keycloakify/vite-plugin";
+
+
+export default defineConfig({
+  root: __dirname,
+  cacheDir: '../../node_modules/.vite/apps/keycloak-theme',
+
+  server: {
+    port: 4200,
+    host: 'localhost',
+  },
+
+  preview: {
+    port: 4300,
+    host: 'localhost',
+  },
+
+  plugins: [react(), nxViteTsPaths(), 
+<strong>      keycloakify({
+</strong><strong>          themeName: "my-project",
+</strong><strong>          themeVersion: "1.0.0",
+</strong><strong>          keycloakifyBuildDirPath: '../../dist/apps/keycloak-theme'
+</strong><strong>       })
+</strong>   ],
+
+  // Uncomment this if you are using workers.
+  // worker: {
+  //  plugins: [ nxViteTsPaths() ],
+  // },
+
+  build: {
+<strong>    outDir: 'dist',
+</strong>    emptyOutDir: true,
+    reportCompressedSize: true,
+    commonjsOptions: {
+      transformMixedEsModules: true,
+    },
+  },
+});
+</code></pre>
+
+Now if you run `npm run build-keycloak-theme` it will generate the&#x20;
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-06-30 at 10.19.42.png" alt="" width="375"><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="yarn/pnpm/npm/bun workspace" %}
@@ -117,16 +201,11 @@ If you applies thoses changes, when you'll run `npm run build-keycloak-theme` yo
 {% endtab %}
 {% endtabs %}
 
+When you want to use the keycloakify CLI commands you can either cd into your keycloakify sub app directory or use the [--project option of the Keycloakify CLI](../build-options/project.md).  \
+Like for example if you want to run add-story you can do either:
 
-
-When you want to run the npx keycloakify start-keycloak or npx keycloakify eject-page be sure to navigate first in your keycloakify sub project or use the --project CLI option. &#x20;
-
-```bash
-cd apps/keycloak-theme
-npx keycloakify start-keycloak
-# OR
-npx keycloakify start-keycloak -p apps/keycloak-theme
-```
+* `cd apps/keycloak-theme && npx keycloakify add-story`
+* `npx keycloakify add-story -p apps/keycloakify-theme` from the root of your monorepo
 
 To go beyond the base configuration you might want to expore what [build options](../build-options/) are available. Starting with with `keycloakVersionTargets` to make sure that you only generates the JARs file you need.
 
