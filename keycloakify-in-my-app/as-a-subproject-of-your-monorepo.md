@@ -31,7 +31,7 @@ import { keycloakify } from "keycloakify/vite-plugin";
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [react(), keycloakify({
-<strong>        name: "my-project"
+<strong>        themeName: "my-app"
 </strong>    })]
 });
 </code></pre>
@@ -209,7 +209,114 @@ Now if you run `npm run build-keycloak-theme` it will generate the JAR in dist/a
 {% endtab %}
 
 {% tab title="yarn/pnpm/npm/bun workspace" %}
+{% hint style="info" %}
+In this section we assume we are using pnpm but this guide applies to any package manager that support namespaces. &#x20;
+{% endhint %}
 
+
+
+```bash
+# pnpm
+pnpm --filter keycloak-theme run build-keycloak-theme
+# yarn
+yarn workspace keycloak-theme run build-keycloak-theme
+# npm
+npm run build-keycloak-theme --workspace=keycloak-theme
+# bun
+bun run --cwd apps/keycloak-theme build-keycloak-theme
+```
+
+Let's assume we have a monorepo project where sub applications are stored in the apps/ directory.  \
+For example with pnpm that would be the case if you have:
+
+<pre class="language-yaml" data-title="pnpm-workspace.yaml"><code class="lang-yaml">packages:
+<strong>  - 'apps/*'
+</strong>  - 'packages/*'
+</code></pre>
+
+
+
+Then, you want to create a new app called, for example 'keycloak-theme' and initialize it with the code of the starter template: &#x20;
+
+```bash
+cd my-monorepo
+git clone https://github.com/keycloakify/keycloakify-starter apps/keycloak-theme
+rm -rf apps/keycloak-theme/.git
+rm -rf apps/keycloak-theme/.github
+rm apps/keycloak-theme/.yarn.lock
+```
+
+<figure><img src="../.gitbook/assets/image (50).png" alt="" width="375"><figcaption></figcaption></figure>
+
+Now you want to update the name field of your apps/keycloak-theme/package.json to match the name of your sub app.&#x20;
+
+{% code title="apps/keycloak-theme/package.json" %}
+```diff
+ {
+-    "name": "keycloakify-starter",
++    "name": "keycloak-theme",
+```
+{% endcode %}
+
+You also want to provide an actual name to your theme as you want it to [appear in the Keycloak Admin UI](https://github.com/keycloakify/keycloakify/assets/6702424/7da4afe2-0f67-4f79-a3d0-bd982636ea23).
+
+<pre class="language-typescript" data-title="apps/keycloak-theme/vite.config.ts"><code class="lang-typescript">import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import { keycloakify } from "keycloakify/vite-plugin";
+
+// https://vitejs.dev/config/
+export default defineConfig({
+    plugins: [react(), keycloakify({
+<strong>        themeName: "my-app"
+</strong>    })]
+});
+</code></pre>
+
+Now you can add a script in your root package json to build the theme and start the keycloak dev server:
+
+<pre class="language-json" data-title="package.json"><code class="lang-json">{
+   //...
+   "scripts": {
+<strong>       "build-keycloak-theme": "pnpm --filter keycloak-theme run build-keycloak-theme",
+</strong><strong>       "start-keycloak": "keycloakify start-keycloak -p apps/keycloak-theme"
+</strong>   }
+}
+</code></pre>
+
+Now you can run:
+
+```bash
+pnpm install
+pnpm run build-keycloak-theme
+```
+
+<figure><img src="../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
+
+Two common thing you might want to do is [change the location of the directory where the JARs files are generated](../build-options/keycloakifybuilddirpath.md) and [only build the JAR for the Keycloak version you are using](../targetting-specific-keycloak-versions.md).
+
+<pre class="language-typescript" data-title="vite.config.ts"><code class="lang-typescript">import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import { keycloakify } from "keycloakify/vite-plugin";
+
+// https://vitejs.dev/config/
+export default defineConfig({
+    plugins: [react(), keycloakify({
+        themeName: "my-app",
+<strong>        keycloakifyBuildDirPath: "../../dist/apps/keycloak-theme",
+</strong><strong>        keycloakVersionTargets: {
+</strong><strong>            hasAccountTheme: true,
+</strong><strong>            "21-and-below": false,
+</strong><strong>            "23": false,
+</strong><strong>            "24": false,
+</strong><strong>            "25-and-above": "keycloak-theme.jar"
+</strong><strong>        }
+</strong>    })]
+});
+</code></pre>
+
+In this configuration when you run `pnpm run build-keycloak-theme` from the root of your monorepo a single `keycloak-theme.jar` will be generated in **dist/apps/keycloak-theme**:
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-06-30 at 16.59.37.png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 {% endtabs %}
 
