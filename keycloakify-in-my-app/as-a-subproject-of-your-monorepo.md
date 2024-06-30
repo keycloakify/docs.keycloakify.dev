@@ -110,36 +110,49 @@ If you applies thoses changes, when you'll run `npm run build-keycloak-theme` yo
 {% endtab %}
 
 {% tab title="Nx" %}
+Let's see how to integrate a Keycloakify theme into a Nx project with integrated monorepo.
+
+In this example we'll start with the Nx Vite starter
+
 ```bash
 npx create-nx-workspace@latest --preset=react-monorepo --bundler=vite
 ```
 
 <figure><img src="../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
 
+Next up we want to repatriate the Keycloakify Starter template sources.  \
+We only copy over the src and .storybook directory.
+
 ```bash
 cd nx-monorepo
 rm -rf apps/keycloak-theme/src
 git clone https://github.com/keycloakify/keycloakify-starter tmp
 mv tmp/src apps/keycloak-theme
+mv tmp/.storybook apps/keycloak-theme
 rm -rf tmp
 ```
 
-<figure><img src="../.gitbook/assets/image (45).png" alt="" width="369"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (46).png" alt="" width="365"><figcaption><p>After moving src and .storybook to apps/keycloak-theme</p></figcaption></figure>
 
 <pre class="language-json" data-title="package.json"><code class="lang-json">{
   "name": "@nx-monorepo/source",
   "version": "0.0.0",
+  "scripts": {
+<strong>    "build-keycloak-theme": "nx build keycloak-theme &#x26;&#x26; keycloakify build -p apps/keycloak-theme",
+</strong><strong>    "keycloak-theme-storybook": "npx storybook dev -p 6006 -c apps/keycloak-theme/.storybook",
+</strong><strong>    "start-keycloak": "keycloakify start-keycloak -p apps/keycloak-theme"
+</strong>  },
   "dependencies": {
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "tslib": "^2.3.0",
 <strong>    "keycloakify": "10.0.0-rc.99"
 </strong>  },
-  "scripts": {
-<strong>    "build-keycloak-theme": "nx build keycloak-theme &#x26;&#x26; keycloakify build -p apps/keycloak-theme",
-</strong><strong>    "start-keycloak": "keycloakify start-keycloak -p apps/keycloak-theme"
-</strong>  },
-  // ...
+  "devDependencies": {
+<strong>      "storybook": "^8.1.10",
+</strong><strong>      "@storybook/react": "^8.1.10",
+</strong><strong>      "@storybook/react-vite": "^8.1.10"
+</strong>  // ...
 </code></pre>
 
 ```bash
@@ -150,9 +163,8 @@ npm install # or `pnpm install` or `yarn`...
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
-import { keycloakify } from "keycloakify/vite-plugin";
-
-
+<strong>import { keycloakify } from "keycloakify/vite-plugin";
+</strong>
 export default defineConfig({
   root: __dirname,
   cacheDir: '../../node_modules/.vite/apps/keycloak-theme',
@@ -191,9 +203,9 @@ export default defineConfig({
 });
 </code></pre>
 
-Now if you run `npm run build-keycloak-theme` it will generate the&#x20;
+Now if you run `npm run build-keycloak-theme` it will generate the JAR in dist/apps/keycloak-theme.
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-06-30 at 10.19.42.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-06-30 at 12.29.58.png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="yarn/pnpm/npm/bun workspace" %}
