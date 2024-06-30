@@ -49,7 +49,7 @@ rm -rf tmp
 npm install # or `pnpm install` or `yarn`...
 ```
 
-<pre class="language-typescript" data-title="vite.config.ts"><code class="lang-typescript">/// &#x3C;reference types='vitest' />
+<pre class="language-typescript" data-title="apps/keycloak-theme/vite.config.ts"><code class="lang-typescript">/// &#x3C;reference types='vitest' />
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
