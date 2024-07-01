@@ -4,8 +4,8 @@ How do you usually styles your web applications?
 
 {% tabs %}
 {% tab title="With .css, .sass or .less files" %}
-{% content-ref url=".css-.sass-or-.less.md" %}
-[.css-.sass-or-.less.md](.css-.sass-or-.less.md)
+{% content-ref url="plain-css.md" %}
+[plain-css.md](plain-css.md)
 {% endcontent-ref %}
 {% endtab %}
 
