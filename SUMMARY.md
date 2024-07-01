@@ -27,6 +27,7 @@
 * [📧 Email Customization](email-customization.md)
 * [🎯 Targetting Specific Keycloak Versions](targetting-specific-keycloak-versions.md)
 * [🚛 Passing URL Parameters to your Theme](passing-url-parameters-when-redirecting-to-your-theme.md)
+* [🔌 Account REST API](account-rest-api.md)
 * [📖 Build Options](build-options/README.md)
   * [--project](build-options/project.md)
   * [keycloakVersionTargets](build-options/keycloakversiontargets.md)
