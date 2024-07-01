@@ -14,6 +14,10 @@ Branch of the starter template modified to call the Account REST API
 This is the relevent changes:
 
 {% embed url="https://github.com/keycloakify/keycloakify-starter/commit/aaab4b803c5debf3e9400ac1d40c0dcec8653c19" %}
+The commit where the API call was added
+{% endembed %}
+
+[Here](https://github.com/keycloak/keycloak/tree/main/js/apps/account-ui/src/api) you have the code from the Account v3 theme from which you can infer all the endpoints available, you can also enable the Account v3 theme in your Keycloak and use the network tab to see what are the endpoints available.
 
 One important thing to note is that you need to add /resources/\* to the valid redirect URIs of the account-console client in your Realm configuration (it wont be nessesary in the future): &#x20;
 
