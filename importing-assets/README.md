@@ -25,6 +25,6 @@ import { PUBLIC_URL } from "keycloakify/PUBLIC_URL";
 [in-react-components.md](in-react-components.md)
 {% endcontent-ref %}
 
-{% content-ref url="in-styles/" %}
-[in-styles](in-styles/)
+{% content-ref url="in-css/" %}
+[in-css](in-css/)
 {% endcontent-ref %}

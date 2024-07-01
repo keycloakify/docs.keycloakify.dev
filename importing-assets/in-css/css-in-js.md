@@ -1,10 +1,20 @@
-# CSS in JS
-
-{% hint style="info" %}
-At this point we assume we have a **background.png** file in the **public/** directory.
-{% endhint %}
+# CSS-in-JS
 
 CSS-in-JS is preferable over plain CSS as it enables for more flexibility and is easyer to maintain.
+
+Let's see, as an example, the different ways you have to change the backgrouns image of the login page. &#x20;
+
+First let's [download a background image](https://coolbackgrounds.io/) an put it in our public directory:
+
+<figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+If you wish to do so, you can hot swipe assets that you have placed into your public directory in your Keycloak instance files at:
+
+**/opt/keycloak/themes/**[**\<name of your theme>**](../../build-options/themename.md)**/\<login|account>/resources/dist**
+
+![](<../../.gitbook/assets/image (28).png>)
+{% endhint %}
 
 Let's see how we can apply the image using a CSS-in-JS. In this example we'll use [@emotion/css](https://emotion.sh/docs/introduction).
 

@@ -2,6 +2,6 @@
 
 Under construction. For now see:
 
-{% content-ref url="../importing-assets/in-styles/" %}
-[in-styles](../importing-assets/in-styles/)
+{% content-ref url="../importing-assets/in-css/" %}
+[in-css](../importing-assets/in-css/)
 {% endcontent-ref %}
