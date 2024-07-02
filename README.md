@@ -10,7 +10,7 @@ Keycloakify is a tool that enables to create keycloak themes for customizing of 
 
 Why would I chose to use this thrid party tool insted of directly implementing [the theming system featured by Keycloak](https://www.keycloak.org/docs/latest/server\_development/#\_themes)?&#x20;
 
-* Keycloakify lets you use modern frontend technology: **TypeScript**, **React**, and **any styling solution or component library** you'd like, such as **Tailwind**, **MUI**, **ShadeCN/UI**, or just **plain CSS**. With the base theming system you have to write [FreeMarker](https://freemarker.apache.org/index.html) and integrating frontend technologies into a Java Stack isn't straight forward.
+* Keycloakify lets you use modern frontend technology: **TypeScript**, **React**, and **any styling solution or component library** you'd like, such as **Tailwind**, **MUI**, **shadcn/ui**, or just **plain CSS**. With the base theming system you have to write [FreeMarker](https://freemarker.apache.org/index.html) and integrating frontend technologies into a Java Stack isn't straight forward.
 * Keycloakify makes it very easy to test your theme [inside](testing-your-theme/in-a-keycloak-docker-container.md) and [outside](testing-your-theme/in-storybook.md) Keycloak with hot reloading enabled.
 * Keycloakify bundles the theme for you into a JAR that you can simply [import into Keycloak](importing-your-theme-in-keycloak.md)t.
 * The Keycloak themes generated with Keycloakify are compatible with all Keycloak versions down to Keycloak version 11, by oposition to regular themes that must be updated to target a specific Keycloak version.
