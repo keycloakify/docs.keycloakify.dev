@@ -41,7 +41,7 @@ WORKDIR /opt/keycloak
 FROM quay.io/keycloak/keycloak:latest
 COPY --from=builder /opt/keycloak/ /opt/keycloak/
 ENV KC_HOSTNAME=localhost
-ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start-dev"]
+ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start", "--optimized"]
 EOF
 
 docker build -t docker-keycloak-with-theme .
