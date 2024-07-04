@@ -77,3 +77,4 @@
   * [⬆️ v6 -> v7](migration-guides/v6-greater-than-v7.md)
   * [⬆️ v6.x -> v6.12](migration-guides/v6.x-greater-than-v6.12.md)
   * [⬆️ v5 -> v6](migration-guides/readme-1.md)
+* [🍪 Google reCaptcha and End of third-party Cookies](faq-and-help/google-recaptcha-and-end-of-third-party-cookies.md)
