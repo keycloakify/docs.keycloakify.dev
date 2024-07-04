@@ -41,7 +41,7 @@ WORKDIR /opt/keycloak
 FROM quay.io/keycloak/keycloak:latest
 COPY --from=builder /opt/keycloak/ /opt/keycloak/
 ENV KC_HOSTNAME=localhost
-ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start", "--optimized"]
+ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start-dev"]
 EOF
 
 docker build -t docker-keycloak-with-theme .
@@ -51,6 +51,10 @@ docker run \
     -p 8080:8080 \
     docker-keycloak-with-theme
 </code></pre>
+
+{% hint style="warning" %}
+In this Docker file we use `ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start-dev"]` but in production use `ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start", "--optimized"]`
+{% endhint %}
 {% endtab %}
 
 {% tab title="Helm" %}
