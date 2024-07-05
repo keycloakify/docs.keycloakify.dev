@@ -5,7 +5,7 @@
 
 This documentation section is relevant only if **you already have a project** and want to add a Keycloak theme as one of its deliverables.&#x20;
 
-One of the powerful aspects of Keycloakify is its ability to let you reuse components and styles from your main application in your Keycloak theme. However, if you don’t have an in-house component library, it’s easier to fork [the starter project](https://github.com/keycloakify/keycloakify-starter) and develop your Keycloak theme as a standalone project.
+One of the powerful aspects of Keycloakify is its ability to let you reuse components and styles from your main application in your Keycloak theme. However, if you don't have an existing codebase, it’s easier to fork [the starter project](https://github.com/keycloakify/keycloakify-starter) and develop your Keycloak theme as a standalone project.
 {% endhint %}
 
 There is two main approach to integrate Keycloakify into your project, pick the one that you think will work best for you.
