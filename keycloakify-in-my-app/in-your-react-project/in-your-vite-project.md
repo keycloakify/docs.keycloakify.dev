@@ -1,13 +1,10 @@
 # In your Vite Project
 
-If you have a Vite/React/TypeScript project you can integrate Keycloakify directly inside it.  \
-The gist of it is that you must have a directory somewhere inside your src directory called keycloak-theme or keycloak\_theme where you'll put all the sources of your Keycloak theme. &#x20;
+If you have a Vite/React/TypeScript project you can integrate Keycloakify directly inside it. &#x20;
 
-Let's integrate the Keycloakify starter template to a vanilla Vite/React/TypeScript project.
+&#x20;In this guide we're going to work with a vanilla Vite project.
 
-Let's assume we have a basic Vite/React/TypeScript project and we want to integrate Keycloakify inside it:
-
-<figure><img src="../../.gitbook/assets/image (56).png" alt="" width="375"><figcaption><p>creating a new vite project with yarn create vite</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (56).png" alt="" width="375"><figcaption><p>Creating a new vite project with yarn create vite. You don't need to create a new project. Just use your existing codebase.</p></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/image (57).png" alt="" width="368"><figcaption><p>Our codebase before installing Keycloakify</p></figcaption></figure>
 
@@ -22,7 +19,6 @@ Let's start by installing Keycloakify (and optionally Storybook) to our project:
 ```bash
 yarn add keycloakify@next
 yarn add --dev storybook @storybook/react @storybook/react-vite
-yarn
 ```
 {% endtab %}
 
@@ -30,7 +26,6 @@ yarn
 ```bash
 pnpm add keycloakify@next 
 pnpm add --dev storybook @storybook/react @storybook/react-vite
-pnpm install
 ```
 {% endtab %}
 
@@ -38,7 +33,6 @@ pnpm install
 ```bash
 bun add keycloakify@next
 bun add --dev storybook @storybook/react @storybook/react-vite
-bun install
 ```
 {% endtab %}
 
@@ -46,7 +40,6 @@ bun install
 ```bash
 npm install --save keycloakify@next
 npm install --save-dev storybook @storybook/react @storybook/react-vite
-npm install
 ```
 {% endtab %}
 {% endtabs %}
@@ -63,7 +56,7 @@ rm src/keycloak-theme/vite-env.d.ts
 mv src/keycloak-theme/main.tsx src/main.tsx
 ```
 
-<figure><img src="../../.gitbook/assets/image (58).png" alt="" width="370"><figcaption><p>State of your codebase after bringin in the Keycloakify boilerplate code</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (58).png" alt="" width="370"><figcaption><p>State of your codebase after bringin in the Keycloakify boilerplate code.<br>Note thate the keycloak-theme (or keycloak_theme) directory can be located anywhere under your src directory.</p></figcaption></figure>
 
 Now you want to modify your entry point so that: &#x20;
 

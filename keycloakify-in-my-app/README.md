@@ -14,8 +14,8 @@ There is two main approach to integrate Keycloakify into your project, pick the 
 {% tab title="Collocation" %}
 If you happen to be devlopping a React Single Page Application with Vite or Webpack you can install Keycloakify directly within your project!
 
-{% content-ref url="in-your-vite-react-project/" %}
-[in-your-vite-react-project](in-your-vite-react-project/)
+{% content-ref url="in-your-react-project/" %}
+[in-your-react-project](in-your-react-project/)
 {% endcontent-ref %}
 {% endtab %}
 
