@@ -17,6 +17,6 @@ If you wish to upgrade your theme that was based on [the CRA starter project](ht
 * You now don't have to specify a XDG\_CACHE\_HOME in your CI. There is a improved builtin cache mechanism in v9.4 that dramatically improve build speed. [If you still provide the XDG\_CACHE\_HOME var env](https://github.com/keycloakify/keycloakify-starter-cra/blob/2da558a3e7c0e1a4c420eda14adb9ecdd4284ee8/.github/workflows/ci.yaml#L21) you must also provide it to the yarn build script.
 * (OPTIONAL) You might want to move your Keycloakify configuration from your `package.json` to your `vite.config.ts`. You just need to move your keycloakify field in your package.json to the argument of the Keycloakify vite plugin. See [here](../build-options/) for examples.
 
-{% content-ref url="../keycloakify-in-my-app/" %}
-[keycloakify-in-my-app](../keycloakify-in-my-app/)
+{% content-ref url="../keycloakify-in-my-codebase/" %}
+[keycloakify-in-my-codebase](../keycloakify-in-my-codebase/)
 {% endcontent-ref %}

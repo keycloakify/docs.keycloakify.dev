@@ -10,6 +10,6 @@ npx keycloakify build -p <path>
 
 `<path>` would be typically something like `packages/keycloak-theme`
 
-{% content-ref url="../keycloakify-in-my-app/as-a-subproject-of-your-monorepo/" %}
-[as-a-subproject-of-your-monorepo](../keycloakify-in-my-app/as-a-subproject-of-your-monorepo/)
+{% content-ref url="../keycloakify-in-my-codebase/as-a-subproject-of-your-monorepo/" %}
+[as-a-subproject-of-your-monorepo](../keycloakify-in-my-codebase/as-a-subproject-of-your-monorepo/)
 {% endcontent-ref %}
