@@ -5,7 +5,7 @@
   * [In Storybook](testing-your-theme/in-storybook.md)
   * [In a Keycloak Docker Container](testing-your-theme/in-a-keycloak-docker-container.md)
   * [With Vite or Webpack in dev mode](testing-your-theme/with-vite-or-webpack-in-dev-mode.md)
-* [🔩 Integrating Keycloakify in your Project](keycloakify-in-my-app/README.md)
+* [🔩 Integrating Keycloakify in your Codebase](keycloakify-in-my-app/README.md)
   * [In your Vite or Webpack project](keycloakify-in-my-app/in-your-vite-react-project.md)
   * [As a Subproject of your Monorepo](keycloakify-in-my-app/as-a-subproject-of-your-monorepo/README.md)
     * [Turborepo](keycloakify-in-my-app/as-a-subproject-of-your-monorepo/turborepo.md)
