@@ -1,24 +1,34 @@
-# 🔩 Integrating Keycloakify in your Project
+# 🔩 Integrating Keycloakify in your Codebase
 
-This documentation section is rellevent to you only if you have already a web project and you want to integrate a Keycloak theme into it. &#x20;
+{% hint style="info" %}
+**Before You Start**:
 
-One of the powerfull aspect of Keycloakify is to enable you to reuse component style of your main application in your Keycloak theme. This enable for a seemless transition from your app to your Keycloak pages. &#x20;
+This documentation section is relevant only if **you already have a project** and want to add a Keycloak theme as one of its deliverables.&#x20;
 
-For integrating Keycloakify into your project there's two strategies. &#x20;
+One of the powerful aspects of Keycloakify is its ability to let you reuse components and styles from your main application in your Keycloak theme. However, if you don’t have an in-house component library, it’s easier to fork [the starter project](https://github.com/keycloakify/keycloakify-starter) and develop your Keycloak theme as a standalone project.
+{% endhint %}
 
-## Collocation
+There is two main approach to integrate Keycloakify into your project, pick the one that you think will work best for you.
 
-If you happen to be devlopping a React Single Page Application with Vite or Webpack you can install Keycloakify directly within your project and have your theme source in a keycloak-theme sub directory of your src directory! &#x20;
+{% tabs %}
+{% tab title="Collocation" %}
+If you happen to be devlopping a React Single Page Application with Vite or Webpack you can install Keycloakify directly within your project!
 
-{% content-ref url="in-your-vite-react-project.md" %}
-[in-your-vite-react-project.md](in-your-vite-react-project.md)
+{% content-ref url="in-your-vite-react-project/" %}
+[in-your-vite-react-project](in-your-vite-react-project/)
 {% endcontent-ref %}
+{% endtab %}
 
-## Monorepo
+{% tab title="Monorepo" %}
+There are many cases where the colocation apprach is not feasable, for example:
 
-If the collocation approach is not an option for you either because your not building an SPA (you are using Next or Remix) or because you're using another frontend framwork than React you can integrate your Keycloakify as a subproject of your Monorepo.  \
+* You are using Next.js or another meta framwork that involves server side rendering.
+* You are using a framework other than React (Vue, Angular, Svelt ...)
 
+In this case you can integrate Keycloakify...
 
 {% content-ref url="as-a-subproject-of-your-monorepo/" %}
 [as-a-subproject-of-your-monorepo](as-a-subproject-of-your-monorepo/)
 {% endcontent-ref %}
+{% endtab %}
+{% endtabs %}

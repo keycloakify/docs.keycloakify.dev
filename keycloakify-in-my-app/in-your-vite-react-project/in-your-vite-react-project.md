@@ -1,4 +1,4 @@
-# In your Vite or Webpack project
+# In your Vite Project
 
 If you have a Vite/React/TypeScript project you can integrate Keycloakify directly inside it.  \
 The gist of it is that you must have a directory somewhere inside your src directory called keycloak-theme or keycloak\_theme where you'll put all the sources of your Keycloak theme. &#x20;
@@ -7,9 +7,9 @@ Let's integrate the Keycloakify starter template to a vanilla Vite/React/TypeScr
 
 Let's assume we have a basic Vite/React/TypeScript project and we want to integrate Keycloakify inside it:
 
-<figure><img src="../.gitbook/assets/image (56).png" alt="" width="375"><figcaption><p>creating a new vite project with yarn create vite</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (56).png" alt="" width="375"><figcaption><p>creating a new vite project with yarn create vite</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (57).png" alt="" width="368"><figcaption><p>Our codebase before installing Keycloakify</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (57).png" alt="" width="368"><figcaption><p>Our codebase before installing Keycloakify</p></figcaption></figure>
 
 {% hint style="info" %}
 Before anything make sure to commit all your pending changes so you can easily revert changes if need be.
@@ -63,7 +63,7 @@ rm src/keycloak-theme/vite-env.d.ts
 mv src/keycloak-theme/main.tsx src/main.tsx
 ```
 
-<figure><img src="../.gitbook/assets/image (58).png" alt="" width="370"><figcaption><p>State of your codebase after bringin in the Keycloakify boilerplate code</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (58).png" alt="" width="370"><figcaption><p>State of your codebase after bringin in the Keycloakify boilerplate code</p></figcaption></figure>
 
 Now you want to modify your entry point so that: &#x20;
 
@@ -116,7 +116,7 @@ declare global {
 }
 </code></pre>
 
-You also need to use Keycloakify's Vite plugin. Here we don't provide any [build options](../build-options/) but you probably at least want to define [keycloakVersionTargets](../build-options/keycloakversiontargets.md).
+You also need to use Keycloakify's Vite plugin. Here we don't provide any [build options](../../build-options/) but you probably at least want to define [keycloakVersionTargets](../../build-options/keycloakversiontargets.md).
 
 <pre class="language-tsx" data-title="vite.config.ts"><code class="lang-tsx">import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
@@ -155,10 +155,10 @@ You're now able to use all the Keycloakify commands (`npx keycloakify --help`) f
 
 Continue with:
 
-{% content-ref url="../testing-your-theme/" %}
-[testing-your-theme](../testing-your-theme/)
+{% content-ref url="../../testing-your-theme/" %}
+[testing-your-theme](../../testing-your-theme/)
 {% endcontent-ref %}
 
-{% content-ref url="../customization-strategies/" %}
-[customization-strategies](../customization-strategies/)
+{% content-ref url="../../customization-strategies/" %}
+[customization-strategies](../../customization-strategies/)
 {% endcontent-ref %}
