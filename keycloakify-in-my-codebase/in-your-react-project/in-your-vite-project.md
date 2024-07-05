@@ -146,7 +146,11 @@ You can run npm run build-keycloak-theme, the JAR distribution of your Keycloak 
 
 You're now able to use all the Keycloakify commands (`npx keycloakify --help`) from the root of your project.
 
-Continue with:
+{% hint style="success" %}
+If you're currently using [keycloak-js](https://www.npmjs.com/package/keycloak-js) or [react-oidc-context](https://github.com/authts/react-oidc-context) to manage user authentication in your app you might want to checkout [oidc-spa](https://www.oidc-spa.dev/), the alternative from the Keycloakify team.
+
+If you have any issues [reach out on Discord](https://discord.gg/mJdYJSdcm4)! We're here to help!
+{% endhint %}
 
 {% content-ref url="../../testing-your-theme/" %}
 [testing-your-theme](../../testing-your-theme/)
