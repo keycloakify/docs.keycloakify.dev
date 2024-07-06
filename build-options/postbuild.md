@@ -21,7 +21,7 @@ export default defineConfig({
 </strong><strong>                await fs.rm(
 </strong><strong>                    path.join(
 </strong><strong>                        "theme",
-</strong><strong>                        "keycloakify-starter",
+</strong><strong>                        buildContext.themeNames[0], // keycloakify-starter
 </strong><strong>                        "login", // Note: We assume we only have an login theme, if we had an account theme we would have to remove it there as well.
 </strong><strong>                        "resources",
 </strong><strong>                        "dist", // Your Vite dist/ or Webpack build/ is here.
