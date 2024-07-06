@@ -1,8 +1,6 @@
 # 🎭 Theme Variants
 
-
-
-
+Theme variant enables you to create multiples Keycloak theme with a single codebase. &#x20;
 
 {% tabs %}
 {% tab title="Vite" %}
@@ -37,12 +35,11 @@ export default defineConfig({
 {% endtab %}
 {% endtabs %}
 
-This option deprecates `extraThemeNames`and let you pack multiple themes variant in a single `.jar` bundle. In vanilla Keycloak themes you have the ability to extend a base theme. There is now an idiomatic way of achieving the same result by using this option.
-
 This will make the theme variant appear in the Keycloak admin select input:
 
 <figure><img src=".gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
-The theme name will be available on the `kcContext`:
+In your code you'll be able to load different styles basesd on the value of `kcContext.themeName`:
 
-<figure><img src=".gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
