@@ -78,26 +78,19 @@ First let's download and extract [the font files](https://github.com/keycloakify
 
 <figure><img src=".gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
-Now let's import the font:
-
-<pre class="language-tsx" data-title="src/login/KcPage.tsx"><code class="lang-tsx"><strong>import "./assets/fonts/geist/main.css";
-</strong>import { Suspense, lazy } from "react";
-// ...
-</code></pre>
-
-Now the Geist is available to use in the project but we still need to actually apply it to some element.\
-Let's set it as the default font for everything. &#x20;
+Now let's set Geist as the default font. &#x20;
 
 {% code title="src/login/main.css" %}
 ```css
+@import url(./assets/fonts/geist/main.css);
+
 body {
     font-family: Geist;
 }
 ```
 {% endcode %}
 
-<pre class="language-tsx" data-title="src/login/KcPage.tsx"><code class="lang-tsx">import "./assets/fonts/geist/main.css";
-<strong>import "./main.css";
+<pre class="language-tsx" data-title="src/login/KcPage.tsx"><code class="lang-tsx"><strong>import "./main.css";
 </strong>import { Suspense, lazy } from "react";
 // ...
 </code></pre>
