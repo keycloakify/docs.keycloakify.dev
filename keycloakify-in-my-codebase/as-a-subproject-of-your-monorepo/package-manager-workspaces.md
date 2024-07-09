@@ -10,6 +10,7 @@ Let's assume we have a monorepo project where sub applications are stored in the
 <strong>    "apps/*"
 </strong>    "packages/*"
   ],
+  "private": true,
 </code></pre>
 {% endtab %}
 
