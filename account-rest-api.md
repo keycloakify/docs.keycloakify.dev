@@ -1,13 +1,5 @@
 # 🔌 Account REST API
 
-{% hint style="warning" %}
-Account v3 is soon to be integrated to Keycloakify.  \
-![](<.gitbook/assets/image (63).png>)
-
-Currently [Keycloakify is using Account v1](https://storybook.keycloakify.dev/?path=/story/account-account-ftl--default).  \
-If you're interested by this you might want to wait until account v3 is integrated. &#x20;
-{% endhint %}
-
 The Keycloak Account v3 (the default account theme that comes with Keycloak) is built on top of a REST API. You can consume this API from your Keycloakify Account theme! So, if you feel limited by the `kcContext` you get in the Account pages, you can leverage this API.
 
 While this support is still a bit rough around the edges, we are working to better integrate it. Here is a minimal demo of how to call the API:
