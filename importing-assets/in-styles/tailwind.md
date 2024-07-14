@@ -1,8 +1,7 @@
 # Tailwind
 
-Under construction:  \
-\
-For the time being see:  \
+See:
 
-
-{% embed url="https://github.com/keycloakify/keycloakify/discussions/578" %}
+{% content-ref url="../../customization-strategies/css-level-customization/using-tailwind.md" %}
+[using-tailwind.md](../../customization-strategies/css-level-customization/using-tailwind.md)
+{% endcontent-ref %}

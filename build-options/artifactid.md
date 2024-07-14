@@ -2,7 +2,7 @@
 
 Configure the `artifactId` that will appear in the `pom.xml` file.
 
-<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% tabs %}
 {% tab title="Vite" %}

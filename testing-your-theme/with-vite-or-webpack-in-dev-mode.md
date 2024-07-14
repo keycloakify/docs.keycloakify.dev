@@ -130,7 +130,7 @@ npm run start
 {% endtab %}
 {% endtabs %}
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="warning" %}
 When you're done testing, don't forget to comment back the import of the mock. Forgeting to do so will negatively impact the bundle size of your pages. &#x20;
