@@ -18,7 +18,7 @@ You'll also need Maven to build the .jar locally. Try running `mvn --version` to
 
 {% tabs %}
 {% tab title="MacOS" %}
-Using [Homerew](https://formulae.brew.sh/formula/maven):
+Using [Homebrew](https://formulae.brew.sh/formula/maven):
 
 ```bash
 brew install maven
@@ -54,7 +54,7 @@ You'll be invited to chose the Keycloak version you want to spin up:
 
 <figure><img src="../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
 
-Keycloakify will preconfigure a realm and client for your theme so you don't nessesarely need to go in the the Keycloak admin console you can simply lavigate to **https://my-theme.keycloakify.dev** it will redirect to your local Keycloak login pages! &#x20;
+Keycloakify will preconfigure a realm and client for your theme so you don't necessarily need to go in the the Keycloak admin console you can simply lavigate to **https://my-theme.keycloakify.dev** it will redirect to your local Keycloak login pages! &#x20;
 
 <figure><img src="../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
 
@@ -62,11 +62,11 @@ Keycloakify will preconfigure a realm and client for your theme so you don't nes
 If you makes changes in your theme while the Keycloak container is running your theme will be automatically recompiled and updated in Keycloak. After a few seconds you'll just have to refresh the page you see them live. &#x20;
 {% endhint %}
 
-You'll be able to autenticate with the test user:
+You'll be able to authenticate with the test user:
 
 <figure><img src="../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
 
-And see the content of your Open ID Connect Access Tocker JWT:
+And see the content of your Open ID Connect Access Tocken JWT:
 
 <figure><img src="../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
 
