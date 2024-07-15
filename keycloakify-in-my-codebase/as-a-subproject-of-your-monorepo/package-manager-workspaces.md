@@ -6,19 +6,22 @@ Let's assume we have a monorepo project where sub applications are stored in the
 {% tab title="yarn/npm/bun" %}
 <pre class="language-json" data-title="package.json"><code class="lang-json">{
   "name": "my-monorepo",
-  "workspaces": [
-<strong>    "apps/*"
-</strong>    "packages/*"
-  ],
-  "private": true,
-</code></pre>
+<strong>  "workspaces": [
+</strong><strong>    "apps/*"
+</strong><strong>    "packages/*"
+</strong><strong>  ],
+</strong><strong>  "private": true,
+</strong></code></pre>
 {% endtab %}
 
 {% tab title="pnpm" %}
-<pre class="language-yaml" data-title="pnpm-workspace.yaml"><code class="lang-yaml">packages:
-<strong>  - 'apps/*'
-</strong>  - 'packages/*'
-</code></pre>
+{% code title="pnpm-workspace.yaml" %}
+```yaml
+packages:
+  - 'apps/*'
+  - 'packages/*'
+```
+{% endcode %}
 {% endtab %}
 {% endtabs %}
 
