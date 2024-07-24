@@ -1,4 +1,4 @@
-# Removing the default stlyes
+# Removing the default styles
 
 ## Case by case
 
@@ -29,6 +29,7 @@ On some components, multiples utility classes are applied, you may want to keep 
 Let's say, for example, that we would like to remove keep only the col-md and lg classes. To do that that we would write:
 
 {% code title="src/login/KcPage.tsx" %}
+
 ```tsx
 import "./main.css";
 // ...
@@ -38,9 +39,10 @@ export default function KcPage(props: { kcContext: KcContext }) {
 }
 
 const classes = {
-    kcInputWrapperClass: "col-md-12 col-lg-12"
+  kcInputWrapperClass: "col-md-12 col-lg-12",
 } satisfies { [key in ClassKey]?: string };
 ```
+
 {% endcode %}
 
 Result:

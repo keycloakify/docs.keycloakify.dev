@@ -1,8 +1,8 @@
 # Webpack specific options
 
-In this sub folder are listed the few build options that are only rellevent in Webpack project. &#x20;
+In this sub folder are listed the few build options that are only relevant in Webpack project. &#x20;
 
-Be aware, theses are not prefererences, they have to reflect your webpack configuration! &#x20;
+Be aware, theses are not preferences, they have to reflect your webpack configuration! &#x20;
 
 {% content-ref url="projectbuilddirpath.md" %}
 [projectbuilddirpath.md](projectbuilddirpath.md)

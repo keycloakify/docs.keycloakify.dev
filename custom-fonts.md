@@ -49,14 +49,17 @@ The fonts must also be imported in Storybook, so we add the links in the .storyb
 </strong><strong>&#x3C;link href="https://fonts.googleapis.com/css2?family=Playwrite+NL:wght@100..400&#x26;display=swap" rel="stylesheet">
 </strong></code></pre>
 
-Then all we have to do is apply the Font font familly, in this example we will use vanilla CSS but you can of course use your favourite styling solution.
+Then all we have to do is apply the Font font family, in this example we will use vanilla CSS but you can of course use your favorite styling solution.
 
 {% code title="src/login/main.css" %}
+
 ```css
-.kcHeaderWrapperClass { /* NOTE: We would use `body {` if we'd like the font to be applied to everything. */
-    font-family: "Playwrite NL", cursive;
+.kcHeaderWrapperClass {
+  /* NOTE: We would use `body {` if we'd like the font to be applied to everything. */
+  font-family: "Playwrite NL", cursive;
 }
 ```
+
 {% endcode %}
 
 <pre class="language-tsx" data-title="src/login/KcPage.tsx"><code class="lang-tsx"><strong>import "./main.css";
@@ -66,11 +69,11 @@ Then all we have to do is apply the Font font familly, in this example we will u
 
 That's it!
 
-<figure><img src=".gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption><p>Playwrite NL succesfully applied to the header</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption><p>Playwrite NL successfully applied to the header</p></figcaption></figure>
 
 ## Using self hosted fonts
 
-Keycloak is often used in entreprise internal network with strict network trafic control. In this context, using a Font CDN isn't an option, you want the font to be bundled in your jar and served directly by the Keycloak server. &#x20;
+Keycloak is often used in enterprise internal network with strict network traffic control. In this context, using a Font CDN isn't an option, you want the font to be bundled in your jar and served directly by the Keycloak server. &#x20;
 
 Let's see how we would use a self hosted copy [Vercel's Geist](https://vercel.com/font) font.
 
@@ -81,13 +84,15 @@ First let's download and extract [the font files](https://github.com/keycloakify
 Now let's set Geist as the default font. &#x20;
 
 {% code title="src/login/main.css" %}
+
 ```css
 @import url(./assets/fonts/geist/main.css);
 
 body {
-    font-family: Geist;
+  font-family: Geist;
 }
 ```
+
 {% endcode %}
 
 <pre class="language-tsx" data-title="src/login/KcPage.tsx"><code class="lang-tsx"><strong>import "./main.css";
@@ -97,4 +102,4 @@ body {
 
 Result:&#x20;
 
-<figure><img src=".gitbook/assets/image (23).png" alt=""><figcaption><p>Geist succesfully applyed</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (23).png" alt=""><figcaption><p>Geist successfully applied</p></figcaption></figure>

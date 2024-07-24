@@ -6,7 +6,7 @@
 
 If you are missing this feature [open an issue about it](https://github.com/InseeFrLab/keycloakify/issues/new).
 
-### Wellcome page not customizable
+### Welcome page not customizable
 
 The following page isn't customizable yet.
 
@@ -20,10 +20,10 @@ Keycloakify lets you bundle an email theme in your Jar but you'll have to use Fr
 
 ### Keycloakify Account theme are based on Account v1 not v3
 
-Hense the default look might seems a bit dated:
+Hence the default look might seems a bit dated:
 
 <figure><img src="../.gitbook/assets/image (42).png" alt=""><figcaption><p>Keycloakify look (Account v1)</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (43).png" alt=""><figcaption><p>Keycloak 25 look</p></figcaption></figure>
 
-Learn more about why we made this choice in the **june 2024 update** of [this discution message](https://github.com/keycloakify/keycloakify/discussions/346#discussioncomment-5889791).
+Learn more about why we made this choice in the **june 2024 update** of [this discussion message](https://github.com/keycloakify/keycloakify/discussions/346#discussioncomment-5889791).

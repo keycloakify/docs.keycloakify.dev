@@ -7,6 +7,7 @@ TLDR:
 npx keycloakify add-story
 npm run storybook
 ```
+
 {% endhint %}
 
 [Storybook](https://storybook.js.org/) is a tool that enables to test UI component in isolation. For reference, the component showcase Keycloakify website is a website generated with Storybook.
@@ -41,8 +42,8 @@ npm run storybook
 
 You can see the changes you make in you code in realtime in your Storybook. &#x20;
 
-The idea of Storybook is to easyly let you see the pages in different configuration without having to reproduce the full login/register process in a real Keycloak.  \
-Keycloakify provide a default mock context for every pages, the stories let you partially override some specific part of this default mock to reflect pages in different configurations.  \
+The idea of Storybook is to easily let you see the pages in different configuration without having to reproduce the full login/register process in a real Keycloak. \
+Keycloakify provide a default mock context for every pages, the stories let you partially override some specific part of this default mock to reflect pages in different configurations. \
 \
 For example, if you want to create a story that show the register page in chinese you would add this:
 
@@ -79,7 +80,7 @@ export const Default: Story = {
 
 <figure><img src="../.gitbook/assets/image (3) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-That's really nice, however this approach has it's limits. At some point you'll want to test in a real Keycloak to make sure everything works. Also you don't nessesary know the kcContext values to provides in order to replicate a desired configuration. &#x20;
+That's really nice, however this approach has it's limits. At some point you'll want to test in a real Keycloak to make sure everything works. Also you don't necessary know the kcContext values to provides in order to replicate a desired configuration. &#x20;
 
 Don't worry! Keycloakify got you covered by letting you test in a local Keycloak Docker container.
 

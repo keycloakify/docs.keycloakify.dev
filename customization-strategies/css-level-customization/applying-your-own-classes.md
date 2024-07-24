@@ -13,11 +13,11 @@ Result:
 <figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="warning" %}
-If you want to implement this approach with **Tailwind** read [this](https://github.com/keycloakify/keycloakify-starter/blob/dd516e53e4dfa7c1ce02bab557420b999e87eca2/src/login/KcPage.tsx#L53-L65). But there's a section dedicaed to Tailwind [here](using-tailwind.md).
+If you want to implement this approach with **Tailwind** read [this](https://github.com/keycloakify/keycloakify-starter/blob/dd516e53e4dfa7c1ce02bab557420b999e87eca2/src/login/KcPage.tsx#L53-L65). But there's a section dedicated to Tailwind [here](using-tailwind.md).
 {% endhint %}
 
 Up next:
 
-{% content-ref url="page-specific-stlyes.md" %}
-[page-specific-stlyes.md](page-specific-stlyes.md)
+{% content-ref url="page-specific-styles.md" %}
+[page-specific-styles.md](page-specific-styles.md)
 {% endcontent-ref %}

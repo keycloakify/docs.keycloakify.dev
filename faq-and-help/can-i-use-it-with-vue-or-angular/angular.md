@@ -1,4 +1,4 @@
 # Angular
 
-For thoses that would like to try to make it work with Angulare this is what you need to know:  \
+For those that would like to try to make it work with Angular this is what you need to know: \
 \
