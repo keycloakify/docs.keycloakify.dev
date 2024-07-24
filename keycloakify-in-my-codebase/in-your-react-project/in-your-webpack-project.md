@@ -1,6 +1,6 @@
 # In your Webpack Project
 
-If you have a Wepack/React/TypeScript project you can integrate Keycloakify directly inside it. &#x20;
+If you have a Webpack/React/TypeScript project you can integrate Keycloakify directly inside it. &#x20;
 
 In this guide we're going to work with a vanilla [Create React App](https://create-react-app.dev/) project.
 
@@ -16,35 +16,43 @@ Let's start by installing Keycloakify (and optionally Storybook) to our project:
 
 {% tabs %}
 {% tab title="yarn" %}
+
 ```bash
 yarn add keycloakify@next
 yarn add --dev rimraf storybook @storybook/react @storybook/react-vite
 ```
+
 {% endtab %}
 
 {% tab title="pnpm" %}
+
 ```bash
-pnpm add keycloakify@next 
+pnpm add keycloakify@next
 pnpm add --dev rimraf storybook @storybook/react @storybook/react-vite
 ```
+
 {% endtab %}
 
 {% tab title="bun" %}
+
 ```bash
 bun add keycloakify@next
 bun add --dev rimraf storybook @storybook/react @storybook/react-vite
 ```
+
 {% endtab %}
 
 {% tab title="npm" %}
+
 ```bash
 npm install --save keycloakify@next
 npm install --save-dev rimraf storybook @storybook/react @storybook/react-vite
 ```
+
 {% endtab %}
 {% endtabs %}
 
-Next we want to repatriate the relevent files from [the starter template](https://github.com/keycloakify/keycloakify-starter) into our project:
+Next we want to repatriate the relevant files from [the starter template](https://github.com/keycloakify/keycloakify-starter) into our project:
 
 ```bash
 cd my-app
@@ -60,8 +68,8 @@ mv src/keycloak-theme/index.tsx src/index.tsx
 
 Now you want to modify your entry point so that: &#x20;
 
-* If the kcContext global is defined, render your Keycloakify theme
-* Else, reder your App as usual. &#x20;
+- If the kcContext global is defined, render your Keycloakify theme
+- Else, render your App as usual. &#x20;
 
 <pre class="language-tsx" data-title="src/index.tsx"><code class="lang-tsx">import { createRoot } from "react-dom/client";
 import { StrictMode, lazy, Suspense } from "react";
@@ -132,7 +140,7 @@ Finally you want to add some script for Keycloakify in you package.json and also
 
 Keycloakify has many build options that you can use, however `projectBuildDirPath`, `staticDirPathInProjectBuildDirPath` and `publicDirPath` are parameters specific to the use of Keycloakify in a Webpack context.
 
-Theses **are not preferences!** If you're not using Create React App your Webpack configuration is probably different and you want to update thoses values to reflect how webpack build your site in your project. &#x20;
+Theses **are not preferences!** If you're not using Create React App your Webpack configuration is probably different and you want to update those values to reflect how webpack build your site in your project. &#x20;
 
 <figure><img src="../../.gitbook/assets/image (62).png" alt="" width="209"><figcaption><p>Here you can see that in a CRA project, when we run <code>npm run build</code> the app distribution is generated in a <strong>build/</strong> directory, this is why we use <code>"projectBuildDirPath": "build"</code>. We can also see that all the assets of the app are gathered under a <code>static/</code> directory this is why we use <code>"staticDirPathInProjectBuildDirPath": "static"</code>. And finally we can see that everything we put in the <strong>public/</strong> directory is copied over to the <strong>build/</strong> directory when building so we use <code>"publicDirPath": "public"</code>.</p></figcaption></figure>
 

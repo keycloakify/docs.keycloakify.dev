@@ -1,5 +1,5 @@
 # keycloakVersionTargets
 
-{% content-ref url="../targetting-specific-keycloak-versions.md" %}
-[targetting-specific-keycloak-versions.md](../targetting-specific-keycloak-versions.md)
+{% content-ref url="../targeting-specific-keycloak-versions.md" %}
+[targeting-specific-keycloak-versions.md](../targeting-specific-keycloak-versions.md)
 {% endcontent-ref %}

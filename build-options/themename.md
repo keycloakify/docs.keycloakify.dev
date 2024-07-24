@@ -1,6 +1,6 @@
 # themeName
 
-This is the name that will apprear in the select input of the Keycloak Admin UI that let's you select the theme.&#x20;
+This is the name that will appear in the select input of the Keycloak Admin UI that let's you select the theme.&#x20;
 
 <figure><img src="../.gitbook/assets/image (3) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption><p>Here the theme name is "my-react-app"</p></figcaption></figure>
 

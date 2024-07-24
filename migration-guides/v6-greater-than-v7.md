@@ -4,9 +4,9 @@ Many things have changed, I invite you to have a look at the latest version of t
 
 {% embed url="https://github.com/codegouvfr/keycloakify-starter" %}
 
-The main takeway is that, now your theme source files should be located in a keycloak-theme directory somewhere in your src directory OR at the root of your directory. &#x20;
+The main takeaway is that, now your theme source files should be located in a keycloak-theme directory somewhere in your src directory OR at the root of your directory. &#x20;
 
-Acceptable directory strucuture: &#x20;
+Acceptable directory structure: &#x20;
 
 ```
 src/
@@ -14,7 +14,7 @@ src/
     login/
     account/
     email/
-    
+
 ===OR===
 
 src/

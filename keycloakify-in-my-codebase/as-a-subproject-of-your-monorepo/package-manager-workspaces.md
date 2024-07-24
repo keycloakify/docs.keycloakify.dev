@@ -4,6 +4,7 @@ Let's assume we have a monorepo project where sub applications are stored in the
 
 {% tabs %}
 {% tab title="yarn/npm/bun" %}
+
 <pre class="language-json" data-title="package.json"><code class="lang-json">{
   "name": "my-monorepo",
 <strong>  "workspaces": [
@@ -12,15 +13,18 @@ Let's assume we have a monorepo project where sub applications are stored in the
 </strong><strong>  ],
 </strong><strong>  "private": true,
 </strong></code></pre>
+
 {% endtab %}
 
 {% tab title="pnpm" %}
 {% code title="pnpm-workspace.yaml" %}
+
 ```yaml
 packages:
-  - 'apps/*'
-  - 'packages/*'
+  - "apps/*"
+  - "packages/*"
 ```
+
 {% endcode %}
 {% endtab %}
 {% endtabs %}
@@ -40,11 +44,13 @@ rm apps/keycloak-theme/.yarn.lock
 Now you want to update the name field of your apps/keycloak-theme/package.json to match the name of your sub app.&#x20;
 
 {% code title="apps/keycloak-theme/package.json" %}
+
 ```diff
  {
 -    "name": "keycloakify-starter",
 +    "name": "keycloak-theme",
 ```
+
 {% endcode %}
 
 You also want to provide an actual name to your theme as you want it to [appear in the Keycloak Admin UI](https://github.com/keycloakify/keycloakify/assets/6702424/7da4afe2-0f67-4f79-a3d0-bd982636ea23).
@@ -65,6 +71,7 @@ Now you can add a script in your root package json to build the theme and start 
 
 {% tabs %}
 {% tab title="pnpm" %}
+
 <pre class="language-json" data-title="package.json"><code class="lang-json">{
    "name": "my-monorepo",
    "scripts": {
@@ -74,9 +81,11 @@ Now you can add a script in your root package json to build the theme and start 
    // ...
 }
 </code></pre>
+
 {% endtab %}
 
 {% tab title="yarn" %}
+
 <pre class="language-json" data-title="package.json"><code class="lang-json">{
    "name": "my-monorepo",
    "scripts": {
@@ -86,9 +95,11 @@ Now you can add a script in your root package json to build the theme and start 
    // ...
 }
 </code></pre>
+
 {% endtab %}
 
 {% tab title="npm" %}
+
 <pre class="language-json" data-title="package.json"><code class="lang-json">{
    "name": "my-monorepo",
    "scripts": {
@@ -98,9 +109,11 @@ Now you can add a script in your root package json to build the theme and start 
    // ...
 }
 </code></pre>
+
 {% endtab %}
 
 {% tab title="bun" %}
+
 <pre class="language-json" data-title="package.json"><code class="lang-json">{
    "name": "my-monorepo",
    "scripts": {
@@ -110,6 +123,7 @@ Now you can add a script in your root package json to build the theme and start 
    // ...
 }
 </code></pre>
+
 {% endtab %}
 {% endtabs %}
 
@@ -117,37 +131,45 @@ Now you can run:
 
 {% tabs %}
 {% tab title="pnpm" %}
+
 ```bash
 pnpm install
 pnpm run build-keycloak-theme
 ```
+
 {% endtab %}
 
 {% tab title="yarn" %}
+
 ```bash
 yarn
 yarn build-keycloak-theme
 ```
+
 {% endtab %}
 
 {% tab title="npm" %}
+
 ```bash
 npm install
 npm run build-keycloak-theme
 ```
+
 {% endtab %}
 
 {% tab title="bun" %}
+
 ```bash
 bun install
 bun run build-keycloak-theme
 ```
+
 {% endtab %}
 {% endtabs %}
 
 <figure><img src="../../.gitbook/assets/screen.png" alt=""><figcaption></figcaption></figure>
 
-Two common thing you might want to do is [change the location of the directory where the JARs files are generated](../../build-options/keycloakifybuilddirpath.md) and [only build the JAR for the Keycloak version you are using](../../targetting-specific-keycloak-versions.md).
+Two common thing you might want to do is [change the location of the directory where the JARs files are generated](../../build-options/keycloakifybuilddirpath.md) and [only build the JAR for the Keycloak version you are using](../../targeting-specific-keycloak-versions.md).
 
 <pre class="language-typescript" data-title="apps/keycloak-theme/vite.config.ts"><code class="lang-typescript">import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
@@ -173,8 +195,8 @@ In this configuration when you run `pnpm run build-keycloak-theme` from the root
 
 <figure><img src="../../.gitbook/assets/Untitled (1).png" alt=""><figcaption></figcaption></figure>
 
-When you want to use the keycloakify CLI commands you can either cd into your keycloakify sub app directory or use the [--project option of the Keycloakify CLI](../../build-options/project.md).  \
+When you want to use the keycloakify CLI commands you can either cd into your keycloakify sub app directory or use the [--project option of the Keycloakify CLI](../../build-options/project.md). \
 Like for example if you want to run add-story you can do either:
 
-* `cd apps/keycloak-theme && npx keycloakify add-story`
-* `npx keycloakify add-story -p apps/keycloakify-theme` from the root of your monorepo.
+- `cd apps/keycloak-theme && npx keycloakify add-story`
+- `npx keycloakify add-story -p apps/keycloakify-theme` from the root of your monorepo.

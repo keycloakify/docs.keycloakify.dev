@@ -6,9 +6,8 @@ TLDR:
 ```bash
 npx keycloakify start-keycloak
 ```
+
 {% endhint %}
-
-
 
 Testing your theme in Storybook is nice, but at some point you'll want to test your theme in a real Keycloak before shipping it in production!
 
@@ -23,12 +22,15 @@ Using [Homebrew](https://formulae.brew.sh/formula/maven):
 ```bash
 brew install maven
 ```
+
 {% endtab %}
 
 {% tab title="Ubuntu/Debian" %}
+
 ```bash
 sudo apt-get install maven
 ```
+
 {% endtab %}
 
 {% tab title="Windows" %}
@@ -54,7 +56,7 @@ You'll be invited to chose the Keycloak version you want to spin up:
 
 <figure><img src="../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
 
-Keycloakify will preconfigure a realm and client for your theme so you don't necessarily need to go in the the Keycloak admin console you can simply lavigate to **https://my-theme.keycloakify.dev** it will redirect to your local Keycloak login pages! &#x20;
+Keycloakify will preconfigure a realm and client for your theme so you don't necessarily need to go in the the Keycloak admin console you can simply navigate to **https://my-theme.keycloakify.dev** it will redirect to your local Keycloak login pages! &#x20;
 
 <figure><img src="../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
 
@@ -66,7 +68,7 @@ You'll be able to authenticate with the test user:
 
 <figure><img src="../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
 
-And see the content of your Open ID Connect Access Tocken JWT:
+And see the content of your Open ID Connect Access Token JWT:
 
 <figure><img src="../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
 

@@ -1,14 +1,14 @@
 # postBuild
 
 {% hint style="info" %}
-Only avaiable in Vite projects, not in Webpack
+Only available in Vite projects, not in Webpack
 {% endhint %}
 
 The postBuild hook is called just before Keycloakify bundles the themes resources into the jar. &#x20;
 
 This gives you the ability to implement some custom transformation.&#x20;
 
-Let's say, for example, we have a big `material-icons` in our `public` directory and thoses icons are used in the main app but not in the Keycloak theme.  We can use the postBuild hook to make sure that thoses icons are not bundled in the generated jar files.
+Let's say, for example, we have a big `material-icons` in our `public` directory and those icons are used in the main app but not in the Keycloak theme. We can use the postBuild hook to make sure that those icons are not bundled in the generated jar files.
 
 <pre class="language-typescript" data-title="vite.config.ts"><code class="lang-typescript">import * as fs from "fs/promises";
 import * as path from "path";

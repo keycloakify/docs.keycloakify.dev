@@ -10,7 +10,7 @@ npx create-nx-workspace@latest --preset=react-monorepo --bundler=vite
 
 <figure><img src="../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
 
-Next up we want to repatriate the Keycloakify Starter template sources.  \
+Next up we want to repatriate the Keycloakify Starter template sources. \
 We only copy over the src and .storybook directory.
 
 ```bash
@@ -97,14 +97,14 @@ Now if you run `npm run build-keycloak-theme` it will generate the JAR in dist/a
 
 <figure><img src="../../.gitbook/assets/Screenshot 2024-06-30 at 12.29.58.png" alt=""><figcaption></figcaption></figure>
 
-When you want to use the keycloakify CLI commands you can either cd into your keycloakify sub app directory or use the [--project option of the Keycloakify CLI](../../build-options/project.md).  \
+When you want to use the keycloakify CLI commands you can either cd into your keycloakify sub app directory or use the [--project option of the Keycloakify CLI](../../build-options/project.md). \
 Like for example if you want to run add-story you can do either:
 
-* `cd apps/keycloak-theme && npx keycloakify add-story`
-* `npx keycloakify add-story -p apps/keycloakify-theme` from the root of your monorepo
+- `cd apps/keycloak-theme && npx keycloakify add-story`
+- `npx keycloakify add-story -p apps/keycloakify-theme` from the root of your monorepo
 
-To go beyond the base configuration you might want to expore what [build options](../../build-options/) are available. Starting with with `keycloakVersionTargets` to make sure that you only generates the JARs file you need.
+To go beyond the base configuration you might want to explore what [build options](../../build-options/) are available. Starting with with `keycloakVersionTargets` to make sure that you only generates the JARs file you need.
 
-{% content-ref url="../../targetting-specific-keycloak-versions.md" %}
-[targetting-specific-keycloak-versions.md](../../targetting-specific-keycloak-versions.md)
+{% content-ref url="../../targeting-specific-keycloak-versions.md" %}
+[targeting-specific-keycloak-versions.md](../../targeting-specific-keycloak-versions.md)
 {% endcontent-ref %}

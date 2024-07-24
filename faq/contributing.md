@@ -4,7 +4,7 @@ description: Looking to submit a PR? Thank you!
 
 # 💟 Contributing
 
-Here is how you can setup a devlopement environement. You must use Yarn classic (v1).    \
+Here is how you can setup a development environment. You must use Yarn classic (v1). \
 First you want to clone keycloakify and the keycloakify starter alongside each other
 
 ```bash
@@ -32,7 +32,7 @@ In parallel you can:
 
 ```bash
 cd ~/github/keycloakify-starter
-yarn storybook 
+yarn storybook
 # or
 npx keycloakify start-keycloak
 ```

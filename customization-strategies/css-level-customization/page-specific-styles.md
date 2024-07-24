@@ -1,8 +1,8 @@
-# Page specific stlyes
+# Page specific styles
 
-So far the customisation we have made applies to all the pages however you might want to have stylesheet specific to certain pages. &#x20;
+So far the customization we have made applies to all the pages however you might want to have stylesheet specific to certain pages. &#x20;
 
-You can do that by loading diferent stylesheet and applying different classes depending on the `kcContext.pageId`.
+You can do that by loading different stylesheet and applying different classes depending on the `kcContext.pageId`.
 
 Implementation example, instead of importing our stylesheet at the top of the KcPage.tsx component file we import them dynamically:
 
