@@ -1,6 +1,6 @@
 # .css, .sass or .less
 
-Let's see, as an example, the different ways you have to change the backgrouns image of the login page. &#x20;
+Let's see, as an example, the different ways you have to change the backgrounds image of the login page. &#x20;
 
 First let's [download a background image](https://coolbackgrounds.io/) an put it in our public directory:
 
@@ -17,11 +17,13 @@ If you wish to do so, you can hot swipe assets that you have placed into your pu
 Let's apply this image to the body using plain CSS
 
 {% code title="src/login/main.css" %}
+
 ```css
 body.kcBodyClass {
-    background: url(/background.png) no-repeat center center fixed;
+  background: url(/background.png) no-repeat center center fixed;
 }
 ```
+
 {% endcode %}
 
 We import the StyleSheet:
@@ -33,16 +35,18 @@ We import the StyleSheet:
 
 Result (see [testing your theme](../../testing-your-theme/)):
 
-<figure><img src="../../.gitbook/assets/image (26).png" alt=""><figcaption><p>Custom background successfully applyed</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (26).png" alt=""><figcaption><p>Custom background successfully applied</p></figcaption></figure>
 
 If you prefer, you can also move the background.png image from `public/` to, for examples, `src/login/assets/background.png` and reference the image with a path relative to the CSS file, in this case it would be:
 
 {% code title="src/login/main.css" %}
+
 ```css
 body.kcBodyClass {
-    background: url(./assets/background.png) no-repeat center center fixed;
+  background: url(./assets/background.png) no-repeat center center fixed;
 }
 ```
+
 {% endcode %}
 
 Now let's see how we would apply a different background image for different pages of our theme.

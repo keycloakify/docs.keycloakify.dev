@@ -14,7 +14,7 @@ This will create a src/login/Template.tsx file in your project.
 
 ## Import from the public directory
 
-Let's use this plarceholder for the demo: [logo.png](https://github.com/keycloakify/keycloakify/releases/download/v0.0.1/logo.png).
+Let's use this placeholder for the demo: [logo.png](https://github.com/keycloakify/keycloakify/releases/download/v0.0.1/logo.png).
 
 We put the file in public/img/logo.png
 
@@ -53,7 +53,7 @@ If you ever need to SSH into the Keycloak server and hot swipe the image you can
 
 ## Letting the bundle handle your import
 
-Importing your asset from the public directory has the drawback that you won't get a compilation error if you made a mistake, like for example if you rename a file and forget to update the imports.  \
+Importing your asset from the public directory has the drawback that you won't get a compilation error if you made a mistake, like for example if you rename a file and forget to update the imports. \
 A nice solution for this is to let Vite or Webpack handle the import. &#x20;
 
 Let's move our logo.png to **/src/login/assets/logo.png**
@@ -77,4 +77,4 @@ export default function Template(props: TemplateProps&#x3C;KcContext, I18n>) {
             {/* ... */}
 </code></pre>
 
-This will yeild the same result except that now if you delete, move or rename the logo.png file you'll get a compilation error letting you know that you must also uptate your **Template.tsx** file. &#x20;
+This will yield the same result except that now if you delete, move or rename the logo.png file you'll get a compilation error letting you know that you must also update your **Template.tsx** file. &#x20;
