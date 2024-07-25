@@ -4,9 +4,9 @@
 Only available in Vite projects, not in Webpack
 {% endhint %}
 
-The postBuild hook is called just before Keycloakify bundles the themes resources into the jar. &#x20;
+The postBuild hook is called just before Keycloakify bundles the themes resources into the jar.
 
-This gives you the ability to implement some custom transformation.&#x20;
+This gives you the ability to implement some custom transformation.
 
 Let's say, for example, we have a big `material-icons` in our `public` directory and those icons are used in the main app but not in the Keycloak theme. We can use the postBuild hook to make sure that those icons are not bundled in the generated jar files.
 
@@ -45,4 +45,4 @@ cd dist_keycloak/extracted
 jar -xf ../keycloak-theme-for-kc-25-and-above.jar
 ```
 
-<figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Overview of the content of the jar extracted</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Overview of the content of the jar extracted</p></figcaption></figure>

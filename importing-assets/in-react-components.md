@@ -1,6 +1,6 @@
 # In React components
 
-Let's say you want to put te logo of your company on every pages of the theme. &#x20;
+Let's say you want to put te logo of your company on every pages of the theme.
 
 First you'd eject the Template:
 
@@ -8,7 +8,7 @@ First you'd eject the Template:
 npx keycloakify eject-page # Select login -> Template.tsx
 ```
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 This will create a src/login/Template.tsx file in your project.
 
@@ -20,11 +20,11 @@ We put the file in public/img/logo.png
 
 <div align="center" data-full-width="false">
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 </div>
 
-Now let's edit the template to import the file: &#x20;
+Now let's edit the template to import the file:
 
 <pre class="language-tsx" data-title="src/login/Template.tsx"><code class="lang-tsx">export default function Template(props: TemplateProps&#x3C;KcContext, I18n>) {
 
@@ -41,20 +41,20 @@ Now let's edit the template to import the file: &#x20;
 
 You can see the result by running `npx keycloakify start-keycloak`
 
-<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 If you ever need to SSH into the Keycloak server and hot swipe the image you can find it at
 
 **/opt/keycloak/themes/**[**\<name of your theme>**](../build-options/themename.md)**/login/resources/dist/img/logo.png**
 
-![](<../.gitbook/assets/image (3) (1).png>)
+<img src="../.gitbook/assets/image (3) (1).png" alt="" data-size="original">
 {% endhint %}
 
 ## Letting the bundle handle your import
 
-Importing your asset from the public directory has the drawback that you won't get a compilation error if you made a mistake, like for example if you rename a file and forget to update the imports. \
-A nice solution for this is to let Vite or Webpack handle the import. &#x20;
+Importing your asset from the public directory has the drawback that you won't get a compilation error if you made a mistake, like for example if you rename a file and forget to update the imports.\
+A nice solution for this is to let Vite or Webpack handle the import.
 
 Let's move our logo.png to **/src/login/assets/logo.png**
 
@@ -77,4 +77,4 @@ export default function Template(props: TemplateProps&#x3C;KcContext, I18n>) {
             {/* ... */}
 </code></pre>
 
-This will yield the same result except that now if you delete, move or rename the logo.png file you'll get a compilation error letting you know that you must also update your **Template.tsx** file. &#x20;
+This will yield the same result except that now if you delete, move or rename the logo.png file you'll get a compilation error letting you know that you must also update your **Template.tsx** file.
