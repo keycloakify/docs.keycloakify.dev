@@ -6,7 +6,7 @@ You can chose between two implementation of the account theme:
 
 ## Single Page
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption><p>Screenshot of the Single Page Account theme</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Screenshot of the Single Page Account theme</p></figcaption></figure>
 
 The Single Page theme also refered as account v3 is this the default theme that comes with Keycloak.
 
@@ -26,9 +26,9 @@ The Single Page theme also refered as account v3 is this the default theme that 
 
 ## Multi Page
 
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
-This is a fork of the Account v1 maintained by the Keycloakify team
+This is a fork of the Account v1 maintained by the Keycloakify team.
 
 ### Pros
 
@@ -52,3 +52,7 @@ When you've made your choice, you can initialize the account theme with:
 ```bash
 npx keycloakify initialize-account-theme
 ```
+
+Once you've initialized the theme you need to edit your src/main.tsx file and uncomment everything related to account.  \
+\
+... More documentation on the account theme coming soon.

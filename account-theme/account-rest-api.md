@@ -1,6 +1,10 @@
-# 🔌 Account REST API
+# 🔌 Account REST API in Multi Page Account
 
-The Keycloak Account v3 (the default account theme that comes with Keycloak) is built on top of a REST API. You can consume this API from your Keycloakify Account theme! So, if you feel limited by the `kcContext` you get in the Account pages, you can leverage this API.
+{% hint style="warning" %}
+At this stage this is meerly a POC. We'll provide better tooling in the near future.&#x20;
+{% endhint %}
+
+The Keycloak Single Page Account UI (Account v3) is built on top of a REST API. You can consume this API from your Keycloakify Account theme! So, if you feel limited by the `kcContext` you get in the Account pages, you can leverage this API.
 
 While this support is still a bit rough around the edges, we are working to better integrate it. Here is a minimal demo of how to call the API:
 
@@ -18,4 +22,4 @@ You can find the code for the Account v3 theme [here](https://github.com/keycloa
 
 If you run `npx keycloakify start-keycloak` in the modified starter, login with the test user, click on the account link, and open the dev tools, you'll see a logged response to an Account REST API call:
 
-<figure><img src=".gitbook/assets/image (51).png" alt="API Call Response"><figcaption><p>Console logging the response of GET <code>/account/?userProfileMetadata=true</code></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (51).png" alt="API Call Response"><figcaption><p>Console logging the response of GET <code>/account/?userProfileMetadata=true</code></p></figcaption></figure>
