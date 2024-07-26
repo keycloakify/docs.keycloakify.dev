@@ -19,7 +19,7 @@ The Single Page theme also refered as account v3 is this the default theme that 
 ### Cons
 
 * Opting for this option will add a lot of dependencies to your project (i18n-next, react-router-dom, patenrnfly and more).
-* CSS level customization beyond overloading of Paternlyfly CSS variable is not practical, you'll have to customize at the React component level.
+* CSS level customization beyond [overidding the Paternfly CSS variables](https://www.patternfly.org/components/button/html/#css-variables) is not practical, you'll have to customize at the React component level.
 * No Storybook support.
 * Not backward compatible with older Keycloak version prior 25
 * If you go beyond surface level customization, keeping the theme up to date as new Keycloak version get released can be challenging.  &#x20;
