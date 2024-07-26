@@ -43,7 +43,7 @@ This is a fork of the Account v1 maintained by the Keycloakify team.
 
 * Don't come with all the feature out of the box yet. You'll have to use the [Keycloak Account REST API if you want to implement them](account-rest-api.md). &#x20;
 * It relies on Java code maintained by the Keycloakify comunity that uses Keycloak internal API, you have to trust us to keep maintaining it.
-* The default looks is a bit dated (as of today, we plan to update it). &#x20;
+* The default look is a bit dated (as of today, we plan to update it). &#x20;
 
 ## Command for initializing the theme
 
