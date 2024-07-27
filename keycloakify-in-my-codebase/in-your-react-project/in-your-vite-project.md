@@ -65,49 +65,45 @@ Now you want to modify your entry point so that: &#x20;
 
 <pre class="language-tsx" data-title="src/main.tsx"><code class="lang-tsx">/* eslint-disable react-refresh/only-export-components */
 import { createRoot } from "react-dom/client";
-import { StrictMode, lazy, Suspense } from "react";
-
-// The following block can be uncommented to test a specific page with `yarn dev`
-// Don't forget to comment back or your bundle size will increase
-/*
-<strong>import { getKcContextMock } from "./keycloak-theme/login/KcPageStory";
+import { 
+    StrictMode,
+<strong>    lazy,
+</strong><strong>    Suspence
+</strong>} from "react";
+<strong>import { KcPage, type KcContext } from "./keycloak-theme/kc.gen";
+</strong><strong>const App = lazy("./App"));
 </strong>
-if (import.meta.env.DEV) {
-    window.kcContext = getKcContextMock({
-        pageId: "register.ftl",
-        overrides: {}
-    });
-}
-*/
-
-const KcLoginThemePage = lazy(() => import("./keycloak-theme/login/KcPage"));
-const KcAccountThemePage = lazy(() => import("./keycloak-theme/account/KcPage"));
-<strong>const App = lazy(() => import("./App"));
+<strong>// The following block can be uncommented to test a specific page with `yarn dev`
+</strong><strong>// Don't forget to comment back or your bundle size will increase
+</strong><strong>/*
+</strong><strong>import { getKcContextMock } from "./keycloak-theme/login/KcPageStory";
+</strong><strong>
+</strong><strong>if (import.meta.env.DEV) {
+</strong><strong>    window.kcContext = getKcContextMock({
+</strong><strong>        pageId: "register.ftl",
+</strong><strong>        overrides: {}
+</strong><strong>    });
+</strong><strong>}
+</strong><strong>*/
 </strong>
 createRoot(document.getElementById("root")!).render(
     &#x3C;StrictMode>
-        &#x3C;Suspense>
-            {(() => {
-                switch (window.kcContext?.themeType) {
-                    case "login":
-                        return &#x3C;KcLoginThemePage kcContext={window.kcContext} />;
-                    case "account":
-                        return &#x3C;KcAccountThemePage kcContext={window.kcContext} />;
-                }
-<strong>                return &#x3C;App />;
-</strong>            })()}
-        &#x3C;/Suspense>
-    &#x3C;/StrictMode>
+<strong>        {!window.kcContext ? (
+</strong><strong>            &#x3C;KcPage kcContext={window.kcContext} />
+</strong><strong>        ) : (
+</strong><strong>            &#x3C;Suspence>
+</strong><strong>                &#x3C;App />
+</strong><strong>            &#x3C;/Suspence>
+</strong><strong>        )}
+</strong>    &#x3C;/StrictMode>
 );
 
-declare global {
-    interface Window {
-        kcContext?:
-<strong>            | import("./keycloak-theme/login/KcContext").KcContext
-</strong><strong>            | import("./keycloak-theme/account/KcContext").KcContext;
-</strong>    }
-}
-</code></pre>
+<strong>declare global {
+</strong><strong>    interface Window {
+</strong><strong>        kcContext?: KcContext;
+</strong><strong>    }
+</strong><strong>}
+</strong></code></pre>
 
 You also need to use Keycloakify's Vite plugin. Here we don't provide any [build options](../../build-options/) but you probably at least want to define [keycloakVersionTargets](../../build-options/keycloakversiontargets.md).
 
@@ -119,10 +115,17 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [
     react(), 
-<strong>    keycloakify({})
+<strong>    keycloakify({
+</strong><strong>        accountThemeImplementation: "none"
+</strong><strong>    })
 </strong>  ],
 })
 </code></pre>
+
+{% hint style="info" %}
+Leave accountThemeImplementation set to "none" for now.  \
+To initialize the account theme refer to [this guide](../../keycloak-configuration/enabling-your-theme/account-theme.md).&#x20;
+{% endhint %}
 
 Finally you want to add to your package.json a script for building the theme and another one to start storybook.
 
