@@ -6,7 +6,7 @@ You can chose between two implementation of the account theme:
 
 ## Single Page
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Screenshot of the Single Page Account theme</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>Screenshot of the Single Page Account theme</p></figcaption></figure>
 
 The Single Page theme also refered as account v3 is this the default theme that comes with Keycloak 25.
 
@@ -26,7 +26,7 @@ The Single Page theme also refered as account v3 is this the default theme that 
 
 ## Multi Page
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 This is a fork of the Account v1 maintained by the Keycloakify team.
 

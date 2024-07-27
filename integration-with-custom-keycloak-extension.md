@@ -12,4 +12,4 @@ Branch of the starter where with a custom sms-otp.ftl page
 Diff view of the changes to add the page
 {% endembed %}
 
-<figure><img src=".gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Keycloakify generates a sms-otp.ftl page</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption><p>Keycloakify generates a sms-otp.ftl page</p></figcaption></figure>

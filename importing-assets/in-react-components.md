@@ -8,7 +8,7 @@ First you'd eject the Template:
 npx keycloakify eject-page # Select login -> Template.tsx
 ```
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 This will create a src/login/Template.tsx file in your project.
 
@@ -20,7 +20,7 @@ We put the file in public/img/logo.png
 
 <div align="center" data-full-width="false">
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 </div>
 
@@ -41,7 +41,7 @@ Now let's edit the template to import the file:
 
 You can see the result by running `npx keycloakify start-keycloak`
 
-<figure><img src="../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 If you ever need to SSH into the Keycloak server and hot swipe the image you can find it at
