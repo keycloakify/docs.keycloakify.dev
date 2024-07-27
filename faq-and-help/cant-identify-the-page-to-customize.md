@@ -15,6 +15,6 @@ If you get this error this means that the theme isn't correctly enabled on the c
 \
 Other scenario you get a page that is not listed in [the reference storybook](https://storybook.keycloakify.dev/?path=/story/introduction--page). This probably mean that you have a third party Keycloak extention enabled on your Keycloak server, you can still customize this page, just follow this guide: &#x20;
 
-{% content-ref url="../integration-with-custom-keycloak-extension.md" %}
-[integration-with-custom-keycloak-extension.md](../integration-with-custom-keycloak-extension.md)
+{% content-ref url="../styling-custom-extension-page.md" %}
+[styling-custom-extension-page.md](../styling-custom-extension-page.md)
 {% endcontent-ref %}

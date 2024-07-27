@@ -73,7 +73,6 @@
 * [❓ Can I use it with Vue or Angular](faq-and-help/can-i-use-it-with-vue-or-angular/README.md)
   * [Angular](faq-and-help/can-i-use-it-with-vue-or-angular/angular.md)
 * [⚠️ Limitations](faq/limitations.md)
-* [🖇️ Integration With Custom Keycloak Extension](integration-with-custom-keycloak-extension.md)
 * [🛑 Errors Keycloak in Logs](faq/keycloak-error-in-log.md)
 * [🙋 How do I add extra pages?](faq-and-help/how-do-i-add-extra-pages.md)
 * [🤓 Can I use react-hooks-form?](faq-and-help/can-i-use-react-hooks-form.md)

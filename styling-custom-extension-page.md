@@ -2,7 +2,7 @@
 
 Sometimes certain extensions will add new functionality that requires an additional page not originally shipped with Keycloak. Keycloakify out-of-the-box will only provide customization to base pages, so if a new page is introduced by an extension, there is a good chance the page will not be styled correctly.
 
-To account for these cases, Keycloakify supports the ability to "eject" custom pages and configure them such that style preservation is maintained.
+To account for these cases, Keycloakify supports the ability to add custom pages and configure them such that style preservation is maintained.
 
 For our example on how to customize this, we will be using Phase Two's otp-form.ftl page. Phase Two provides email OTP codes for logging in and as a result has a special page if OTP codes are enabled in the authorization flow.
 
@@ -12,8 +12,8 @@ You can find the original .ftl file on Phase Two's github
 
 The first thing we will do is create the page under the pages directory, our file name in this case will be `OtpForm.tsx` and paste in some starter code including the template.
 
-```JS
-// src/login/pages/OtpForm.tsx
+{% code title="src/login/pages/OtpForm.tsx" %}
+```tsx
 import { getKcClsx } from "keycloakify/login/lib/kcClsx";
 import type { PageProps } from "keycloakify/login/pages/PageProps";
 import type { KcContext } from "../KcContext";
@@ -48,11 +48,12 @@ export default function OtpForm(props: PageProps<Extract<KcContext, { pageId: "o
     );
 }
 ```
+{% endcode %}
 
 Note the `pageId` variable specified `otp-form.ftl`, that should match the exact name of the page file you are trying to implement. Additionally, we will also need to modify the `kcContext` values to account for certain custom variables, but we will get to that later. For now the last new file we need to add would be the story file for this page:
 
-```JS
-// src/login/pages/OtpForm.stories.tsx
+{% code title="src/login/pages/OtpForm.stories.tsx" %}
+```tsx
 import type { Meta, StoryObj } from "@storybook/react";
 import { createKcPageStory } from "../KcPageStory";
 
@@ -71,10 +72,12 @@ export const Default: Story = {
     render: () => <KcPageStory />
 };
 ```
+{% endcode %}
 
 Next the easiest thing is to just paste the default code for the custom page right into the template and begin modifying it for Keycloakify. In our case, here is the code for that page at the time of writing:
 
-<details open>
+<details>
+
 <summary>otp-form.ftl</summary>
 
 ```xml
@@ -137,36 +140,40 @@ Breaking down this code:
 
 1, 2, and 3 require converting code to JSX. The converted code for the page can be found at the bottom. Here are some tips:
 
-- Any classname provided as a variable will use `kcClsx` to resolve, so `${properties.kcFormClass!}` would turn into `{kcClsx("kcFormGroupClass")}`
-- When dealing with message values, `msg` may return full blown HTML so it can be used as a child element and `msgStr` will return straight text.
-  - Example 1, `aria-label="${msg("restartLoginTooltip")}"` would turn into `aria-label={msgStr("restartLoginTooltip")}`.
-  - Example 2, `msg` variables they can inject HTML as a variable, when this happens we need to dangerously set inner html. Specifcally with a piece of code like this:
-    ```html
-    <#if messagesPerField.existsError('totp')>
-      <span id="input-error-otp-code" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
-        ${kcSanitize(messagesPerField.get('totp'))?no_esc}
-      </span>
-    </#if>
-    ```
-    would turn into this:
-    ```jsx
-    {
-      messagesPerField.existsError("totp") && (
-        <span
-          id="input-error-otp-code"
-          className={kcClsx("kcInputErrorMessageClass")}
-          aria-live="polite"
-          dangerouslySetInnerHTML={{ __html: messagesPerField.get("totp") }}
-        />
-      );
-    }
-    ```
-    Unfortunately, a lot of it is up to you to decide with the extension you might be using, but there may be some trial and error.
+* Any classname provided as a variable will use `kcClsx` to resolve, so `${properties.kcFormClass!}` would turn into `{kcClsx("kcFormGroupClass")}`
+* When dealing with message values, `msg` may return full blown HTML so it can be used as a child element and `msgStr` will return straight text.
+  * Example 1, `aria-label="${msg("restartLoginTooltip")}"` would turn into `aria-label={msgStr("restartLoginTooltip")}`.
+  *   Example 2, `msg` variables they can inject HTML as a variable, when this happens we need to dangerously set inner html. Specifcally with a piece of code like this:
+
+      ```html
+      <#if messagesPerField.existsError('totp')>
+        <span id="input-error-otp-code" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
+          ${kcSanitize(messagesPerField.get('totp'))?no_esc}
+        </span>
+      </#if>
+      ```
+
+      would turn into this:
+
+      ```jsx
+      {
+        messagesPerField.existsError("totp") && (
+          <span
+            id="input-error-otp-code"
+            className={kcClsx("kcInputErrorMessageClass")}
+            aria-live="polite"
+            dangerouslySetInnerHTML={{ __html: messagesPerField.get("totp") }}
+          />
+        );
+      }
+      ```
+
+      Unfortunately, a lot of it is up to you to decide with the extension you might be using, but there may be some trial and error.
 
 4 on the other hand requires changing some code in other files.
 
-```JS
-// src/login/KcContext.ts
+{% code title="src/login/KcContext.ts" %}
+```tsx
 /* eslint-disable @typescript-eslint/ban-types */
 import type { ExtendKcContext } from "keycloakify/login";
 import type { KcEnvName, ThemeName } from "../kc.gen";
@@ -191,11 +198,12 @@ export type KcContextExtensionPerPage = {
 
 export type KcContext = ExtendKcContext<KcContextExtension, KcContextExtensionPerPage>;
 ```
+{% endcode %}
 
 As seen above, kcContext is where we can add the type definitions for the props passed into the page. In the freemarker we also see `msg("doResend")` value which is not in the base keycloak i18 library. We would also need add this for mocking purposes.
 
-```JS
-// src/login/i18n.ts
+{% code title="src/login/i18n.ts" %}
+```typescript
 import { createUseI18n } from "keycloakify/login";
 
 export const { useI18n, ofTypeI18n } = createUseI18n({
@@ -209,11 +217,12 @@ export const { useI18n, ofTypeI18n } = createUseI18n({
 
 export type I18n = typeof ofTypeI18n;
 ```
+{% endcode %}
 
 The last two things we need to do now would be adding the story to the `KcPageStory.tsx`
 
-```JS
-// src/login/KcPageStory.tsx
+{% code title="src/login/KcPageStory.tsx" %}
+```typescript
 const kcContextExtensionPerPage: KcContextExtensionPerPage = {
     "otp-form.ftl": {
         auth: {
@@ -226,10 +235,12 @@ const kcContextExtensionPerPage: KcContextExtensionPerPage = {
     }
 };
 ```
+{% endcode %}
 
 and adding the page to the `KcPage.tsx`
 
-```JS
+{% code title="src/login/KcPage.tsx" %}
+```tsx
 case "otp-form.ftl":
     return (
         <OtpForm
@@ -239,10 +250,12 @@ case "otp-form.ftl":
         />
     );
 ```
+{% endcode %}
 
 After all that you should be done! You can view the new component in storybook and check everything looks right and then the next time you bundle and build it, it should be deployed.
 
-<details open>
+<details>
+
 <summary>Completed code for OtpForm.tsx:</summary>
 
 ```JSX
