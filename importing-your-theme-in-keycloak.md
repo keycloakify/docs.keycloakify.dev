@@ -6,7 +6,7 @@ Now that you have your theme as a .jar file, let's see how you can import it in 
 
 {% tabs %}
 {% tab title="Docker" %}
-Let's see how you would go about creating a Keycloak Docker image with your theme available.\\
+Let's see how you would go about creating a Keycloak Docker image with your theme available.
 
 {% embed url="https://willwill96.github.io/the-ui-dawg-static-site/en/keycloakify/#integrating-keycloak-and-keycloakify-jar" %}
 Checkout this great tutorial that explains it in great details
