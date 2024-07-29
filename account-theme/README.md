@@ -26,7 +26,7 @@ The Single Page theme also refered as account v3 is this the default theme that 
 
 ## Multi Page
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 This is a fork of the Account v1 maintained by the Keycloakify team.
 

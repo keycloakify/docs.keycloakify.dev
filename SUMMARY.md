@@ -70,6 +70,7 @@
 
 * [😞 Can't identify the page to customize?](faq-and-help/cant-identify-the-page-to-customize.md)
 * [🤔 How it Works](faq/how-it-works.md)
+* [😖 Missing values on the kcContext](faq-and-help/missing-values-on-the-kccontext.md)
 * [❓ Can I use it with Vue or Angular](faq-and-help/can-i-use-it-with-vue-or-angular/README.md)
   * [Angular](faq-and-help/can-i-use-it-with-vue-or-angular/angular.md)
 * [⚠️ Limitations](faq/limitations.md)
