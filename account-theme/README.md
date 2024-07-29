@@ -21,8 +21,9 @@ The Single Page theme also refered as account v3 is this the default theme that 
 * Opting for this option will add a lot of dependencies to your project (i18n-next, react-router-dom, patenrnfly and more).
 * CSS level customization beyond [overidding the Paternfly CSS variables](https://www.patternfly.org/components/button/html/#css-variables) is not practical, you'll have to customize at the React component level.
 * No Storybook support.
+* No `npx keycloakify eject-page` CLI, you'll have to manually copy paste from the source the components you want to take ownership over.
 * Not backward compatible with older Keycloak version prior 25
-* If you go beyond surface level customization, keeping the theme up to date as new Keycloak version get released can be challenging.  &#x20;
+* When upgrading to a future version of Keycloak, there’s a possibility that your account theme may break. If your customizations are limited to styles, updating should be straightforward—simply bump the version number of [the Account UI](https://github.com/keycloakify/keycloak-account-ui) in your dependencies. However, if you’ve made customizations at the React component level, migrating to the new version could require substantial effort due to potential extensive changes in the underlying code. The Keycloakify team cannot guarantee a specific level of stability for these modifications, as they are not part of our codebase.  &#x20;
 
 ## Multi Page
 
@@ -42,8 +43,8 @@ This is a fork of the Account v1 maintained by the Keycloakify team.
 ### Cons
 
 * Don't come with all the feature out of the box yet. You'll have to use the [Keycloak Account REST API if you want to implement them](account-rest-api.md). &#x20;
-* It relies on Java code maintained by the Keycloakify comunity that uses Keycloak internal API, you have to trust us to keep maintaining it.
-* The default look is a bit dated (as of today, we plan to update it). &#x20;
+* It relies on Java code maintained by us, this code uses Keycloak internal API, you have to trust us to keep maintaining it.
+* The default look is a bit dated (as of today, we'll to update it). &#x20;
 
 ## Command for initializing the theme
 
