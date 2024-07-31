@@ -59,6 +59,8 @@ Now let's see how you can set the value of thoses environement variable on the K
 </strong>    -p 8080:8080 \
     docker-keycloak-with-theme
 </code></pre>
+
+
 {% endtab %}
 
 {% tab title="Helm" %}
@@ -105,3 +107,24 @@ MY_APP_API_URL="https://api.my-org.com" MY_APP_PALETTE="solaris" /opt/keycloak/b
 {% endtab %}
 {% endtabs %}
 
+To test locally, you can pass the environement variable to the start-keycloak CLI command:
+
+```bash
+MY_APP_PALETTE="solaris" MY_APP_API_URL="..." npx keycloakify start-keycloak
+```
+
+You can also create stories with specific ENV values:
+
+```tsx
+export const Solaris: Story = {
+    render: () => (
+        <KcPageStory
+            kcContext={{
+                properties: {
+                    MY_APP_PALETTE: "solaris"
+                },
+            }}
+        />
+    )
+};
+```
