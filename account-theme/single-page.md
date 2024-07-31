@@ -202,8 +202,87 @@ Example loading some custom CSS:
 
 <figure><img src="../.gitbook/assets/image (79).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (80).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (80).png" alt=""><figcaption><p>The red boder has been applied on all the element that have the pf-v5-c-page__main-secrion class</p></figcaption></figure>
+
+## Component level customization
+
+To customize the Account theme at the React component level you want to use the eject-page command and slect "account".
+
+```bash
+npx keycloakify eject-page
+```
+
+<figure><img src="../.gitbook/assets/image (81).png" alt=""><figcaption></figcaption></figure>
+
+After running this command you'll be able to see that the following change has been automatically applied:
+
+{% code title="src/account/KcPage.tsx" %}
+```diff
+ import { lazy } from "react";
+ import { KcAccountUiLoader } from "@keycloakify/keycloak-account-ui";
+ import type { KcContext } from "./KcContext";
+
+-const KcAccountUi = lazy(()=> import("@keycloakify/keycloak-account-ui/KcAccountUi"));
++const KcAccountUi = lazy(() => import("./KcAccountUi"));
+
+ export default function KcPage(props: { kcContext: KcContext }) {
+     const { kcContext } = props;
+
+     return (
+         <KcAccountUiLoader
+             kcContext={kcContext}
+             KcAccountUi={KcAccountUi}
+         />
+     );
+ }
+```
+{% endcode %}
+
+Also the KcAccountUi component has be copied over from **node\_modules/@keycloakify/keycloak-account-ui/src/KcAccountUi.tsx** to your codebase at **src/account/KcAccountUi.tsx**. &#x20;
+
+<figure><img src="../.gitbook/assets/image (82).png" alt=""><figcaption><p>KcAccountUi.tsx has been ejected</p></figcaption></figure>
+
+That what you'll want to each time you'll want to take ownership of some component of the Account UI: Copy the original source file into your codebase and update the absolute imports by relative imports.  \
+Let's see in practice how we would eject the routes:
+
+```bash
+cp node_modules/@keycloakify/keycloak-account-ui/src/routes.tsx src/account/
+```
+
+Then you want to update the absolututes import of the routes to your local routes in KcAccountUI.tsx
+
+```diff
+- import { routes } from "@keycloakify/keycloak-account-ui/routes";
++ import { router } from "./routes";
+```
+
+<figure><img src="../.gitbook/assets/image (83).png" alt=""><figcaption></figcaption></figure>
+
+And that's it, you now own the routes!  \
+Moving forward you can incrementally "eject" the components you need to take ownerhip over by followind the same process. &#x20;
+
+Be aware: The more components you eject, the more work it will represent to mainain your theme up to date with the future evolution of Keycloak.  &#x20;
+
+## Updating keycloak-account-ui to a new version
+
+Each time a new version of Keycloak is released, a new version of @keycloak/keycloak-account-ui is also released with the same version number.\
+This does not nessesarely means that in order to have a custom theme that works with Keycloak 25.0.2 for example you need to use @keycloak/keycloak-account-ui@25.0.2. Actually it's very likely that you theme will still work with Keycloak 26, however at some point your theme will break with future version of Keycloak and you'll have to upgrade. &#x20;
+
+Keycloakify does not use the NPM package @keycloak/keycloak-account-ui but an automatically repackaged distribution of it: @keycloakify/keycloak-account-ui.
+
+So, when comes the time to upgrade you want to navigate to:\
 
 
+{% embed url="https://github.com/keycloakify/keycloak-account-ui" %}
+
+And look in the README in the installation section:
+
+<figure><img src="../.gitbook/assets/image (84).png" alt=""><figcaption><p>Instalation section of keycloakify/keycloak-account-ui version 25.0.2</p></figcaption></figure>
+
+You want to copy and paste the dependencies into the package.json of your Keycloakify project.
+
+The readme is generated automatically, you can trust that is always up do date.
+
+You migh wonder why there's only RC releases of @keycloakify/keycloak-account-ui, it's because we want to match the version number of the upstream package @keycloak/keycloak-account-ui but still be able to publish update when minor changes on the re-packaging distribution is needed. &#x20;
 
 [^1]: React, in developement mode, when using `<StrictMode/>`, renders the components twice, this is not a bug.
