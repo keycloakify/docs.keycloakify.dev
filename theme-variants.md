@@ -1,11 +1,10 @@
 # 🎭 Theme Variants
 
-Theme variant enables you to create multiples Keycloak theme with a single codebase. &#x20;
+Theme variant enables you to create multiples Keycloak theme with a single codebase.
 
 {% tabs %}
 {% tab title="Vite" %}
 {% code title="vite.config.ts" %}
-
 ```typescript
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
@@ -20,13 +19,11 @@ export default defineConfig({
   ],
 });
 ```
-
 {% endcode %}
 {% endtab %}
 
 {% tab title="Webpack" %}
 {% code title="package.json" %}
-
 ```json
 {
   "keycloakify": {
@@ -34,7 +31,6 @@ export default defineConfig({
   }
 }
 ```
-
 {% endcode %}
 {% endtab %}
 {% endtabs %}
@@ -49,4 +45,8 @@ In your code you'll be able to load different styles based on the value of `kcCo
 
 {% embed url="https://youtu.be/Nkoz1iD-HOA" %}
 Tutorial video
+{% endembed %}
+
+{% embed url="https://github.com/keycloakify/keycloakify-starter/tree/theme_variant" %}
+Branch of the starter where the changes of the video have been applied
 {% endembed %}
