@@ -29,7 +29,7 @@
     * [Tailwind](importing-assets/in-styles/tailwind.md)
 * [🖋️ Custom Fonts](custom-fonts.md)
 * [👤 Account Theme](account-theme/README.md)
-  * [🔌 Account REST API in Multi Page Account](account-theme/account-rest-api.md)
+  * [Multi-Page](account-theme/account-rest-api.md)
   * [Single-Page](account-theme/single-page.md)
 * [🌎 Internationalization and Translations](i18n.md)
 * [🖇️ Styling a Custom Page Not Included In Base Keycloak](styling-custom-extension-page.md)

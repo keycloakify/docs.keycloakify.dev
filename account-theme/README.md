@@ -25,9 +25,15 @@ The Single Page theme also refered as account v3 is this the default theme that 
 * Not backward compatible with older Keycloak version prior 25
 * When upgrading to a future version of Keycloak, there’s a possibility that your account theme may break. If your customizations are limited to styles, updating should be straightforward—simply bump the version number of [the Account UI](https://github.com/keycloakify/keycloak-account-ui) in your dependencies. However, if you’ve made customizations at the React component level, migrating to the new version could require substantial effort due to potential extensive changes in the underlying code. The Keycloakify team cannot guarantee a specific level of stability for these modifications, as they are not part of our codebase.  &#x20;
 
+To get started with the Single-Page account theme:
+
+{% content-ref url="single-page.md" %}
+[single-page.md](single-page.md)
+{% endcontent-ref %}
+
 ## Multi Page
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 This is a fork of the Account v1 maintained by the Keycloakify team.
 
@@ -46,14 +52,8 @@ This is a fork of the Account v1 maintained by the Keycloakify team.
 * It relies on Java code maintained by us, this code uses Keycloak internal API, you have to trust us to keep maintaining it.
 * The default look is a bit dated (as of today, we'll update it). &#x20;
 
-## Command for initializing the theme
+To get started with the Multi-Page account theme:
 
-When you've made your choice, you can initialize the account theme with:
-
-```bash
-npx keycloakify initialize-account-theme
-```
-
-Once you've initialized the theme you need to edit your src/main.tsx file and uncomment everything related to account.  \
-\
-... More documentation on the account theme coming soon.
+{% content-ref url="account-rest-api.md" %}
+[account-rest-api.md](account-rest-api.md)
+{% endcontent-ref %}

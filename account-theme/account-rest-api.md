@@ -1,10 +1,29 @@
-# 🔌 Account REST API in Multi Page Account
+# Multi-Page
+
+## Initializing the Multi-Page Account Theme
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>The Multi-Page Account theme before customization</p></figcaption></figure>
+
+You've made your mind and opted for the Multi-Page Account theme?  \
+Great, let's start by initializing you theme: &#x20;
+
+```bash
+npx keycloakify initialize-account-theme
+```
+
+When asked, select "Multi-Page". &#x20;
+
+This command will create the nessesary boilerplate for you. &#x20;
+
+Beyond that there isn't much thing you need to be aware of, things works exactly as in the login theme. You'll be able to use the  keycloakify`add-story` and `eject-page` CLI command just select account when asked.
+
+## Using the REST API
 
 {% hint style="warning" %}
 At this stage this is meerly a POC. We'll provide better tooling in the near future.&#x20;
 {% endhint %}
 
-The Keycloak Single Page Account UI (Account v3) is built on top of a REST API. You can consume this API from your Keycloakify Account theme! So, if you feel limited by the `kcContext` you get in the Account pages, you can leverage this API.
+Even if you're using the Multi-Page theme you can still consume the REST API the Single-Page Account is build on top of. So, if some information you need are missing from the `kcContext` you can fetch them dynamically.
 
 While this support is still a bit rough around the edges, we are working to better integrate it. Here is a minimal demo of how to call the API:
 
