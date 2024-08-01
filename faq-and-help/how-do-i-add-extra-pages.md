@@ -6,6 +6,6 @@ That being said, if what you are trying to do is implementing, for example, a mu
 
 If you have implemented a custom Keycloak extension (in Java) that does define some non standard extra user facing pages you can implement implement them in your Keycloakify theme. See:
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="../styling-custom-extension-page.md" %}
+[styling-custom-extension-page.md](../styling-custom-extension-page.md)
 {% endcontent-ref %}
