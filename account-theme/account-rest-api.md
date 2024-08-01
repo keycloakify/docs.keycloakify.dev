@@ -33,7 +33,7 @@ Branch of the starter template modified to call the Account REST API
 
 Here are the relevant changes:
 
-{% embed url="https://github.com/keycloakify/keycloakify-starter/commit/f391abc9292310ce6e36de2d55ead5c389258461" %}
+{% embed url="https://github.com/keycloakify/keycloakify-starter/commit/acc429422d78105aa4a438945b579fa5e1f4fd2c" %}
 The commit where the API call was added
 {% endembed %}
 
