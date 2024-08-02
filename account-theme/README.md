@@ -1,5 +1,16 @@
 # 👤 Account Theme
 
+{% hint style="warning" %}
+The first question you want to ask yourself is: "Do I really need an account theme?"\
+If you're looking to create an account theme just so that you can provide a way for your users to change their password or update their account infos such as email, phone number, favorite pets, ect... then you do not need an account theme. &#x20;
+
+There is pages in the login theme for that. You only need to add a button to redirect your user to your page in your main app. Here is how to do it with oidc-spa: [Documentation](https://docs.oidc-spa.dev/documentation/user-account-management).  \
+The added benefit of not having an account theme is that you will reuse the exact same form that you have created for the registration page in the login-update-profile page.  \
+
+
+You should consider creating an account theme only if you need to provide advanced account management feature to your users such a connexion logs, management of active session, file upload ect.
+{% endhint %}
+
 Keycloakify provide you two ways to create your own account theme. &#x20;
 
 You can chose between two implementation of the account theme:
