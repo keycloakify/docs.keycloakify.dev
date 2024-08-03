@@ -14,6 +14,8 @@ There is two main approach to integrate Keycloakify into your project, pick the 
 {% tab title="Collocation" %}
 If you happen to be devlopping a React Single Page Application with Vite or Webpack you can install Keycloakify directly within your project!
 
+This approach make it easy to reuse style and component of your main application in your Keycloakify theme if you are not in a mono-repository setup. &#x20;
+
 {% content-ref url="in-your-react-project/" %}
 [in-your-react-project](in-your-react-project/)
 {% endcontent-ref %}
@@ -24,6 +26,8 @@ There are many cases where the colocation apprach is not feasable, for example:
 
 * You are using Next.js or another meta framwork that involves server side rendering.
 * You are using a framework other than React (Vue, Angular, Svelt ...)
+
+Beside, you might prefer to to keep your Keycloak theme as an isolated component of your app.
 
 In this case you can integrate Keycloakify...
 
