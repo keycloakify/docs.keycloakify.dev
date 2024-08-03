@@ -88,7 +88,7 @@ import {
 </strong>
 createRoot(document.getElementById("root")!).render(
     &#x3C;StrictMode>
-<strong>        {!window.kcContext ? (
+<strong>        {window.kcContext ? (
 </strong><strong>            &#x3C;KcPage kcContext={window.kcContext} />
 </strong><strong>        ) : (
 </strong><strong>            &#x3C;Suspence>
@@ -104,6 +104,22 @@ createRoot(document.getElementById("root")!).render(
 </strong><strong>    }
 </strong><strong>}
 </strong></code></pre>
+
+{% hint style="info" %}
+#### Question:
+
+Why do my main application and Keycloak theme share the same entry point?
+
+#### Answer:
+
+To simplify the build process. If you don't want it to negatively impact the performance of your application, it's essential to understand the following points:
+
+* **Different Contexts:** The application (`App`) and Keycloak page (`KcPage`) are mounted in very different contexts. Avoid sharing providers between the two at the `main.tsx` file level. The true entry point of your application is the `App` component, while the entry point for your Keycloak theme is the `KcPage` component. Be careful about what code is shared between them.
+* **Responsibility of main.tsx:** The `main.tsx` file should only determine the context (either the application or Keycloak) and mount the appropriate component (`App` or `KcPage`). It should not contain any substantial logic or dependencies.
+* **Performance Considerations:** Keep `main.tsx` as lightweight as possible to avoid increasing the initial load time of both your main application and login pages. For example, do not load any state management libraries like `redux-toolkit` at this level. Only the main application needs `redux-toolkit`, not the login pages.
+
+By following these guidelines, you can ensure a clear separation of contexts and maintain optimal performance for both your main application and Keycloak theme.
+{% endhint %}
 
 You also need to use Keycloakify's Vite plugin. Here we don't provide any [build options](../../build-options/) but you probably at least want to define [keycloakVersionTargets](../../build-options/keycloakversiontargets.md).
 
