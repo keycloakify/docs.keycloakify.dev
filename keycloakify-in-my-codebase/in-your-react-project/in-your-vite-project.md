@@ -51,7 +51,7 @@ cd my-react-app
 git clone https://github.com/keycloakify/keycloakify-starter tmp
 mv tmp/src src/keycloak-theme
 mv tmp/.storybook .
-rm -r tmp
+rm -rf tmp
 rm src/keycloak-theme/vite-env.d.ts
 mv src/keycloak-theme/main.tsx src/main.tsx
 ```
@@ -68,10 +68,10 @@ import { createRoot } from "react-dom/client";
 import { 
     StrictMode,
 <strong>    lazy,
-</strong><strong>    Suspence
+</strong><strong>    Suspense
 </strong>} from "react";
 <strong>import { KcPage, type KcContext } from "./keycloak-theme/kc.gen";
-</strong><strong>const App = lazy("./App"));
+</strong><strong>const App = lazy(() => import("./App"));
 </strong>
 <strong>// The following block can be uncommented to test a specific page with `yarn dev`
 </strong><strong>// Don't forget to comment back or your bundle size will increase
@@ -91,9 +91,9 @@ createRoot(document.getElementById("root")!).render(
 <strong>        {window.kcContext ? (
 </strong><strong>            &#x3C;KcPage kcContext={window.kcContext} />
 </strong><strong>        ) : (
-</strong><strong>            &#x3C;Suspence>
+</strong><strong>            &#x3C;Suspense>
 </strong><strong>                &#x3C;App />
-</strong><strong>            &#x3C;/Suspence>
+</strong><strong>            &#x3C;/Suspense>
 </strong><strong>        )}
 </strong>    &#x3C;/StrictMode>
 );
