@@ -1,6 +1,6 @@
 # Page specific styles
 
-So far the customization we have made applies to all the pages however you might want to have stylesheet specific to certain pages. &#x20;
+So far the customization we have made applies to all the pages however you might want to have stylesheet specific to certain pages.
 
 You can do that by loading different stylesheet and applying different classes depending on the `kcContext.pageId`.
 
@@ -49,8 +49,8 @@ export default function KcPage(props: { kcContext: KcContext }) {
 </strong><strong>        let classes: { [key in ClassKey]?: string } = {
 </strong><strong>            // Your classes that applies to all pages
 </strong><strong>        };
-</strong><strong>
-</strong><strong>        switch (kcContext.pageId) {
+</strong>
+<strong>        switch (kcContext.pageId) {
 </strong><strong>            case "login.ftl":
 </strong><strong>                // You login page specific stylesheet.
 </strong><strong>                import("./pages/login.css");
@@ -69,15 +69,15 @@ export default function KcPage(props: { kcContext: KcContext }) {
 </strong><strong>                break;
 </strong><strong>            // ...
 </strong><strong>        }
-</strong><strong>
-</strong><strong>        return classes;
-</strong><strong>
-</strong><strong>    }, []);
+</strong>
+<strong>        return classes;
+</strong>
+<strong>    }, []);
 </strong><strong>}
 </strong></code></pre>
 
 Now some specific documentation if you wish to use [Tailwind](https://tailwindcss.com/):
 
-{% content-ref url="../../importing-assets/in-styles/tailwind.md" %}
-[tailwind.md](../../importing-assets/in-styles/tailwind.md)
+{% content-ref url="using-tailwind.md" %}
+[using-tailwind.md](using-tailwind.md)
 {% endcontent-ref %}
