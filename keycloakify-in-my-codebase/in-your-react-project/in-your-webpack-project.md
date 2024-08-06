@@ -137,7 +137,7 @@ Finally you want to add some script for Keycloakify in you package.json and also
 </strong>        // ...
     },
 <strong>    "keycloakify": {
-</strong><strong>        "accountThemeImplementation": "none"
+</strong><strong>        "accountThemeImplementation": "none",
 </strong><strong>        "projectBuildDirPath": "build",
 </strong><strong>        "staticDirPathInProjectBuildDirPath": "static",
 </strong><strong>        "publicDirPath": "public"
