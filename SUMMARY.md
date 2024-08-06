@@ -35,6 +35,7 @@
 * [👤 Account Theme](account-theme/README.md)
   * [Single-Page](account-theme/single-page.md)
   * [Multi-Page](account-theme/account-rest-api.md)
+* [🤵 Admin theme](admin-theme.md)
 * [📧 Email Customization](email-customization.md)
 * [🎯 Targetting Specific Keycloak Versions](targeting-specific-keycloak-versions.md)
 * [🚛 Passing URL Parameters to your Theme](passing-url-parameters-when-redirecting-to-your-theme.md)
