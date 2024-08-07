@@ -77,8 +77,8 @@ import {
 </strong><strong>// Don't forget to comment back or your bundle size will increase
 </strong><strong>/*
 </strong><strong>import { getKcContextMock } from "./keycloak-theme/login/KcPageStory";
-</strong><strong>
-</strong><strong>if (import.meta.env.DEV) {
+</strong>
+<strong>if (import.meta.env.DEV) {
 </strong><strong>    window.kcContext = getKcContextMock({
 </strong><strong>        pageId: "register.ftl",
 </strong><strong>        overrides: {}
@@ -106,13 +106,13 @@ createRoot(document.getElementById("root")!).render(
 </strong></code></pre>
 
 {% hint style="info" %}
-#### Question:
+**Question:**
 
 Why do my main application and Keycloak theme share the same entry point?
 
-#### Answer:
+**Answer:**
 
-To simplify the build process. If you don't want it to negatively impact the performance of your application, it's essential to understand the following points: &#x20;
+To simplify the build process. If you don't want it to negatively impact the performance of your application, it's essential to understand the following points:
 
 * **Different Contexts:** The application (`App`) and Keycloak page (`KcPage`) are mounted in very different contexts. Avoid sharing providers between the two at the `main.tsx` file level. The true entry point of your application is the `App` component, while the entry point for your Keycloak theme is the `KcPage` component. Be careful about what code is shared between them.
 * **Responsibility of main.tsx:** The `main.tsx` file should only determine the context (either the application or Keycloak) and mount the appropriate component (`App` or `KcPage`). It should not contain any substantial logic or dependencies.
@@ -146,8 +146,8 @@ Finally you want to add some script for Keycloakify in you package.json and also
 </code></pre>
 
 {% hint style="info" %}
-Leave accountThemeImplementation set to "none" for now.  \
-To initialize the account theme refer to [this guide](../../keycloak-configuration/enabling-your-theme/account-theme.md).&#x20;
+Leave accountThemeImplementation set to "none" for now.\
+To initialize the account theme refer to [this guide](../../keycloak-configuration/enabling-your-theme/account-theme.md).
 {% endhint %}
 
 Keycloakify has many build options that you can use, however `projectBuildDirPath`, `staticDirPathInProjectBuildDirPath` and `publicDirPath` are parameters specific to the use of Keycloakify in a Webpack context.
@@ -158,7 +158,7 @@ Theses **are not preferences!** If you're not using Create React App your Webpac
 
 That's it, your project is ready to go!
 
-You can run `npm run build-keycloak-theme`, the JAR distribution of your Keycloak theme will be generated in `dist_keycloak` ([you can change this](../../build-options/keycloakifybuilddirpath.md)).
+You can run `npm run build-keycloak-theme`, the JAR distribution of your Keycloak theme will be generated in `build_keycloak` ([you can change this](../../build-options/keycloakifybuilddirpath.md)).
 
 You're now able to use all the Keycloakify commands (`npx keycloakify --help`) from the root of your project.
 
