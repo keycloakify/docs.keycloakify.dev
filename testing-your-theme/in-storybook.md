@@ -18,7 +18,7 @@ The starter template does not initially contain any story files, instead there's
 So, just run this command in the root of your Keycloakify project and select the pages you want.
 
 ```bash
-npx keycloakify add-stories
+npx keycloakify add-story
 ```
 
 It will enables you to select the pages you want to add stories for.
