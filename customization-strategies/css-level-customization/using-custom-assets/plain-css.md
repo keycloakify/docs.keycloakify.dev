@@ -4,14 +4,14 @@ Let's see, as an example, the different ways you have to change the backgrounds 
 
 First let's [download a background image](https://coolbackgrounds.io/) an put it in our public directory:
 
-<figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 If you wish to do so, you can hot swipe assets that you have placed into your public directory in your Keycloak instance files at:
 
-**/opt/keycloak/themes/**[**\<name of your theme>**](../../build-options/themename.md)**/\<login|account>/resources/dist**
+**/opt/keycloak/themes/**[**\<name of your theme>**](../../../build-options/themename.md)**/\<login|account>/resources/dist**
 
-<img src="../../.gitbook/assets/image (28).png" alt="" data-size="original">
+<img src="../../../.gitbook/assets/image (28).png" alt="" data-size="original">
 {% endhint %}
 
 Let's apply this image to the body using plain CSS
@@ -31,9 +31,9 @@ We import the StyleSheet:
 // ...
 </code></pre>
 
-Result (see [testing your theme](../../testing-your-theme/)):
+Result (see [testing your theme](../../../testing-your-theme/)):
 
-<figure><img src="../../.gitbook/assets/image (26).png" alt=""><figcaption><p>Custom background successfully applied</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (26).png" alt=""><figcaption><p>Custom background successfully applied</p></figcaption></figure>
 
 If you prefer, you can also move the background.png image from `public/` to, for examples, `src/login/assets/background.png` and reference the image with a path relative to the CSS file, in this case it would be:
 
@@ -45,6 +45,6 @@ body.kcBodyClass {
 ```
 {% endcode %}
 
-In the following video I show how to load different background for different page and how to create [theme variant](../../theme-variants.md).
+In the following video I show how to load different background for different page and how to create [theme variant](../../../theme-variants.md).
 
 {% embed url="https://youtu.be/Nkoz1iD-HOA?si=hBXt8rw72-Pvhhnr" %}

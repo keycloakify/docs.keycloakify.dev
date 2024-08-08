@@ -8,7 +8,7 @@ Keycloakify enables you to customize the pages without changing the React compon
 
 If you can make it work, CSS Level Customization is preferable over component level customization since it's much easier to maintain.
 
-If you want to use a component library like MUI, ShadeCN/UI or Antlr, this is not the approach that you should favor you should instead checkout [Component Level customization](../component-level-customization.md).
+If you want to use a component library like MUI, ShadeCN/UI or Antlr, this is not the approach that you should favor you should instead checkout [Component Level customization](../component-level-customization/).
 
 {% content-ref url="basic-example.md" %}
 [basic-example.md](basic-example.md)

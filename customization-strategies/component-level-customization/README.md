@@ -14,6 +14,6 @@ It will enable you to import into your Keycloakify project some pages or templat
 
 Under construction, for now see:
 
-{% content-ref url="../importing-assets/in-react-components.md" %}
-[in-react-components.md](../importing-assets/in-react-components.md)
+{% content-ref url="in-react-components.md" %}
+[in-react-components.md](in-react-components.md)
 {% endcontent-ref %}
