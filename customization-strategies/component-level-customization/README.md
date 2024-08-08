@@ -1,16 +1,14 @@
 # Component Level Customization
 
-{% hint style="info" %}
-TLDR: &#x20;
+The Keycloakify starter repo doesn't come with much React component at all, this might seem puzling to you but don't wory it will make sense very soon. &#x20;
 
-Use this command:
+By default Keycloakify internalize every React component that constitute the default theme and only exposes the \<DefaultPage /> compoent. &#x20;
 
-```
-npx keycloakify eject-page
-```
+However you can take ownership of any component that constitutes the default theme. We call this process ejecting. &#x20;
 
-It will enable you to import into your Keycloakify project some pages or templates as React components.
-{% endhint %}
+When you eject a page or a temple it will copy from the keycloakify source code into your project the component that you have selected. &#x20;
+
+
 
 Under construction, for now see:
 
