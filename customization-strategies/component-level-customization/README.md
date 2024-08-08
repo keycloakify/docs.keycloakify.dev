@@ -4,11 +4,13 @@ The Keycloakify starter repo doesn't come with much React component at all, this
 
 By default Keycloakify internalize every React component that constitute the default theme and only exposes the \<DefaultPage /> compoent. &#x20;
 
-However you can take ownership of any component that constitutes the default theme. We call this process ejecting. &#x20;
+However you can take ownership of any component that constitutes the default theme by using the following command: &#x20;
 
-When you eject a page or a temple it will copy from the keycloakify source code into your project the component that you have selected. &#x20;
+```bash
+npx keycloakify eject-page
+```
 
-
+This command will let you select&#x20;
 
 Under construction, for now see:
 
