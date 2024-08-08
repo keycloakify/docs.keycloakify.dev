@@ -57,7 +57,7 @@ On the next page you'll be provided with a link to the Account pages:
 
 <figure><img src="../.gitbook/assets/image (71).png" alt=""><figcaption><p>Authenticated as "testuser" on the my-theme.keycloakify.dev utility app</p></figcaption></figure>
 
-You should be able to see your log statement ([printed twice](#user-content-fn-1)[^1]), confirming that you are indeed running your theme.
+You should be able to see your log statement confirming that you are indeed running your theme.
 
 <figure><img src="../.gitbook/assets/image (72).png" alt=""><figcaption></figcaption></figure>
 
@@ -284,5 +284,3 @@ You want to copy and paste the dependencies into the package.json of your Keyclo
 The readme is generated automatically, you can trust that is always up do date.
 
 You migh wonder why there's only RC releases of @keycloakify/keycloak-account-ui, it's because we want to match the version number of the upstream package @keycloak/keycloak-account-ui but still be able to publish update when minor changes on the re-packaging distribution is needed. &#x20;
-
-[^1]: React, in developement mode, when using `<StrictMode/>`, renders the components twice, this is not a bug.
