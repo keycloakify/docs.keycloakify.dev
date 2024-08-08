@@ -45,8 +45,6 @@ body.kcBodyClass {
 ```
 {% endcode %}
 
-Now let's see how we would apply a different background image for different pages of our theme.
+In the following video I show how to load different background for different page and how to create [theme variant](../../theme-variants.md).
 
 {% embed url="https://youtu.be/Nkoz1iD-HOA?si=hBXt8rw72-Pvhhnr" %}
-In this video I show how to load different background for different page and how to create [theme variant](../../theme-variants.md).
-{% endembed %}
