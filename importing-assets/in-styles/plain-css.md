@@ -1,6 +1,6 @@
 # .css, .sass or .less
 
-Let's see, as an example, the different ways you have to change the backgrounds image of the login page. &#x20;
+Let's see, as an example, the different ways you have to change the backgrounds image of the login page.
 
 First let's [download a background image](https://coolbackgrounds.io/) an put it in our public directory:
 
@@ -11,19 +11,17 @@ If you wish to do so, you can hot swipe assets that you have placed into your pu
 
 **/opt/keycloak/themes/**[**\<name of your theme>**](../../build-options/themename.md)**/\<login|account>/resources/dist**
 
-![](<../../.gitbook/assets/image (28).png>)
+<img src="../../.gitbook/assets/image (28).png" alt="" data-size="original">
 {% endhint %}
 
 Let's apply this image to the body using plain CSS
 
 {% code title="src/login/main.css" %}
-
 ```css
 body.kcBodyClass {
   background: url(/background.png) no-repeat center center fixed;
 }
 ```
-
 {% endcode %}
 
 We import the StyleSheet:
@@ -40,15 +38,15 @@ Result (see [testing your theme](../../testing-your-theme/)):
 If you prefer, you can also move the background.png image from `public/` to, for examples, `src/login/assets/background.png` and reference the image with a path relative to the CSS file, in this case it would be:
 
 {% code title="src/login/main.css" %}
-
 ```css
 body.kcBodyClass {
   background: url(./assets/background.png) no-repeat center center fixed;
 }
 ```
-
 {% endcode %}
 
 Now let's see how we would apply a different background image for different pages of our theme.
 
-{% embed url="https://youtu.be/Kg7TqJhPvEI" %}
+{% embed url="https://youtu.be/Nkoz1iD-HOA?si=hBXt8rw72-Pvhhnr" %}
+In this video I show how to load different background for different page and how to create [theme variant](../../theme-variants.md).
+{% endembed %}
