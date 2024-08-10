@@ -77,8 +77,8 @@ import {
 </strong><strong>// Don't forget to comment back or your bundle size will increase
 </strong><strong>/*
 </strong><strong>import { getKcContextMock } from "./keycloak-theme/login/KcPageStory";
-</strong>
-<strong>if (import.meta.env.DEV) {
+</strong><strong>
+</strong><strong>if (process.env.NODE_ENV === "development") {
 </strong><strong>    window.kcContext = getKcContextMock({
 </strong><strong>        pageId: "register.ftl",
 </strong><strong>        overrides: {}
