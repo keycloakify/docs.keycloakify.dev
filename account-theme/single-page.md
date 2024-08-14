@@ -4,6 +4,12 @@ description: Customizing the Single Page Account UI
 
 # Single-Page
 
+The present documation page is a transcript of what I explain in this video:
+
+{% embed url="https://youtu.be/PCNd3Nso1mY" %}
+This excerpt is from a video call with the Keycloak team, where we introduced the support for Account SPA customization.
+{% endembed %}
+
 ## Initializing the Single-Page Account Theme
 
 <figure><img src="../.gitbook/assets/image (66).png" alt=""><figcaption><p>The account Single Page Account theme before customization</p></figcaption></figure>
