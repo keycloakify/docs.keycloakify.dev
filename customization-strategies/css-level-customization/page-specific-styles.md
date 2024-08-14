@@ -76,8 +76,16 @@ export default function KcPage(props: { kcContext: KcContext }) {
 </strong><strong>}
 </strong></code></pre>
 
-Now some specific documentation if you wish to use [Tailwind](https://tailwindcss.com/):
+## What's next?
+
+At this point of the documentation, if you're looking for using tailwind you can go to this page:
 
 {% content-ref url="using-tailwind.md" %}
 [using-tailwind.md](using-tailwind.md)
+{% endcontent-ref %}
+
+Else you can skip directly to the next section: &#x20;
+
+{% content-ref url="using-custom-assets/" %}
+[using-custom-assets](using-custom-assets/)
 {% endcontent-ref %}
