@@ -66,12 +66,12 @@ This is a fork of the Account v1 maintained by the Keycloakify team.
 
 #### Cons
 
-* Don't come with all the feature out of the box yet. You'll have to use the [Keycloak Account REST API if you want to implement them](account-rest-api.md). &#x20;
+* Don't come with all the feature out of the box yet. You'll have to use the [Keycloak Account REST API if you want to implement them](multi-page.md). &#x20;
 * It relies on Java code maintained by us, this code uses Keycloak internal API, you have to trust us to keep maintaining it.
 * The default look is a bit dated (as of today, we'll update it). &#x20;
 
 To get started with the Multi-Page account theme:
 
-{% content-ref url="account-rest-api.md" %}
-[account-rest-api.md](account-rest-api.md)
+{% content-ref url="multi-page.md" %}
+[multi-page.md](multi-page.md)
 {% endcontent-ref %}
