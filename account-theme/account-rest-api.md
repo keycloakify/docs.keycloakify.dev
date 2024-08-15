@@ -31,12 +31,6 @@ While this support is still a bit rough around the edges, we are working to bett
 Branch of the starter template modified to call the Account REST API
 {% endembed %}
 
-Here are the relevant changes:
-
-{% embed url="https://github.com/keycloakify/keycloakify-starter/commit/e4d4562b0e78b9b27afdb7b756229af21d7543c7" %}
-The commit where the API call was added
-{% endembed %}
-
 You can find the code for the Account v3 theme [here](https://github.com/keycloak/keycloak/tree/main/js/apps/account-ui/src/api). This will help you infer all the available endpoints. You can also enable the Account v3 theme in your Keycloak and use the network tab to see the available endpoints.
 
 If you run `npx keycloakify start-keycloak` in the modified starter, login with the test user, click on the account link, and open the dev tools, you'll see a logged response to an Account REST API call:
