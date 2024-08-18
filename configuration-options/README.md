@@ -26,8 +26,8 @@ In this folder are listed the different configuration options you can use with K
 [postbuild.md](postbuild.md)
 {% endcontent-ref %}
 
-{% content-ref url="kccontextexclusionsftl.md" %}
-[kccontextexclusionsftl.md](kccontextexclusionsftl.md)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 {% content-ref url="xdg_cache_home.md" %}
