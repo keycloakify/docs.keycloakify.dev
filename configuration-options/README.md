@@ -34,6 +34,10 @@ In this folder are listed the different configuration options you can use with K
 [xdg\_cache\_home.md](xdg\_cache\_home.md)
 {% endcontent-ref %}
 
+{% content-ref url="kccontextexclusionsftl.md" %}
+[kccontextexclusionsftl.md](kccontextexclusionsftl.md)
+{% endcontent-ref %}
+
 {% content-ref url="keycloakifybuilddirpath.md" %}
 [keycloakifybuilddirpath.md](keycloakifybuilddirpath.md)
 {% endcontent-ref %}
