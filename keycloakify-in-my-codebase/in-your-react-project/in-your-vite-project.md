@@ -121,7 +121,7 @@ To simplify the build process. If you don't want it to negatively impact the per
 By following these guidelines, you can ensure a clear separation of contexts and maintain optimal performance for both your main application and Keycloak theme.
 {% endhint %}
 
-You also need to use Keycloakify's Vite plugin. Here we don't provide any [build options](../../build-options/) but you probably at least want to define [keycloakVersionTargets](../../build-options/keycloakversiontargets.md).
+You also need to use Keycloakify's Vite plugin. Here we don't provide any [build options](../../configuration-options/) but you probably at least want to define [keycloakVersionTargets](../../configuration-options/keycloakversiontargets.md).
 
 <pre class="language-tsx" data-title="vite.config.ts"><code class="lang-tsx">import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'

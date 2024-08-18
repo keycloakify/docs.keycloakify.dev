@@ -158,7 +158,7 @@ Theses **are not preferences!** If you're not using Create React App your Webpac
 
 That's it, your project is ready to go!
 
-You can run `npm run build-keycloak-theme`, the JAR distribution of your Keycloak theme will be generated in `build_keycloak` ([you can change this](../../build-options/keycloakifybuilddirpath.md)).
+You can run `npm run build-keycloak-theme`, the JAR distribution of your Keycloak theme will be generated in `build_keycloak` ([you can change this](../../configuration-options/keycloakifybuilddirpath.md)).
 
 You're now able to use all the Keycloakify commands (`npx keycloakify --help`) from the root of your project.
 

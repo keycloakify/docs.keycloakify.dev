@@ -12,14 +12,12 @@ rm -rf apps/keycloak-theme/.github
 Change the name field in the package.json of your keycloakify sub app.
 
 {% code title="apps/keycloak-theme/package.json" %}
-
 ```diff
  {
 -    "name": "keycloakify-starter",
 +    "name": "keycloak-theme",
  }
 ```
-
 {% endcode %}
 
 Give an actual name to your theme (as you want it to apprear [in the Keycloak Admin Console](https://github.com/keycloakify/keycloakify/assets/6702424/7da4afe2-0f67-4f79-a3d0-bd982636ea23))
@@ -78,7 +76,7 @@ npm run build-keycloak-theme
 Building the theme, only compiling for Keycloak 25 with a custom jar file name. Demonstrating the effectiveness of turborepo cache
 {% endembed %}
 
-Optionally, if you want to change the location of the directory where the jar for your theme are created you can do: &#x20;
+Optionally, if you want to change the location of the directory where the jar for your theme are created you can do:
 
 <pre class="language-typescript" data-title="apps/keycloak-theme/vite.config.ts"><code class="lang-typescript">export default defineConfig({
     plugins: [react(), keycloakify({
@@ -89,7 +87,6 @@ Optionally, if you want to change the location of the directory where the jar fo
 </code></pre>
 
 {% code title="turbo.json" %}
-
 ```diff
  {
    "$schema": "https://turbo.build/schema.json",
@@ -105,18 +102,17 @@ Optionally, if you want to change the location of the directory where the jar fo
    }
  }
 ```
-
 {% endcode %}
 
 If you applies those changes, when you'll run `npm run build-keycloak-theme` your JARs are going to be generated in `dist/keycloak-theme/`
 
-When you want to use the keycloakify CLI commands you can either cd into your keycloakify sub app directory or use the [--project option of the Keycloakify CLI](../../build-options/project.md). \
+When you want to use the keycloakify CLI commands you can either cd into your keycloakify sub app directory or use the [--project option of the Keycloakify CLI](../../configuration-options/project.md).\
 Like for example if you want to run add-story you can do either:
 
-- `cd apps/keycloak-theme && npx keycloakify add-story`
-- `npx keycloakify add-story -p apps/keycloakify-theme` from the root of your monorepo
+* `cd apps/keycloak-theme && npx keycloakify add-story`
+* `npx keycloakify add-story -p apps/keycloakify-theme` from the root of your monorepo
 
-To go beyond the base configuration you might want to explore what [build options](../../build-options/) are available. Starting with with `keycloakVersionTargets` to make sure that you only generates the JARs file you need.
+To go beyond the base configuration you might want to explore what [build options](../../configuration-options/) are available. Starting with with `keycloakVersionTargets` to make sure that you only generates the JARs file you need.
 
 {% content-ref url="../../targeting-specific-keycloak-versions.md" %}
 [targeting-specific-keycloak-versions.md](../../targeting-specific-keycloak-versions.md)

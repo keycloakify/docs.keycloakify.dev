@@ -72,7 +72,7 @@ Loggin in with the test user (testuser/password123) will redirect you to a page 
 
 <figure><img src="../.gitbook/assets/image (86).png" alt=""><figcaption></figcaption></figure>
 
-## Command options
+## Configuration options
 
 There are many options available to you to configure the Keycloak testing container.
 
