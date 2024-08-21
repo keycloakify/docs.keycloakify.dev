@@ -6,6 +6,31 @@ Now that you have your theme as a .jar file, let's see how you can import it in 
 
 {% tabs %}
 {% tab title="Docker" %}
+<pre class="language-sh"><code class="lang-sh">cd ~/github
+git clone https://github.com/keycloakify/keycloakify-starter
+cd keycloakify-starter
+# Just to make sure these instructions remain relevant in the future
+# We pin the version of the starter we are using.  
+git checkout 2553c38272fc76efba8f88c9add6de5ce696ba9d
+yarn
+yarn build-keycloak-theme
+
+docker run \
+    -p 8080:8080 \
+    --name my-keycloak \
+    -e KEYCLOAK_ADMIN=admin \
+    -e KEYCLOAK_ADMIN_PASSWORD=admin \
+<strong>    -v "./dist_keycloak/keycloak-theme-for-kc-22-and-above.jar":/opt/keycloak/providers/keycloak-theme.jar \
+</strong>    quay.io/keycloak/keycloak:25.0.4 \
+    start-dev
+</code></pre>
+
+{% hint style="warning" %}
+Here we use `"start-dev"` but in production use `"start --optimized"`
+{% endhint %}
+{% endtab %}
+
+{% tab title="Docker - Custom Image" %}
 Let's see how you would go about creating a Keycloak Docker image with your theme available.
 
 {% embed url="https://willwill96.github.io/the-ui-dawg-static-site/en/keycloakify/#integrating-keycloak-and-keycloakify-jar" %}
@@ -19,7 +44,7 @@ git clone https://github.com/keycloakify/keycloakify-starter
 cd keycloakify-starter
 # Just to make sure these instructions remain relevant in the future
 # We pin the version of the starter we are using.  
-git checkout 1992a63a1629c05edfae51dd86954f9cf2457095
+git checkout 2553c38272fc76efba8f88c9add6de5ce696ba9d
 cd ..
 
 cat &#x3C;&#x3C; EOF > ./Dockerfile
@@ -35,7 +60,7 @@ RUN yarn build-keycloak-theme
 
 FROM quay.io/keycloak/keycloak:latest as builder
 WORKDIR /opt/keycloak
-<strong>COPY --from=keycloakify_jar_builder /opt/app/dist_keycloak/keycloak-theme-for-kc-25-and-above.jar /opt/keycloak/providers/
+<strong>COPY --from=keycloakify_jar_builder /opt/app/dist_keycloak/keycloak-theme-for-kc-22-and-above.jar /opt/keycloak/providers/
 </strong>RUN /opt/keycloak/bin/kc.sh build
 
 FROM quay.io/keycloak/keycloak:latest
@@ -55,6 +80,76 @@ docker run \
 {% hint style="warning" %}
 In this Docker file we use `ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start-dev"]` but in production use `ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start", "--optimized"]`
 {% endhint %}
+{% endtab %}
+
+{% tab title="Docker Compose" %}
+* Create `docker-compose.yml` for keycloak
+* build custom theme from keycloakify and get `.jar` copy and put it some where in same `docker-compose.yml` directory
+* in `docker-compose.yml` for example .jar is in themes
+
+```
+volumes: 
+      - ./themes:/opt/keycloak/providers/
+```
+
+^^^ this volums .jar in themes in to `opt/keycloak/providers/` in docker container
+
+{% code title="docker-compose.yml" %}
+```yaml
+version: '3.7'
+
+services:
+  postgres:
+    image: postgres:16.2
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - 5432:5432
+    networks:
+      - keycloak_network
+
+  keycloak:
+
+    image: quay.io/keycloak/keycloak:25.0.2
+    command: start-dev
+
+    environment:
+      KC_HOSTNAME: ${KEYCLOAK_HOSTNAME}
+      KC_HOSTNAME_PORT: 8080
+      KC_HTTP_ENABLED: true
+      KC_HEALTH_ENABLED: true
+      KC_HOSTNAME_STRICT_HTTPS: false
+      KC_HOSTNAME_STRICT: false
+      
+      KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN}
+      KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://postgres/${POSTGRES_DB}
+      KC_DB_USERNAME: ${POSTGRES_USER}
+      KC_DB_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - 8080:8080
+    volumes: 
+      - ./themes:/opt/keycloak/providers/
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    networks:
+      - keycloak_network
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  keycloak_network:
+    driver: bridge
+```
+{% endcode %}
 {% endtab %}
 
 {% tab title="Helm" %}
