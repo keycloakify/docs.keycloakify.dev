@@ -59,10 +59,7 @@
 
 * [📥 Importing the JAR of Your Theme Into Keycloak](importing-your-theme-in-keycloak.md)
 * [📄 Terms and conditions](keycloak-configuration/terms-and-conditions.md)
-* [🔛 Enabling your Theme in the Keycloak Admin Console](keycloak-configuration/enabling-your-theme/README.md)
-  * [Login Theme](keycloak-configuration/enabling-your-theme/login-theme.md)
-  * [Account Theme](keycloak-configuration/enabling-your-theme/account-theme.md)
-  * [Email Theme](keycloak-configuration/enabling-your-theme/email-theme.md)
+* [🔛 Enabling your Theme in the Keycloak Admin Console](keycloak-configuration/enabling-your-theme.md)
 * [✍️ Adding Registration Form Fields](keycloak-configuration/adding-registration-form-fields/README.md)
   * [💂 Email domain acceptlist](keycloak-configuration/adding-registration-form-fields/email-domain-acceptlist.md)
 * [🔒 Defining Password Requirements](keycloak-configuration/defining-password-requirements.md)

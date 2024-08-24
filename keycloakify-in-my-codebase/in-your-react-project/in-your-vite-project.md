@@ -138,7 +138,7 @@ export default defineConfig({
 
 {% hint style="info" %}
 Leave accountThemeImplementation set to "none" for now.  \
-To initialize the account theme refer to [this guide](../../keycloak-configuration/enabling-your-theme/account-theme.md).&#x20;
+To initialize the account theme refer to [this guide](broken-reference).&#x20;
 {% endhint %}
 
 Finally you want to add to your package.json a script for building the theme and another one to start storybook.
