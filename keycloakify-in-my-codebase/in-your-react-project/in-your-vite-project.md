@@ -56,7 +56,7 @@ rm src/keycloak-theme/vite-env.d.ts
 mv src/keycloak-theme/main.tsx src/main.tsx
 ```
 
-<figure><img src="../../.gitbook/assets/image (58).png" alt="" width="370"><figcaption><p>State of your codebase after bringin in the Keycloakify boilerplate code.<br>Note thate the keycloak-theme (or keycloak_theme) directory can be located anywhere under your src directory.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/after_import.png" alt="" width="370"><figcaption><p>State of your codebase after bringin in the Keycloakify boilerplate code.<br>Note thate the keycloak-theme (or keycloak_theme) directory can be located anywhere under your src directory.</p></figcaption></figure>
 
 Now you want to modify your entry point so that: &#x20;
 

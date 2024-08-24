@@ -56,7 +56,7 @@ rm src/keycloak-theme/react-app-env.d.ts
 mv src/keycloak-theme/index.tsx src/index.tsx
 ```
 
-<figure><img src="../../.gitbook/assets/after_import.png" alt="" width="308"><figcaption><p>Sate of your codebase after bringing in Keycloakify's starter boilerplate code</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/after_import (1).png" alt="" width="308"><figcaption><p>Sate of your codebase after bringing in Keycloakify's starter boilerplate code</p></figcaption></figure>
 
 Now you want to modify your entry point so that:
 
