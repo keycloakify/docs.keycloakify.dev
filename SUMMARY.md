@@ -28,6 +28,7 @@
 * [🖋️ Custom Fonts](custom-fonts.md)
 * [🌎 Internationalization and Translations](i18n.md)
 * [🎭 Theme Variants](theme-variants.md)
+* [📝 Customizing the Registration](customizing-the-registration.md)
 * [👤 Account Theme](account-theme/README.md)
   * [Single-Page](account-theme/single-page.md)
   * [Multi-Page](account-theme/multi-page.md)
