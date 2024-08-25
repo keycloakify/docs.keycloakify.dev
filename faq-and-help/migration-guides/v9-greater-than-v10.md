@@ -6,31 +6,30 @@ This major breaking change was necessary to lay a strong foundation for the futu
 
 I’ve recorded a video summarizing all the changes. It’s quite detailed, so if you don’t have time to watch the entire video, you can refer to the updated documentation for a quicker overview:
 
-\<youtube embedded>
+{% embed url="https://youtu.be/BQQO03lbS6s" %}
 
-### Key Points Covered in the Video:
+## Key Points Covered in the Video:
 
-## Update Strategies
+### Update Strategies
 
 When updating, I recommend starting fresh with the new starter and reapplying your custom changes.
 
-- **If you only had a Keycloak theme:**
-  - Vite starter: [https://github.com/keycloakify/keycloakify-starter](https://github.com/keycloakify/keycloakify-starter)
-  - Webpack (Create React App) starter: [https://github.com/keycloakify/keycloakify-starter-webpack](https://github.com/keycloakify/keycloakify-starter-webpack)
-  
-- **If you had Keycloakify installed in your web app:**  
+* **If you only had a Keycloak theme:**
+  * Vite starter: [https://github.com/keycloakify/keycloakify-starter](https://github.com/keycloakify/keycloakify-starter)
+  * Webpack (Create React App) starter: [https://github.com/keycloakify/keycloakify-starter-webpack](https://github.com/keycloakify/keycloakify-starter-webpack)
+* **If you had Keycloakify installed in your web app:**\
   Follow this integration guide: [Integrating Keycloakify in your React project](../../keycloakify-in-my-codebase/in-your-react-project/).
 
-## Key Changes:
+### Key Changes:
 
-### User Profile is Now the Default
+#### User Profile is Now the Default
 
-- The `register-user-profile.ftl` file has been renamed to `register.ftl`. The old `register.ftl`, where user attributes were hardcoded, has been removed.
-- The `update-user-profile.ftl` file has been renamed to `login-update-profile.ftl`, and the old `login-update-profile.ftl` has also been removed.
+* The `register-user-profile.ftl` file has been renamed to `register.ftl`. The old `register.ftl`, where user attributes were hardcoded, has been removed.
+* The `update-user-profile.ftl` file has been renamed to `login-update-profile.ftl`, and the old `login-update-profile.ftl` has also been removed.
 
 Don’t worry—Keycloakify still generates themes that are compatible with older Keycloak versions, including those that did not have the declarative User Profile feature.
 
-### Two Types of Account Themes
+#### Two Types of Account Themes
 
 You now have the option to choose between a Single Page Account Theme or a Multi-Page Account Theme. [See documentation](../../account-theme/).
 
@@ -104,7 +103,7 @@ export default defineConfig({
 {% endtab %}
 {% endtabs %}
 
-### Keycloakify Components API Changes
+#### Keycloakify Components API Changes
 
 The Keycloakify Component API and boilerplate have undergone several small adjustments.
 
