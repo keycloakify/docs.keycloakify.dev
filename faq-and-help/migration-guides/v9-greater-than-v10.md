@@ -1,39 +1,40 @@
 # ⬆️ v9 -> v10
 
-A lot of things have changed in Keycloakify 10 compared to the previous versions. The software as almost been rewrote from scratch, it is now a much more mature solution but with it comes quites a few of breaking changes.    \
-Keycloakify will be more stable going forward you shouldn't have to go through a painfull migration process to support the latest Keycloak version moving forward.&#x20;
+**Keycloakify 10 has undergone significant changes compared to previous versions.** The software has been nearly rewritten from the ground up, making it a more mature and stable solution. However, this also brings several breaking changes. Moving forward, Keycloakify will be more stable, and you shouldn’t have to endure a painful migration process to support the latest Keycloak versions.
 
-A big breaking change whas nessesary this time to lays strong fundation for the future of the project.  \
-\
-I've recorded a video where I try to some up everything that have changed, I apologize, it's quite a long video, if you don't have the time to watch all of it you can probably go quicker by reading the new documentation:&#x20;
+This major breaking change was necessary to lay a strong foundation for the future of the project.
+
+I’ve recorded a video summarizing all the changes. It’s quite detailed, so if you don’t have time to watch the entire video, you can refer to the updated documentation for a quicker overview:
 
 \<youtube embedded>
 
-Here are the Key points adressed in this video:
+### Key Points Covered in the Video:
 
-## Update strategies
+## Update Strategies
 
-For updating my advise is to start fresh from the new starter and re apply your changes. &#x20;
+When updating, I recommend starting fresh with the new starter and reapplying your custom changes.
 
-* If you had only a Keycloak theme
-  * Here is the Vite starter: [https://github.com/keycloakify/keycloakify-starter](https://github.com/keycloakify/keycloakify-starter)
-  * Here is the Wepback (Create React App) starter: [https://github.com/keycloakify/keycloakify-starter-webpack](https://github.com/keycloakify/keycloakify-starter-webpack)
-* If you had Keycloakify installed in your web app you can follow this integration guide: [Itegrating Keycloakify in your React project](../../keycloakify-in-my-codebase/in-your-react-project/).
+- **If you only had a Keycloak theme:**
+  - Vite starter: [https://github.com/keycloakify/keycloakify-starter](https://github.com/keycloakify/keycloakify-starter)
+  - Webpack (Create React App) starter: [https://github.com/keycloakify/keycloakify-starter-webpack](https://github.com/keycloakify/keycloakify-starter-webpack)
+  
+- **If you had Keycloakify installed in your web app:**  
+  Follow this integration guide: [Integrating Keycloakify in your React project](../../keycloakify-in-my-codebase/in-your-react-project/).
 
-## Key things that have changed:
+## Key Changes:
 
-### User Profile is now the default
+### User Profile is Now the Default
 
-* register-user-profile.ftl has been renamed register.ftl. The old register.ftl where the user attribute where hardcoded has been removed.
-* update-user-profile.ftl has been renamed login-update-profile.ftl, the old login-update-profile.ftl has been removed.
+- The `register-user-profile.ftl` file has been renamed to `register.ftl`. The old `register.ftl`, where user attributes were hardcoded, has been removed.
+- The `update-user-profile.ftl` file has been renamed to `login-update-profile.ftl`, and the old `login-update-profile.ftl` has also been removed.
 
-Don't worry Keycloakify still generates theme that are compatible with older Keycloak versions, including version that didn't had the declarative User Profile features. &#x20;
+Don’t worry—Keycloakify still generates themes that are compatible with older Keycloak versions, including those that did not have the declarative User Profile feature.
 
-### There are now two type of Account themes
+### Two Types of Account Themes
 
-You can now choose between the Single Page Account Theme or the Multi Page Account theme. [See documentation](../../account-theme/). &#x20;
+You now have the option to choose between a Single Page Account Theme or a Multi-Page Account Theme. [See documentation](../../account-theme/).
 
-If you had no account theme, or you didn't customized one, you must set accountThemeImplementation to "none" in your Keycloakify configs (and you can remove the src/keycloak-theme/account directory):
+If you haven't created or customized an account theme, set `accountThemeImplementation` to `"none"` in your Keycloakify configuration. You can also remove the `src/keycloak-theme/account` directory if it exists.
 
 {% tabs %}
 {% tab title="Vite" %}
@@ -103,10 +104,12 @@ export default defineConfig({
 {% endtab %}
 {% endtabs %}
 
-### Keycloakify components API changes
+### Keycloakify Components API Changes
 
-There are a lot of little adjustments in the Keycloakify Component API and the boilerplate.  \
-One of the more notable one is [useGetClassName](https://github.com/keycloakify/keycloakify-starter/blob/081c7d415088b022cb9595bd4bca3a502171ed3a/src/keycloak-theme/login/pages/Login.tsx#L18-L21) that is now [getKcClsx](https://github.com/keycloakify/keycloakify/blob/1785916d32f11b36527dbac6625643c5342149ab/src/login/pages/Login.tsx#L12-L15).  \
-You can see the code for the new pages here: [https://github.com/keycloakify/keycloakify/tree/main/src/login/pages](https://github.com/keycloakify/keycloakify/tree/main/src/login/pages)  \
-\
-It's very important that you re-apply you changes to the new Template.tsx, and not try to make your old Template.tsx compile. See the new template here: [https://github.com/keycloakify/keycloakify/blob/main/src/login/Template.tsx](https://github.com/keycloakify/keycloakify/blob/main/src/login/Template.tsx) &#x20;
+The Keycloakify Component API and boilerplate have undergone several small adjustments.
+
+One of the most notable changes is the renaming of `useGetClassName` to `getKcClsx`. You can view the updated implementation here: [useGetClassName](https://github.com/keycloakify/keycloakify-starter/blob/081c7d415088b022cb9595bd4bca3a502171ed3a/src/keycloak-theme/login/pages/Login.tsx#L18-L21) is now [getKcClsx](https://github.com/keycloakify/keycloakify/blob/1785916d32f11b36527dbac6625643c5342149ab/src/login/pages/Login.tsx#L12-L15).
+
+For the latest code for the new pages, refer to this repository: [New Login Pages](https://github.com/keycloakify/keycloakify/tree/main/src/login/pages).
+
+It's crucial that you reapply your changes to the new `Template.tsx` instead of trying to modify your old `Template.tsx` to compile. You can find the updated template here: [New Template.tsx](https://github.com/keycloakify/keycloakify/blob/main/src/login/Template.tsx).
