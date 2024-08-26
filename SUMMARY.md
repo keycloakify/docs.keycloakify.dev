@@ -29,15 +29,18 @@
 * [🌎 Internationalization and Translations](i18n.md)
 * [🎭 Theme Variants](theme-variants.md)
 * [📝 Customizing the Register Page](customizing-the-register-page.md)
+* [📄 Terms and conditions](terms-and-conditions.md)
+* [🖇️ Styling a Custom Page Not Included In Base Keycloak](styling-custom-extension-page.md)
+* [🔧 Accessing the Server Environment Variables](environment-variables.md)
+* [🎯 Targetting Specific Keycloak Versions](targeting-specific-keycloak-versions.md)
+* [🚛 Passing URL Parameters to your Theme](passing-url-parameters-when-redirecting-to-your-theme.md)
 * [👤 Account Theme](account-theme/README.md)
   * [Single-Page](account-theme/single-page.md)
   * [Multi-Page](account-theme/multi-page.md)
-* [🖇️ Styling a Custom Page Not Included In Base Keycloak](styling-custom-extension-page.md)
-* [🔧 Accessing the Server Environment Variables](environment-variables.md)
 * [🤵 Admin theme](admin-theme.md)
 * [📧 Email Customization](email-customization.md)
-* [🎯 Targetting Specific Keycloak Versions](targeting-specific-keycloak-versions.md)
-* [🚛 Passing URL Parameters to your Theme](passing-url-parameters-when-redirecting-to-your-theme.md)
+* [📥 Importing the JAR of Your Theme Into Keycloak](importing-your-theme-in-keycloak.md)
+* [🔛 Enabling your Theme in the Keycloak Admin Console](enabling-your-theme.md)
 * [📖 Configuration Options](configuration-options/README.md)
   * [--project](configuration-options/project.md)
   * [keycloakVersionTargets](configuration-options/keycloakversiontargets.md)
@@ -55,15 +58,6 @@
     * [projectBuildDirPath](configuration-options/webpack-specific-options/projectbuilddirpath.md)
     * [staticDirPathInProjectBuildDirPath](configuration-options/webpack-specific-options/staticdirpathinprojectbuilddirpath.md)
     * [publicDirPath](configuration-options/webpack-specific-options/publicdirpath.md)
-
-## Keycloak configuration
-
-* [📥 Importing the JAR of Your Theme Into Keycloak](importing-your-theme-in-keycloak.md)
-* [📄 Terms and conditions](keycloak-configuration/terms-and-conditions.md)
-* [🔛 Enabling your Theme in the Keycloak Admin Console](keycloak-configuration/enabling-your-theme.md)
-* [✍️ Adding Registration Form Fields](keycloak-configuration/adding-registration-form-fields/README.md)
-  * [💂 Email domain acceptlist](keycloak-configuration/adding-registration-form-fields/email-domain-acceptlist.md)
-* [🔒 Defining Password Requirements](keycloak-configuration/defining-password-requirements.md)
 
 ## FAQ & HELP
 
