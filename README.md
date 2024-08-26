@@ -1,9 +1,5 @@
 # 👨‍💻 Quick start
 
-{% hint style="warning" %}
-Some section of this documentation website are still under construction. If you have any question don't hesitate to [reach out on Discord](https://discord.gg/kYFZG7fQmn).
-{% endhint %}
-
 Keycloakify is a tool that enables to create keycloak themes for customizing of the look and feel of Keycloak's user-facing pages. You can preview these pages here:
 
 {% embed url="https://storybook.keycloakify.dev/" %}
