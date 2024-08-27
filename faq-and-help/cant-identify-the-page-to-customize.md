@@ -11,7 +11,7 @@ First one is there is no KcContext
 
 <figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>No kcContext defined on the global</p></figcaption></figure>
 
-If you get this error this means that the theme isn't correctly enabled on the client/realm. You can join [our discord server](https://discord.gg/kYFZG7fQmn), we'll help you debug.  \
+If you get this error this means that the theme isn't correctly enabled on the client/realm. Checkout [this guide](../enabling-your-theme.md) or join [our discord server](https://discord.gg/kYFZG7fQmn), we'll help you debug.  \
 \
 Other scenario you get a page that is not listed in [the reference storybook](https://storybook.keycloakify.dev/?path=/story/introduction--page). This probably mean that you have a third party Keycloak extention enabled on your Keycloak server, you can still customize this page, just follow this guide: &#x20;
 
