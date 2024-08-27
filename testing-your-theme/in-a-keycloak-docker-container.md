@@ -137,11 +137,7 @@ export default defineConfig({
 </strong><strong>    realm so you do not have to create a realm, a client, a user, etc.  
 </strong><strong>    However you might want to edit this base realm configuration and 
 </strong><strong>    persist the changes that you made.  
-</strong><strong>    For this, after you've made changes in the Keycloak admin console, 
-</strong><strong>    you can navigate to:
-</strong><strong>    Realm Settings -> Actions -> Partial Export, enable "export clients" and click "Export"
-</strong><strong>    This will download a JSON file that you can use to restore your 
-</strong><strong>    changes the next time you run `npx keycloakify start-keycloak`
+</strong><strong>    I explain it in this video: https://www.youtube.com/watch?v=lMOLrdqilqE&#x26;t=991s
 </strong><strong>    */
 </strong><strong>    realmJsonFilePath: "./keycloak-resources/myrealm-realm.json",
 </strong><strong>    /*
