@@ -17,28 +17,28 @@ Let's start by installing Keycloakify (and optionally Storybook) to our project:
 {% tabs %}
 {% tab title="yarn" %}
 ```bash
-yarn add keycloakify@next
+yarn add keycloakify
 yarn add --dev storybook @storybook/react @storybook/react-vite
 ```
 {% endtab %}
 
 {% tab title="pnpm" %}
 ```bash
-pnpm add keycloakify@next 
+pnpm add keycloakify
 pnpm add --dev storybook @storybook/react @storybook/react-vite
 ```
 {% endtab %}
 
 {% tab title="bun" %}
 ```bash
-bun add keycloakify@next
+bun add keycloakify
 bun add --dev storybook @storybook/react @storybook/react-vite
 ```
 {% endtab %}
 
 {% tab title="npm" %}
 ```bash
-npm install --save keycloakify@next
+npm install --save keycloakify
 npm install --save-dev storybook @storybook/react @storybook/react-vite
 ```
 {% endtab %}

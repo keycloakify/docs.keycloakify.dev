@@ -36,7 +36,7 @@ rm -rf tmp
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "tslib": "^2.3.0",
-<strong>    "keycloakify": "10.0.0-rc.106"
+<strong>    "keycloakify": "^10.0.0"
 </strong>  },
   "devDependencies": {
 <strong>      "storybook": "^8.1.10",
