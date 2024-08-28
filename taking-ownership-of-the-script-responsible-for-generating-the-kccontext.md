@@ -1,10 +1,10 @@
-# 🤓 Taking ownership of the script that generates the kcContext
+# 🤓 Taking ownership of the script responsible for generating the kcContext
 
 {% hint style="warning" %}
 Use this approach only if you know what you are doing. In most sincronstances you shouldn't need it.
 {% endhint %}
 
-
+{% embed url="https://www.youtube.com/watch?v=WdSPrpFObhg" %}
 
 Add [patch-package](https://www.npmjs.com/package/patch-package) add dev dependency
 
