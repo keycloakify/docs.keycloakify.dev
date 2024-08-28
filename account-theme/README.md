@@ -40,7 +40,7 @@ The Single Page theme also refered as account v3 is this the default theme that 
 * CSS level customization beyond [overidding the Paternfly CSS variables](https://www.patternfly.org/components/button/html/#css-variables) is not practical, you'll have to customize at the React component level.
 * No Storybook support.
 * No `npx keycloakify eject-page` CLI, you'll have to manually copy paste from the source the components you want to take ownership over.
-* Not backward compatible with older Keycloak version prior 25
+* Not currently supported by Keycloak 21 (Specifically this version). If you want me to add support for it [open an issue](https://github.com/keycloakify/keycloakify/issues/new).
 * When upgrading to a future version of Keycloak, there’s a possibility that your account theme may break. If your customizations are limited to styles, updating should be straightforward—simply bump the version number of [the Account UI](https://github.com/keycloakify/keycloak-account-ui) in your dependencies. However, if you’ve made customizations at the React component level, migrating to the new version could require substantial effort due to potential extensive changes in the underlying code. The Keycloakify team cannot guarantee a specific level of stability for these modifications, as they are not part of our codebase.  &#x20;
 
 To get started with the Single-Page account theme:
