@@ -96,11 +96,31 @@ For more detailed example you can refer to this section of the code that defines
 
 ## More advanced modification of the kcContext
 
-If you feel limited by this option you can take ownership of the FreeMarker template that generates the kcContext. &#x20;
 
+
+If you feel limited by this option you can take ownership of the FreeMarker template that generates the kcContext.  \
 \
-\
-Do do this you can use this wonderfull litle package: &#x20;
+Do do this using the wonderfull [patch-package](https://www.npmjs.com/package/patch-package).
 
-{% embed url="https://www.npmjs.com/package/patch-package" %}
+```bash
+yarn add --dev patch-package
+```
 
+And edit the FreeMarker template that generates the KcContext in:&#x20;
+
+**node\_modules/keycloakify/src/bin/keycloakify/generateFtl/kcContextDeclarationTemplate.ftl**
+
+You can then create a diff for your changes by running: &#x20;
+
+```bash
+npx patch-package keycloakify
+```
+
+Then add a postinstall script to your package.json:
+
+<pre class="language-json" data-title="package.json"><code class="lang-json">{
+    "name": "keycloakify-starter",
+    "scripts": {
+<strong>        "postinstall": "patch-package",
+</strong>        "dev": "vite",
+</code></pre>

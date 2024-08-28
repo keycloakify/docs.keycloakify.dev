@@ -41,6 +41,7 @@
 * [🤵 Admin theme](admin-theme.md)
 * [📥 Importing the JAR of Your Theme Into Keycloak](importing-your-theme-in-keycloak.md)
 * [🔛 Enabling your Theme in the Keycloak Admin Console](enabling-your-theme.md)
+* [🤓 Taking ownership of the script that generates the kcContext](taking-ownership-of-the-script-that-generates-the-kccontext.md)
 * [📖 Configuration Options](configuration-options/README.md)
   * [--project](configuration-options/project.md)
   * [keycloakVersionTargets](configuration-options/keycloakversiontargets.md)
