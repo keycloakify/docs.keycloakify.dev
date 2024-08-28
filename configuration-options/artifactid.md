@@ -43,5 +43,5 @@ By default it's `<themeName>-keycloak-theme` See, [`keycloak.themeName`](artifac
 You can overwrite this using an environment variable:
 
 ```bash
-KEYCLOAKIFY_ARTIFACT_ID="my-cool-theme" npx keycloakify
+KEYCLOAKIFY_ARTIFACT_ID="my-cool-theme" npx keycloakify build
 ```
