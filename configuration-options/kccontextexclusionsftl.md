@@ -93,3 +93,14 @@ The code that you provide will be injected [here](https://github.com/keycloakify
 For more detailed example you can refer to this section of the code that defines the the default exclusions:
 
 {% embed url="https://github.com/keycloakify/keycloakify/blob/0879ddba7c3e12ea5ffd0cbefd97fa9b8cf63f7e/src/bin/keycloakify/generateFtl/kcContextDeclarationTemplate.ftl#L125-L227" %}
+
+## More advanced modification of the kcContext
+
+If you feel limited by this option you can take ownership of the FreeMarker template that generates the kcContext. &#x20;
+
+\
+\
+Do do this you can use this wonderfull litle package: &#x20;
+
+{% embed url="https://www.npmjs.com/package/patch-package" %}
+
