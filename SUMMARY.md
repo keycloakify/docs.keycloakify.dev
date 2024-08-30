@@ -41,7 +41,7 @@
 * [🤵 Admin theme](admin-theme.md)
 * [📥 Importing the JAR of Your Theme Into Keycloak](importing-your-theme-in-keycloak.md)
 * [🔛 Enabling your Theme in the Keycloak Admin Console](enabling-your-theme.md)
-* [🤓 Taking ownership of the script responsible for generating the kcContext](taking-ownership-of-the-script-responsible-for-generating-the-kccontext.md)
+* [🤓 Taking ownership of the kcContext](taking-ownership-of-the-kccontext.md)
 * [📖 Configuration Options](configuration-options/README.md)
   * [--project](configuration-options/project.md)
   * [keycloakVersionTargets](configuration-options/keycloakversiontargets.md)
@@ -82,6 +82,7 @@
   * [⬆️ v6.x -> v6.12](migration-guides/v6.x-greater-than-v6.12.md)
   * [⬆️ v5 -> v6](migration-guides/readme-1.md)
 * [🍪 Google reCaptcha and End of third-party Cookies](faq-and-help/google-recaptcha-and-end-of-third-party-cookies.md)
+* [🔖 Accessing the Realm Attributes](faq-and-help/accessing-the-realm-attributes.md)
 
 ***
 
