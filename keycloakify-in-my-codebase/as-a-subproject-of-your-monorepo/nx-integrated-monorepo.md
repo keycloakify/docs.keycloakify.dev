@@ -22,7 +22,7 @@ mv tmp/.storybook apps/keycloak-theme
 rm -rf tmp
 ```
 
-<figure><img src="../../.gitbook/assets/image (46).png" alt="" width="365"><figcaption><p>After moving src and .storybook to apps/keycloak-theme</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Untitled.png" alt="" width="365"><figcaption><p>After moving src and .storybook to apps/keycloak-theme</p></figcaption></figure>
 
 <pre class="language-json" data-title="package.json"><code class="lang-json">{
   "name": "@nx-monorepo/source",
@@ -95,12 +95,15 @@ export default defineConfig({
 
 Now if you run `npm run build-keycloak-theme` it will generate the JAR in dist/apps/keycloak-theme.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-06-30 at 12.29.58.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Untitled (1).png" alt=""><figcaption></figcaption></figure>
 
 When you want to use the keycloakify CLI commands you can either cd into your keycloakify sub app directory or use the [--project option of the Keycloakify CLI](../../configuration-options/project.md).\
-Like for example if you want to run add-story you can do either:
+Like for example if you want to run [add-story](../../testing-your-theme/in-storybook.md) you can do either:
 
 * `cd apps/keycloak-theme && npx keycloakify add-story`
+
+OR
+
 * `npx keycloakify add-story -p apps/keycloakify-theme` from the root of your monorepo
 
 To go beyond the base configuration you might want to explore what [build options](../../configuration-options/) are available. Starting with with `keycloakVersionTargets` to make sure that you only generates the JARs file you need.

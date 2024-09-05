@@ -171,7 +171,7 @@ export default defineConfig({
 
 In this configuration when you run `pnpm run build-keycloak-theme` from the root of your monorepo a single `keycloak-theme.jar` will be generated in **dist/apps/keycloak-theme**:
 
-<figure><img src="../../.gitbook/assets/Untitled (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Untitled (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 When you want to use the keycloakify CLI commands you can either cd into your keycloakify sub app directory or use the [--project option of the Keycloakify CLI](../../configuration-options/project.md).\
 Like for example if you want to run add-story you can do either:
