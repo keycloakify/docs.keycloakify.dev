@@ -22,7 +22,7 @@ mv tmp/.storybook apps/keycloak-theme
 rm -rf tmp
 ```
 
-<figure><img src="../../.gitbook/assets/image (46).png" alt="" width="365"><figcaption><p>After moving src and .storybook to apps/keycloak-theme</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (46).png" alt="" width="365"><figcaption><p>After moving src and .storybook to apps/keycloak-theme. The account folder in the apps/keycloak-theme/src directory is optional in v10.0.0-rc.135 or higher, so it isn't available by default.</p></figcaption></figure>
 
 <pre class="language-json" data-title="package.json"><code class="lang-json">{
   "name": "@nx-monorepo/source",
@@ -94,6 +94,8 @@ export default defineConfig({
 </code></pre>
 
 Now if you run `npm run build-keycloak-theme` it will generate the JAR in dist/apps/keycloak-theme.
+
+> Note: In version v10.0.0-rc.135 or higher, you need commit or stash your changes and run `mkdir -p apps/keycloak-theme/src/account/ && npx keycloakify initialize-account-theme --project apps/keycloak-theme` for create the `account` folder (more details in [Account Theme](./../../account-theme/README.md)).
 
 <figure><img src="../../.gitbook/assets/Screenshot 2024-06-30 at 12.29.58.png" alt=""><figcaption></figcaption></figure>
 
