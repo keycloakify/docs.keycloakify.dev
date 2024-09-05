@@ -177,4 +177,4 @@ When you want to use the keycloakify CLI commands you can either cd into your ke
 Like for example if you want to run add-story you can do either:
 
 * `cd apps/keycloak-theme && npx keycloakify add-story`
-* `npx keycloakify add-story -p apps/keycloakify-theme` from the root of your monorepo.
+* `npx keycloakify add-story -p apps/keycloak-theme` from the root of your monorepo.

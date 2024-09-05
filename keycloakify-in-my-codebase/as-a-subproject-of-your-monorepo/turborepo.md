@@ -110,7 +110,7 @@ When you want to use the keycloakify CLI commands you can either cd into your ke
 Like for example if you want to run add-story you can do either:
 
 * `cd apps/keycloak-theme && npx keycloakify add-story`
-* `npx keycloakify add-story -p apps/keycloakify-theme` from the root of your monorepo
+* `npx keycloakify add-story -p apps/keycloak-theme` from the root of your monorepo
 
 To go beyond the base configuration you might want to explore what [build options](../../configuration-options/) are available. Starting with with `keycloakVersionTargets` to make sure that you only generates the JARs file you need.
 
