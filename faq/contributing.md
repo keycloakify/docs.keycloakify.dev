@@ -4,16 +4,22 @@ description: Looking to submit a PR? Thank you!
 
 # 💟 Contributing
 
-Here is how you can setup a development environment. You must use Yarn classic (v1). \
+First, if you're not yet familiar on how to contribute to open source, you might want to watch this short viedo. &#x20;
+
+{% embed url="https://www.youtube.com/watch?v=8lGpZkjnkt4" %}
+
+First thing you want to do is fork the [keycloakify](https://github.com/keycloakify/keycloakify) and the [keycloakify-starter](https://github.com/keycloakify/keycloakify-starter) repos.&#x20;
+
+Here is how you can setup a development environment. You must use Yarn classic (v1).\
 First you want to clone keycloakify and the keycloakify starter alongside each other
 
 ```bash
 cd ~/github
-git clone https://github.com/keycloakify
-git clone https://github.com/keycloakify-starter
+git clone https://github.com/<your github username>/keycloakify
+git clone https://github.com/<your github username>/keycloakify-starter
 ```
 
-You can start the storybook locally in dev mode with: &#x20;
+You can start the storybook locally in dev mode with:
 
 ```bash
 cd ~/github/keycloakify
