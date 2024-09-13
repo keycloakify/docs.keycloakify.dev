@@ -44,7 +44,7 @@ npm install --save-dev storybook @storybook/react @storybook/react-vite
 {% endtab %}
 {% endtabs %}
 
-Next we want to repatriate the relevent files from [the starter template](https://github.com/keycloakify/keycloakify-starter) into our project:
+Next we want to repatriate the relevant files from [the starter template](https://github.com/keycloakify/keycloakify-starter) into our project:
 
 ```bash
 cd my-react-app
