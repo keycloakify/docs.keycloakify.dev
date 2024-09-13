@@ -29,6 +29,12 @@ sudo apt-get install maven
 ```
 {% endtab %}
 
+{% tab title="Fedora" %}
+```bash
+sudo dnf install maven
+```
+{% endtab %}
+
 {% tab title="Windows" %}
 On Windows you can use the [Chocolatery](https://chocolatey.org/) package manager:
 
