@@ -4,7 +4,7 @@
 Even if you're only interested by Tailwind you should still read the other section of the [CSS Level Customization](./) first as it gives important context.
 {% endhint %}
 
-To use Tailwind in your Keycloakify project start by following the steup guide for Vite.
+To use Tailwind in your Keycloakify project start by following the setup guide for Vite.
 
 {% embed url="https://tailwindcss.com/docs/guides/vite#react" %}
 
