@@ -16,6 +16,12 @@ This command allows you to select specific components from Keycloakify's source 
 Video tutorial on how to use MUI to customize the login page
 {% endembed %}
 
+{% hint style="info" %}
+Disabling the default styles:  \
+One thing that is touched on [only late in the video](https://youtu.be/PhNE-3EwwP8?si=s3e9DjaIlhG2uxQC\&t=1338) is how to disable all the default styles.  \
+See documentation [here](../css-level-customization/removing-the-default-styles.md).
+{% endhint %}
+
 Following is a step by step guide on how to import and use custom assets in your react components:
 
 {% content-ref url="in-react-components.md" %}
