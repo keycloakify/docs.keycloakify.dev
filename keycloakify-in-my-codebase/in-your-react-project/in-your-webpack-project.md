@@ -124,15 +124,16 @@ Finally you want to add some script for Keycloakify in you package.json and also
 <pre class="language-json" data-title="package.json"><code class="lang-json">{
     "name": "my-app",
     "scripts": {
-<strong>        "prestorybook": "keycloakify update-kc-gen &#x26;&#x26; keycloakify copy-keycloak-resources-to-public",
-</strong><strong>        "storybook": "storybook dev -p 6006",
-</strong><strong>        "prestart": "npm run prestorybook",
+<strong>        "prestart": "keycloakify update-kc-gen &#x26;&#x26; keycloakify copy-keycloak-resources-to-public",
 </strong>        "start": "react-scripts start",
+<strong>        "prestorybook": "npm run prestart",
+</strong>        "storybook": "storybook dev -p 6006",
 <strong>        "prebuild": "keycloakify update-kc-gen",
 </strong>        "build": "react-scripts build",
 <strong>        "postbuild": "rimraf build/keycloak-resources",
 </strong><strong>        "build-keycloak-theme": "npm run build &#x26;&#x26; keycloakify build",
-</strong>        // ...
+</strong>        "format": "prettier . --write"
+        // ...
     },
 <strong>    "keycloakify": {
 </strong><strong>        "accountThemeImplementation": "none",
