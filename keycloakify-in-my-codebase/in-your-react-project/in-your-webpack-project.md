@@ -145,7 +145,7 @@ Finally you want to add some script for Keycloakify in you package.json and also
 
 {% hint style="info" %}
 Leave accountThemeImplementation set to "none" for now.\
-To initialize the account theme refer to [this guide](broken-reference).
+To initialize the account theme refer to [this guide](../../account-theme/).
 {% endhint %}
 
 Keycloakify has many build options that you can use, however `projectBuildDirPath`, `staticDirPathInProjectBuildDirPath` and `publicDirPath` are parameters specific to the use of Keycloakify in a Webpack context.
