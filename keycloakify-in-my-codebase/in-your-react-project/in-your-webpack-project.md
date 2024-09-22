@@ -130,7 +130,7 @@ Finally you want to add some script for Keycloakify in you package.json and also
 </strong>        "storybook": "storybook dev -p 6006",
 <strong>        "prebuild": "keycloakify update-kc-gen",
 </strong>        "build": "react-scripts build",
-<strong>        "postbuild": "rimraf build/keycloak-resources",
+<strong>        "postbuild": "rimraf build/keycloakify-dev-resources",
 </strong><strong>        "build-keycloak-theme": "npm run build &#x26;&#x26; keycloakify build",
 </strong>        "format": "prettier . --write"
         // ...
