@@ -63,51 +63,89 @@ Now you want to modify your entry point so that:
 * If the kcContext global is defined, render your Keycloakify theme
 * Else, reder your App as usual.
 
+Let's say, for example, your **src/main.tsx** file currently looks like this:
+
+{% code title="src/main.tsx" %}
+```tsx
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App";
+import "./index.css";
+import { MyProvider } from "./MyProvider";
+
+createRoot(document.getElementById('root')!).render(
+    <StrictMode>
+      <MyProvider>
+        <App />
+      </MyProvider>
+    </StrictMode>,
+);
+```
+{% endcode %}
+
+You want to **rename** this file to src/main.app.tsx (for example) and modify it as follow:
+
+{% code title="src/main.app.tsx" %}
+```tsx
+import App from "./App.tsx";
+import "./index.css";
+import { MyProvider } from "./MyProvider.tsx";
+
+export default function AppEntrypoint() {
+  return (
+    <MyProvider>
+      <App />
+    </MyProvider>
+  )
+}
+```
+{% endcode %}
+
 {% hint style="info" %}
-Your src/index.tsx should **literaly** be as follow. You must move everything you curently havein your index.tsx file into App.tsx (or whaterver your entrypoint is). &#x20;
+If you have some top level `await` and you don't know how to deal with thoses, join [the discord server](https://discord.com/invite/kYFZG7fQmn), I can help you out.
 {% endhint %}
 
-<pre class="language-tsx" data-title="src/main.tsx"><code class="lang-tsx">/* eslint-disable react-refresh/only-export-components */
+Then you want to create the following **src/main.tsx** file, you can copy paste the followint code, it does not need to be adapted:
+
+{% code title="src/main.tsx" %}
+```tsx
 import { createRoot } from "react-dom/client";
-import { 
-    StrictMode,
-<strong>    lazy,
-</strong><strong>    Suspense
-</strong>} from "react";
-<strong>import { KcPage, type KcContext } from "./keycloak-theme/kc.gen";
-</strong><strong>const App = lazy(() => import("./App"));
-</strong>
-<strong>// The following block can be uncommented to test a specific page with `yarn dev`
-</strong><strong>// Don't forget to comment back or your bundle size will increase
-</strong><strong>/*
-</strong><strong>import { getKcContextMock } from "./keycloak-theme/login/KcPageStory";
-</strong>
-<strong>if (import.meta.env.DEV) {
-</strong><strong>    window.kcContext = getKcContextMock({
-</strong><strong>        pageId: "register.ftl",
-</strong><strong>        overrides: {}
-</strong><strong>    });
-</strong><strong>}
-</strong><strong>*/
-</strong>
+import { StrictMode, lazy, Suspense } from "react";
+import { KcPage, type KcContext } from "./keycloak-theme/kc.gen";
+const AppEntrypoint = lazy(() => import("./main.app"));
+
+// The following block can be uncommented to test a specific page with `yarn dev`
+// Don't forget to comment back or your bundle size will increase
+/*
+import { getKcContextMock } from "./keycloak-theme/login/KcPageStory";
+
+if (import.meta.env.DEV) {
+    window.kcContext = getKcContextMock({
+        pageId: "register.ftl",
+        overrides: {}
+    });
+}
+*/
+
 createRoot(document.getElementById("root")!).render(
-    &#x3C;StrictMode>
-<strong>        {window.kcContext ? (
-</strong><strong>            &#x3C;KcPage kcContext={window.kcContext} />
-</strong><strong>        ) : (
-</strong><strong>            &#x3C;Suspense>
-</strong><strong>                &#x3C;App />
-</strong><strong>            &#x3C;/Suspense>
-</strong><strong>        )}
-</strong>    &#x3C;/StrictMode>
+    <StrictMode>
+        {window.kcContext ? (
+            <KcPage kcContext={window.kcContext} />
+        ) : (
+            <Suspense>
+                <AppEntrypoint />
+            </Suspense>
+        )}
+    </StrictMode>
 );
 
-<strong>declare global {
-</strong><strong>    interface Window {
-</strong><strong>        kcContext?: KcContext;
-</strong><strong>    }
-</strong><strong>}
-</strong></code></pre>
+declare global {
+    interface Window {
+        kcContext?: KcContext;
+    }
+}
+```
+{% endcode %}
 
 {% hint style="info" %}
 **Question:**
@@ -160,8 +198,6 @@ Finally you want to add to your package.json a script for building the theme and
 </strong>  },
   // ...
 </code></pre>
-
-
 
 Last setp is to exclude from your html `<head />` things that aren't relevent in the context of Keycloak pages. &#x20;
 

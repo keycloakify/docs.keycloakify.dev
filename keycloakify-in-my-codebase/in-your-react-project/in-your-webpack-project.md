@@ -63,51 +63,100 @@ Now you want to modify your entry point so that:
 * If the kcContext global is defined, render your Keycloakify theme
 * Else, render your App as usual.
 
-{% hint style="info" %}
-Your src/index.tsx should **literaly** be as follow. You must move everything you curently havein your index.tsx file into App.tsx (or whaterver your entrypoint is). &#x20;
-{% endhint %}
+Let's say, for example, your **src/index.tsx** file currently looks like this:
 
-<pre class="language-tsx" data-title="src/index.tsx"><code class="lang-tsx">/* eslint-disable react-refresh/only-export-components */
-import { createRoot } from "react-dom/client";
-import { 
-    StrictMode,
-<strong>    lazy,
-</strong><strong>    Suspense
-</strong>} from "react";
-<strong>import { KcPage, type KcContext } from "./keycloak-theme/kc.gen";
-</strong><strong>const App = lazy(()=> import("./App"));
-</strong>
-<strong>// The following block can be uncommented to test a specific page with `yarn dev`
-</strong><strong>// Don't forget to comment back or your bundle size will increase
-</strong><strong>/*
-</strong><strong>import { getKcContextMock } from "./keycloak-theme/login/KcPageStory";
-</strong><strong>
-</strong><strong>if (process.env.NODE_ENV === "development") {
-</strong><strong>    window.kcContext = getKcContextMock({
-</strong><strong>        pageId: "register.ftl",
-</strong><strong>        overrides: {}
-</strong><strong>    });
-</strong><strong>}
-</strong><strong>*/
-</strong>
-createRoot(document.getElementById("root")!).render(
-    &#x3C;StrictMode>
-<strong>        {window.kcContext ? (
-</strong><strong>            &#x3C;KcPage kcContext={window.kcContext} />
-</strong><strong>        ) : (
-</strong><strong>            &#x3C;Suspense>
-</strong><strong>                &#x3C;App />
-</strong><strong>            &#x3C;/Suspense>
-</strong><strong>        )}
-</strong>    &#x3C;/StrictMode>
+{% code title="src/index.tsx" %}
+```tsx
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import { MyProvider } from "./MyProvider";
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(
+  document.getElementById('root') as HTMLElement
+);
+root.render(
+  <React.StrictMode>
+    <MyProvider>
+      <App />
+    </MyProvider>
+  </React.StrictMode>
 );
 
-<strong>declare global {
-</strong><strong>    interface Window {
-</strong><strong>        kcContext?: KcContext;
-</strong><strong>    }
-</strong><strong>}
-</strong></code></pre>
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+```
+{% endcode %}
+
+You want to **rename** this file to **src/index.app.tsx** (for example) and modify it as follow:
+
+{% code title="src/index.app.tsx" %}
+```tsx
+import './index.css';
+import App from './App';
+import { MyProvider } from "./MyProvider";
+import reportWebVitals from './reportWebVitals';
+
+export default function AppEntrypoint(){
+  return (
+    <MyProvider>
+      <App />
+    </MyProvider>
+  );
+}
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+```
+{% endcode %}
+
+Then you want to create the following **src/index.tsx** file, you can copy paste the followint code, it does not need to be adapted:
+
+{% code title="src/index.tsx" %}
+```tsx
+import { createRoot } from "react-dom/client";
+import { StrictMode, lazy, Suspense } from "react";
+import { KcPage, type KcContext } from "./keycloak-theme/kc.gen";
+const AppEntrypoint = lazy(() => import("./index.app"));
+
+// The following block can be uncommented to test a specific page with `yarn dev`
+// Don't forget to comment back or your bundle size will increase
+/*
+import { getKcContextMock } from "./keycloak-theme/login/KcPageStory";
+
+if (import.meta.env.DEV) {
+    window.kcContext = getKcContextMock({
+        pageId: "register.ftl",
+        overrides: {}
+    });
+}
+*/
+
+createRoot(document.getElementById("root")!).render(
+    <StrictMode>
+        {window.kcContext ? (
+            <KcPage kcContext={window.kcContext} />
+        ) : (
+            <Suspense>
+                <AppEntrypoint />
+            </Suspense>
+        )}
+    </StrictMode>
+);
+
+declare global {
+    interface Window {
+        kcContext?: KcContext;
+    }
+}
+```
+{% endcode %}
 
 {% hint style="info" %}
 **Question:**
