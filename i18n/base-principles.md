@@ -4,7 +4,7 @@
 
 In the Keycloak Admin Console you can enable localisation by selecting a set of language that you wish to support: &#x20;
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 The language that you want to support isn't in the default set? You can add support for it with Keycloakify. [See how](adding-support-for-extra-languages.md).
@@ -12,7 +12,7 @@ The language that you want to support isn't in the default set? You can add supp
 
 When Internationalization is enabled you will see a language dropdown select in your UIs:
 
-<figure><img src="../.gitbook/assets/image (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 {% hint style="success" %}
 You shouldn't rely on the language select to let your users select their language. &#x20;

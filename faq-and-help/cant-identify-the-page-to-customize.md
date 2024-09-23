@@ -3,7 +3,7 @@
 If you can't seem to find the page that you're looking for in [the reference Storybook](https://storybook.keycloakify.dev/?path=/story/introduction--page), first thing to try is to open the devlopper tool and see the page id of the page you're trying to customize.  \
 
 
-<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>Identificating register.ftl</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption><p>Identificating register.ftl</p></figcaption></figure>
 
 Here there is two scenario:&#x20;
 

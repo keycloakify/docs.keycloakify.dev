@@ -41,7 +41,7 @@ Let's see how to add support for an extra language so you can enable it in the K
 
 In this example we're going to add Hindi (hi).
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>Hindi appear as a supported locales option in the Keycloak Account UI</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>Hindi appear as a supported locales option in the Keycloak Account UI</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (3).png" alt="" width="375"><figcaption><p>Hindi appear as an option in the language select dropdown</p></figcaption></figure>
 
