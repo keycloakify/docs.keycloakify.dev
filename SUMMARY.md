@@ -66,6 +66,15 @@
 
 ## FAQ & HELP
 
+* [⬆️ Migration Guides](faq-and-help/migration-guides/README.md)
+  * [⬆️ v10->v11](faq-and-help/migration-guides/v10-greater-than-v11.md)
+  * [⬆️ v9 -> v10](faq-and-help/migration-guides/v9-greater-than-v10.md)
+  * [⬆️ CRA -> Vite](faq-and-help/migration-guides/cra-greater-than-vite.md)
+  * [⬆️ v8 -> v9](faq-and-help/migration-guides/v8-greater-than-v9.md)
+  * [⬆️ v7 -> v8](faq-and-help/migration-guides/v7-greater-than-v8.md)
+  * [⬆️ v6 -> v7](faq-and-help/migration-guides/v6-greater-than-v7.md)
+  * [⬆️ v6.x -> v6.12](faq-and-help/migration-guides/v6.x-greater-than-v6.12.md)
+  * [⬆️ v5 -> v6](faq-and-help/migration-guides/readme-1.md)
 * [😞 Can't identify the page to customize?](faq-and-help/cant-identify-the-page-to-customize.md)
 * [🤔 How it Works](faq-and-help/how-it-works.md)
 * [😖 Some values you need are missing from in kcContext type definitions?](faq-and-help/some-values-you-need-are-missing-from-in-kccontext.md)
@@ -77,14 +86,6 @@
 * [🤓 Can I use react-hooks-form?](faq-and-help/can-i-use-react-hooks-form.md)
 * [🚀 Redirecting you users to the login/register pages](faq-and-help/redirecting-you-users-to-the-login-register-pages.md)
 * [💟 Contributing](faq-and-help/contributing.md)
-* [⬆️ Migration Guides](faq-and-help/migration-guides/README.md)
-  * [⬆️ v9 -> v10](faq-and-help/migration-guides/v9-greater-than-v10.md)
-  * [⬆️ CRA -> Vite](faq-and-help/migration-guides/cra-greater-than-vite.md)
-  * [⬆️ v8 -> v9](faq-and-help/migration-guides/v8-greater-than-v9.md)
-  * [⬆️ v7 -> v8](faq-and-help/migration-guides/v7-greater-than-v8.md)
-  * [⬆️ v6 -> v7](faq-and-help/migration-guides/v6-greater-than-v7.md)
-  * [⬆️ v6.x -> v6.12](faq-and-help/migration-guides/v6.x-greater-than-v6.12.md)
-  * [⬆️ v5 -> v6](faq-and-help/migration-guides/readme-1.md)
 * [🍪 Google reCaptcha and End of third-party Cookies](faq-and-help/google-recaptcha-and-end-of-third-party-cookies.md)
 * [🔖 Accessing the Realm Attributes](faq-and-help/accessing-the-realm-attributes.md)
 
