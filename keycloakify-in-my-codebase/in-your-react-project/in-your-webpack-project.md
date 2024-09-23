@@ -155,7 +155,50 @@ Theses **are not preferences!** If you're not using Create React App your Webpac
 
 <figure><img src="../../.gitbook/assets/image (128).png" alt="" width="209"><figcaption><p>Here you can see that in a CRA project, when we run <code>npm run build</code> the app distribution is generated in a <strong>build/</strong> directory, this is why we use <code>"projectBuildDirPath": "build"</code>. We can also see that all the assets of the app are gathered under a <code>static/</code> directory this is why we use <code>"staticDirPathInProjectBuildDirPath": "static"</code>. And finally we can see that everything we put in the <strong>public/</strong> directory is copied over to the <strong>build/</strong> directory when building so we use <code>"publicDirPath": "public"</code>.</p></figcaption></figure>
 
-That's it, your project is ready to go!
+Last setp is to exclude from your html `<head />` things that aren't relevent in the context of Keycloak pages. &#x20;
+
+{% hint style="danger" %}
+Do not blindely copy paste, this is just an example! &#x20;
+
+You have to figure out what does and does not make sense to be in the \<head/> of your Keycloak UI pages.
+{% endhint %}
+
+<pre class="language-html" data-title="public/index.html"><code class="lang-html">&#x3C;!DOCTYPE html>
+&#x3C;html>
+&#x3C;head>
+  &#x3C;meta charset="utf-8" />
+  &#x3C;link rel="icon" href="%PUBLIC_URL%/icon.png" />
+  &#x3C;meta name="viewport" content="width=device-width, initial-scale=1" />
+  &#x3C;meta name="theme-color" content="#000000" />
+  &#x3C;link rel="apple-touch-icon" href="%PUBLIC_URL%/icon.png" />
+  &#x3C;link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  &#x3C;link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&#x26;display=swap" />
+  &#x3C;link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+<strong>  &#x3C;meta name="keycloakify-ignore-start">
+</strong>  &#x3C;title>ACME Dashboard&#x3C;/title>
+  &#x3C;script>
+    window.ENV = {
+      API_ADDRESS: '${API_ADDRESS}',
+      SENTRY_DSN: '${SENTRY_DSN}'
+    };
+  &#x3C;/script>
+<strong>  &#x3C;meta name="keycloakify-ignore-end">
+</strong>
+  &#x3C;!-- ... -->
+
+&#x3C;/head>
+
+&#x3C;!-- ... -->
+</code></pre>
+
+In the above example we tell keycloakify not to include the `<title>` because keycloakify will set it dynamically to something like _"ACME- Login"_ or _"ACME - Register"_. &#x20;
+
+We also exclude a placeholder script for injecting environnement variables at container startup.
+
+
+
+**That's it, your project is ready to go!** :tada:
 
 You can run `npm run build-keycloak-theme`, the JAR distribution of your Keycloak theme will be generated in `build_keycloak` ([you can change this](../../configuration-options/keycloakifybuilddirpath.md)).
 

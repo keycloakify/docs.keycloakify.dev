@@ -157,7 +157,48 @@ Finally you want to add to your package.json a script for building the theme and
   // ...
 </code></pre>
 
-That's it, your project is ready to go!
+
+
+Last setp is to exclude from your html `<head />` things that aren't relevent in the context of Keycloak pages. &#x20;
+
+{% hint style="danger" %}
+Do not blindely copy paste, this is just an example! &#x20;
+
+You have to figure out what does and does not make sense to be in the \<head/> of your Keycloak UI pages.
+{% endhint %}
+
+<pre class="language-html" data-title="public/index.html"><code class="lang-html">&#x3C;!doctype html>
+&#x3C;html>
+
+&#x3C;head>
+    &#x3C;meta charset="UTF-8" />
+    &#x3C;link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    &#x3C;meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<strong>    &#x3C;meta name="keycloakify-ignore-start">
+</strong>    &#x3C;title>ACME Dashboard&#x3C;/title>
+    &#x3C;script>
+        window.ENV = {
+            API_ADDRESS: '${API_ADDRESS}',
+            SENTRY_DSN: '${SENTRY_DSN}'
+        };
+    &#x3C;/script>
+<strong>    &#x3C;meta name="keycloakify-ignore-end">
+</strong>    
+    &#x3C;!-- ... -->
+
+&#x3C;/head>
+
+&#x3C;!-- ... -->
+</code></pre>
+
+In the above example we tell keycloakify not to include the `<title>` because keycloakify will set it dynamically to something like _"ACME- Login"_ or _"ACME - Register"_. &#x20;
+
+We also exclude a placeholder script for injecting environnement variables at container startup.
+
+
+
+**That's it, your project is ready to go!** :tada:
 
 You can run npm run build-keycloak-theme, the JAR distribution of your Keycloak theme will be generated in dist\_keycloak.
 
