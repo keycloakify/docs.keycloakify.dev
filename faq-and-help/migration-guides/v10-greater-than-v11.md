@@ -266,3 +266,29 @@ You can search/replace in your codebase for any `dangerouslySetInnerHTML` occure
                 }}
             />
 ```
+
+## keycloakify-resouces has been renamed keycloakify-dev-resources
+
+{% hint style="warning" %}
+This change is only required for Webpack users. Not Vite users. &#x20;
+{% endhint %}
+
+{% code title="package.json" %}
+```diff
+ {
+     "scripts": {
+         "prestart": "keycloakify update-kc-gen && keycloakify copy-keycloak-resources-to-public",
+         "start": "react-scripts start",
+         "prestorybook": "npm run prestart",
+         "storybook": "storybook dev -p 6006",
+         "prebuild": "keycloakify update-kc-gen",
+         "build": "react-scripts build",
+-        "postbuild": "rimraf build/keycloakify-resources",
++        "postbuild": "rimraf build/keycloakify-dev-resources",
+         "build-keycloak-theme": "npm run build && keycloakify build",
+         "format": "prettier . --write"
+         // ...
+     },
+```
+{% endcode %}
+
