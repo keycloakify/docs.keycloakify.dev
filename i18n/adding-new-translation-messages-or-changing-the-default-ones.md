@@ -6,13 +6,13 @@ Let's see firs how you can overwrite the default translation messages to best fi
 
 See, for example, by default the login page shows "Sign in to your account":
 
-<figure><img src="../.gitbook/assets/image (6).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8).png" alt="" width="375"><figcaption></figcaption></figure>
 
 Let's say we want to change that with a message more specific to you usecase.
 
 First setp is to identify the message key. You can usually found it just by inspecting the HTML of your page:
 
-<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 Here we can see that the _"Sign in to your account"_ translation message corespond to the message key **loginAccountTitle**.
 
@@ -47,16 +47,16 @@ export { useI18n, type I18n };
 
 Here is the result that you should get:
 
-<figure><img src="../.gitbook/assets/image (8).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10).png" alt="" width="375"><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (9).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (11).png" alt="" width="375"><figcaption></figcaption></figure>
 
 {% hint style="warning" %}
 The messageBundle that you provide as argument of the `createUseI18n` function must be statically valuable. You can't import from external files. All the translations must be declared inline.\
 This is because Keycloakify will analyze your code at build time to make Keycloak aware of your modifications of the base messages so that server side generated feedback messages can use your translations.
 
-![](<../.gitbook/assets/image (34).png>)\
-![](<../.gitbook/assets/image (35).png>)
+![](<../.gitbook/assets/image (47).png>)\
+![](<../.gitbook/assets/image (48).png>)
 
 <img src="../.gitbook/assets/Screenshot 2024-06-22 at 21.36.53.png" alt="" data-size="original">
 {% endhint %}
@@ -93,7 +93,7 @@ export { useI18n, type I18n };
 
 You'll then be able to use the message key "myCustomMessage" in your components:
 
-<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="success" %}
 If you are implementing theme variants you can provides translations on a per-theme variant basis.  [See how](../theme-variants.md).
@@ -106,11 +106,11 @@ I'm thinking in particular as translations related to custom user attribues (fav
 
 Some relevant messages, namely `termsText` and all the messages used in the User Profile Attributes like for example the Display name, the helper text or the select option labels can be defined at the realm level and it will work as you would expect:
 
-<figure><img src="../.gitbook/assets/image (28).png" alt=""><figcaption><p>The custom user attribute favourite_pet has for Display Name the message key "profile.attributes.favourite_pet"</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (41).png" alt=""><figcaption><p>The custom user attribute favourite_pet has for Display Name the message key "profile.attributes.favourite_pet"</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (29).png" alt=""><figcaption><p>A translation for the message key "profile.attributes.favourite_pet" has been defined for the English language: "Favourite Pet"</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (42).png" alt=""><figcaption><p>A translation for the message key "profile.attributes.favourite_pet" has been defined for the English language: "Favourite Pet"</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (30).png" alt="" width="312"><figcaption><p>"Favourite Pet" is correctly used as Display Name for the input field in the register page</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (43).png" alt="" width="312"><figcaption><p>"Favourite Pet" is correctly used as Display Name for the input field in the register page</p></figcaption></figure>
 
 Note that if you try to use:
 

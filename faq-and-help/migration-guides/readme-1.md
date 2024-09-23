@@ -58,13 +58,13 @@ In v5 and prior, Keycloakify only provided [a very hacky way](https://docs.keycl
 
 Keycloakify v6 now has a proper i18n api.
 
-{% content-ref url="../../i18n.md" %}
-[i18n.md](../../i18n.md)
+{% content-ref url="../../i18n/" %}
+[i18n](../../i18n/)
 {% endcontent-ref %}
 
 ### Terms and conditions
 
-The message `termsTitle` ([_Terms and Conditions_ in en.ts](https://github.com/InseeFrLab/keycloakify/blob/f0ae5ea908e0aa42391af323b6d5e2fd371af851/src/lib/i18n/generated\_messages/18.0.1/login/en.ts#L66)) was replaced by a blank string in v5. If you want to do the same in v6 you have to use the new [i18n API](../../i18n.md).
+The message `termsTitle` ([_Terms and Conditions_ in en.ts](https://github.com/InseeFrLab/keycloakify/blob/f0ae5ea908e0aa42391af323b6d5e2fd371af851/src/lib/i18n/generated\_messages/18.0.1/login/en.ts#L66)) was replaced by a blank string in v5. If you want to do the same in v6 you have to use the new [i18n API](../../i18n/).
 
 ```diff
  useDownloadTerms({
@@ -108,7 +108,7 @@ Example of component level configuration of the Terms page
 
 ### useFormValidationSlice()
 
-`useFormValidationSlice()` now require you to pass a i18n object, see [I18n API](../../i18n.md).
+`useFormValidationSlice()` now require you to pass a i18n object, see [I18n API](../../i18n/).
 
 ```diff
  import { useFormValidationSlice } from "keycloakify";

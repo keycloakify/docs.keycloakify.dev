@@ -45,7 +45,7 @@ export default defineConfig({
 
 We can then access the runtime value of thoses variables under kcContext.properties:
 
-<figure><img src=".gitbook/assets/image (118).png" alt=""><figcaption><p>Accessing the value of the environement variable defined.</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (131).png" alt=""><figcaption><p>Accessing the value of the environement variable defined.</p></figcaption></figure>
 
 Now let's see how you can set the value of thoses environement variable on the Keycloak side:
 

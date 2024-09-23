@@ -12,7 +12,7 @@ The language that you want to support isn't in the default set? You can add supp
 
 When Internationalization is enabled you will see a language dropdown select in your UIs:
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3).png" alt="" width="375"><figcaption></figcaption></figure>
 
 {% hint style="success" %}
 You shouldn't rely on the language select to let your users select their language. &#x20;
@@ -45,7 +45,7 @@ If you [eject some pages](../customization-strategies/component-level-customizat
 }
 </code></pre>
 
-<figure><img src="../.gitbook/assets/image (94).png" alt="" width="374"><figcaption><p><code>msg("backToLogin")</code> gets rendered as <strong>« Back to Login</strong></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (107).png" alt="" width="374"><figcaption><p><code>msg("backToLogin")</code> gets rendered as <strong>« Back to Login</strong></p></figcaption></figure>
 
 If you want to see the base message translations you can navigate to the **node\_modules/keycloakify/src/login/i18n/messages\_defaultSet/** directory:
 

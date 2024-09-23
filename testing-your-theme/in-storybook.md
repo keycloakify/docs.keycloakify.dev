@@ -23,11 +23,11 @@ npx keycloakify add-story
 
 It will enables you to select the pages you want to add stories for.
 
-<figure><img src="../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (55).png" alt=""><figcaption></figcaption></figure>
 
 Selecting login -> register.ftl will result in this file to be created in your project:
 
-<figure><img src="../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
 
 You can run the above command multiple times to add stories for the different pages you want to develop.
 
@@ -37,7 +37,7 @@ Once your added a few stories you can start Storybook locally with:
 npm run storybook
 ```
 
-<figure><img src="../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
 
 You can see the changes you make in you code in realtime in your Storybook.
 
@@ -77,7 +77,7 @@ export const Default: Story = {
 </strong><strong>};
 </strong></code></pre>
 
-<figure><img src="../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (58).png" alt=""><figcaption></figcaption></figure>
 
 That's really nice, however this approach has it's limits. At some point you'll want to test in a real Keycloak to make sure everything works. Also you don't necessary know the kcContext values to provides in order to replicate a desired configuration.
 

@@ -4,14 +4,14 @@ Let's see, as an example, the different ways you have to change the backgrounds 
 
 First let's [download a background image](https://coolbackgrounds.io/) an put it in our public directory:
 
-<figure><img src="../../../.gitbook/assets/image (78).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (91).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 If you wish to do so, you can hot swipe assets that you have placed into your public directory in your Keycloak instance files at:
 
 **/opt/keycloak/themes/**[**\<name of your theme>**](../../../configuration-options/themename.md)**/\<login|account>/resources/dist**
 
-<img src="../../../.gitbook/assets/image (81).png" alt="" data-size="original">
+<img src="../../../.gitbook/assets/image (94).png" alt="" data-size="original">
 {% endhint %}
 
 Let's apply this image to the body using plain CSS
@@ -33,7 +33,7 @@ We import the StyleSheet:
 
 Result (see [testing your theme](../../../testing-your-theme/)):
 
-<figure><img src="../../../.gitbook/assets/image (79).png" alt=""><figcaption><p>Custom background successfully applied</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (92).png" alt=""><figcaption><p>Custom background successfully applied</p></figcaption></figure>
 
 If you prefer, you can also move the background.png image from `public/` to, for examples, `src/login/assets/background.png` and reference the image with a path relative to the CSS file, in this case it would be:
 

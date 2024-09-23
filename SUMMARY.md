@@ -26,7 +26,7 @@
   * [Component Level Customization](customization-strategies/component-level-customization/README.md)
     * [Using custom assets](customization-strategies/component-level-customization/in-react-components.md)
 * [🖋️ Custom Fonts](custom-fonts.md)
-* [🌎 Internationalization and Translations](i18n.md)
+* [🌎 Internationalization and Translations](i18n/README.md)
   * [Base principles](i18n/base-principles.md)
   * [Adding Support for Extra Languages](i18n/adding-support-for-extra-languages.md)
   * [Previewing you Pages In Different Languages](i18n/previewing-you-pages-in-different-languages.md)

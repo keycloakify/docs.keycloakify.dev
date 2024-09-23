@@ -12,7 +12,7 @@ This excerpt is from a video call with the Keycloak team, where we introduced th
 
 ## Initializing the Single-Page Account Theme
 
-<figure><img src="../.gitbook/assets/image (119).png" alt=""><figcaption><p>The account Single Page Account theme before customization</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (132).png" alt=""><figcaption><p>The account Single Page Account theme before customization</p></figcaption></figure>
 
 You've made your mind and opted for the Single Page Account UI?  \
 Great, let's start by initializing you theme: &#x20;
@@ -21,11 +21,11 @@ Great, let's start by initializing you theme: &#x20;
 npx keycloakify initialize-account-theme
 ```
 
-<figure><img src="../.gitbook/assets/image (120).png" alt=""><figcaption><p>When prompted, select the "Single-Page" option</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (133).png" alt=""><figcaption><p>When prompted, select the "Single-Page" option</p></figcaption></figure>
 
 This command will create the nessesary boilerpate and add to your project dependencies the required dependencies of the latest Account UI.
 
-<figure><img src="../.gitbook/assets/image (121).png" alt=""><figcaption><p>Dependency added to your project when using initializing the Single-Page Account UI</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (134).png" alt=""><figcaption><p>Dependency added to your project when using initializing the Single-Page Account UI</p></figcaption></figure>
 
 Before starting the customization, let's make sure that everything works by adding a simple console.log.
 
@@ -52,20 +52,20 @@ npx keycloakify start-keycloak
 
 Selet Keycloak 25.
 
-<figure><img src="../.gitbook/assets/image (122).png" alt="" width="375"><figcaption><p>Keycloak 25 up and runing on your computer</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (135).png" alt="" width="375"><figcaption><p>Keycloak 25 up and runing on your computer</p></figcaption></figure>
 
 Once you get the confirmation message that Keycloak is up and running you can reach the https://my-theme.keycloakify.dev to get redirected to your Login theme.\
 Use the test credentials to authenticate as the test user:
 
-<figure><img src="../.gitbook/assets/image (123).png" alt="" width="375"><figcaption><p>Authenticating as the test user</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (136).png" alt="" width="375"><figcaption><p>Authenticating as the test user</p></figcaption></figure>
 
 On the next page you'll be provided with a link to the Account pages:
 
-<figure><img src="../.gitbook/assets/image (124).png" alt=""><figcaption><p>Authenticated as "testuser" on the my-theme.keycloakify.dev utility app</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (137).png" alt=""><figcaption><p>Authenticated as "testuser" on the my-theme.keycloakify.dev utility app</p></figcaption></figure>
 
 You should be able to see your log statement confirming that you are indeed running your theme.
 
-<figure><img src="../.gitbook/assets/image (125).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (138).png" alt=""><figcaption></figcaption></figure>
 
 Compilation of your theme is running in watch mode when using the start-keycloak command, you can eddit your console.log message, save and after a few seconds reload the page, you should see the message updated.\
 \
@@ -87,7 +87,7 @@ Let's see what we can do.
 
 First start by adding a logo file in your src directory somewhere, example:&#x20;
 
-<figure><img src="../.gitbook/assets/image (127).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (140).png" alt=""><figcaption></figcaption></figure>
 
 And pass a reference to it as props of the `<KcAccountUiLoader />` component:
 
@@ -113,7 +113,7 @@ export default function KcPage(props: { kcContext: KcContext }) {
 
 After saving and reloading you should be able to see that the logo has been updated:
 
-<figure><img src="../.gitbook/assets/image (128).png" alt="" width="375"><figcaption><p>The Keycloak logo has been replaced by the Keycloakify logo</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (141).png" alt="" width="375"><figcaption><p>The Keycloak logo has been replaced by the Keycloakify logo</p></figcaption></figure>
 
 ### Customizing what sections are availables in the left pannel
 
@@ -187,11 +187,11 @@ export default function KcPage(props: { kcContext: KcContext }) {
 
 Let's for example comment out the deviceActivity section.
 
-<figure><img src="../.gitbook/assets/image (129).png" alt="" width="297"><figcaption><p>Before</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (142).png" alt="" width="297"><figcaption><p>Before</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (130).png" alt="" width="375"><figcaption><p>Commenting out deviceActivity</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (143).png" alt="" width="375"><figcaption><p>Commenting out deviceActivity</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (131).png" alt="" width="315"><figcaption><p>After, the Device Activity section has disapeared</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (144).png" alt="" width="315"><figcaption><p>After, the Device Activity section has disapeared</p></figcaption></figure>
 
 ### Adding custom CSS
 
@@ -206,9 +206,9 @@ Beyond that you can of course import your custom CSS and use the PaternFly utili
 \
 Example loading some custom CSS:
 
-<figure><img src="../.gitbook/assets/image (132).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (145).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (133).png" alt=""><figcaption><p>The red boder has been applied on all the element that have the pf-v5-c-page__main-secrion class</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (146).png" alt=""><figcaption><p>The red boder has been applied on all the element that have the pf-v5-c-page__main-secrion class</p></figcaption></figure>
 
 ## Component level customization
 
@@ -218,7 +218,7 @@ To customize the Account theme at the React component level you want to use the 
 npx keycloakify eject-page
 ```
 
-<figure><img src="../.gitbook/assets/image (134).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (147).png" alt=""><figcaption></figcaption></figure>
 
 After running this command you'll be able to see that the following change has been automatically applied:
 
@@ -246,7 +246,7 @@ After running this command you'll be able to see that the following change has b
 
 Also the KcAccountUi component has be copied over from **node\_modules/@keycloakify/keycloak-account-ui/src/KcAccountUi.tsx** to your codebase at **src/account/KcAccountUi.tsx**. &#x20;
 
-<figure><img src="../.gitbook/assets/image (135).png" alt=""><figcaption><p>KcAccountUi.tsx has been ejected</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (148).png" alt=""><figcaption><p>KcAccountUi.tsx has been ejected</p></figcaption></figure>
 
 That what you'll want to each time you'll want to take ownership of some component of the Account UI: Copy the original source file into your codebase and update the absolute imports by relative imports.  \
 Let's see in practice how we would eject the routes:
@@ -262,7 +262,7 @@ Then you want to update the absolututes import of the routes to your local route
 + import { router } from "./routes";
 ```
 
-<figure><img src="../.gitbook/assets/image (136).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (149).png" alt=""><figcaption></figcaption></figure>
 
 And that's it, you now own the routes!  \
 Moving forward you can incrementally "eject" the components you need to take ownerhip over by followind the same process. &#x20;
@@ -287,7 +287,7 @@ So, when comes the time to upgrade you want to navigate to:\
 
 And look in the README in the installation section:
 
-<figure><img src="../.gitbook/assets/image (137).png" alt=""><figcaption><p>Instalation section of keycloakify/keycloak-account-ui version 25.0.2</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (150).png" alt=""><figcaption><p>Instalation section of keycloakify/keycloak-account-ui version 25.0.2</p></figcaption></figure>
 
 You want to copy and paste the dependencies into the package.json of your Keycloakify project.
 

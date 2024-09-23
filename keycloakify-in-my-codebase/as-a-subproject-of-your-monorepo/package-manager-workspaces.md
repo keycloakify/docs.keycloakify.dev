@@ -35,7 +35,7 @@ rm -rf apps/keycloak-theme/.github
 rm apps/keycloak-theme/.yarn.lock
 ```
 
-<figure><img src="../../.gitbook/assets/image (103).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (116).png" alt="" width="375"><figcaption></figcaption></figure>
 
 Now you want to update the name field of your apps/keycloak-theme/package.json to match the name of your sub app.
 

@@ -4,7 +4,7 @@
 
 This object contains no sensitive data—only the information that the Keycloak team considers essential for rendering the various login pages. Additionally, if you have custom plugins, such as [keycloak-email-whitelisting](https://github.com/micedre/keycloak-mail-whitelisting), they may introduce additional values into this object.
 
-<figure><img src="../.gitbook/assets/image (141).png" alt=""><figcaption><p>A typical kcContext for the register.ftl page</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (154).png" alt=""><figcaption><p>A typical kcContext for the register.ftl page</p></figcaption></figure>
 
 If you'd like to prevent some values of the FreeMarker context from being forwarded to the client you can do it with the `kcContextExclusionsFtl` option. &#x20;
 

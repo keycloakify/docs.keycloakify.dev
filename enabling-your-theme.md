@@ -2,7 +2,7 @@
 
 Let's see how to enable your theme once you have sucessfully imported it in your Keycloak instance.
 
-<figure><img src=".gitbook/assets/image (142).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (155).png" alt=""><figcaption></figcaption></figure>
 
 ## Enabeling globaly on your realm
 

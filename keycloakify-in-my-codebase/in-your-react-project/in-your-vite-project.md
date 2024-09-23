@@ -4,9 +4,9 @@ If you have a Vite/React/TypeScript project you can integrate Keycloakify direct
 
 In this guide we're going to work with a vanilla Vite project.
 
-<figure><img src="../../.gitbook/assets/image (109).png" alt="" width="375"><figcaption><p>Creating a new vite project with yarn create vite. You don't need to create a new project. Just use your existing codebase.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (122).png" alt="" width="375"><figcaption><p>Creating a new vite project with yarn create vite. You don't need to create a new project. Just use your existing codebase.</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (110).png" alt="" width="368"><figcaption><p>Our codebase before installing Keycloakify</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (123).png" alt="" width="368"><figcaption><p>Our codebase before installing Keycloakify</p></figcaption></figure>
 
 {% hint style="info" %}
 Before anything make sure to commit all your pending changes so you can easily revert changes if need be.

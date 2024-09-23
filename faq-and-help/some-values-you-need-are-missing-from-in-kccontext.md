@@ -11,7 +11,7 @@ However, at runtime there is much more information in the kcContext that what Ty
 A common scenario is when you want, on the register page to enable sign-up via Google or Facebook but the kcContext.social object isn't defined:  \
 
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>kcContext.social not defined in the KcContext type on the register page.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption><p>kcContext.social not defined in the KcContext type on the register page.</p></figcaption></figure>
 
 Here is how you would go about addressing this usecase for this particular usecase: &#x20;
 

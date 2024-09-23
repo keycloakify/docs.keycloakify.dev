@@ -4,9 +4,9 @@ If you have a Webpack/React/TypeScript project you can integrate Keycloakify dir
 
 In this guide we're going to work with a vanilla [Create React App](https://create-react-app.dev/) project.
 
-<figure><img src="../../.gitbook/assets/image (112).png" alt="" width="375"><figcaption><p>Creating a CRA project. You don't need to do that, just use your existing codebase.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (125).png" alt="" width="375"><figcaption><p>Creating a CRA project. You don't need to do that, just use your existing codebase.</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (113).png" alt="" width="304"><figcaption><p>Our codebase before involving Keycloakify</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (126).png" alt="" width="304"><figcaption><p>Our codebase before involving Keycloakify</p></figcaption></figure>
 
 {% hint style="info" %}
 Before anything make sure to commit all your pending changes so you can easily revert changes if need be.
@@ -153,7 +153,7 @@ Keycloakify has many build options that you can use, however `projectBuildDirPat
 
 Theses **are not preferences!** If you're not using Create React App your Webpack configuration is probably different and you want to update those values to reflect how webpack build your site in your project.
 
-<figure><img src="../../.gitbook/assets/image (115).png" alt="" width="209"><figcaption><p>Here you can see that in a CRA project, when we run <code>npm run build</code> the app distribution is generated in a <strong>build/</strong> directory, this is why we use <code>"projectBuildDirPath": "build"</code>. We can also see that all the assets of the app are gathered under a <code>static/</code> directory this is why we use <code>"staticDirPathInProjectBuildDirPath": "static"</code>. And finally we can see that everything we put in the <strong>public/</strong> directory is copied over to the <strong>build/</strong> directory when building so we use <code>"publicDirPath": "public"</code>.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (128).png" alt="" width="209"><figcaption><p>Here you can see that in a CRA project, when we run <code>npm run build</code> the app distribution is generated in a <strong>build/</strong> directory, this is why we use <code>"projectBuildDirPath": "build"</code>. We can also see that all the assets of the app are gathered under a <code>static/</code> directory this is why we use <code>"staticDirPathInProjectBuildDirPath": "static"</code>. And finally we can see that everything we put in the <strong>public/</strong> directory is copied over to the <strong>build/</strong> directory when building so we use <code>"publicDirPath": "public"</code>.</p></figcaption></figure>
 
 That's it, your project is ready to go!
 

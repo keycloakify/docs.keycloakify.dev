@@ -56,11 +56,11 @@ npx keycloakify start-keycloak
 
 You'll be invited to chose the Keycloak version you want to spin up:
 
-<figure><img src="../.gitbook/assets/image (84).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (97).png" alt=""><figcaption></figcaption></figure>
 
 Keycloakify will preconfigure a realm and client for your theme so you don't necessarily need to go in the the Keycloak admin console you can simply navigate to **https://my-theme.keycloakify.dev** it will redirect to your local Keycloak login pages!
 
-<figure><img src="../.gitbook/assets/image (89).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (102).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="success" %}
 If you makes changes in your theme while the Keycloak container is running **your theme will be automatically recompiled** and updated in Keycloak. After a few seconds you'll just have to refresh the page you see them live.
@@ -68,15 +68,15 @@ If you makes changes in your theme while the Keycloak container is running **you
 
 Clicking on the **https://my-theme.keycloakify.dev** link will redirect you to the login page of your theme:
 
-<figure><img src="../.gitbook/assets/image (138).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (151).png" alt=""><figcaption></figcaption></figure>
 
 With the developer tool of your brower you'll be able to explore the kcContext of the page. You can use it to creates new stories of your pages in specific configuration.
 
-<figure><img src="../.gitbook/assets/image (90).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (103).png" alt=""><figcaption></figcaption></figure>
 
 Loggin in with the test user (testuser/password123) will redirect you to a page where you'll be able to inspect the decoded id token JWT beside other things.
 
-<figure><img src="../.gitbook/assets/image (139).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (152).png" alt=""><figcaption></figcaption></figure>
 
 ## Configuration options
 
@@ -192,4 +192,4 @@ See the Vite tab for explaination of the different options.
 
 Configured as the example above, the docker run command will be the following one:
 
-<figure><img src="../.gitbook/assets/image (140).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (153).png" alt=""><figcaption></figcaption></figure>

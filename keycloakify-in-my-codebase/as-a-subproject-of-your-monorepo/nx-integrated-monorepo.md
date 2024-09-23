@@ -8,7 +8,7 @@ In this example we'll start with the Nx Vite starter
 npx create-nx-workspace@latest --preset=react-monorepo --bundler=vite
 ```
 
-<figure><img src="../../.gitbook/assets/image (97).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (110).png" alt=""><figcaption></figcaption></figure>
 
 Next up we want to repatriate the Keycloakify Starter template sources.\
 We only copy over the src and .storybook directory.

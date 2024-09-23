@@ -2,7 +2,7 @@
 
 ## Initializing the Multi-Page Account Theme
 
-<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption><p>The Multi-Page Account theme before customization</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption><p>The Multi-Page Account theme before customization</p></figcaption></figure>
 
 You've made your mind and opted for the Multi-Page Account theme?  \
 Great, let's start by initializing you theme: &#x20;

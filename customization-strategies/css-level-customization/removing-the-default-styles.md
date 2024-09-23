@@ -4,7 +4,7 @@
 
 You may notice that beside the the kcSomething classes other classes are applied to the components.
 
-<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption><p>The &#x3C;header> element has an extra class beside kcFormHeaderClass: login-pf-header</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption><p>The &#x3C;header> element has an extra class beside kcFormHeaderClass: login-pf-header</p></figcaption></figure>
 
 This other classes, non prefixed with kc actually have styles rules that target them. Let's as an example remove the login-pf-header class:
 
@@ -20,11 +20,11 @@ const classes = {
 </strong>} satisfies { [key in ClassKey]?: string };
 </code></pre>
 
-<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption><p>We can see that now, the &#x3C;header> element only have the kcFormHeaderClass, the login-pf-header class has been removed. As a result the text is now aligned to the left (default layout)</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (26).png" alt=""><figcaption><p>We can see that now, the &#x3C;header> element only have the kcFormHeaderClass, the login-pf-header class has been removed. As a result the text is now aligned to the left (default layout)</p></figcaption></figure>
 
 On some components, multiples utility classes are applied, you may want to keep some of them and remove others. Example:
 
-<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption><p>Here we can see that a bunch of col-* classes gets applied to the element with kcInputWrapperClass</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (29).png" alt=""><figcaption><p>Here we can see that a bunch of col-* classes gets applied to the element with kcInputWrapperClass</p></figcaption></figure>
 
 Let's say, for example, that we would like to remove keep only the col-md and lg classes. To do that that we would write:
 
@@ -45,7 +45,7 @@ const classes = {
 
 Result:
 
-<figure><img src="../../.gitbook/assets/image (17).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (30).png" alt="" width="375"><figcaption></figcaption></figure>
 
 ## Removing all the default styles at once
 
@@ -78,7 +78,7 @@ Maybe you'd prefer to remove all default styles at once you can do that by setti
 
 However be aware that re-styling everything involves quite a bit of work:
 
-<figure><img src="../../.gitbook/assets/image (18).png" alt="" width="375"><figcaption><p>The login page with doUseDefaultCss set to false</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (31).png" alt="" width="375"><figcaption><p>The login page with doUseDefaultCss set to false</p></figcaption></figure>
 
 Up next:
 

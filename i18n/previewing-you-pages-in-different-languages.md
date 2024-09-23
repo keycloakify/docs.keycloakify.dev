@@ -48,7 +48,7 @@ export const Default: Story = {
 // Other stories ...
 </code></pre>
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>Viewing the French story of the login page</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption><p>Viewing the French story of the login page</p></figcaption></figure>
 
 If you want all your story to by by default in an other language you can edit:
 
