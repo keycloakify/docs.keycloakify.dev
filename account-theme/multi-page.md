@@ -17,6 +17,10 @@ This command will create the nessesary boilerplate for you. &#x20;
 
 Beyond that there isn't much thing you need to be aware of, things works exactly as in the login theme. You'll be able to use the  keycloakify`add-story` and `eject-page` CLI command just select account when asked.
 
+## Internationalization and translation (i18n)
+
+The i18n system of the Multi-Page Account theme is similar in every way to the one of the login theme, you just need to replace **/login/** by **/account/** everywhere. See the note in [this page](../i18n/adding-support-for-extra-languages.md).
+
 ## Using the REST API
 
 Even if you're using the Multi-Page theme you can still consume the REST API the Single-Page Account is build on top of. So, if some information you need are missing from the `kcContext` you can fetch them dynamically.

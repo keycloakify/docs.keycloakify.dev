@@ -269,6 +269,10 @@ Moving forward you can incrementally "eject" the components you need to take own
 
 Be aware: The more components you eject, the more work it will represent to mainain your theme up to date with the future evolution of Keycloak.  &#x20;
 
+## Internationalization and translation (i18n)
+
+To add support for extra languages or customize the message translations read the note about account theme of [this page](../i18n/adding-support-for-extra-languages.md).
+
 ## Updating keycloak-account-ui to a new version
 
 Each time a new version of Keycloak is released, a new version of @keycloak/keycloak-account-ui is also released with the same version number.\
@@ -290,3 +294,5 @@ You want to copy and paste the dependencies into the package.json of your Keyclo
 The readme is generated automatically, you can trust that is always up do date.
 
 You migh wonder why there's only RC releases of @keycloakify/keycloak-account-ui, it's because we want to match the version number of the upstream package @keycloak/keycloak-account-ui but still be able to publish update when minor changes on the re-packaging distribution is needed. &#x20;
+
+##

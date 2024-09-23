@@ -40,7 +40,6 @@ The Single Page theme also refered as account v3 is this the default theme that 
 * CSS level customization beyond [overidding the Paternfly CSS variables](https://www.patternfly.org/components/button/html/#css-variables) is not practical, you'll have to customize at the React component level.
 * No Storybook support.
 * No `npx keycloakify eject-page` CLI, you'll have to manually copy paste from the source the components you want to take ownership over.
-* When upgrading to a future version of Keycloak, there’s a possibility that your account theme may break. If your customizations are limited to styles, updating should be straightforward—simply bump the version number of [the Account UI](https://github.com/keycloakify/keycloak-account-ui) in your dependencies. However, if you’ve made customizations at the React component level, migrating to the new version could require substantial effort due to potential extensive changes in the underlying code. The Keycloakify team cannot guarantee a specific level of stability for these modifications, as they are not part of our codebase.  &#x20;
 
 To get started with the Single-Page account theme:
 
@@ -58,16 +57,16 @@ This is a fork of the Account v1 maintained by the Keycloakify team.
 
 * Works exactly the same as the login theme, nothing new to learn.
 * Storybook support
-* CSS level customization support just like in the login theme.
+* CSS level customization support like in the login theme.
 * As it's maintained by us, we can guarenty a certain level of stability in future version of Keycloak.
 * Compatible with all Keycloak version.
 * Does not add any dependency to your project.
 
 #### Cons
 
-* Don't come with all the feature out of the box yet. You'll have to use the [Keycloak Account REST API if you want to implement them](multi-page.md). &#x20;
+* Don't come with all the feature out of the box yet. You'll have to use the [Keycloak Account REST API if you want to implement the missing features](multi-page.md). &#x20;
 * It relies on Java code maintained by us, this code uses Keycloak internal API, you have to trust us to keep maintaining it.
-* The default look is a bit dated (as of today, we'll update it). &#x20;
+* The default look is a bit dated. &#x20;
 
 To get started with the Multi-Page account theme:
 
