@@ -63,6 +63,10 @@ Now you want to modify your entry point so that:
 * If the kcContext global is defined, render your Keycloakify theme
 * Else, reder your App as usual.
 
+{% hint style="info" %}
+Your src/index.tsx should **literaly** be as follow. You must move everything you curently havein your index.tsx file into App.tsx (or whaterver your entrypoint is). &#x20;
+{% endhint %}
+
 <pre class="language-tsx" data-title="src/main.tsx"><code class="lang-tsx">/* eslint-disable react-refresh/only-export-components */
 import { createRoot } from "react-dom/client";
 import { 
