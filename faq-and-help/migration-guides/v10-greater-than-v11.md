@@ -7,6 +7,10 @@ See release note:
 
 {% embed url="https://github.com/keycloakify/keycloakify/releases" %}
 
+{% hint style="warning" %}
+Pay close attention. The syntax hylighting of gitbook for diffs is buggy. Don't look only at the colors. Look at the `+` and `-` symbols at the start of each line.
+{% endhint %}
+
 ## Changes to the i18n system
 
 <pre class="language-diff" data-title="src/login/i18n.ts"><code class="lang-diff">-import { createUseI18n } from "keycloakify/login";
