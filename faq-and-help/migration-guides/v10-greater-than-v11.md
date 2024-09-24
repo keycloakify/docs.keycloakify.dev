@@ -49,6 +49,16 @@ If you have ejected the Template.tsx the language selector code has changed a li
 +   const { msg, msgStr, currentLanguage, enabledLanguages } = i18n;
 
     // ...
+    
+-   useEffect(() => {
+-       const { currentLanguageTag } = locale ?? {};
+-       if (currentLanguageTag === undefined) {
+-           return;
+-       }
+-       const html = document.querySelector("html");
+-       assert(html !== null);
+-       html.lang = currentLanguageTag;
+-   }, []);
 
     return (
         <div className={kcClsx("kcLoginClass")}>
@@ -162,16 +172,6 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
         qualifiedName: "body",
         className: bodyClassName ?? kcClsx("kcBodyClass")
     });
-
--   useEffect(() => {
--       const { currentLanguageTag } = locale ?? {};
--       if (currentLanguageTag === undefined) {
--           return;
--       }
--       const html = document.querySelector("html");
--       assert(html !== null);
--       html.lang = currentLanguageTag;
--   }, []);
 
 -   const { areAllStyleSheetsLoaded } = useInsertLinkTags({
 -       componentOrHookName: "Template",
