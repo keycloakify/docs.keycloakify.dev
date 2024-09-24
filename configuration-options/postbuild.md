@@ -46,3 +46,48 @@ jar -xf ../keycloak-theme-for-kc-25-and-above.jar
 ```
 
 <figure><img src="../.gitbook/assets/image (64).png" alt=""><figcaption><p>Overview of the content of the jar extracted</p></figcaption></figure>
+
+### Debugging
+
+Note that the script is executed in a different thread. console.log() won't work.  \
+If you want to debug you can write your logs into a file. Example:  \
+
+
+{% code title="vite.config.ts" %}
+```typescript
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import { keycloakify } from "keycloakify/vite-plugin";
+
+// https://vitejs.dev/config/
+export default defineConfig({
+    plugins: [
+        react(),
+        keycloakify({
+            accountThemeImplementation: "Single-Page",
+            postBuild: async (buildContext) => {
+
+                const fs = await import("fs");
+                const path = await import("path");
+
+                const logFilePath = path.join(buildContext.projectDirPath, "postBuildLog.txt");
+
+                fs.rmSync(logFilePath, { force: true });
+
+                const log= (msg: string) => {
+                    fs.appendFileSync(
+                        logFilePath,
+                        Buffer.from(msg + "\n", "utf8")
+                    );
+                };
+
+                // This will be logged into postBuildLog.txt at the root of your project.
+                log("Hello World");
+
+            }
+        })
+    ]
+});
+
+```
+{% endcode %}
