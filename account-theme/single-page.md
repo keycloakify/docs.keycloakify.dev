@@ -76,6 +76,57 @@ git add -A
 git commit -am "Initialize the Single-Page Account Theme"
 ```
 
+## i18n:  Internationalization and translation
+
+To customize the text and the translations it's done by creating .properties files in **src/account/messages**.\
+
+
+{% hint style="info" %}
+You can find the base i18n resources in:
+
+**node\_modules/@keycloakify/keycloak-account-ui/messages**
+
+Don't edit theses files directly though, keep reading!
+{% endhint %}
+
+### Modifying existing texts
+
+Let's say we want to change some text in the UI.&#x20;
+
+Create the following file:
+
+{% code title="src/account/messages/messages_en.properties" %}
+```properties
+personalInfo=Personal info cool
+```
+{% endcode %}
+
+<figure><img src="../.gitbook/assets/image (157).png" alt=""><figcaption></figcaption></figure>
+
+Result:
+
+<figure><img src="../.gitbook/assets/image (159).png" alt=""><figcaption></figcaption></figure>
+
+We just changed the text only in english. You need to do the same for all the languages that you wish to support.
+
+### Adding support for a new language
+
+We just see how to add or modify texts for languages that are supported by default. &#x20;
+
+If, however, you want to add support for an extra language, you can do it by creating a new propery file.
+
+Example, adding support for the Vietnamese:
+
+<figure><img src="../.gitbook/assets/image (161).png" alt=""><figcaption></figcaption></figure>
+
+You can now go in the Keycloak Admin Console and select Vn in the list of supported language:
+
+<figure><img src="../.gitbook/assets/image (162).png" alt=""><figcaption><p>Note: Keycloak does not provide a way to provide the corect label at the moment</p></figcaption></figure>
+
+Result after selecting Vn in the Account UI:&#x20;
+
+<figure><img src="../.gitbook/assets/image (163).png" alt=""><figcaption></figcaption></figure>
+
 ## Basic customization
 
 You can customize some aspect of the account theme witout having to go down at the React component level.  \
@@ -268,10 +319,6 @@ And that's it, you now own the routes!  \
 Moving forward you can incrementally "eject" the components you need to take ownerhip over by followind the same process. &#x20;
 
 Be aware: The more components you eject, the more work it will represent to mainain your theme up to date with the future evolution of Keycloak.  &#x20;
-
-## Internationalization and translation (i18n)
-
-To add support for extra languages or customize the message translations read the note about account theme of [this page](../i18n/adding-support-for-extra-languages.md).
 
 ## Updating keycloak-account-ui to a new version
 
