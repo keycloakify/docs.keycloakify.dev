@@ -109,6 +109,11 @@ Result:
 
 We just changed the text only in english. You need to do the same for all the languages that you wish to support.
 
+{% hint style="success" %}
+You can also change the texts in the Keycloak Account UI in the Localization tab.\
+Learn more: [See this](../i18n/adding-new-translation-messages-or-changing-the-default-ones.md#in-the-keycloak-realm-configuration).
+{% endhint %}
+
 ### Adding support for a new language
 
 We just see how to add or modify texts for languages that are supported by default. &#x20;

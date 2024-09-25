@@ -37,55 +37,6 @@ Keycloak, out of the box come with availaible translation for the following lang
 If the languages you with to support is included in this list, great, you can [skip to the next section](previewing-you-pages-in-different-languages.md) otherwise keep reading.
 {% endhint %}
 
-<details>
-
-<summary>Account Theme</summary>
-
-Regarding the Account theme.&#x20;
-
-### Single-Page
-
-If you have opted for [the Single-Page implementation](../account-theme/single-page.md) of the the system is different, it levrages i18Next. To see how it works you can eject (manually) the src/account/i18n.ts file from the @keycloakify/keycloak-account-ui package. To add support for an extra language you must use the [postBuild function](../configuration-options/postbuild.md) to copy your aditional `message_xx.properties` files in **theme/\<your-theme-name>/account/messages/**.
-
-You must also add this line to the **theme/\<your-theme-name>/account/theme.property** file:
-
-`locales=ar,ca,cs,da,de,el,en,es,fa,fi,fr,hu,it,ja,ka,lt,lv,nl,no,pl,pt-BR,pt,ru,sk,sv,th,tr,uk,zh-CN,zh-TW,<your additional language>`
-
-### Multi-Page
-
-If you have opted for the Multi-Page account theme, things are much easyer as they work exactly the same as in the login theme. &#x20;
-
-You can follow the same instruction just everywhere you have **/login/**, replace by **/account/**.
-
-The list of language supported out of the box is smaller though, here it is:
-
-1. ar - Arabic
-2. ca - Catalan
-3. cs - Czech
-4. da - Danish
-5. de - German
-6. en - English
-7. es - Spanish
-8. fi - Finnish
-9. fr - French
-10. hu - Hungarian
-11. it - Italian
-12. ja - Japanese
-13. lt - Lithuanian
-14. lv - Latvian
-15. nl - Dutch
-16. no - Norwegian
-17. pl - Polish
-18. pt-BR - Portuguese (Brazilian)
-19. ru - Russian
-20. sk - Slovak
-21. sv - Swedish
-22. tr - Turkish
-23. types - (No associated language, probably a types file)
-24. zh-CN - Chinese (Simplified)
-
-</details>
-
 Let's see how to add support for an extra language so you can enable it in the Keycloak Admin UI.
 
 In this example we're going to add Hindi (hi).

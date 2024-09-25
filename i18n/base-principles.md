@@ -1,6 +1,13 @@
 # Base principles
 
+{% hint style="info" %}
+This documentation explains how i18n works in the Login theme.\
+\
+In the Account Multi-Page theme, everything works the same as in the Login theme. You just need to replace **/login/** by **/account/** in the import paths. &#x20;
 
+\
+In the Account Single-Page theme, things works differently. [See relevent doc](../account-theme/single-page.md#i18n-internationalization-and-translation).
+{% endhint %}
 
 In the Keycloak Admin Console you can enable localisation by selecting a set of language that you wish to support: &#x20;
 
