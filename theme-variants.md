@@ -93,3 +93,9 @@ export { useI18n, type I18n };
 <figure><img src=".gitbook/assets/image.png" alt=""><figcaption><p>"my-theme-1" view</p></figcaption></figure>
 
 <figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption><p>"my-theme-2" view</p></figcaption></figure>
+
+## Email theme
+
+[Your emails](theme-variants.md#email-theme) can be adapted based on the active theme variant.\
+In the `.ftl` files located in the `src/email` directory, you can use the FreeMarker variable: `xKeycloakify.themeName`.\
+This variable holds the name of the currently enabled theme as a string, for example: `"my-theme-1"`, `"my-theme-2"`, etc.

@@ -24,3 +24,9 @@ You can remove all the template and resource file you aren't going to customize 
 When `npx keycloakify` (`yarn keycloak`) is run it will bundle your email theme into your `.jar` file and you will be able to select it in the Keycloak administration pages.
 
 ![Selecting your email theme in the Keycloak admin](.gitbook/assets/email.png)
+
+
+
+{% hint style="info" %}
+For theme variants read [this](theme-variants.md#email-theme).
+{% endhint %}

@@ -34,7 +34,7 @@ cd ~/github/keycloakify
 yarn link-in-starter
 ```
 
-In parallel you can:
+Once it's watching for changes, in another terminal you can do:
 
 ```bash
 cd ~/github/keycloakify-starter
