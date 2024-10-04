@@ -66,6 +66,7 @@
 
 ## FAQ & HELP
 
+* [🤝 Comunity resources](faq-and-help/comunity-resources.md)
 * [⬆️ Migration Guides](faq-and-help/migration-guides/README.md)
   * [⬆️ v10->v11](faq-and-help/migration-guides/v10-greater-than-v11.md)
   * [⬆️ v9 -> v10](faq-and-help/migration-guides/v9-greater-than-v10.md)
