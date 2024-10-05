@@ -206,22 +206,27 @@ export type KcContext = ExtendKcContext<KcContextExtension, KcContextExtensionPe
 
 As seen above, kcContext is where we can add the type definitions for the props passed into the page. In the freemarker we also see `msg("doResend")` value which is not in the base keycloak i18 library. We would also need add this for mocking purposes.
 
-{% code title="src/login/i18n.ts" %}
-```typescript
-import { createUseI18n } from "keycloakify/login";
+<pre class="language-typescript" data-title="src/login/i18n.ts"><code class="lang-typescript">import { i18nBuilder } from "keycloakify/login";
+import type { ThemeName } from "../kc.gen";
 
-export const { useI18n, ofTypeI18n } = createUseI18n({
-    en: {
-        doResend: "Resend"
-    },
-    fr: {
-        doResend: "Renvoyer"
-    }
-});
+/** @see: https://docs.keycloakify.dev/i18n */
+const { useI18n, ofTypeI18n } = i18nBuilder
+    .withThemeName&#x3C;ThemeName>()
+    .withExtraLanguages({ /* ... */ })
+    .withCustomTranslations({
+<strong>        en: {
+</strong><strong>            doResend: "Resend"
+</strong><strong>        },
+</strong><strong>        fr: {
+</strong><strong>            doResend: "Renvoyer"
+</strong><strong>        }
+</strong>    })
+    .build();
 
-export type I18n = typeof ofTypeI18n;
-```
-{% endcode %}
+type I18n = typeof ofTypeI18n;
+
+export { useI18n, type I18n };
+</code></pre>
 
 The last two things we need to do now would be adding the story to the `KcPageStory.tsx`
 
