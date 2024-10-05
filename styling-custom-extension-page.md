@@ -1,5 +1,11 @@
 # 🖇️ Styling a Custom Page Not Included In Base Keycloak
 
+{% hint style="info" %}
+If you are looking to implement the pages featured by the [PhaseTwo](https://phasetwo.io/) plugins they are implemented [in this repo](https://github.com/pnzrr/keycloakify-starter/tree/p2/magic-link-extension-templates).
+{% endhint %}
+
+
+
 Sometimes certain extensions will add new functionality that requires an additional page not originally shipped with Keycloak. Keycloakify out-of-the-box will only provide customization to base pages, so if a new page is introduced by an extension, there is a good chance the page will not be styled correctly.
 
 To account for these cases, Keycloakify supports the ability to add custom pages and configure them such that style preservation is maintained.
