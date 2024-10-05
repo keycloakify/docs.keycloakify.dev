@@ -1,5 +1,7 @@
 # Previewing you Pages In Different Languages
 
+## In Storybook
+
 To preview your component in different languages, create separate stories for each language.\
 Example:
 
@@ -66,6 +68,8 @@ export const { getKcContextMock } = createGetKcContextMock({
 });
 ```
 {% endcode %}
+
+### With the Vite or Webpack developpement server
 
 If, for previewing your pages, you don't use storybook but [the dev mode of storybook or webpack](../testing-your-theme/with-vite-or-webpack-in-dev-mode.md), you can specify the language like so:
 

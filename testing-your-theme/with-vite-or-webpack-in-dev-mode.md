@@ -1,27 +1,5 @@
 # With Vite or Webpack in dev mode
 
-{% tabs %}
-{% tab title="Vite" %}
-{% hint style="info" %}
-TLDR:
-
-* Uncomment the `getKcContextMock()` in **src/main.tsx**
-* **npm run dev**
-* Don't forget to comment again when you're done testing.
-{% endhint %}
-{% endtab %}
-
-{% tab title="Webpack" %}
-{% hint style="info" %}
-TLDR:
-
-* Uncomment the `getKcContextMock()` in **src/index.tsx**
-* **npm run start**
-* Don't forget to comment again when you're done testing.
-{% endhint %}
-{% endtab %}
-{% endtabs %}
-
 If you don't have Storybook in your project you can also test your theme with the dev server.
 
 To do that, just uncomment some line in your entrypoint:
@@ -99,18 +77,17 @@ createRoot(document.getElementById("root")!).render(
 The pageId parameter of the getKcContextMock let you decide what page you want to test.\
 The overrides parameter let you modify the the default kcContext mock for the page.\
 \
-For example you can set:
+For example you can overwrite the kcContext.locale.currentLanguageTag to preview your page in a different language.
 
-```tsx
-window.kcContext = getKcContextMock({
+<pre class="language-tsx"><code class="lang-tsx">window.kcContext = getKcContextMock({
   pageId: "login.ftl",
-  overrides: {
-    locale: {
-      currentLanguageTag: "zh-CN",
-    },
-  },
-});
-```
+<strong>  overrides: {
+</strong><strong>    locale: {
+</strong><strong>      currentLanguageTag: "zh-CN",
+</strong><strong>    },
+</strong><strong>  },
+</strong>});
+</code></pre>
 
 For rendering the Login page in Chinese.
 
