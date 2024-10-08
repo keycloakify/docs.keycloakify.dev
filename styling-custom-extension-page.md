@@ -1,7 +1,7 @@
 # 🖇️ Styling a Custom Page Not Included In Base Keycloak
 
 {% hint style="info" %}
-If you are looking to implement the pages featured by the [PhaseTwo](https://phasetwo.io/) plugins they are implemented [in this repo](https://github.com/pnzrr/keycloakify-starter/tree/p2/magic-link-extension-templates).
+If you are looking to implement the pages featured by the [PhaseTwo](https://phasetwo.io/) plugins they are implemented [in this repo](https://github.com/p2-inc/keycloakify-starter/tree/p2/magic-link-extension-templates).
 {% endhint %}
 
 
@@ -10,10 +10,10 @@ Sometimes certain extensions will add new functionality that requires an additio
 
 To account for these cases, Keycloakify supports the ability to add custom pages and configure them such that style preservation is maintained.
 
-For our example on how to customize this, we will be using Phase Two's otp-form.ftl page. Phase Two provides email OTP codes for logging in and as a result has a special page if OTP codes are enabled in the authorization flow. &#x20;
+For our example on how to customize this, we will be using Phase Two's `otp-form.ftl` page. Phase Two provides email OTP codes for logging in and as a result has a special page if OTP codes are enabled in the authorization flow. &#x20;
 
 {% hint style="success" %}
-You can load the extention that you are using in Keycloak container that is started when running `npx keycloakify start-keycloak`. Use [the `extensionJars option`](testing-your-theme/in-a-keycloak-docker-container.md).
+You can load the extension that you are using in Keycloak container that is started when running `npx keycloakify start-keycloak`. Use [the `extensionJars option`](testing-your-theme/in-a-keycloak-docker-container.md).
 {% endhint %}
 
 {% embed url="https://github.com/p2-inc/keycloak-magic-link/blob/main/src/main/resources/theme-resources/templates/otp-form.ftl" %}
