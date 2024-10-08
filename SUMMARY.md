@@ -85,7 +85,7 @@
 * [🛑 Errors Keycloak in Logs](faq-and-help/keycloak-error-in-log.md)
 * [🙋 How do I add extra pages?](faq-and-help/how-do-i-add-extra-pages.md)
 * [🤓 Can I use react-hooks-form?](faq-and-help/can-i-use-react-hooks-form.md)
-* [🚀 Redirecting you users to the login/register pages](faq-and-help/redirecting-you-users-to-the-login-register-pages.md)
+* [🚀 Redirecting your users to the login/register pages](faq-and-help/redirecting-you-users-to-the-login-register-pages.md)
 * [💟 Contributing](faq-and-help/contributing.md)
 * [🍪 Google reCaptcha and End of third-party Cookies](faq-and-help/google-recaptcha-and-end-of-third-party-cookies.md)
 * [🔖 Accessing the Realm Attributes](faq-and-help/accessing-the-realm-attributes.md)
