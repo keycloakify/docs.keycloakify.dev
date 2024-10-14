@@ -167,8 +167,8 @@ Why do my main application and Keycloak theme share the same entry point?
 
 To simplify the build process. If you don't want it to negatively impact the performance of your application, it's essential to understand the following points:
 
-* **Different Contexts:** The application (`App`) and Keycloak page (`KcPage`) are mounted in very different contexts. Avoid sharing providers between the two at the `main.tsx` file level. The true entry point of your application is the `App` component, while the entry point for your Keycloak theme is the `KcPage` component. Be careful about what code is shared between them.
-* **Responsibility of main.tsx:** The `index.tsx` file should only determine the context (either the application or Keycloak) and mount the appropriate component (`App` or `KcPage`). It should not contain any substantial logic or dependencies.
+* **Different Contexts:** The application (`App`) and Keycloak page (`KcPage`) are mounted in very different contexts. Avoid sharing providers between the two at the `index.tsx` file level. The true entry point of your application is the `AppEntrypoint` component in  `index.app.tsx`, while the entry point for your Keycloak theme is the `KcPage` component. Be careful about what code is shared between them.
+* **Responsibility of index.tsx:** The `index.tsx` file should only determine the context (either the application or Keycloak) and mount the appropriate component (`AppEntrypoint` or `KcPage`). It should not contain any substantial logic or dependencies.
 * **Performance Considerations:** Keep `index.tsx` as lightweight as possible to avoid increasing the initial load time of both your main application and login pages. For example, do not load any state management libraries like `redux-toolkit` at this level.&#x20;
 {% endhint %}
 
