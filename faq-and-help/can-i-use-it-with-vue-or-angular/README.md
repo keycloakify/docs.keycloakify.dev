@@ -10,6 +10,10 @@ Angular:&#x20;
 
 {% embed url="https://github.com/kathari00/keycloakify-starter-angular" %}
 
+Angular (Analog JS) + Vite:&#x20;
+
+{% embed url="https://github.com/luca.peruzzo/analog-keycloakify-starter" %}
+
 Vue:
 
 {% embed url="https://github.com/keycloak/keycloak/discussions/9093#discussioncomment-8720943" %}
