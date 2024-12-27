@@ -56,7 +56,7 @@ rm src/keycloak-theme/vite-env.d.ts
 mv src/keycloak-theme/main.tsx src/main.tsx
 ```
 
-<figure><img src="../../.gitbook/assets/after_import.png" alt="" width="370"><figcaption><p>State of your codebase after bringin in the Keycloakify boilerplate code.<br>Note thate the keycloak-theme (or keycloak_theme) directory can be located anywhere under your src directory.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/after_import.png" alt="" width="370"><figcaption><p>State of your codebase after bringin in the Keycloakify boilerplate code.<br>Note that the keycloak-theme (or keycloak_theme) directory can be located anywhere under your src directory.</p></figcaption></figure>
 
 Now you want to modify your entry point so that:
 
@@ -102,10 +102,10 @@ export default function AppEntrypoint() {
 {% endcode %}
 
 {% hint style="info" %}
-If you have some top level `await` and you don't know how to deal with thoses, join [the discord server](https://discord.com/invite/kYFZG7fQmn), I can help you out.
+If you have some top level `await` and you don't know how to deal with theses, join [the discord server](https://discord.com/invite/kYFZG7fQmn), I can help you out.
 {% endhint %}
 
-Then you want to create the following **src/main.tsx** file, you can copy paste the followint code, it does not need to be adapted:
+Then you want to create the following **src/main.tsx** file, you can copy paste the following code, it does not need to be adapted:
 
 {% code title="src/main.tsx" %}
 ```tsx
@@ -199,10 +199,10 @@ Finally you want to add to your package.json a script for building the theme and
   // ...
 </code></pre>
 
-Last setp is to exclude from your html `<head />` things that aren't relevent in the context of Keycloak pages. &#x20;
+Last step is to exclude from your html `<head />` things that aren't relevant in the context of Keycloak pages. &#x20;
 
 {% hint style="danger" %}
-Do not blindely copy paste, this is just an example! &#x20;
+Do not blindly copy paste, this is just an example! &#x20;
 
 You have to figure out what does and does not make sense to be in the \<head/> of your Keycloak UI pages.
 {% endhint %}
@@ -234,7 +234,7 @@ You have to figure out what does and does not make sense to be in the \<head/> o
 
 In the above example we tell keycloakify not to include the `<title>` because keycloakify will set it dynamically to something like _"ACME- Login"_ or _"ACME - Register"_. &#x20;
 
-We also exclude a placeholder script for injecting environnement variables at container startup.
+We also exclude a placeholder script for injecting environment variables at container startup.
 
 
 

@@ -116,7 +116,7 @@ reportWebVitals();
 ```
 {% endcode %}
 
-Then you want to create the following **src/index.tsx** file, you can copy paste the followint code, it does not need to be adapted:
+Then you want to create the following **src/index.tsx** file, you can copy paste the following code, it does not need to be adapted:
 
 {% code title="src/index.tsx" %}
 ```tsx
@@ -208,10 +208,10 @@ Theses **are not preferences!** If you're not using Create React App your Webpac
 
 <figure><img src="../../.gitbook/assets/image (128).png" alt="" width="209"><figcaption><p>Here you can see that in a CRA project, when we run <code>npm run build</code> the app distribution is generated in a <strong>build/</strong> directory, this is why we use <code>"projectBuildDirPath": "build"</code>. We can also see that all the assets of the app are gathered under a <code>static/</code> directory this is why we use <code>"staticDirPathInProjectBuildDirPath": "static"</code>. And finally we can see that everything we put in the <strong>public/</strong> directory is copied over to the <strong>build/</strong> directory when building so we use <code>"publicDirPath": "public"</code>.</p></figcaption></figure>
 
-Last setp is to exclude from your html `<head />` things that aren't relevent in the context of Keycloak pages. &#x20;
+Last step is to exclude from your html `<head />` things that aren't relevant in the context of Keycloak pages. &#x20;
 
 {% hint style="danger" %}
-Do not blindely copy paste, this is just an example! &#x20;
+Do not blindly copy paste, this is just an example! &#x20;
 
 You have to figure out what does and does not make sense to be in the \<head/> of your Keycloak UI pages.
 {% endhint %}
@@ -247,7 +247,7 @@ You have to figure out what does and does not make sense to be in the \<head/> o
 
 In the above example we tell keycloakify not to include the `<title>` because keycloakify will set it dynamically to something like _"ACME- Login"_ or _"ACME - Register"_. &#x20;
 
-We also exclude a placeholder script for injecting environnement variables at container startup.
+We also exclude a placeholder script for injecting environment variables at container startup.
 
 
 
