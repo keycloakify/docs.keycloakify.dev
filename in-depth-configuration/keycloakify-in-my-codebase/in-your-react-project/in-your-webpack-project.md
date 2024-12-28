@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # In your Webpack Project
 
 If you have a Webpack/React/TypeScript project you can integrate Keycloakify directly inside it.
