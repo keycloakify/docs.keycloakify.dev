@@ -147,7 +147,7 @@ bun run build-keycloak-theme
 
 <figure><img src="../../../.gitbook/assets/screen.png" alt=""><figcaption></figcaption></figure>
 
-Two common thing you might want to do is [change the location of the directory where the JARs files are generated](../../configuration-options/keycloakifybuilddirpath.md) and [only build the JAR for the Keycloak version you are using](../../targeting-specific-keycloak-versions.md).
+Two common thing you might want to do is change the location of the directory where the JARs files are generated and [only build the JAR for the Keycloak version you are using](../../targeting-specific-keycloak-versions.md).
 
 <pre class="language-typescript" data-title="apps/keycloak-theme/vite.config.ts"><code class="lang-typescript">import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
@@ -173,7 +173,7 @@ In this configuration when you run `pnpm run build-keycloak-theme` from the root
 
 <figure><img src="../../../.gitbook/assets/Untitled (3).png" alt=""><figcaption></figcaption></figure>
 
-When you want to use the keycloakify CLI commands you can either cd into your keycloakify sub app directory or use the [--project option of the Keycloakify CLI](../../configuration-options/project.md).\
+When you want to use the keycloakify CLI commands you can either cd into your keycloakify sub app directory or use the [--project option of the Keycloakify CLI](../../configuration-options.md#project).\
 Like for example if you want to run add-story you can do either:
 
 * `cd apps/keycloak-theme && npx keycloakify add-story`

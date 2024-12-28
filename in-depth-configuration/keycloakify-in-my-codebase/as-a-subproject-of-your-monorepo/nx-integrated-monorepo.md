@@ -97,16 +97,16 @@ Now if you run `npm run build-keycloak-theme` it will generate the JAR in dist/a
 
 <figure><img src="../../../.gitbook/assets/Untitled (1).png" alt=""><figcaption></figcaption></figure>
 
-When you want to use the keycloakify CLI commands you can either cd into your keycloakify sub app directory or use the [--project option of the Keycloakify CLI](../../configuration-options/project.md).\
+When you want to use the keycloakify CLI commands you can either cd into your keycloakify sub app directory or use the [--project option of the Keycloakify CLI](../../configuration-options.md#project).\
 Like for example if you want to run [add-story](../../../basics/testing-your-theme/in-storybook.md) you can do either:
 
 * `cd apps/keycloak-theme && npx keycloakify add-story`
 
-OR
+or
 
 * `npx keycloakify add-story -p apps/keycloak-theme` from the root of your monorepo
 
-To go beyond the base configuration you might want to explore what [build options](../../configuration-options/) are available. Starting with with `keycloakVersionTargets` to make sure that you only generates the JARs file you need.
+To go beyond the base configuration you might want to explore what [build options](../../configuration-options.md) are available. Starting with with `keycloakVersionTargets` to make sure that you only generates the JARs file you need.
 
 {% content-ref url="../../targeting-specific-keycloak-versions.md" %}
 [targeting-specific-keycloak-versions.md](../../targeting-specific-keycloak-versions.md)

@@ -3,7 +3,7 @@
 This documentation explore how to finely controlls what is and isnt included in the `window.kcContext` object.
 
 {% hint style="info" %}
-If you simply want to **remove** some specific values from the kcContext you can use the [kcContextExclusionFtl](configuration-options/kccontextexclusionsftl.md) option. &#x20;
+If you simply want to **remove** some specific values from the kcContext you can use the [kcContextExclusionFtl](configuration-options.md#kccontextexclusionsftl) option. &#x20;
 {% endhint %}
 
 Some values, like for example the realm attributes (kcContext.realm.attributes) are explicitely excluded from the KcContext.

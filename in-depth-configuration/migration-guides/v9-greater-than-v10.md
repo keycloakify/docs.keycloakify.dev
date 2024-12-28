@@ -18,7 +18,7 @@ When updating, I recommend starting fresh with the new starter and reapplying yo
   * Vite starter: [https://github.com/keycloakify/keycloakify-starter](https://github.com/keycloakify/keycloakify-starter)
   * Webpack (Create React App) starter: [https://github.com/keycloakify/keycloakify-starter-webpack](https://github.com/keycloakify/keycloakify-starter-webpack)
 * **If you had Keycloakify installed in your web app:**\
-  Follow this integration guide: [Integrating Keycloakify in your React project](../keycloakify-in-my-codebase/in-your-react-project/).
+  Follow this integration guide: [Integrating Keycloakify in your React project](../keycloakify-in-my-codebase/in-your-react-project.md).
 
 ### Key Changes:
 

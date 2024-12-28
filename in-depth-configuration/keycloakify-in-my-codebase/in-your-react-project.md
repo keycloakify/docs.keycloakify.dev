@@ -8,9 +8,9 @@ Webpack is mainly used in combination with Create React App.
 
 If you have a Vite/React/TypeScript project you can integrate Keycloakify directly inside it.
 
-<figure><img src="../../../.gitbook/assets/image (125).png" alt="" width="375"><figcaption><p>Creating a new vite project with yarn create vite. You don't need to create a new project. Just use your existing codebase.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (125).png" alt="" width="375"><figcaption><p>Creating a new vite project with yarn create vite. You don't need to create a new project. Just use your existing codebase.</p></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (126).png" alt="" width="368"><figcaption><p>Our codebase before installing Keycloakify</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (126).png" alt="" width="368"><figcaption><p>Our codebase before installing Keycloakify</p></figcaption></figure>
 
 {% hint style="info" %}
 Before anything make sure to commit all your pending changes so you can easily revert changes if need be.
@@ -60,7 +60,7 @@ rm src/keycloak-theme/vite-env.d.ts
 mv src/keycloak-theme/main.tsx src/main.tsx
 ```
 
-<figure><img src="../../../.gitbook/assets/after_import.png" alt="" width="370"><figcaption><p>State of your codebase after bringin in the Keycloakify boilerplate code.<br>Note thate the keycloak-theme (or keycloak_theme) directory can be located anywhere under your src directory.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/after_import.png" alt="" width="370"><figcaption><p>State of your codebase after bringin in the Keycloakify boilerplate code.<br>Note thate the keycloak-theme (or keycloak_theme) directory can be located anywhere under your src directory.</p></figcaption></figure>
 
 Now you want to modify your entry point so that:
 
@@ -165,7 +165,7 @@ To simplify the build process. If you don't want it to negatively impact the per
 * **Performance Considerations:** Keep `main.tsx` as lightweight as possible to avoid increasing the initial load time of both your main application and login pages. For example, do not load any state management libraries like `redux-toolkit` at this level.
 {% endhint %}
 
-You also need to use Keycloakify's Vite plugin. Here we don't provide any [build options](../../configuration-options/) but you probably at least want to define [keycloakVersionTargets](../../configuration-options/keycloakversiontargets.md).
+You also need to use Keycloakify's Vite plugin. Here we don't provide any [build options](../configuration-options.md) but you probably at least want to define [keycloakVersionTargets](../configuration-options.md#keycloakversiontargets).
 
 <pre class="language-tsx" data-title="vite.config.ts"><code class="lang-tsx">import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
@@ -260,9 +260,9 @@ If you have a Webpack/React/TypeScript project you can integrate Keycloakify dir
 
 In this guide we're going to work with a vanilla [Create React App](https://create-react-app.dev/) project.
 
-<figure><img src="../../../.gitbook/assets/image (128).png" alt="" width="375"><figcaption><p>Creating a CRA project. You don't need to do that, just use your existing codebase.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (128).png" alt="" width="375"><figcaption><p>Creating a CRA project. You don't need to do that, just use your existing codebase.</p></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (129).png" alt="" width="304"><figcaption><p>Our codebase before involving Keycloakify</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (129).png" alt="" width="304"><figcaption><p>Our codebase before involving Keycloakify</p></figcaption></figure>
 
 {% hint style="info" %}
 Before anything make sure to commit all your pending changes so you can easily revert changes if need be.
@@ -312,7 +312,7 @@ rm src/keycloak-theme/react-app-env.d.ts
 mv src/keycloak-theme/index.tsx src/index.tsx
 ```
 
-<figure><img src="../../../.gitbook/assets/after_import (1).png" alt="" width="308"><figcaption><p>Sate of your codebase after bringing in Keycloakify's starter boilerplate code</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/after_import (1).png" alt="" width="308"><figcaption><p>Sate of your codebase after bringing in Keycloakify's starter boilerplate code</p></figcaption></figure>
 
 Now you want to modify your entry point so that:
 
@@ -455,14 +455,14 @@ Finally you want to add some script for Keycloakify in you package.json and also
 
 {% hint style="info" %}
 Leave accountThemeImplementation set to "none" for now.\
-To initialize the account theme refer to [this guide](../../../in-depth-customization/account-theme/).
+To initialize the account theme refer to [this guide](../../in-depth-customization/account-theme/).
 {% endhint %}
 
 Keycloakify has many build options that you can use, however `projectBuildDirPath`, `staticDirPathInProjectBuildDirPath` and `publicDirPath` are parameters specific to the use of Keycloakify in a Webpack context.
 
 Theses **are not preferences!** If you're not using Create React App your Webpack configuration is probably different and you want to update those values to reflect how webpack build your site in your project.
 
-<figure><img src="../../../.gitbook/assets/image (131).png" alt="" width="209"><figcaption><p>Here you can see that in a CRA project, when we run <code>npm run build</code> the app distribution is generated in a <strong>build/</strong> directory, this is why we use <code>"projectBuildDirPath": "build"</code>. We can also see that all the assets of the app are gathered under a <code>static/</code> directory this is why we use <code>"staticDirPathInProjectBuildDirPath": "static"</code>. And finally we can see that everything we put in the <strong>public/</strong> directory is copied over to the <strong>build/</strong> directory when building so we use <code>"publicDirPath": "public"</code>.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (131).png" alt="" width="209"><figcaption><p>Here you can see that in a CRA project, when we run <code>npm run build</code> the app distribution is generated in a <strong>build/</strong> directory, this is why we use <code>"projectBuildDirPath": "build"</code>. We can also see that all the assets of the app are gathered under a <code>static/</code> directory this is why we use <code>"staticDirPathInProjectBuildDirPath": "static"</code>. And finally we can see that everything we put in the <strong>public/</strong> directory is copied over to the <strong>build/</strong> directory when building so we use <code>"publicDirPath": "public"</code>.</p></figcaption></figure>
 
 Last setp is to exclude from your html `<head />` things that aren't relevent in the context of Keycloak pages. &#x20;
 
@@ -509,7 +509,7 @@ We also exclude a placeholder script for injecting environnement variables at co
 
 **That's it, your project is ready to go!** :tada:
 
-You can run `npm run build-keycloak-theme`, the JAR distribution of your Keycloak theme will be generated in `build_keycloak` ([you can change this](../../configuration-options/keycloakifybuilddirpath.md)).
+You can run `npm run build-keycloak-theme`, the JAR distribution of your Keycloak theme will be generated in `build_keycloak` ([you can change this](../configuration-options.md#keycloakifybuilddirpath)).
 
 You're now able to use all the Keycloakify commands (`npx keycloakify --help`) from the root of your project.
 

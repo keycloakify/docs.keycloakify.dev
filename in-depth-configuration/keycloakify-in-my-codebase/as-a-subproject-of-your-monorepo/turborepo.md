@@ -106,13 +106,13 @@ Optionally, if you want to change the location of the directory where the jar fo
 
 If you applies those changes, when you'll run `npm run build-keycloak-theme` your JARs are going to be generated in `dist/keycloak-theme/`
 
-When you want to use the keycloakify CLI commands you can either cd into your keycloakify sub app directory or use the [--project option of the Keycloakify CLI](../../configuration-options/project.md).\
+When you want to use the keycloakify CLI commands you can either cd into your keycloakify sub app directory or use the [--project option of the Keycloakify CLI](broken-reference).\
 Like for example if you want to run add-story you can do either:
 
 * `cd apps/keycloak-theme && npx keycloakify add-story`
 * `npx keycloakify add-story -p apps/keycloak-theme` from the root of your monorepo
 
-To go beyond the base configuration you might want to explore what [build options](../../configuration-options/) are available. Starting with with `keycloakVersionTargets` to make sure that you only generates the JARs file you need.
+To go beyond the base configuration you might want to explore what [build options](../../configuration-options.md) are available. Starting with with `keycloakVersionTargets` to make sure that you only generates the JARs file you need.
 
 {% content-ref url="../../targeting-specific-keycloak-versions.md" %}
 [targeting-specific-keycloak-versions.md](../../targeting-specific-keycloak-versions.md)
