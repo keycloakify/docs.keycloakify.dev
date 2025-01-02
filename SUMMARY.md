@@ -1,0 +1,13 @@
+# Table of contents
+
+* [Frequently Asked Questions](README.md)
+* [How does Keycloakify work?](how-it-works.md)
+* [There is too much info exposed in window.kcContext](there-is-too-much-info-exposed-in-window.kccontext.md)
+* [How do I identify the page to customize?](cant-identify-the-page-to-customize.md)
+* [Can I use react-hooks-form?](can-i-use-react-hooks-form.md)
+* [I can't find what I need in the kcContext](some-values-you-need-are-missing-from-in-kccontext.md)
+* [How do I add extra pages?](how-do-i-add-extra-pages.md)
+* [How can I access Realm Attributes?](accessing-the-realm-attributes.md)
+* [How can I redirect the user to Login/Register?](redirecting-you-users-to-the-login-register-pages.md)
+* [Errors in Keycloak Log](keycloak-error-in-log.md)
+* [Why do I get reCaptcha warnings?](google-recaptcha-and-end-of-third-party-cookies.md)
