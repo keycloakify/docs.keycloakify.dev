@@ -301,4 +301,4 @@ This change is only required for Webpack users. Not Vite users.
 This change is only required for users of version 10.1.4 and below who use the keycloakVersionTargets configuration.
 {% endhint %}
 
-You can get help updating your keycloakVersionTargets configuration through [targeting-specific-keycloak-versions](https://docs.keycloakify.dev/targeting-specific-keycloak-versions).
+You can get help updating your keycloakVersionTargets configuration through [targeting-specific-keycloak-versions](https://docs.keycloakify.dev/features/compiler-options/keycloakversiontargets).
