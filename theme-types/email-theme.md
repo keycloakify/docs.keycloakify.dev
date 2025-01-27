@@ -6,11 +6,7 @@ icon: envelope
 
 There are two ways you can create a Keycloak Email theme with Keycloakify
 
-## Using jsx-email (or anoter email templating solution)
-
-{% hint style="warning" %}
-This approach only works in Vite project. So not with Webpack/Create-React-App
-{% endhint %}
+## Using keycloakify-emails
 
 [keycloakify-email](https://github.com/timofei-iatsenko/keycloakify-emails) is a Keycloakify plugin that enable to create an email theme using [jsx-email](https://jsx.email/) or any other email templating solution. &#x20;
 
@@ -18,6 +14,21 @@ This approach only works in Vite project. So not with Webpack/Create-React-App
 
 _This plugin will evenutally be integrated to Keycloakify core._  \
 \
+
+{% hint style="warning" %}
+This approach only works in Vite project. So not with Webpack/Create-React-App
+{% endhint %}
+
+{% tabs %} {% tab title="React" %}
+
+yarn add keycloakify-emails jsx-email
+{% endtab %}
+
+{% tab title="Svelte" %}
+
+yarn add keycloakify-emails @keycloakify/svelte-email
+{% endtab %} {% endtabs %}
+
 For more instruction on how to configure Keycloak to send emails [see this video](https://www.youtube.com/watch?v=IZ9LSLfWxqo\&t=177s).
 
 ## Unsing FreeMarker
