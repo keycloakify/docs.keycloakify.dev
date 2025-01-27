@@ -3,7 +3,7 @@
 The recommended way to preview your theme as you develop it is to use [Storybook](https://storybook.js.org/).\
 Storybook is a tool that enables to test UI component in isolation. For reference the following website was generated with storybook:
 
-{% embed url="https://storybook.keycloakify.dev/?path=/story/introduction--page" %}
+{% embed url="https://storybook.keycloakify.dev/" %}
 
 {% hint style="info" %}
 If you prefer to avoid intoducing Storybook into your stack, it's okay, you can still preview your page in dev mode. Do do so, refer to [this guide](outside-of-keycloak-without-storybook.md).
