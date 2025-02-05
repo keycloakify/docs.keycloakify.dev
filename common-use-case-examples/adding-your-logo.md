@@ -164,5 +164,5 @@ If you ever need to SSH into the Keycloak server and hot swipe the image you can
 
 **/opt/keycloak/themes/**[**\<name of your theme>**](../features/compiler-options/themename.md)**/login/resources/dist/img/logo.png**
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Inspecting the Docker Keycloak docker image file system we can find the logo.png at the expected location.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>Inspecting the Docker Keycloak docker image file system we can find the logo.png at the expected location.</p></figcaption></figure>
 
