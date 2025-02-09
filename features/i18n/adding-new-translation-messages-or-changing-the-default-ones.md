@@ -6,13 +6,13 @@ Let's see firs how you can overwrite the default translation messages to best fi
 
 See, for example, by default the login page shows "Sign in to your account":
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 Let's say we want to change that with a message more specific to you usecase.
 
 First setp is to identify the message key. You can usually found it just by inspecting the HTML of your page:
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Here we can see that the _"Sign in to your account"_ translation message corespond to the message key **loginAccountTitle**.
 
@@ -103,7 +103,7 @@ I'm thinking in particular as translations related to custom user attribues (fav
 
 ## In the Keycloak Realm configuration
 
-Some relevant messages, namely `termsText` and all the messages used in the User Profile Attributes like for example the Display name, the helper text or the select option labels can be defined at the realm level and it will work as you would expect:
+Some relevant messages, namely [`termsText`](../../page-specific-guides/terms-and-conditions-page.md) and all the messages used in the User Profile Attributes like for example the Display name, the helper text or the select option labels can be defined at the realm level and it will work as you would expect:
 
 <figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption><p>The custom user attribute favourite_pet has for Display Name the message key "profile.attributes.favourite_pet"</p></figcaption></figure>
 
@@ -120,12 +120,34 @@ msg("profile.attributes.favourite_pet");
 It will work at runtime, you'll get `Favourite Pet` but typescript will complain because `"profile.attributes.favourite_pet"` or `string` isn't a known i18n message key, it makes sense as it's only defined on the server.
 
 This is why you'll see in some place in the code the usage of `advancedMsg(attribute.displayName)`, `advancedMsg()` is basically equivalent to `msg()` except that TypeScript won't complain if the key isn't part of the statically defined set.\
-[More details](https://github.com/keycloakify/keycloakify/blob/60aaa03202763307a82991c38997d166f8f44d65/src/login/i18n/i18n.tsx#L58-L72).\
-\
-See also:
+[More details](https://github.com/keycloakify/keycloakify/blob/60aaa03202763307a82991c38997d166f8f44d65/src/login/i18n/i18n.tsx#L58-L72).
 
-{% content-ref url="https://github.com/keycloakify/docs.keycloakify.dev/blob/v11_next/features/terms-and-conditions.md" %}
-[https://github.com/keycloakify/docs.keycloakify.dev/blob/v11\_next/features/terms-and-conditions.md](https://github.com/keycloakify/docs.keycloakify.dev/blob/v11_next/features/terms-and-conditions.md)
-{% endcontent-ref %}
+### My Realm Overrides Translation aren't applied
 
-[Adding registration form fields](https://www.youtube.com/watch?v=lMOLrdqilqE\&t=88s).
+There is a limitation in the current version of Keycloakify: **Not all translations defined at the Keycloak realm level are pulled by the theme**. &#x20;
+
+It will be addressed in future version but as of now, here is a workarond that you can use. &#x20;
+
+Let's say you want to make sure that the message key "**doRegister**" and "**invalidUserMessage**" can be overriten at the ream level, you can edit your vite.config.ts like so: &#x20;
+
+{% code title="vite.config.ts" %}
+```typescript
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import { keycloakify } from "keycloakify/vite-plugin";
+
+// https://vitejs.dev/config/
+export default defineConfig({
+    plugins: [
+        react(),
+        keycloakify({
+            // ...
+            kcContextExclusionsFtl: `
+                <@addToXKeycloakifyMessagesIfMessageKey str="doRegister" />
+                <@addToXKeycloakifyMessagesIfMessageKey str="invalidUserMessage" />
+            `
+        })
+    ]
+});
+```
+{% endcode %}

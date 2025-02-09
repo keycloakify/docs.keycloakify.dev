@@ -42,8 +42,8 @@ Running this command will initialize a native email theme in the `src/email` dir
 
 To use images you can put them into **src/email/resources/** example:&#x20;
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>kc-logo.png in src/email/resources</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>kc-logo.png in src/email/resources</p></figcaption></figure>
 
 And then you can import them using the FreeMarker varialble `url.resourcesUrl`. Example:
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Using kc-logo.png</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Using kc-logo.png</p></figcaption></figure>
