@@ -30,7 +30,7 @@ yarn add keycloakify-emails @keycloakify/svelte-email
 
 For more instruction on how to configure Keycloak to send emails [see this video](https://www.youtube.com/watch?v=IZ9LSLfWxqo\&t=177s).
 
-## Unsing FreeMarker
+## Using FreeMarker
 
 `npx keycloakify initialize-email-theme`, select the `native` option.
 
