@@ -11,3 +11,4 @@
 * [How can I redirect the user to Login/Register?](redirecting-you-users-to-the-login-register-pages.md)
 * [Errors in Keycloak Log](keycloak-error-in-log.md)
 * [Why do I get reCaptcha warnings?](google-recaptcha-and-end-of-third-party-cookies.md)
+* [My Realm Overrides Translations do not apply](my-realm-overrides-translations-do-not-apply.md)
