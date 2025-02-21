@@ -118,7 +118,7 @@ services:
       KC_HEALTH_ENABLED: true
       KC_HOSTNAME_STRICT_HTTPS: false
       KC_HOSTNAME_STRICT: false
-      
+
       KC_BOOTSTRAP_ADMIN_USERNAME: ${KEYCLOAK_ADMIN}
       KC_BOOTSTRAP_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
       KC_DB: postgres
@@ -127,7 +127,7 @@ services:
       KC_DB_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
       - 8080:8080
-    volumes: 
+    volumes:
       - ./themes:/opt/keycloak/providers/
     restart: unless-stopped
     depends_on:
@@ -156,7 +156,7 @@ name: keycloak
 version: 1.0.0
 dependencies:
   - name: keycloak
-    version: 24.4.4 # Keycloak 26.1.0
+    version: 24.4.10 # Keycloak 26.1.2
     repository: oci://registry-1.docker.io/bitnamicharts
 ```
 {% endcode %}
@@ -181,24 +181,13 @@ keycloak:
       args:
         - -c
         - |
-          # Replace USER and PROJECT, use the correct version of the jar for the keycloak version you are deploying    
-          curl -L -f -S -o /extensions/keycloak-theme.jar https://github.com/USER/PROJECT/releases/download/VERSION/keycloak-theme-for-kc-all-other-versions.jar
+          # Replace USER and PROJECT, use the correct version of the jar for the keycloak version you are deploying
+          mkdir -p /emptydir/app-providers-dir
+          curl -L -f -S -o /emptydir/app-providers-dir/keycloak-theme.jar https://github.com/USER/PROJECT/releases/download/VERSION/keycloak-theme-for-kc-all-other-versions.jar
 
-      volumeMounts:
-        - name: extensions
-          mountPath: /extensions
-
-  extraVolumeMounts:
-    - name: extensions
-      mountPath: /opt/bitnami/keycloak/providers
-
-  extraVolumes:
-    - name: extensions
-      emptyDir: {}
       volumeMounts:
         - name: empty-dir
-          mountPath: /extensions
-          subPath: app-providers-dir
+          mountPath: /emptydir
 ```
 {% endcode %}
 
