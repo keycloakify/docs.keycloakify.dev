@@ -165,29 +165,27 @@ Here we only list the relevant values:
 
 {% code title="values.yaml" %}
 ```yaml
-keycloak:
+# OPTIONAL: Here you can define environment variables that you can access in your theme, see: https://docs.keycloakify.dev/features/environment-variables
+extraEnvVars:
+  - name: MY_APP_PALLET
+    value: "monokai"
 
-  # OPTIONAL: Here you can define env var that you can access in your theme, see: https://docs.keycloakify.dev/features/environment-variables
-  extraEnvVars:
-    - name: MY_APP_PALLET
-      value: "monokai"
+initContainers:
+  - name: realm-ext-provider
+    image: curlimages/curl
+    imagePullPolicy: IfNotPresent
+    command:
+      - sh
+    args:
+      - -c
+      - |
+        # Replace USER and PROJECT, use the correct version of the jar for the keycloak version you are deploying
+        mkdir -p /emptydir/app-providers-dir
+        curl -L -f -S -o /emptydir/app-providers-dir/keycloak-theme.jar https://github.com/USER/PROJECT/releases/download/VERSION/keycloak-theme-for-kc-all-other-versions.jar
 
-  initContainers:
-    - name: realm-ext-provider
-      image: curlimages/curl
-      imagePullPolicy: IfNotPresent
-      command:
-        - sh
-      args:
-        - -c
-        - |
-          # Replace USER and PROJECT, use the correct version of the jar for the keycloak version you are deploying
-          mkdir -p /emptydir/app-providers-dir
-          curl -L -f -S -o /emptydir/app-providers-dir/keycloak-theme.jar https://github.com/USER/PROJECT/releases/download/VERSION/keycloak-theme-for-kc-all-other-versions.jar
-
-      volumeMounts:
-        - name: empty-dir
-          mountPath: /emptydir
+    volumeMounts:
+      - name: empty-dir
+        mountPath: /emptydir
 ```
 {% endcode %}
 
