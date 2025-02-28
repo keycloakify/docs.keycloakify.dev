@@ -12,3 +12,4 @@
 * [Errors in Keycloak Log](keycloak-error-in-log.md)
 * [Why do I get reCaptcha warnings?](google-recaptcha-and-end-of-third-party-cookies.md)
 * [My Realm Overrides Translations do not apply](my-realm-overrides-translations-do-not-apply.md)
+* [Validating the password in login-update-password.ftl page](validating-the-password-in-login-update-password.ftl-page.md)
