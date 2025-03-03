@@ -342,6 +342,21 @@ Now you can freely apply your own custom button styles without Patternfly interf
     outline: none;
     box-shadow: 0 0 0 3px rgba(37, 117, 252, 0.5);
 }
+
+.kcButtonClass:disabled {
+    background: linear-gradient(45deg, #aaa, #ccc);
+    color: #666;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+    opacity: 0.6;
+}
+
+.kcButtonClass:disabled:hover,
+.kcButtonClass:disabled:active {
+    transform: none;
+    box-shadow: none;
+}
 ```
 {% endcode %}
 
