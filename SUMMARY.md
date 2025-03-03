@@ -2,6 +2,7 @@
 
 * [Frequently Asked Questions](README.md)
 * [How does Keycloakify work?](how-it-works.md)
+* [It works in Storybook but not in Keycloak](it-works-in-storybook-but-not-in-keycloak.md)
 * [There is too much info exposed in window.kcContext](there-is-too-much-info-exposed-in-window.kccontext.md)
 * [How do I identify the page to customize?](cant-identify-the-page-to-customize.md)
 * [Can I use react-hooks-form?](can-i-use-react-hooks-form.md)
