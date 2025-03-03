@@ -1,10 +1,9 @@
-# It Works in Storybook but Not in Keycloak
+# It works in Storybook but not in Keycloak
 
-If your images appear correctly in Storybook but are broken after deploying your theme to Keycloak—or when testing with `npx keycloakify start-keycloak`—the issue is likely due to how assets are imported.  
+If your images appear correctly in Storybook but are broken after deploying your theme to Keycloak—or when testing with `npx keycloakify start-keycloak`—the issue is likely due to how assets are imported.
 
 \
-:octagonal_sign: **Incorrect Import Example**  
-\
+:octagonal\_sign: **Incorrect Import Example**
 
 The following approach is **not** valid for importing assets in Vite or Create React App (CRA), even outside of Keycloakify:
 
@@ -15,9 +14,9 @@ The following approach is **not** valid for importing assets in Vite or Create R
 ```
 {% endcode %}
 
-While this may work in some cases, it is unreliable and not officially supported.  
+While this may work in some cases, it is unreliable and not officially supported (By Vite or Webpack).
 
-Below are two correct ways to import assets in TypeScript files when using Vite or Create React App:
+Below are two correct ways to import assets in TypeScript files when using Vite or Create React App (this is not specific to Keycloakify, it's how it should be done in any project):
 
 ## 1️⃣ Using the Bundler (Recommended)
 
@@ -59,6 +58,6 @@ import { PUBLIC_URL } from "keycloakify/PUBLIC_URL";
 
 Using the public directory method is useful when assets should remain unchanged after the build process, but for most cases, bundling assets (Method 1) is the preferred approach.
 
----
+***
 
 By following these guidelines, your assets will load correctly in both Storybook and Keycloak.
