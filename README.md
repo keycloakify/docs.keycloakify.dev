@@ -38,13 +38,13 @@ If you’re still unsure or want a better understanding before committing to usi
 
 ## Pick Your Framework: React, Angular or Svelte
 
-Keycloakify supports React, [Angular ⚠️](#user-content-fn-2)[^2], and Svelte, allowing you to work with the framework you're most familiar with. If you're only making CSS-level customizations to Keycloak's built-in theme, any of these frameworks will work. For a smoother experience, **React** is recommended, as it has the most complete integration.
+Keycloakify supports React, Angular, and Svelte, allowing you to work with the framework you're most familiar with. If you're only making CSS-level customizations to Keycloak's built-in theme, any of these frameworks will work. For a smoother experience, **React** is recommended, as it has the most complete integration.
 
 For Angular and Svelte users, a few considerations apply:
 
-* **Account Themes**: [The starting UI differs from Keycloak's default](#user-content-fn-3)[^3], requiring additional adjustments.
+* **Account Themes**: [The starting UI differs from Keycloak's default](#user-content-fn-2)[^2], requiring additional adjustments.
 * **Admin Themes**: Only React supports custom Admin UIs. However, since the Admin UI is only seen by the Keycloak instance administrator, it is rarely customized.
-* **Angular Setup**: [Keycloakify cannot be directly installed in an existing Angular project](#user-content-fn-4)[^4]. Themes must either be standalone projects or a subproject in a monorepo.
+* **Angular Setup**: [Keycloakify cannot be directly installed in an existing Angular project](#user-content-fn-3)[^3]. Themes must either be standalone projects or a subproject in a monorepo.
 
 React provides the most seamless experience, but Angular and Svelte are fully supported for login and account themes with some extra effort, which covers the needs of most projects. Choose the framework that best suits your project and expertise. If you have any questions or concerns, feel free to ask us on our [Discord channel](https://discord.gg/kYFZG7fQmn).
 
@@ -60,10 +60,6 @@ git clone https://github.com/keycloakify/keycloakify-starter
 {% endtab %}
 
 {% tab title="Angular" %}
-{% hint style="danger" %}
-The Angular Support isn't fully stable yet.&#x20;
-{% endhint %}
-
 ```bash
 git clone https://github.com/keycloakify/keycloakify-starter-angular-vite keycloakify-starter
 ```
@@ -76,7 +72,7 @@ git clone https://github.com/keycloakify/keycloakify-starter-svelte keycloakify-
 {% endtab %}
 {% endtabs %}
 
-Let's create a story for the Login page and run Storybook[^5].
+Let's create a story for the Login page and run Storybook[^4].
 
 ```bash
 cd keycloakify-starter
@@ -138,10 +134,8 @@ Now let's see how CSS customization works in Keycloakify:
 
 [^1]: Of course, we can't guarantee that a given build of your theme will work with future major versions of Keycloak. However, our goal is to ensure that when a new Keycloak version introduces breaking changes, the only action required to make your theme compatible is updating the Keycloakify version and rebuilding your theme—no additional adjustments needed.
 
-[^2]: The Angular support isn't stable yet. We're working on it.
+[^2]: The difference exists because recent Keycloak versions use a React-based Account UI by default, which has not been ported to Angular or Svelte in Keycloakify due to the complexity involved. For Angular and Svelte projects, Keycloakify provides a base UI derived from an older version of the Keycloak Account UI, used before the switch to React.
 
-[^3]: The difference exists because recent Keycloak versions use a React-based Account UI by default, which has not been ported to Angular or Svelte in Keycloakify due to the complexity involved. For Angular and Svelte projects, Keycloakify provides a base UI derived from an older version of the Keycloak Account UI, used before the switch to React.
+[^3]: Keycloakify cannot be integrated directly into standard Angular projects because the Keycloakify compiler is designed to work with Vite and Webpack. However, most Angular projects today use Esbuild by default, which is not currently supported.
 
-[^4]: Keycloakify cannot be integrated directly into standard Angular projects because the Keycloakify compiler is designed to work with Vite and Webpack. However, most Angular projects today use Esbuild by default, which is not currently supported.
-
-[^5]: [Storybook](https://storybook.js.org/) is a tool that allows you to develop UI components in isolation. It is set up in the Keycloakify starter repos because it provides an good developer experience and makes it easy to quickly preview the different pages of your theme.
+[^4]: [Storybook](https://storybook.js.org/) is a tool that allows you to develop UI components in isolation. It is set up in the Keycloakify starter repos because it provides an good developer experience and makes it easy to quickly preview the different pages of your theme.
