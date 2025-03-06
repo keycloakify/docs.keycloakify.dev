@@ -63,12 +63,16 @@ git clone https://github.com/keycloakify/keycloakify-starter
 ```bash
 git clone https://github.com/keycloakify/keycloakify-starter-angular-vite keycloakify-starter
 ```
+
+Credit goes to [@kathari00](https://github.com/kathari00) for taking the initiative and driving the development of Angular support.
 {% endtab %}
 
 {% tab title="Svelte" %}
 ```bash
 git clone https://github.com/keycloakify/keycloakify-starter-svelte keycloakify-starter
 ```
+
+Credit goes to [@luca-peruzzo](https://github.com/luca-peruzzo) for taking the initiative and driving the development of Svelte support.
 {% endtab %}
 {% endtabs %}
 
