@@ -116,9 +116,11 @@ OR
 
 To go beyond the base configuration you might want to explore what [build options](../features/compiler-options/) are available. Starting with with `keycloakVersionTargets` to make sure that you only generates the JARs file you need.
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="../features/compiler-options/keycloakversiontargets.md" %}
+[keycloakversiontargets.md](../features/compiler-options/keycloakversiontargets.md)
 {% endcontent-ref %}
+
+
 
 [^1]: Starter projects:\
     React: [https://github.com/keycloakify/keycloakify-starter](https://github.com/keycloakify/keycloakify-starter)\
