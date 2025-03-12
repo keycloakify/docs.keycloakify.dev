@@ -1,11 +1,15 @@
 # Create-React-App / Webpack
 
-{% hint style="info" %}
-**Before You Start**:
+{% hint style="danger" %}
+🚨 **WARNING: ADVANCED USERS ONLY** 🚨
 
-This documentation section is intended for cases where **you already have an existing project** and want to add a Keycloak theme as part of its deliverables.
+If you're unsure what this section is about, **this approach is NOT for you.** Instead, follow [the Quick Start Guide and fork the starter project.](../#quick-start)
 
-One of Keycloakify’s strengths is its ability to let you reuse components and styles from your main application in your Keycloak theme. However, if you don’t have an existing codebase, it’s easier to [fork one of the starter projects](https://github.com/keycloakify/keycloakify-starter) and develop your Keycloak theme as a standalone project.
+This section is **only** for developers who already have an existing project and need to integrate a Keycloak theme **within it** to reuse existing components and styles.
+
+🔹 If you're just trying to get started with Keycloakify, **stop here**—[the starter projects](../#quick-start) provide a much simpler and recommended path.
+
+🔹 If you proceed without fully understanding how this approach differs from the starter project, you will likely get confused about what you’re actually doing, attempt to _simplify_ things, and end up hitting a roadblock.
 {% endhint %}
 
 If you have a Webpack/React/TypeScript project you can integrate Keycloakify directly inside it.

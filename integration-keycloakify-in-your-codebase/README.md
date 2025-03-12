@@ -4,19 +4,27 @@ icon: puzzle
 
 # Integrating Keycloakify in your Codebase
 
-{% hint style="info" %}
-**Before You Start**:
-
-This documentation section is intended for cases where **you already have an existing project** and want to add a Keycloak theme as part of its deliverables.
-
-One of Keycloakify’s strengths is its ability to let you reuse components and styles from your main application in your Keycloak theme. However, if you don’t have an existing codebase, it’s easier to [fork one of the starter projects](#user-content-fn-1)[^1] and develop your Keycloak theme as a standalone project.
+{% hint style="warning" %}
+This is for advanced users. If you are just trying to get started with Keycloakify follow [the Quick Start Guide and fork the starter project.](../#quick-start)
 {% endhint %}
 
 There are two main approaches to integrate Keycloakify into your project.
 
 ## First Option: Installing Keycloakify Directly in Your SPA
 
-If you are developing a [Single Page Application (SPA)](#user-content-fn-2)[^2], you can install Keycloakify directly within your project.
+{% hint style="danger" %}
+🚨 **WARNING: ADVANCED USERS ONLY** 🚨
+
+If you're unsure what this section is about, **this approach is NOT for you.** Instead, follow [the Quick Start Guide and fork the starter project.](../#quick-start)
+
+This section is **only** for developers who already have an existing project and need to integrate a Keycloak theme **within it** to reuse existing components and styles.
+
+🔹 If you're just trying to get started with Keycloakify, **stop here**—[the starter projects](../#quick-start) provide a much simpler and recommended path.
+
+🔹 If you proceed without fully understanding how this approach differs from the starter project, you will likely get confused about what you’re actually doing, attempt to _simplify_ things, and end up hitting a roadblock.
+{% endhint %}
+
+If you are developing a [Single Page Application (SPA)](#user-content-fn-1)[^1], you can install Keycloakify directly within your project.
 
 The main advantage of this approach is that your theme's source files will reside inside `src/keycloak-theme`, allowing you to directly import and reuse the components from your existing codebase.
 
@@ -24,8 +32,8 @@ This approach is suitable if your project falls into one of the following catego
 
 * Vite + React
 * Create-React-App
-* [Vite + Svelte](#user-content-fn-3)[^3]
-* Webpack + React ⚠[^4]
+* [Vite + Svelte](#user-content-fn-2)[^2]
+* Webpack + React ⚠[^3]
 
 Follow the guide corresponding to your setup:
 
@@ -59,13 +67,8 @@ Choose the guide that matches your monorepo setup:
 [angular-workspace.md](angular-workspace.md)
 {% endcontent-ref %}
 
-[^1]: Starter projects:\
-    React: [https://github.com/keycloakify/keycloakify-starter](https://github.com/keycloakify/keycloakify-starter)\
-    Angular: [https://github.com/keycloakify/keycloakify-starter-angular-vite](https://github.com/keycloakify/keycloakify-starter-angular-vite)\
-    Svelte: [https://github.com/keycloakify/keycloakify-starter-svelte](https://github.com/keycloakify/keycloakify-starter-svelte)
+[^1]: If your project is build with Next.js or Remix it does not fall under this cathegory.
 
-[^2]: If your project is build with Next.js or Remix it does not fall under this cathegory.
+[^2]: Svelte projects initialized with SvelteKit 1.0.0 or later use Vite as the default build tool. If your project was created in 2023 or later, it is likely based on Vite.
 
-[^3]: Svelte projects initialized with SvelteKit 1.0.0 or later use Vite as the default build tool. If your project was created in 2023 or later, it is likely based on Vite.
-
-[^4]: Requires some advanced configuration
+[^3]: Requires some advanced configuration

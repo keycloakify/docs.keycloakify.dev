@@ -1,22 +1,24 @@
 # Vite
 
-{% hint style="info" %}
-**Before You Start**:
+{% hint style="danger" %}
+🚨 **WARNING: ADVANCED USERS ONLY** 🚨
 
-This documentation section is intended for cases where **you already have an existing Vite project** and want to add a Keycloak theme as part of its deliverables.
+If you're unsure what this section is about, **this approach is NOT for you.** Instead, follow [the Quick Start Guide and fork the starter project.](../#quick-start)
 
-One of Keycloakify’s strengths is its ability to let you reuse components and styles from your main application in your Keycloak theme. However, if you don’t have an existing codebase, it’s easier to [fork one of the starter projects](#user-content-fn-1)[^1] and develop your Keycloak theme as a standalone project.
+This section is **only** for developers who already have an existing project and need to integrate a Keycloak theme **within it** to reuse existing components and styles.
+
+🔹 If you're just trying to get started with Keycloakify, **stop here**—[the starter projects](../#quick-start) provide a much simpler and recommended path.
+
+🔹 If you proceed without fully understanding how this approach differs from the starter project, you will likely get confused about what you’re actually doing, attempt to _simplify_ things, and end up hitting a roadblock.
 {% endhint %}
 
 If you have a Vite project you can integrate Keycloakify directly inside it.
 
-Svelte: Although this guide uses React as an example it's also applicable for Svelte, you just need to adapt it when relevent.
+**Svelte**: Although this guide uses React as an example it's also applicable for Svelte, you just need to adapt it when relevent.
 
 Let's assume we're working with a freshly initialized Vite project.
 
-
-
-<figure><img src="../.gitbook/assets/image (28).png" alt="" width="375"><figcaption><p>Creating a new vite project with yarn create vite. <br>Don't do that, use your existing project.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (28).png" alt="" width="375"><figcaption><p>Creating a new vite project with yarn create vite.<br>Don't do that, use your existing project.</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (155).png" alt="" width="368"><figcaption><p>Our codebase before installing Keycloakify</p></figcaption></figure>
 
@@ -220,10 +222,10 @@ Finally you want to add to your `package.json` a script for building the theme a
   // ...
 </code></pre>
 
-Last setp is to exclude from your html `<head />` things that aren't relevent in the context of Keycloak pages. &#x20;
+Last setp is to exclude from your html `<head />` things that aren't relevent in the context of Keycloak pages.
 
 {% hint style="danger" %}
-Do not blindly copy/paste, this is just an example! &#x20;
+Do not blindly copy/paste, this is just an example!
 
 You have to figure out what does and does not make sense to be in the `<head/>` of your Keycloak UI pages.
 {% endhint %}
@@ -253,11 +255,9 @@ You have to figure out what does and does not make sense to be in the `<head/>` 
 &#x3C;!-- ... -->
 </code></pre>
 
-In the above example we tell Keycloakify not to include the `<title>` because Keycloakify will set it dynamically to something like _"ACME- Login"_ or _"ACME - Register"_. &#x20;
+In the above example we tell Keycloakify not to include the `<title>` because Keycloakify will set it dynamically to something like _"ACME- Login"_ or _"ACME - Register"_.
 
 We also exclude a placeholder script for injecting environnement variables at container startup.
-
-
 
 **That's it, your project is ready to go!** :tada:
 
@@ -275,11 +275,6 @@ If you have any issues [reach out on Discord](https://discord.gg/mJdYJSdcm4)! We
 [testing-your-theme](../testing-your-theme/)
 {% endcontent-ref %}
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="broken-reference/" %}
+[broken-reference](broken-reference/)
 {% endcontent-ref %}
-
-[^1]: Starter projects:\
-    React: [https://github.com/keycloakify/keycloakify-starter](https://github.com/keycloakify/keycloakify-starter)\
-    Angular: [https://github.com/keycloakify/keycloakify-starter-angular-vite](https://github.com/keycloakify/keycloakify-starter-angular-vite)\
-    Svelte: [https://github.com/keycloakify/keycloakify-starter-svelte](https://github.com/keycloakify/keycloakify-starter-svelte)

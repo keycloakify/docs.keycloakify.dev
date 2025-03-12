@@ -1,11 +1,7 @@
 # Angular Workspace
 
-{% hint style="info" %}
-**Before You Start**:
-
-This documentation section is intended for cases where **you already have an existing project** and want to add a Keycloak theme as part of its deliverables.
-
-One of Keycloakify’s strengths is its ability to let you reuse components and styles from your main application in your Keycloak theme. However, if you don’t have an existing codebase, it’s easier to [fork one of the starter projects](https://github.com/keycloakify/keycloakify-starter-angular-vite) and develop your Keycloak theme as a standalone project.
+{% hint style="danger" %}
+If you're unsure what this section is about, **this approach is NOT for you.** Instead, follow [the Quick Start Guide and fork the starter project.](../#quick-start)
 {% endhint %}
 
 ## Integrating Keycloakify into an Angular Workspace
