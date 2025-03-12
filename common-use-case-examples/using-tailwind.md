@@ -12,9 +12,11 @@ We allso show how to use tailwind the regular way, at the component level on eje
 
 Before you start with this exemple it is strongly recommended you read the CSS Level Customization guide. This will teach you how to partially or completely disable the PatternFly[^1] stlyes inherited from the default theme.
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="../css-customization.md" %}
+[css-customization.md](../css-customization.md)
 {% endcontent-ref %}
+
+
 
 To use Tailwind in your Keycloakify project start by following the setup guide for Vite.
 
