@@ -1,6 +1,8 @@
 # themeVersion
 
-Configure the version that will appear in the `pom.xml` file within the jar file of your theme.
+Configure the version that will appear in the `pom.xml` file within the jar file of your theme and in the `kcContext.themeVersion`.
+
+This is purely indicative, it's a way for you to quickly see what version of your theme is in production.
 
 <figure><img src="../../.gitbook/assets/image (102).png" alt=""><figcaption></figcaption></figure>
 
@@ -45,5 +47,3 @@ export default defineConfig({
 {% endcode %}
 {% endtab %}
 {% endtabs %}
-
-By default it's the package.json homepage field at reverse with .keycloak at the end.
