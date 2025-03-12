@@ -155,7 +155,7 @@ bun run build-keycloak-theme
 
 <figure><img src="../.gitbook/assets/screen.png" alt=""><figcaption></figcaption></figure>
 
-Two common thing you might want to do is [change the location of the directory where the JARs files are generated](../features/compiler-options/keycloakifybuilddirpath.md) and [only build the JAR for the Keycloak version you are using](broken-reference).
+Two common thing you might want to do is [change the location of the directory where the JARs files are generated](../features/compiler-options/keycloakifybuilddirpath.md) and [only build the JAR for the Keycloak version you are using](../features/compiler-options/keycloakversiontargets.md).
 
 <pre class="language-typescript" data-title="apps/keycloak-theme/vite.config.ts"><code class="lang-typescript">import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
