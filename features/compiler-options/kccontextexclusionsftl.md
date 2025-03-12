@@ -29,24 +29,24 @@ export default defineConfig({
         keycloakify({
             // ...
 <strong>            kcContextExclusionsFtl: `
-</strong><strong>                &#x3C;#if (
-</strong><strong>                    key == "keycloakifyVersion" &#x26;&#x26;
-</strong><strong>                    areSamePath(path, []) 
-</strong><strong>                )>
-</strong><strong>                    &#x3C;#continue>
-</strong><strong>                &#x3C;/#if>
+</strong><strong>
 </strong><strong>                &#x3C;#if (
 </strong><strong>                    xKeycloakify.pageId == "register.ftl" &#x26;&#x26;
 </strong><strong>                    [
 </strong><strong>                        "actionTokenGeneratedByUserLifespanMinutes", 
 </strong><strong>                        "idpVerifyAccountLinkActionTokenLifespanMinutes"
 </strong><strong>                    ]?seq_contains(key) &#x26;&#x26;
-</strong><strong>                    areSamePath(path, ["realm"]
+</strong><strong>                    areSamePath(path, ["realm"])
 </strong><strong>                )>
 </strong><strong>                    &#x3C;#continue>
 </strong><strong>                &#x3C;/#if>
-</strong>            `
-        })
+</strong><strong>
+</strong><strong>                &#x3C;#if xKeycloakify.keycloakifyVersion != "__hidden__">
+</strong><strong>                    &#x3C;#assign xKeycloakify = xKeycloakify + { "keycloakifyVersion": "__hidden__" }>
+</strong><strong>                &#x3C;/#if>
+</strong><strong>
+</strong><strong>            `
+</strong>        })
     ]
 });
 </code></pre>
@@ -60,20 +60,18 @@ You can also provide a path to a .ftl file instead of inlining the ftl code in y
 {% code title="kcContextExclusions.ftl" %}
 ```ftl
 <#if (
-    key == "keycloakifyVersion" &&
-    areSamePath(path, []) 
-)>
-    <#continue>
-</#if>
-<#if (
     xKeycloakify.pageId == "register.ftl" &&
     [
         "actionTokenGeneratedByUserLifespanMinutes", 
         "idpVerifyAccountLinkActionTokenLifespanMinutes"
     ]?seq_contains(key) &&
-    areSamePath(path, ["realm"]
+    areSamePath(path, ["realm"])
 )>
     <#continue>
+</#if>
+
+<#if xKeycloakify.keycloakifyVersion != "__hidden__">
+    <#assign xKeycloakify = xKeycloakify + { "keycloakifyVersion": "__hidden__" }>
 </#if>
 ```
 {% endcode %}
@@ -88,11 +86,11 @@ You can also provide a path to a .ftl file instead of inlining the ftl code in y
 {% endtab %}
 {% endtabs %}
 
-The code that you provide will be injected [here](https://github.com/keycloakify/keycloakify/blob/0879ddba7c3e12ea5ffd0cbefd97fa9b8cf63f7e/src/bin/keycloakify/generateFtl/kcContextDeclarationTemplate.ftl#L249). &#x20;
+To test/debug your exclusion when you are running `npx keycloakify start-keycloak` you can open the file
 
-For more detailed example you can refer to this section of the code that defines the the default exclusions:
+`dist_keycloak/theme/<theme_name>/login/login.ftl`
 
-{% embed url="https://github.com/keycloakify/keycloakify/blob/0879ddba7c3e12ea5ffd0cbefd97fa9b8cf63f7e/src/bin/keycloakify/generateFtl/kcContextDeclarationTemplate.ftl#L125-L227" %}
+Your custom exclusion are injected around line 300. You can edit this code and reload the page immediately.
 
 ## Taking full control of how the KcContext is generated
 
