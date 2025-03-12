@@ -279,11 +279,3 @@ If you're currently using [keycloak-js](https://www.npmjs.com/package/keycloak-j
 
 If you have any issues [reach out on Discord](https://discord.gg/mJdYJSdcm4)! We're here to help!
 {% endhint %}
-
-{% content-ref url="../testing-your-theme/" %}
-[testing-your-theme](../testing-your-theme/)
-{% endcontent-ref %}
-
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
-{% endcontent-ref %}
