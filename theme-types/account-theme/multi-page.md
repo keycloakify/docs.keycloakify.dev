@@ -19,7 +19,7 @@ Beyond that there isn't much thing you need to be aware of, things works exactly
 
 ## Internationalization and translation (i18n)
 
-The i18n system of the Multi-Page Account theme is similar in every way to the one of the login theme, you just need to replace **/login/** by **/account/** everywhere. See the note in [this page](broken-reference).
+The i18n system of the Multi-Page Account theme is similar in every way to the one of the login theme, you just need to replace **/login/** by **/account/** everywhere.
 
 ## Using the REST API
 
@@ -44,7 +44,5 @@ Branch of the starter template modified to call the Account REST API
 TODO
 {% endtab %}
 {% endtabs %}
-
-
 
 You can find the code for the Account v3 theme [here](https://github.com/keycloak/keycloak/tree/main/js/apps/account-ui/src/api). This will help you infer all the available endpoints. You can also enable the Account v3 theme in your Keycloak and use the network tab to see the available endpoints.
