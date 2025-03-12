@@ -9,7 +9,3 @@ npx keycloakify build -p <path>
 ```
 
 `<path>` would be typically something like `packages/keycloak-theme`
-
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
-{% endcontent-ref %}
