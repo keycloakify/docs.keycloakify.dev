@@ -39,13 +39,13 @@ You can configure which JAR files are generated and how they are named. For deta
 [keycloakversiontargets.md](features/compiler-options/keycloakversiontargets.md)
 {% endcontent-ref %}
 
-If you have an OPS team and your responsibility is limited to developing the theme, your job ends here. The JAR file is your deliverable. You can provide it to the person managing your Keycloak instance—they will know what to do with it.&#x20;
+If you have an OPS team and your responsibility is limited to developing the theme, your job ends here. The JAR file is your deliverable. You can provide it to the person managing your Keycloak instance—they will know what to do with it.
 
 If you are responsible for both development and deployment, keep reading to learn how to load and enable the theme in Keycloak.
 
 ## Loading the JAR File into Keycloak
 
-Now that your theme is packaged as a JAR file, you can load it into your Keycloak server, just like any other Keycloak extension. &#x20;
+Now that your theme is packaged as a JAR file, you can load it into your Keycloak server, just like any other Keycloak extension.
 
 For official guidance, refer to the [Keycloak documentation on registering provider implementations](https://www.keycloak.org/docs/latest/server_development/#registering-provider-implementations).\
 \
@@ -56,18 +56,18 @@ Improtrant note:
 
 **How to deploy Keycloak in production is beyond the scope of Keycloakify’s documentation**.
 
-If you’re unfamiliar with deploying a Keycloak instance, we strongly recommend starting with [the official Keycloak deployment guides](https://www.keycloak.org/documentation).&#x20;
+If you’re unfamiliar with deploying a Keycloak instance, we strongly recommend starting with [the official Keycloak deployment guides](https://www.keycloak.org/documentation).
 
-Do **not** attempt to use these snippets directly without understanding how Keycloak deployment works. &#x20;
+Do **not** attempt to use these snippets directly without understanding how Keycloak deployment works.
 
 Once you’re confident in deploying Keycloak, revisit this section to integrate your custom theme seamlessly.
 {% endhint %}
 
 {% tabs %}
 {% tab title="Docker" %}
-One of the most common ways to deploy Keycloak in production is by using the official Docker image. &#x20;
+One of the most common ways to deploy Keycloak in production is by using the official Docker image.
 
-If you are following this approach, you can use the `-v` option to mount your JAR file into the `/opt/keycloak` directory inside the container. &#x20;
+If you are following this approach, you can use the `-v` option to mount your JAR file into the `/opt/keycloak` directory inside the container.
 
 Here’s an example of how to run the Keycloak container with your custom theme:
 
@@ -200,7 +200,7 @@ Then you can start your Keycloak server, your theme should be available in it.
 {% endtab %}
 
 {% tab title="Docker - Custom Image" %}
-Another common approach is to build a custom Docker image of Keycloak that extends the official Keycloak image and includes your theme. &#x20;
+Another common approach is to build a custom Docker image of Keycloak that extends the official Keycloak image and includes your theme.
 
 {% hint style="warning" %}
 This approach is **not recommended**, as it requires rebuilding the Docker image every time you update your theme.
@@ -212,10 +212,17 @@ However, if you still prefer this approach, here’s an example of what your Doc
 git clone https://github.com/keycloakify/keycloakify-starter
 cd keycloakify-starter
 
+cat &#x3C;&#x3C; EOF > ./dockerignore
+node_modules
+dist
+dist_keycloak
+# DO NOT ADD .git and .gitignore
+EOF
+
 cat &#x3C;&#x3C; EOF > ./Dockerfile
 <strong>FROM node:20-alpine as build
 </strong><strong>RUN apk update &#x26;&#x26; \
-</strong><strong>    apk add --no-cache openjdk17 maven
+</strong><strong>    apk add --no-cache git openjdk17 maven
 </strong><strong>WORKDIR /app
 </strong><strong>COPY . .
 </strong><strong>RUN yarn install --frozen-lockfile
