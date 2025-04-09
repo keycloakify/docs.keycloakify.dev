@@ -24,17 +24,17 @@ Video Tutorial
 
 ## Initialize the Account 
 
-After initialization, there will be many files there that are part of the theme. They are all Git ignored for the time being. To customize a file and make sure its tracked, run the own command included at the top of the file. For instance at the top of `KcPage.tsx` you'll see `npx keycloakify own --path "account/KcPage.tsx"`. 
+After initialization, there will be many files that are part of the theme but are currently git-ignored. To customize a file and ensure it's tracked, run the own command included at the top of the file. For instance, at the top of `KcPage.tsx` you'll see `npx keycloakify own --path "account/KcPage.tsx"`.
 
-When a new person clones the project and runs the install script, their project will populate with all the files necessary, but continue to gitignore them. 
+When a new person clones the project and runs the installation script, their project will populate with all the necessary files while continuing to be git-ignored.
 
 ## Running the Server
 
-To preview the application use `npx keycloakify start-keycloak`. This will run your application within a Keycloak container. Open the local realm version and select the Account theme link. Once that is open, you'll be able to work like you normally would on any react application with instant refresh and reload. 
+To preview the application use `npx keycloakify start-keycloak`. This will run your application within a Keycloak container. Open the local realm version and select the Account theme link. Once that is open, you'll be able to work like you normally would on any React application with instant refresh and reload. 
 
 **Note** 
 
-If you have a Login theme where you are forcing a specific template to render, make sure to comment that out. Otherwise you will never be able to log in. 
+If you have a Login theme where you are forcing a specific template to render, make sure to comment that out. Otherwise, you will never be able to log in.
 
 ## Updating the Logo
 
@@ -48,10 +48,10 @@ If you have a Login theme where you are forcing a specific template to render, m
 Updating a component that comes from PatternFly, means that we need to create a new component in some fashion. In order to make it possible to edit the components that are used from PatternFly, those are re-exported from the core library of PatternFly. 
 
 1. In the project structure, locate `/src/shared/@patternfly/.../index.tsx` of whatever component or item you want to edit. Run the own command for that specific file. 
-2. For the sake of this example, let's do a "CustomButton" component. That lives in the `@patternfly/react-core` package. Create a new file `CustomButton.tsx` at the same level as the index file (`/src/shared/@patternfly/react-core/CustomButton.tsx`.
-3. Inside that component, you can create the component however you want. For example you could do
+2. For the sake of this example, let's create a "CustomButton" component from the `@patternfly/react-core` package. Create a new file `CustomButton.tsx` at the same level as the index file (e.g., `/src/shared/@patternfly/react-core/CustomButton.tsx`).
+3. Inside that component, you can create it however you want. For example, you could do
 
-```
+```tsx
 import { type ButtonProps, Button } from "@patternfly/react-core";
 import { css } from "@patternfly/react-styles";
 import styles from "./CustomButton.module.css"; // Import the CSS module
@@ -80,14 +80,15 @@ export function CustomButton(props: ButtonProps) {
 4. You'll notice that it imports a CSS module file. Create `CustomButton.module.css` right next to it and style however you want.
 5. In the `index.tsx` file then export the component. This will then override the button exported by Patternfly and apply it to every page that imports that button. 
 
-```
+```tsx
 export * from "@patternfly/react-core";
 export { CustomButton as Button } from "./CustomButton";
 ```
 
 ## Update Instances
 
-The core module for the account is `@keycloakify/keycloak-account-ui`. You can always update the minor versions without issues (change them and do an install). Major updates should follow update instructions to avoid breaking changes depending on changes you've done. 
+The core module for the account is `@keycloakify/keycloak-account-ui`. You can always update the minor versions without issues (simply update them and run the installation script).
+
 
 ## Translations
 
