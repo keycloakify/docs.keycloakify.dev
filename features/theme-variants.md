@@ -51,6 +51,12 @@ In your code you'll be able to load different styles based on the value of `kcCo
 Tutorial video
 {% endembed %}
 
+## Viewing your variants
+
+1. Assign the variant as the login theme to the realm.
+2. Create separate clients and assign each variant to a different client.
+3. Apply the theme name in the `kcContext` of the storybook story: `<KcPageStory kcContext={{ themeName: "chocolate" }}...`
+
 ## Different text for each of your theme variants
 
 Keycloakify lets you provide custom tranlations on a per-theme variant basis.
@@ -97,6 +103,10 @@ export { useI18n, type I18n };
 <figure><img src="../.gitbook/assets/image (32).png" alt=""><figcaption><p>"my-theme-1" view</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (33).png" alt=""><figcaption><p>"my-theme-2" view</p></figcaption></figure>
+
+## In Emails
+
+Access the value in your email theme with `${xKeycloakify.themeName}`.
 
 ## In Native Themes
 
