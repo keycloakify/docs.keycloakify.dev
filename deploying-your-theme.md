@@ -212,7 +212,7 @@ However, if you still prefer this approach, here’s an example of what your Doc
 git clone https://github.com/keycloakify/keycloakify-starter
 cd keycloakify-starter
 
-cat &#x3C;&#x3C; EOF > ./dockerignore
+cat &#x3C;&#x3C; EOF > ./.dockerignore
 node_modules
 dist
 dist_keycloak
