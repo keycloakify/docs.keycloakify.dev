@@ -22,7 +22,14 @@ You can load the extension that you are using in Keycloak container that is star
 You can find the original .ftl file on Phase Two's github
 {% endembed %}
 
-The first thing we will do is create the page under the pages directory, our file name in this case will be `OtpForm.tsx` and paste in some starter code including the template.
+The first thing we want to do is to let Keycloakify know that we are adding a new page: &#x20;
+
+<pre class="language-typescript" data-title="src/login/KcPageStory.tsx"><code class="lang-typescript">const kcContextExtensionPerPage: KcContextExtensionPerPage = {
+<strong>    "otp-form.ftl": { /* We will delare propreties that we need later */ }
+</strong>};
+</code></pre>
+
+Then, we want to create the page under the pages directory, our file name in this case will be `OtpForm.tsx` and paste in some starter code including the template.
 
 {% code title="src/login/pages/OtpForm.tsx" %}
 ```tsx
@@ -238,21 +245,18 @@ export { useI18n, type I18n };
 
 The last two things we need to do now would be adding the story to the `KcPageStory.tsx`
 
-{% code title="src/login/KcPageStory.tsx" %}
-```typescript
-const kcContextExtensionPerPage: KcContextExtensionPerPage = {
-    "otp-form.ftl": {
-        auth: {
-            attemptedUsername: "user@user.com"
-        },
-        url: {
-            loginRestartFlowUrl: "#",
-            loginAction: "#"
-        }
-    }
-};
-```
-{% endcode %}
+<pre class="language-typescript" data-title="src/login/KcPageStory.tsx"><code class="lang-typescript">const kcContextExtensionPerPage: KcContextExtensionPerPage = {
+<strong>    "otp-form.ftl": {
+</strong><strong>        auth: {
+</strong><strong>            attemptedUsername: "user@user.com"
+</strong><strong>        },
+</strong><strong>        url: {
+</strong><strong>            loginRestartFlowUrl: "#",
+</strong><strong>            loginAction: "#"
+</strong><strong>        }
+</strong><strong>    }
+</strong>};
+</code></pre>
 
 and adding the page to the `KcPage.tsx`
 
@@ -275,7 +279,7 @@ After all that you should be done! You can view the new component in storybook a
 
 <summary>Completed code for OtpForm.tsx:</summary>
 
-```JSX
+```jsx
 import { getKcClsx } from "keycloakify/login/lib/kcClsx";
 import type { PageProps } from "keycloakify/login/pages/PageProps";
 import type { KcContext } from "../KcContext";
