@@ -4,6 +4,10 @@ icon: rocket-launch
 
 # Quick Start
 
+{% embed url="https://www.youtube.com/watch?v=S-B8Db2dStk" %}
+Introduction and Tutorial
+{% endembed %}
+
 **Keycloakify** is a tool for creating custom Keycloak themes, enabling you to modify the appearance and behavior of Keycloak's user interfaces. This includes:
 
 * **Login Theme**: The UI for login and registration pages, displayed to users when they attempt to log in or sign up.
@@ -33,7 +37,7 @@ You might be wondering why you would need a third-party tool like Keycloakify to
 If you’re still unsure or want a better understanding before committing to using Keycloakify, check out this guide:
 
 {% content-ref url="https://app.gitbook.com/s/H3WkQf6kDTNqLCk7O5D7/how-it-works" %}
-[How does Keycloakify work?](https://app.gitbook.com/s/H3WkQf6kDTNqLCk7O5D7/how-it-works)
+[https://app.gitbook.com/s/H3WkQf6kDTNqLCk7O5D7/how-it-works](https://app.gitbook.com/s/H3WkQf6kDTNqLCk7O5D7/how-it-works)
 {% endcontent-ref %}
 
 ## Pick Your Framework: React, Angular or Svelte
@@ -126,7 +130,7 @@ And import it:
 {% endtab %}
 {% endtabs %}
 
-This is what you should be getting: &#x20;
+This is what you should be getting:
 
 <figure><img src=".gitbook/assets/grafik (3).png" alt=""><figcaption><p>Screenshot showing the red border being applied to the header section of the login card.</p></figcaption></figure>
 
