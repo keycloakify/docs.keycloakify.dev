@@ -84,9 +84,19 @@ Let's create a story for the Login page and run Storybook[^4].
 
 ```bash
 cd keycloakify-starter
-yarn install # Feel free to use another package manager (if you do, remove the .yarn.lock)
-npx keycloakify add-story # Select login.ftl (for example)
-npm run storybook 
+
+yarn install              # You can use any package manager (npm, pnpm, etc.)
+                          # If you do, delete the .yarn.lock file to avoid conflicts.
+
+npx keycloakify add-story # Select login.ftl (for example).
+                          # Always use `npx` to run CLI tools installed in your project.
+                          # This is standard practice across all modern JS projects,
+                          # do not try to adapt this command based on your package 
+                          # manager.
+
+npm run storybook         # `npm run <script>`, `yarn <script>`, and `pnpm run <script>`
+                          # are strictly equivalent. We use `npm run` here for 
+                          # consistency and because `npm` is always available.
 ```
 
 You should now be able to see the login pages in different scenarios:
