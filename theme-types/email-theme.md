@@ -28,8 +28,6 @@ yarn add keycloakify-emails @keycloakify/svelte-email
 {% endtab %}
 {% endtabs %}
 
-For more instruction on how to configure Keycloak to send emails [see this video](https://www.youtube.com/watch?v=IZ9LSLfWxqo\&t=177s).
-
 ## Using FreeMarker
 
 `npx keycloakify initialize-email-theme`, select the `native` option.
@@ -40,7 +38,7 @@ Running this command will initialize a native email theme in the `src/email` dir
 
 ### Using assets in native email theme
 
-To use images you can put them into **src/email/resources/** example:&#x20;
+To use images you can put them into **src/email/resources/** example:
 
 <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>kc-logo.png in src/email/resources</p></figcaption></figure>
 
