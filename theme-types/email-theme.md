@@ -10,7 +10,7 @@ There are two ways you can create a Keycloak Email theme with Keycloakify
 
 [keycloakify-email](https://github.com/timofei-iatsenko/keycloakify-emails) is a Keycloakify plugin that enable to create an email theme using [jsx-email](https://jsx.email/) or any other email templating solution.
 
-{% embed url="https://github.com/garronej/keycloakify-emails/tree/dir_location_new" %}
+{% embed url="https://github.com/timofei-iatsenko/keycloakify-emails" %}
 
 _This plugin will evenutally be integrated to Keycloakify core._
 
