@@ -8,7 +8,7 @@ The Keycloakify starter repository may initially seem sparse in terms of React/A
 
 By default, Keycloakify internalizes all the components that make up the default UI, exposing only the `DefaultPage` component.
 
-The idea behind this approach is to let you have in your project only the pages that you have modified and don't overwhelm pepole that only want to apply CSS customization.
+The idea behind this approach is to let you have in your project only the pages that you have modified and don't overwhelm people that only want to apply CSS customization.
 
 If you want to customize any component from the default theme, you can easily do so by running the following command:
 
