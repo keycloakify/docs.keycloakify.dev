@@ -210,13 +210,14 @@ cat &#x3C;&#x3C; EOF > ./.dockerignore
 node_modules
 dist
 dist_keycloak
-# DO NOT ADD .git and .gitignore
-EOF
+<strong># IMPORTANT: Make sure `.gitignore` is **not** listed
+</strong><strong># in your .dockerignore file
+</strong>EOF
 
 cat &#x3C;&#x3C; EOF > ./Dockerfile
 <strong>FROM node:20-alpine as build
 </strong><strong>RUN apk update &#x26;&#x26; \
-</strong><strong>    apk add --no-cache git openjdk17 maven
+</strong><strong>    apk add --no-cache openjdk17 maven
 </strong><strong>WORKDIR /app
 </strong><strong>COPY . .
 </strong><strong>RUN yarn install --frozen-lockfile
