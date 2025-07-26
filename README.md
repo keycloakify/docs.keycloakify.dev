@@ -65,7 +65,7 @@ git clone https://github.com/keycloakify/keycloakify-starter
 
 {% tab title="Angular" %}
 ```bash
-git clone https://github.com/keycloakify/keycloakify-starter-angular-vite keycloakify-starter
+git clone https://github.com/keycloakify/keycloakify-starter-angular keycloakify-starter-angular-vite
 ```
 
 Credit goes to [@kathari00](https://github.com/kathari00) for taking the initiative and driving the development of Angular support.
