@@ -114,12 +114,12 @@ Some relevant messages, namely [`termsText`](../../page-specific-guides/terms-an
 Note that if you try to use:
 
 ```tsx
-msg("profile.attributes.favourite_pet");
+msgStr("profile.attributes.favourite_pet");
 ```
 
 It will work at runtime, you'll get `Favourite Pet` but typescript will complain because `"profile.attributes.favourite_pet"` or `string` isn't a known i18n message key, it makes sense as it's only defined on the server.
 
-This is why you'll see in some place in the code the usage of `advancedMsg(attribute.displayName)`, `advancedMsg()` is basically equivalent to `msg()` except that TypeScript won't complain if the key isn't part of the statically defined set.\
+This is why you'll see in some place in the code the usage of `advancedMsgStr(attribute.displayName)`, `advancedMsgStr()` is basically equivalent to `msgStr()` except that TypeScript won't complain if the key isn't part of the statically defined set.\
 [More details](https://github.com/keycloakify/keycloakify/blob/60aaa03202763307a82991c38997d166f8f44d65/src/login/i18n/i18n.tsx#L58-L72).
 
 ### My Realm Overrides Translation aren't applied
