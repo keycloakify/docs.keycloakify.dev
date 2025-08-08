@@ -28,6 +28,7 @@ const { useI18n, ofTypeI18n } = i18nBuilder
     .withThemeName<ThemeName>()
     .withExtraLanguages({ /* ... */ })
     .withCustomTranslations({
+        // WARNING: You can't import the translation from external files
         en: {
             loginAccountTitle: "Log in to your ACME account"
         },
