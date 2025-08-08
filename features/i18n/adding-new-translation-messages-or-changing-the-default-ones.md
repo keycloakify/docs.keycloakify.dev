@@ -52,7 +52,7 @@ Here is the result that you should get:
 <figure><img src="../../.gitbook/assets/image (3).png" alt="" width="375"><figcaption></figcaption></figure>
 
 {% hint style="warning" %}
-The translations that you provide to the `i18nBuilder` must be statically valuable. You can't import from external files. All the translations must be declared inline.\
+The translations that you provide to the `withCustomTranslations` must be statically valuable. You can't import from external files. All the translations must be declared inline.\
 This is because Keycloakify will analyze your code at build time to make Keycloak aware of your modifications of the base messages so that server side generated feedback messages can use your translations.
 
 \
@@ -124,11 +124,11 @@ This is why you'll see in some place in the code the usage of `advancedMsg(attri
 
 ### My Realm Overrides Translation aren't applied
 
-There is a limitation in the current version of Keycloakify: **Not all translations defined at the Keycloak realm level are pulled by the theme**. &#x20;
+There is a limitation in the current version of Keycloakify: **Not all translations defined at the Keycloak realm level are pulled by the theme**.
 
-It will be addressed in future version but as of now, here is a workarond that you can use. &#x20;
+It will be addressed in future version but as of now, here is a workarond that you can use.
 
-Let's say you want to make sure that the message key "**doRegister**" and "**invalidUserMessage**" can be overriten at the ream level, you can edit your vite.config.ts like so: &#x20;
+Let's say you want to make sure that the message key "**doRegister**" and "**invalidUserMessage**" can be overriten at the ream level, you can edit your vite.config.ts like so:
 
 {% code title="vite.config.ts" %}
 ```typescript
