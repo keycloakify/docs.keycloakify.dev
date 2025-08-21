@@ -18,6 +18,11 @@ If you want you show your terms and condition page when they create an account y
 
 This is how to do it in the Keycloak Admin Console: &#x20;
 
+* Navigat to your realm
+* Left bar item: Authentication
+* Tab: Required Actions
+* Terms and condition: Enabled & Set as Default Action
+
 ## Defining your Terms and Conditions text
 
 The way of defining your terms of services in Keycloak is to provide a message bundle for your realm that overrides the `termsText` key for the different languages that you have enabled. &#x20;

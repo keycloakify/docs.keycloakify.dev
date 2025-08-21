@@ -202,6 +202,12 @@ Then you can start your Keycloak server, your theme should be available in it.
 {% tab title="Docker - Custom Image" %}
 Another common approach is to build a custom Docker image of Keycloak that extends the official Keycloak image and includes your theme.
 
+{% hint style="warning" %}
+This approach is **not recommended**, as it requires rebuilding the Docker image every time you update your theme.
+{% endhint %}
+
+However, if you still prefer this approach, here’s an example of what your Dockerfile might look like:
+
 <pre class="language-bash"><code class="lang-bash">cd ~/github
 git clone https://github.com/keycloakify/keycloakify-starter
 cd keycloakify-starter
@@ -210,14 +216,13 @@ cat &#x3C;&#x3C; EOF > ./.dockerignore
 node_modules
 dist
 dist_keycloak
-<strong># IMPORTANT: Make sure `.gitignore` is **not** listed
-</strong><strong># in your .dockerignore file
-</strong>EOF
+# DO NOT ADD .git and .gitignore
+EOF
 
 cat &#x3C;&#x3C; EOF > ./Dockerfile
 <strong>FROM node:20-alpine as build
 </strong><strong>RUN apk update &#x26;&#x26; \
-</strong><strong>    apk add --no-cache openjdk17 maven
+</strong><strong>    apk add --no-cache git openjdk17 maven
 </strong><strong>WORKDIR /app
 </strong><strong>COPY . .
 </strong><strong>RUN yarn install --frozen-lockfile
@@ -237,8 +242,6 @@ docker run \
     -p 8080:8080 \
     my-keycloak
 </code></pre>
-
-Ref to official doc: [https://www.keycloak.org/server/containers](https://www.keycloak.org/server/containers)
 {% endtab %}
 
 {% tab title="Cloud-IAM" %}
