@@ -55,6 +55,8 @@ export default defineConfig({
     In this example we load two extensions:
     - https://github.com/InseeFr/Keycloak-FranceConnect
     - https://github.com/micedre/keycloak-mail-whitelisting
+    
+    (NOTE: ./keycloak-resources/ is just an example, you can use any directory)
     */
     extensionJars: [
      "https://github.com/InseeFr/Keycloak-FranceConnect/releases/download/6.2.0/keycloak-franceconnect-6.2.0.jar",
