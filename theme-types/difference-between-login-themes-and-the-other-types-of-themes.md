@@ -19,7 +19,7 @@ Here are the features that apply to all theme types:
 
 * ✅ [Testing your theme inside Keycloak](../testing-your-theme/inside-of-keycloak.md)
 * ✅ [Theme Variants](../features/theme-variants.md)
-* ✅ [Environment Variables](../features/compiler-options/environmentvariables.md)
+* ✅ [Environment Variables](../features/compiler-options/environmentvariables.md) (except email theme)
 
 Below are the documentation pages that apply **only** to the Login Theme **and** the Multi-Page Account Theme but are handled differently in the other types of themes: &#x20;
 
