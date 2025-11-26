@@ -14,4 +14,4 @@ If you get this error this means that the theme isn't correctly enabled on the c
 \
 Other scenario you get a page that is not listed in [the reference storybook](https://storybook.keycloakify.dev/?path=/story/introduction--page). This probably mean that you have a third party Keycloak extension enabled on your Keycloak server, you can still customize this page, just follow this guide:
 
-{% embed url="https://docs.keycloakify.dev/features/styling-a-custom-page-not-included-in-base-keycloak" %}
+[Styling a Custom Page Not Included in Base Keycloak](https://app.gitbook.com/s/4Ls5iTdfTS2xECgBfw90/features/styling-a-custom-page-not-included-in-base-keycloak "mention")
