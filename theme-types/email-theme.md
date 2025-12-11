@@ -21,7 +21,7 @@ This approach only works in Vite project. So not with Webpack/Create-React-App
 {% tabs %}
 {% tab title="React" %}
 For react, there is a working example in the /example directory of keycloakify-emails that uses jsx-email\
-[https://github.com/timofei-iatsenko/keycloakify-emails](https://github.com/timofei-iatsenko/keycloakify-emails)
+[https://github.com/timofei-iatsenko/keycloakify-emails](https://github.com/timofei-iatsenko/keycloakify-emails/tree/main/example)
 {% endtab %}
 
 {% tab title="Svelte" %}
