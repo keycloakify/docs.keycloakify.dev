@@ -19,7 +19,7 @@ When you inspect the DOM in Storybook, you’ll notice most elements have at lea
 
 Classes beginning with `kc` don’t have any styles applied to them by default. Their sole purpose is to serve as selectors for your custom styles.
 
-Classes beginning with `pf-` are Patternfly classes. [Patternfly](https://v5-archive.patternfly.org/) is a CSS framework created by RedHat, similar to Bootstrap, that the Keycloak team uses to build all of its UIs. &#x20;
+Classes beginning with `pf-` are Patternfly classes. [Patternfly](https://v5-archive.patternfly.org/) is a CSS framework created by RedHat, similar to Bootstrap, that the Keycloak team uses to build all of its UIs.
 
 What you’ll want to do is partially or completely remove the Patternfly styles and then apply your custom ones.
 
@@ -74,7 +74,7 @@ In this example, we use a global stylesheet that applies to all pages of the log
 
 If you plan to customize the pages at the component level using React, Angular, or Svelte, you can skip this section. Once you've learned about the [`npx keycloakify eject-page`](common-use-case-examples/using-a-component-library.md) command, it will be straightforward to import different stylesheets for different ejected pages, and no additional instructions will be necessary.
 
-However, if you plan to customize the theme using only CSS without ejecting the pages, the process may not be immediately clear. \
+However, if you plan to customize the theme using only CSS without ejecting the pages, the process may not be immediately clear.\
 You need to be able to load different stylesheet based on the value of `kcContext.pageId`.\
 Below is a snippet of React code demonstrating how you can apply separate stylesheets for different pages:
 
@@ -158,6 +158,12 @@ If this code doesn’t make much sense, you can watch [this video tutorial](http
 <details>
 
 <summary>Using Tailwind</summary>
+
+{% hint style="info" %}
+If you wish to use tailwind there is a pre made Starter Theme for Shadcn UI:
+
+[Shadcn UI (Tailwind)](https://app.gitbook.com/s/HIMW3tZgxcAgIZHxk9JD/shadcn-ui-tailwind "mention")
+{% endhint %}
 
 Of course, you can use Tailwind in the usual way by applying utility classes to the React/Angular/Svelte components.\
 But note that you can also use Tailwind without modifying the page structure by using the `@apply` directive. This is shown in [this page](css-customization.md#using-tailwind).
@@ -296,8 +302,6 @@ const classes = {
 </code></pre>
 {% endtab %}
 {% endtabs %}
-
-
 
 After saving these changes, here’s the result:
 
