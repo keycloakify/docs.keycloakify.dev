@@ -176,12 +176,13 @@ This is to make sure that you can import relative to the source with `"@/compone
 
 <pre class="language-json" data-title="tsconfig.json"><code class="lang-json">{
     // ...
-<strong>    "compilerOptions": {
-</strong><strong>        "paths": {
+    "compilerOptions": {
+        // ...
+<strong>        "paths": {
 </strong><strong>            "@/*": ["./src/*"]
 </strong><strong>        }
-</strong><strong>    }
-</strong>}
+</strong>    }
+}
 </code></pre>
 
 <pre class="language-json" data-title="tsconfig.app.json"><code class="lang-json">{
