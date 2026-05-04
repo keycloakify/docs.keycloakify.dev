@@ -82,7 +82,7 @@ Result:&#x20;
 
 ## Optional: Updating the logo without re-building the theme
 
-Some pepoles want to be able to "hot swipe" the asset in the Keycloak file system without having to re-build the theme and re-deploy it.
+Some people want to be able to "hot swipe" the asset in the Keycloak file system without having to re-build the theme and re-deploy it.
 
 To ensure that the assets are located in a predictible location you would use the public/ directory.
 
