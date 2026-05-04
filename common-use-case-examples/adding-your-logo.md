@@ -160,7 +160,7 @@ NOTE: You can see PUBLIC\_URL as an equivalent of `process.env.PUBLIC_URL` that 
 {% endtab %}
 {% endtabs %}
 
-If you ever need to SSH into the Keycloak server and hot swipe the image you can find it at
+If you ever need to SSH into the Keycloak server and hot swap the image you can find it at
 
 **/opt/keycloak/themes/**[**\<name of your theme>**](../features/compiler-options/themename.md)**/login/resources/dist/img/logo.png**
 
