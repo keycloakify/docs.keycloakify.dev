@@ -260,7 +260,7 @@ Never configure the master realm for your application. Create a separate realm f
 
 <figure><img src=".gitbook/assets/image (187).png" alt=""><figcaption></figcaption></figure>
 
-Note that the name that apprear in the dropdown (here "keycloakify-starter") can be configured with [the themeName option](features/compiler-options/themename.md). If you implement [theme variants](features/theme-variants.md) you'll have more than one option.
+Note that the name that appears in the dropdown (here "keycloakify-starter") can be configured with [the themeName option](features/compiler-options/themename.md). If you implement [theme variants](features/theme-variants.md) you'll have more than one option.
 
 <details>
 
