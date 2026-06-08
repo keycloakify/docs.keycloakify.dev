@@ -148,8 +148,8 @@ Changes that need to be made to your Vite config to enable Tailwind and Shadcn t
 <pre class="language-typescript" data-title="vite.config.ts"><code class="lang-typescript">import react from "@vitejs/plugin-react";
 import { keycloakify } from "keycloakify/vite-plugin";
 import { defineConfig } from "vite";
-import path from "node:path";
-<strong>import tailwindcss from "@tailwindcss/vite";
+<strong>import path from "node:path";
+</strong><strong>import tailwindcss from "@tailwindcss/vite";
 </strong>
 // https://vite.dev/config/
 export default defineConfig({
@@ -157,9 +157,27 @@ export default defineConfig({
         react(),
 <strong>        tailwindcss(),
 </strong>        keycloakify({
-            accountThemeImplementation: "none"
-        })
-    ],
+            accountThemeImplementation: "none",
+<strong>            environmentVariables: [
+</strong><strong>                {
+</strong><strong>                  name: "SHADCN_THEME_LOGO_WHITE_URL",
+</strong><strong>                  default: "",
+</strong><strong>                },
+</strong><strong>                {
+</strong><strong>                  name: "SHADCN_THEME_LOGO_DARK_URL",
+</strong><strong>                  default: "",
+</strong><strong>                },
+</strong><strong>                { name: "SHADCN_THEME_APP_NAME", default: "Acme Inc." },
+</strong><strong>                { name: "SHADCN_THEME_LAYOUT", default: "two-column" },
+</strong><strong>                { name: "SHADCN_THEME_SIDE_IMAGE_URL", default: "" },
+</strong><strong>                { name: "SHADCN_THEME_PRESET", default: "neutral" },
+</strong><strong>                { name: "SHADCN_THEME_BASE", default: "neutral" },
+</strong><strong>                { name: "SHADCN_THEME_RADIUS", default: "default" },
+</strong><strong>                { name: "SHADCN_THEME_FONT", default: "geist" },
+</strong><strong>                { name: "SHADCN_THEME_PLACEHOLDER", default: "true" },
+</strong><strong>              ],
+</strong><strong>        })
+</strong>    ],
 <strong>    resolve: {
 </strong><strong>        alias: {
 </strong><strong>            "@": path.resolve(__dirname, "src")
@@ -216,6 +234,7 @@ git commit -m "Initial commit"
 {% tab title="npm" %}
 ```bash
 # Run Storybook for component development and testing
+# IMPORTANT! Must be run at least once.
 npm run storybook
 
 # Build the JAR file to import in Keycloak, see https://docs.keycloakify.dev/deploying-your-theme
