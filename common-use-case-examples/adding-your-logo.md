@@ -82,7 +82,7 @@ Result:&#x20;
 
 ## Optional: Updating the logo without re-building the theme
 
-Some pepoles want to be able to "hot swipe" the asset in the Keycloak file system without having to re-build the theme and re-deploy it.
+Some people want to be able to "hot swap" the asset in the Keycloak file system without having to re-build the theme and re-deploy it.
 
 To ensure that the assets are located in a predictible location you would use the public/ directory.
 
@@ -160,7 +160,7 @@ NOTE: You can see PUBLIC\_URL as an equivalent of `process.env.PUBLIC_URL` that 
 {% endtab %}
 {% endtabs %}
 
-If you ever need to SSH into the Keycloak server and hot swipe the image you can find it at
+If you ever need to SSH into the Keycloak server and hot swap the image you can find it at
 
 **/opt/keycloak/themes/**[**\<name of your theme>**](../features/compiler-options/themename.md)**/login/resources/dist/img/logo.png**
 
