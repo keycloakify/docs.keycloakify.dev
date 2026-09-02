@@ -192,16 +192,16 @@ export default defineConfig({
 
 This is to make sure that you can import relative to the source with `"@/components/..."`
 
-<pre class="language-json" data-title="tsconfig.json"><code class="lang-json">{
-    // ...
-    "compilerOptions": {
-        // ...
-<strong>        "paths": {
-</strong><strong>            "@/*": ["./src/*"]
-</strong><strong>        }
-</strong>    }
-}
-</code></pre>
+{% code title="tsconfig.node.json" %}
+```diff
+ {
+     // ...
+-    "module": "nodenext",
++    "module": "ESNext",
++    "moduleResolution": "Bundler",
+ }
+```
+{% endcode %}
 
 <pre class="language-json" data-title="tsconfig.app.json"><code class="lang-json">{
     "compilerOptions": {
