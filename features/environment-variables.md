@@ -47,7 +47,7 @@ export default defineConfig({
 {% endtab %}
 {% endtabs %}
 
-We can then access the runtime value of thoses variables under kcContext.properties:
+After running `npx keycloakify update-kc-gen`, we can then access the runtime value of thoses variables under kcContext.properties:
 
 <figure><img src="../.gitbook/assets/image (163).png" alt=""><figcaption><p>Accessing the value of the environement variable defined.</p></figcaption></figure>
 
