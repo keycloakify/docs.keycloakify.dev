@@ -64,6 +64,18 @@ Once you’re confident in deploying Keycloak, revisit this section to integrate
 {% endhint %}
 
 {% tabs %}
+{% tab title="Phase Two" %}
+If you have a Keycloak Instance managed by [Phase Two](https://phasetwo.io/), deploying your theme is very straight forward.\
+\
+1\) Connect to [https://dash.phasetwo.io/](https://dash.phasetwo.io/)\
+2\) Navigate to config->resources on the left pannel.\
+3\) Click "+Add new resource"\
+4\) Select theme\
+5\) Upload your .jar file (dist\_keycloak/keycloak-theme-for-kc-all-other-versions.jar)
+
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+{% endtab %}
+
 {% tab title="Docker" %}
 One of the most common ways to deploy Keycloak in production is by using the official Docker image.
 
@@ -239,10 +251,6 @@ docker run \
 </code></pre>
 
 Ref to official doc: [https://www.keycloak.org/server/containers](https://www.keycloak.org/server/containers)
-{% endtab %}
-
-{% tab title="Cloud-IAM" %}
-If you have a Keycloak instance managed by [Cloud-IAM](https://cloud-iam.com/?mtm_campaign=keycloakify-deal\&mtm_source=keycloakify-doc-header), you can simply sign-in to and click on the "Upload JAR File" button.
 {% endtab %}
 {% endtabs %}
 

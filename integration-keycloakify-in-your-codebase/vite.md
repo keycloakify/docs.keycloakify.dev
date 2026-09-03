@@ -275,6 +275,6 @@ If you have any issues [reach out on Discord](https://discord.gg/mJdYJSdcm4)! We
 [testing-your-theme](../testing-your-theme/)
 {% endcontent-ref %}
 
-{% content-ref url="broken-reference/" %}
-[broken-reference](broken-reference/)
+{% content-ref url="https://github.com/keycloakify/docs.keycloakify.dev/blob/v11/integration-keycloakify-in-your-codebase/broken-reference/README.md" %}
+[https://github.com/keycloakify/docs.keycloakify.dev/blob/v11/integration-keycloakify-in-your-codebase/broken-reference/README.md](https://github.com/keycloakify/docs.keycloakify.dev/blob/v11/integration-keycloakify-in-your-codebase/broken-reference/README.md)
 {% endcontent-ref %}

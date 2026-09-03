@@ -60,7 +60,7 @@ This is because Keycloakify will analyze your code at build time to make Keycloa
 ![](<../../.gitbook/assets/image (4).png>)
 
 ![](<../../.gitbook/assets/image (5).png>)\
-![](<../../.gitbook/assets/image (7).png>)
+![](<../../.gitbook/assets/image (6).png>)
 {% endhint %}
 
 If you have opted for a configuration [at the component level](https://github.com/keycloakify/docs.keycloakify.dev/blob/v11_next/features/customization-strategies/component-level-customization/README.md) it can come handy to define you own custom message keys:
