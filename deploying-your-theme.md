@@ -65,13 +65,13 @@ Once you’re confident in deploying Keycloak, revisit this section to integrate
 
 {% tabs %}
 {% tab title="Phase Two" %}
-If you have a Keycloak Instance managed by [Phase Two](https://phasetwo.io/), deploying your theme is very straight forward.\
-\
-1\) Connect to [https://dash.phasetwo.io/](https://dash.phasetwo.io/)\
-2\) Navigate to config->resources on the left pannel.\
-3\) Click "+Add new resource"\
-4\) Select theme\
-5\) Upload your .jar file (dist\_keycloak/keycloak-theme-for-kc-all-other-versions.jar)
+If [Phase Two](https://phasetwo.io/) manages your Keycloak instance, upload the theme JAR from its dashboard.
+
+1. Open the [Phase Two dashboard](https://dash.phasetwo.io/).
+2. In the left sidebar, select **Config** → **Resources**.
+3. Click **+ Add new resource**.
+4. Select **Theme**.
+5. Upload your JAR file, such as `dist_keycloak/keycloak-theme-for-kc-all-other-versions.jar`.
 
 <figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
